@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "path": "Home.md",
+      "title": "Home"
+    },
+    {
+      "type": "file",
+      "path": "10 Process/Meta Ads Process.canvas",
+      "title": "\u2699 Process (canvas)"
+    },
+    {
+      "type": "file",
+      "path": "11 Links/Links.md",
+      "title": "\ud83d\udd17 Links"
+    },
+    {
+      "type": "file",
+      "path": "12 Research/Studies & Stats.md",
+      "title": "Studies & Stats"
+    },
+    {
+      "type": "file",
+      "path": "03 Meta Ads/Tracker.md",
+      "title": "Tracker"
+    },
+    {
+      "type": "file",
+      "path": "03 Meta Ads/KPI.md",
+      "title": "KPI"
+    },
+    {
+      "type": "file",
+      "path": "01 Strategy/Brand Guardrails.md",
+      "title": "Guardrails"
+    },
+    {
+      "type": "file",
+      "path": "02 Assets Creation/Hooks & Angles.md",
+      "title": "Hooks"
+    }
+  ]
+}
