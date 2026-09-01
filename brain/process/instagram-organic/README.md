@@ -8,8 +8,8 @@ updated: 2026-09-01
 Posting as `@winkypie.app`, unpaid. **Nothing has been decided here.** This folder exists to
 hold a place on [[Process.canvas|the process canvas]], not to be filled in early.
 
-**Opens after** TikTok Ads, on the same logic: organic reuses creative that already proved
-itself in paid.
+**Fourth in the queue**, after TikTok Organic and on the same logic: organic reuses creative
+that already proved itself in paid.
 
 When it opens, build it in the shape described in [[process/README|Process]].
 

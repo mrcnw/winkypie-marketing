@@ -30,14 +30,15 @@ brain/process/
 │       ├── NN Step Name.md documentation — the tile points here
 │       ├── NN TODO.md      the checklist
 │       └── …               every note that step produces
-├── tiktok-ads/             next in line — README stub, nothing else
-├── tiktok-organic/         parked — README stub, nothing else
-└── instagram-organic/      parked — README stub, nothing else
+├── tiktok-ads/             2 · next in line — README stub, nothing else
+├── tiktok-organic/         3 · queued — README stub, nothing else
+├── instagram-organic/      4 · queued — README stub, nothing else
+└── influencers/            5 · queued — README stub, nothing else
 ```
 
-**One channel at a time.** A parked channel stays an empty folder until the channel before
-it produces a winner worth repeating — notes written for work nobody is doing go stale and
-then get believed. When a channel opens, it gets the same shape as `meta-ads/`.
+**One channel at a time, in that order.** A queued channel stays an empty folder until the
+channel before it produces a winner worth repeating — notes written for work nobody is doing
+go stale and then get believed. When a channel opens, it gets the same shape as `meta-ads/`.
 
 ## Division of labour
 

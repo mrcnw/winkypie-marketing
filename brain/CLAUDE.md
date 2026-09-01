@@ -25,15 +25,17 @@ brain/
     │       ├── NN Step Name.md     documentation — the canvas tile points here
     │       ├── NN TODO.md          the checklist
     │       └── …                   every note this step produces
-    ├── tiktok-ads/                 folder + README stub only
-    ├── tiktok-organic/             folder + README stub only
-    └── instagram-organic/          folder + README stub only
+    ├── tiktok-ads/                 2 · folder + README stub only
+    ├── tiktok-organic/             3 · folder + README stub only
+    ├── instagram-organic/          4 · folder + README stub only
+    └── influencers/                5 · folder + README stub only
 ```
 
-**One channel at a time, and it is meta-ads.** The other three folders hold a README stub
-and nothing else, on purpose — do not write steps, TODOs or strategy into a channel nobody
-is working. Stale notes get believed. A channel opens when the one before it has a
-repeatable winner; then it gets the same shape as `meta-ads/`.
+**One channel at a time, and it is meta-ads.** The other four folders hold a README stub and
+nothing else, on purpose — do not write steps, TODOs or strategy into a channel nobody is
+working. Stale notes get believed. The queue order is fixed (meta-ads → tiktok-ads →
+tiktok-organic → instagram-organic → influencers); a channel opens when the one before it has
+a repeatable winner, and then it gets the same shape as `meta-ads/`.
 
 Do not add loose notes at the `brain/` root or at the `process/` root.
 

@@ -1,18 +1,21 @@
 {
 	"nodes":[
-		{"id":"gnow","type":"group","x":-40,"y":-80,"width":380,"height":300,"color":"4","label":"NOW — the only channel being worked"},
-		{"id":"gnext","type":"group","x":380,"y":-80,"width":380,"height":300,"color":"3","label":"NEXT"},
-		{"id":"glater","type":"group","x":800,"y":-80,"width":380,"height":480,"color":"6","label":"LATER"},
+		{"id":"gnow","type":"group","x":-40,"y":-80,"width":380,"height":300,"color":"4","label":"1 · NOW — the only channel being worked"},
+		{"id":"gnext","type":"group","x":380,"y":-80,"width":380,"height":300,"color":"3","label":"2 · NEXT"},
+		{"id":"glater","type":"group","x":800,"y":-80,"width":380,"height":660,"color":"6","label":"3–5 · QUEUED, in this order"},
 		{"id":"c1","type":"file","file":"process/meta-ads/README.md","x":0,"y":0,"width":300,"height":140,"color":"4"},
 		{"id":"c2","type":"file","file":"process/tiktok-ads/README.md","x":420,"y":0,"width":300,"height":140},
 		{"id":"c3","type":"file","file":"process/tiktok-organic/README.md","x":840,"y":0,"width":300,"height":140},
 		{"id":"c4","type":"file","file":"process/instagram-organic/README.md","x":840,"y":180,"width":300,"height":140},
-		{"id":"focus","type":"text","text":"**One channel at a time.**\n\nmeta-ads is the focus. The other three are folders and nothing else — no steps, no TODOs, no half-written strategy. A channel that is not being worked collects stale notes, and stale notes get believed.\n\nA channel opens when the one before it has a repeatable winner, not when it looks interesting.","x":-40,"y":440,"width":580,"height":220,"color":"4"},
-		{"id":"shape","type":"text","text":"**To open a channel:** copy the shape of `meta-ads/` — a `README.md` with the loop and the gates, one canvas seen from above, one `NN Step Name/` folder per tile holding its documentation, its `NN TODO.md` and whatever it produces.\n\nSteps and numbering are per channel. Do not reuse Meta's nine steps unquestioned — TikTok's creative loop is faster and its research step is a different job.","x":560,"y":440,"width":620,"height":220,"color":"6"}
+		{"id":"c5","type":"file","file":"process/influencers/README.md","x":840,"y":360,"width":300,"height":140},
+		{"id":"focus","type":"text","text":"**One channel at a time.**\n\nmeta-ads is the focus. The other four are folders and nothing else — no steps, no TODOs, no half-written strategy. A channel that is not being worked collects stale notes, and stale notes get believed.\n\nA channel opens when the one before it has a repeatable winner, not when it looks interesting.","x":-40,"y":620,"width":580,"height":240,"color":"4"},
+		{"id":"shape","type":"text","text":"**To open a channel:** copy the shape of `meta-ads/` — a `README.md` with the loop and the gates, one canvas seen from above, one `NN Step Name/` folder per tile holding its documentation, its `NN TODO.md` and whatever it produces.\n\nSteps and numbering are per channel. Do not reuse Meta's nine steps unquestioned — TikTok's creative loop is faster, and an influencer brief is a different job from a media buy.","x":560,"y":620,"width":620,"height":240,"color":"6"}
 	],
 	"edges":[
 		{"id":"e1","fromNode":"c1","fromSide":"right","toNode":"c2","toSide":"left","label":"a winner worth repeating"},
 		{"id":"e2","fromNode":"c2","fromSide":"right","toNode":"c3","toSide":"left","label":"paid creative that works"},
-		{"id":"e3","fromNode":"c2","fromSide":"right","toNode":"c4","toSide":"left"}
+		{"id":"e3","fromNode":"c3","fromSide":"bottom","toNode":"c4","toSide":"top"},
+		{"id":"e4","fromNode":"c4","fromSide":"bottom","toNode":"c5","toSide":"top","label":"known hooks + known CAC"},
+		{"id":"e5","fromNode":"c5","fromSide":"left","toNode":"c1","toSide":"bottom","label":"creator footage feeds paid"}
 	]
 }

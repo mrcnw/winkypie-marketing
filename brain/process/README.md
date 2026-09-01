@@ -5,16 +5,19 @@ updated: 2026-09-01
 # Process — the channels
 
 One folder per channel. [[Process.canvas|Process canvas]] is the same thing seen from above:
-which channel is being worked, which is next, which is parked.
+which channel is being worked, which is next, which is queued behind it.
 
-| Channel | Folder | Status | What it is |
-|---|---|---|---|
-| **Meta Ads** | [[process/meta-ads/README\|meta-ads]] | **active** | Paid on Facebook and Instagram. Nine steps, research → launch → KPI. |
-| TikTok Ads | [[process/tiktok-ads/README\|tiktok-ads]] | not started | Paid on TikTok. Opens when Meta has a creative worth repeating. |
-| TikTok Organic | [[process/tiktok-organic/README\|tiktok-organic]] | not started | Posting as WinkyPie. Fed by whatever the paid creative proved. |
-| Instagram Organic | [[process/instagram-organic/README\|instagram-organic]] | not started | `@winkypie.app` — the only social channel wired today. |
+The queue is fixed. Each channel opens on what the one before it proved:
 
-**One channel at a time, and it is meta-ads.** The other three are empty folders on purpose.
+| # | Channel | Folder | Status | What it is |
+|---|---|---|---|---|
+| 1 | **Meta Ads** | [[process/meta-ads/README\|meta-ads]] | **active** | Paid on Facebook and Instagram. Nine steps, research → launch → KPI. |
+| 2 | TikTok Ads | [[process/tiktok-ads/README\|tiktok-ads]] | not started | Paid on TikTok. Opens when Meta has a creative worth repeating. |
+| 3 | TikTok Organic | [[process/tiktok-organic/README\|tiktok-organic]] | not started | Posting as WinkyPie. Fed by whatever the paid creative proved. |
+| 4 | Instagram Organic | [[process/instagram-organic/README\|instagram-organic]] | not started | `@winkypie.app` — the only social channel wired today. |
+| 5 | Influencers | [[process/influencers/README\|influencers]] | not started | Paid creators and UGC. Needs known hooks and a known CAC first. |
+
+**One channel at a time, and it is meta-ads.** The other four are empty folders on purpose.
 Notes written for a channel nobody is working go stale and then get believed.
 
 A channel opens when the one before it has a repeatable winner — not when it looks

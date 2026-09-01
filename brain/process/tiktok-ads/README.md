@@ -8,7 +8,7 @@ updated: 2026-09-01
 Paid on TikTok. **Nothing has been decided here.** This folder exists to hold a place on
 [[Process.canvas|the process canvas]], not to be filled in early.
 
-**Opens when** Meta Ads has a creative that wins repeatably — see
+**Second in the queue.** Opens when Meta Ads has a creative that wins repeatably — see
 [[process/meta-ads/README|meta-ads]]. Until then this file stays as it is.
 
 When it opens, build it in the shape described in [[process/README|Process]]: a README with
