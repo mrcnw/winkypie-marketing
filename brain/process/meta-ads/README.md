@@ -1,10 +1,10 @@
 ---
 tags: [process, moc]
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # Meta Ads — the process
 
-Nine steps, one loop. Research feeds strategy, strategy feeds creative, creative goes live,
+Ten steps, one loop. Research feeds strategy, strategy feeds creative, creative goes live,
 the numbers come back and feed the next round of research.
 
 [[Meta Ads.canvas|Meta Ads canvas]] is the same loop seen from above — open it first. Every
@@ -66,6 +66,7 @@ flowchart LR
   end
   subgraph P["3 · PRODUCE"]
     T4["04 Highfield CLI<br/>and MCP Ad"]
+    T41["04.1 Outsource<br/>The Shoot"]
   end
   subgraph U["4 · SET UP"]
     T6["06 Meta Ads Configuration<br/>incl. persona"] --> T7["07 Update Facebook Account"]
@@ -76,7 +77,9 @@ flowchart LR
   T2 --> T3
   T2 --> T5
   T3 --> T4
+  T3 --> T41
   T4 --> T6
+  T41 --> T6
   T5 --> T6
   T7 --> T8
   T9 -. "lessons feed the next round" .-> T1
