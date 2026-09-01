@@ -22,11 +22,14 @@ to stand out on social apps"), but the product covers our promise closer than an
 | Audience | Generic/professional-first, gender-neutral; dating secondary ("connection seeker… social apps"; landing testimonial: "Upgraded all of my dating apps thanks to GIO") | App Store, [l.gioapp.ai](https://l.gioapp.ai/) |
 | Traction | 7.5M+ downloads; ~90k downloads and **~$500k revenue/mo** (screensdesign est.); TikTok-ad-led (@gio.app, big paid footprint) | [mwm.ai](https://mwm.ai/apps/gio-ai-headshot-generator/6449296449), screensdesign |
 
-## Meta Ad Library (checked 2026-09-01, US, active)
+## Meta Ad Library (updated 2026-09-02)
 
-Keyword scan "Prequel" is polluted (skincare brand) and no GIO-page ads surfaced in top
-results — their paid engine is **TikTok**, not Meta (discover pages full of "gio ai photo
-app ad"). Meta presence: not established; re-check by page name "GIO" monthly.
+**Corrected: GIO is a huge Meta advertiser too.** Page "GIO: AI Portrait Photo Editor"
+(page_id `111792985260795`) showed **~530 active ads** on 2026-09-01 — mostly video,
+Spanish-language upload-a-photo hooks. Keyword scans missed it because the copy doesn't
+contain "GIO"/"Prequel" in English; page-view search found it. On top of the TikTok engine
+(@gio.app, big paid footprint). This makes GIO the second-largest Meta spender adjacent to
+our niche after Retake AI.
 
 ## Bad-review themes
 
