@@ -4,6 +4,7 @@ import { Download, ExternalLink } from "lucide-react";
 
 import { AssetPreview } from "@/components/asset-preview";
 import { CopyButton } from "@/components/copy-button";
+import { DownloadButton } from "@/components/download-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,35 +21,41 @@ import { formatBytes, formatDate } from "@/lib/format";
 export function AssetCard({ asset }: { asset: Asset }) {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <button
-          type="button"
-          className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-left transition-colors hover:border-foreground/25"
-        >
-          <span className="relative flex aspect-square w-full items-center justify-center overflow-hidden bg-background/60">
-            <AssetPreview asset={asset} />
-          </span>
-          <span className="flex flex-col gap-1 border-t border-border/60 p-3">
-            <span className="truncate text-sm font-medium">{asset.name}</span>
-            <span className="text-xs text-muted-foreground">
-              {formatBytes(asset.size)} · {asset.ext.replace(".", "").toUpperCase()}
-              {asset.group ? ` · ${asset.group}` : ""}
+      <div className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-foreground/25">
+        <DialogTrigger asChild>
+          <button type="button" className="flex flex-col text-left">
+            <span className="relative flex aspect-square w-full items-center justify-center overflow-hidden bg-background/60">
+              <AssetPreview asset={asset} />
             </span>
-          </span>
-        </button>
-      </DialogTrigger>
+            <span className="flex flex-col gap-1 border-t border-border/60 p-3">
+              <span className="truncate text-sm font-medium">{asset.name}</span>
+              <span className="text-xs text-muted-foreground">
+                {formatBytes(asset.size)} ·{" "}
+                {asset.ext.replace(".", "").toUpperCase()}
+                {asset.group ? ` · ${asset.group}` : ""}
+              </span>
+            </span>
+          </button>
+        </DialogTrigger>
+        <DownloadButton href={asset.href} fileName={asset.name} />
+      </div>
 
       <DialogContent className="sm:max-w-3xl">
         <DialogHeader>
           <DialogTitle className="truncate">{asset.name}</DialogTitle>
           <DialogDescription>
-            {formatBytes(asset.size)} · {asset.ext.replace(".", "").toUpperCase()} · added{" "}
+            {formatBytes(asset.size)} ·{" "}
+            {asset.ext.replace(".", "").toUpperCase()} · added{" "}
             {formatDate(asset.modified)}
           </DialogDescription>
         </DialogHeader>
 
         <div className="relative flex h-[55vh] items-center justify-center overflow-hidden rounded-lg bg-background/60">
-          <AssetPreview asset={asset} interactive sizes="(max-width: 768px) 100vw, 768px" />
+          <AssetPreview
+            asset={asset}
+            interactive
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
         </div>
 
         <div className="flex flex-wrap items-center gap-2">

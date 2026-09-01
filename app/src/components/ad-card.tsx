@@ -4,6 +4,7 @@ import { ExternalLink, ImageOff } from "lucide-react";
 
 import { AssetPreview } from "@/components/asset-preview";
 import { CopyButton } from "@/components/copy-button";
+import { DownloadButton } from "@/components/download-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,31 +23,34 @@ export function AdCard({ ad }: { ad: AdSwipe }) {
   return (
     <article className="flex flex-col overflow-hidden rounded-xl border border-border bg-card">
       <Dialog>
-        <DialogTrigger asChild disabled={!first}>
-          <button
-            type="button"
-            disabled={!first}
-            className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden bg-background/60 disabled:cursor-default"
-          >
-            {first ? (
-              <AssetPreview
-                asset={first}
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            ) : (
-              <span className="flex flex-col items-center gap-2 p-6 text-center text-xs text-muted-foreground">
-                <ImageOff className="size-6" />
-                No preview yet — drop a screenshot named{" "}
-                <code className="font-mono">{ad.slug}.png</code>
-              </span>
-            )}
-            {rest.length > 0 && (
-              <span className="absolute bottom-2 right-2 rounded-full bg-background/85 px-2 py-0.5 text-xs">
-                +{rest.length}
-              </span>
-            )}
-          </button>
-        </DialogTrigger>
+        <div className="group relative">
+          <DialogTrigger asChild disabled={!first}>
+            <button
+              type="button"
+              disabled={!first}
+              className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden bg-background/60 disabled:cursor-default"
+            >
+              {first ? (
+                <AssetPreview
+                  asset={first}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              ) : (
+                <span className="flex flex-col items-center gap-2 p-6 text-center text-xs text-muted-foreground">
+                  <ImageOff className="size-6" />
+                  No preview yet — drop a screenshot named{" "}
+                  <code className="font-mono">{ad.slug}.png</code>
+                </span>
+              )}
+              {rest.length > 0 && (
+                <span className="absolute bottom-2 right-2 rounded-full bg-background/85 px-2 py-0.5 text-xs">
+                  +{rest.length}
+                </span>
+              )}
+            </button>
+          </DialogTrigger>
+          {first && <DownloadButton href={first.href} fileName={first.name} />}
+        </div>
 
         {first && (
           <DialogContent className="sm:max-w-3xl">
@@ -68,6 +72,7 @@ export function AdCard({ ad }: { ad: AdSwipe }) {
                     interactive
                     sizes="(max-width: 768px) 100vw, 768px"
                   />
+                  <DownloadButton href={preview.href} fileName={preview.name} />
                 </div>
               ))}
             </div>
@@ -119,7 +124,11 @@ export function AdCard({ ad }: { ad: AdSwipe }) {
               Ad Library
             </a>
           </Button>
-          <CopyButton value={ad.url} label="Copy link" toastMessage="Link copied" />
+          <CopyButton
+            value={ad.url}
+            label="Copy link"
+            toastMessage="Link copied"
+          />
         </div>
       </div>
     </article>
