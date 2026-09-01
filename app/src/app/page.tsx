@@ -2,16 +2,17 @@ import Link from "next/link";
 import { ArrowRight, Images, Megaphone } from "lucide-react";
 
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
-import { readAdSwipes } from "@/lib/meta-ads";
+import { readSwipes, SWIPE_SOURCES } from "@/lib/meta-ads";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [brand, beforeAfter, mobileApp, swipes] = await Promise.all([
+  const [brand, beforeAfter, mobileApp, goodAds, competitors] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
-    readAdSwipes(),
+    readSwipes(SWIPE_SOURCES["good-ads"]),
+    readSwipes(SWIPE_SOURCES.competitors),
   ]);
 
   const winkypieCount = brand.length + beforeAfter.length + mobileApp.length;
@@ -29,10 +30,10 @@ export default async function Home() {
       title: "Meta Ads",
       icon: Megaphone,
       lines: [
-        "Ads worth keeping, one click from the Ad Library",
-        "Preview plus the link that opens it",
+        "Good Ads — single ads worth keeping",
+        "Competitors — their whole live Ad Library",
       ],
-      count: `${swipes.ads.length} ad${swipes.ads.length === 1 ? "" : "s"}`,
+      count: `${goodAds.ads.length} good · ${competitors.ads.length} competitors`,
     },
   ];
 

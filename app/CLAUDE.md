@@ -16,7 +16,7 @@ Two tabs. One job each:
 |---|---|
 | `/` | The two tiles, with a file count on each. |
 | `/winkypie` | Three tabs: **Brand Assets** (logo marks, wordmarks), **Before / After** (pairs, with the disclosure) and **Mobile App** (icon, App Store screenshots, recordings). Click a file for a full preview, its repo path, and download. |
-| `/meta-ads` | Ads worth keeping. Preview, why it works, and a one-click link into the Meta Ad Library. |
+| `/meta-ads` | Two tabs: **Good Ads** (single ads worth keeping) and **Competitors — Ad Library** (a competitor's page link, which always shows what they run today). Preview, why it works, one-click link into the library. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —
 belongs in `brain/process/meta-ads/`, not here. If a view would need a checkbox or a status,
@@ -34,24 +34,31 @@ app/public/assets/winkypie/before-after/  → /winkypie · pairs on the file nam
                                             hero_1_before.png + hero_1_after.png
                                             (before|pre and after|post both work)
 app/public/assets/winkypie/mobile-app/    → /winkypie · Mobile App
-app/public/assets/meta-ads/               → /meta-ads previews, matched to an ad by slug:
-                                            <slug>.png, or a <slug>/ folder for several
-app/content/meta-ads.json                 → the swipe file, one entry per ad
+app/content/good-ads.json                 → /meta-ads · Good Ads tab
+app/content/competitors.json              → /meta-ads · Competitors tab
+app/public/assets/meta-ads/good-ads/      → previews for the first list, by slug:
+app/public/assets/meta-ads/competitors/     <slug>.png, or a <slug>/ folder for several
 ```
 
 Sub-folders are walked four levels deep and shown as a group label. Dotfiles are skipped, so
 `.gitkeep` keeps an empty folder in git without appearing in the UI.
 
-`content/meta-ads.json` is hand-edited: an array of `{ slug, title, advertiser, url, note,
-tags, added }`, where only `slug` and `url` are required. Broken JSON surfaces as a message on
-the page rather than an empty grid — do not "fix" that by swallowing the error.
+Both swipe files are hand-edited and share one shape: an array of `{ slug, title, advertiser,
+url, note, tags, added }`, where only `slug` and `url` are required. `SWIPE_SOURCES` in
+`src/lib/meta-ads.ts` binds each file to its tab and its asset folder — add a list there, not
+by copying the loader. Broken JSON surfaces as a message on the page rather than an empty grid
+— do not "fix" that by swallowing the error.
 
-**Thumbnails: `npm run shot`.** `scripts/capture-previews.mjs` opens every ad that has no
-preview in headless Chrome and saves the viewport to `<slug>.png`. The Ad Library renders
-without a login, so this needs no credentials and no API key; it is the screenshot you would
-otherwise take by hand, kept for internal reference. `-- --force` recaptures, and passing
-slugs limits it to those ads. A `?id=<library id>` URL captures a single ad instead of a
-page's whole list.
+The split is on purpose: a **good ad** is one creative (`?id=<library id>`), a **competitor**
+is a page (`view_all_page_id=…`) whose contents change under the same link. Mixing them makes
+"how many ads have we saved" meaningless.
+
+**Thumbnails: `npm run shot`.** `scripts/capture-previews.mjs` walks both files, opens every
+entry that has no preview in headless Chrome and saves the viewport to that list's folder as
+`<slug>.png`. The Ad Library renders without a login, so this needs no credentials and no API
+key; it is the screenshot you would otherwise take by hand, kept for internal reference.
+`-- --force` recaptures, and passing slugs limits it to those entries. Its `SOURCES` array
+must stay in sync with `SWIPE_SOURCES`.
 
 Assets are committed to the repo. A multi-hundred-MB video is worth a second thought before
 `git add`; everything else just goes in.

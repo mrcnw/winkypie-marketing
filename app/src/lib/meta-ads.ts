@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-import { ASSET_DIRS, readAssets, type Asset } from "@/lib/assets";
+import { readAssets, type Asset } from "@/lib/assets";
 
 export type AdSwipe = {
   slug: string;
@@ -18,9 +18,34 @@ export type AdSwipe = {
   previews: Asset[];
 };
 
-/** Hand-edited. One entry per ad worth keeping. */
-export const SWIPE_FILE = "app/content/meta-ads.json";
-const SWIPE_PATH = path.join(process.cwd(), "content", "meta-ads.json");
+/**
+ * Two lists, two files. One holds single ads worth keeping, the other holds
+ * competitors' Ad Library pages — a page link shows everything they run today,
+ * which is a different thing from one good ad.
+ */
+export const SWIPE_SOURCES = {
+  "good-ads": {
+    key: "good-ads",
+    label: "Good Ads",
+    file: "good-ads.json",
+    repoFile: "app/content/good-ads.json",
+    assetDir: "assets/meta-ads/good-ads",
+    blurb:
+      "One entry per ad worth keeping. Use the ad's own ?id=<library id> link so the card opens that ad, not a whole page.",
+  },
+  competitors: {
+    key: "competitors",
+    label: "Competitors — Ad Library",
+    file: "competitors.json",
+    repoFile: "app/content/competitors.json",
+    assetDir: "assets/meta-ads/competitors",
+    blurb:
+      "One entry per competitor page. Paste the Ad Library page link (view_all_page_id=…) — it always shows what they are running right now.",
+  },
+} as const;
+
+export type SwipeSourceKey = keyof typeof SWIPE_SOURCES;
+export type SwipeSource = (typeof SWIPE_SOURCES)[SwipeSourceKey];
 
 type RawSwipe = {
   slug?: unknown;
@@ -50,7 +75,7 @@ function idsFrom(url: string) {
 
 /**
  * Previews are optional and matched by name: either
- * `public/assets/meta-ads/<slug>/*` or `public/assets/meta-ads/<slug>.<ext>`.
+ * `<assetDir>/<slug>/*` or `<assetDir>/<slug>.<ext>`.
  */
 function previewsFor(slug: string, assets: Asset[]) {
   return assets.filter((asset) => {
@@ -60,15 +85,16 @@ function previewsFor(slug: string, assets: Asset[]) {
   });
 }
 
-export async function readAdSwipes(): Promise<{
-  ads: AdSwipe[];
-  error: string | null;
-}> {
+export async function readSwipes(
+  source: SwipeSource,
+): Promise<{ ads: AdSwipe[]; error: string | null }> {
+  const file = path.join(process.cwd(), "content", source.file);
+
   let raw: string;
   try {
-    raw = await fs.readFile(SWIPE_PATH, "utf8");
+    raw = await fs.readFile(file, "utf8");
   } catch {
-    return { ads: [], error: null }; // no file yet — same as an empty swipe file
+    return { ads: [], error: null }; // no file yet — same as an empty list
   }
 
   let parsed: unknown;
@@ -78,15 +104,15 @@ export async function readAdSwipes(): Promise<{
     // Hand-edited JSON: say what broke instead of silently showing nothing.
     return {
       ads: [],
-      error: `${SWIPE_FILE} is not valid JSON — ${(error as Error).message}`,
+      error: `${source.repoFile} is not valid JSON — ${(error as Error).message}`,
     };
   }
 
   if (!Array.isArray(parsed)) {
-    return { ads: [], error: `${SWIPE_FILE} must contain an array of ads.` };
+    return { ads: [], error: `${source.repoFile} must contain an array.` };
   }
 
-  const assets = await readAssets(ASSET_DIRS.metaAds);
+  const assets = await readAssets(source.assetDir);
   const ads: AdSwipe[] = [];
   let skipped = 0;
 
@@ -119,7 +145,7 @@ export async function readAdSwipes(): Promise<{
   return {
     ads,
     error: skipped
-      ? `${skipped} entr${skipped === 1 ? "y" : "ies"} skipped — every ad needs a slug and a url.`
+      ? `${skipped} entr${skipped === 1 ? "y" : "ies"} skipped in ${source.repoFile} — every entry needs a slug and a url.`
       : null,
   };
 }

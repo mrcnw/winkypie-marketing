@@ -31,7 +31,6 @@ export const ASSET_DIRS = {
   brand: "assets/winkypie/brand",
   beforeAfter: "assets/winkypie/before-after",
   mobileApp: "assets/winkypie/mobile-app",
-  metaAds: "assets/meta-ads",
 } as const;
 
 function kindOf(ext: string): AssetKind {
