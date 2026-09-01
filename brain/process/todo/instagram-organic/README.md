@@ -6,12 +6,12 @@ updated: 2026-09-01
 # Instagram Organic — not started
 
 Posting as `@winkypie.app`, unpaid. **Nothing has been decided here.** This folder exists to
-hold a place on [[Process.canvas|the process canvas]], not to be filled in early.
+hold a place on [[Process.excalidraw|the process drawing]], not to be filled in early.
 
 **Fourth in the queue**, after TikTok Organic and on the same logic: organic reuses creative
 that already proved itself in paid.
 
-When it opens, build it in the shape described in [[process/README|Process]].
+When it opens, build it in the shape described in [[process/todo/README|todo]] and [[process/README|Process]].
 
 Two things to pull in at that point rather than now:
 

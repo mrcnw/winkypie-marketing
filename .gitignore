@@ -2,3 +2,6 @@
 
 # Obsidian per-machine UI state — the rest of .obsidian/ is shared config
 brain/.obsidian/workspace.json
+
+# Vendored plugin code (5 MB+). community-plugins.json records what to install
+brain/.obsidian/plugins/

@@ -16,8 +16,8 @@ brain/
 ├── CLAUDE.md                       you are here
 └── process/
     ├── README.md                   the channels, and which one is active
-    ├── Process.canvas              all four channels seen from above
-    ├── meta-ads/                   ← ACTIVE
+    ├── Process.excalidraw.md       the queue, drawn
+    ├── meta-ads/                   ← ACTIVE — the only channel outside todo/
     │   ├── README.md               index, the loop, the gates, the rhythm
     │   ├── Meta Ads.canvas         the loop seen from above — the channel's only canvas
     │   ├── _Template/              copy this folder to add a step
@@ -25,17 +25,23 @@ brain/
     │       ├── NN Step Name.md     documentation — the canvas tile points here
     │       ├── NN TODO.md          the checklist
     │       └── …                   every note this step produces
-    ├── tiktok-ads/                 2 · folder + README stub only
-    ├── tiktok-organic/             3 · folder + README stub only
-    ├── instagram-organic/          4 · folder + README stub only
-    └── influencers/                5 · folder + README stub only
+    └── todo/                       not started, in queue order
+        ├── README.md               the queue and how to open a channel
+        ├── tiktok-ads/             2 · README stub only
+        ├── tiktok-organic/         3 · README stub only
+        ├── instagram-organic/      4 · README stub only
+        └── influencers/            5 · README stub only
 ```
 
-**One channel at a time, and it is meta-ads.** The other four folders hold a README stub and
+**The filing rule: a channel folder at `process/` level is live work; everything not started
+lives in `todo/`.** Opening a channel is a `mv` out of `todo/`, then giving it the shape of
+`meta-ads/`.
+
+**One channel at a time, and it is meta-ads.** The four in `todo/` hold a README stub and
 nothing else, on purpose — do not write steps, TODOs or strategy into a channel nobody is
 working. Stale notes get believed. The queue order is fixed (meta-ads → tiktok-ads →
 tiktok-organic → instagram-organic → influencers); a channel opens when the one before it has
-a repeatable winner, and then it gets the same shape as `meta-ads/`.
+a repeatable winner.
 
 Do not add loose notes at the `brain/` root or at the `process/` root.
 
@@ -113,13 +119,15 @@ everything. Renumbering breaks the canvas and every wiki link pointing at it.
   marker for work to do.
 - Internal notes are plain and technical. The brand voice rules apply to ad copy, not here.
 
-## Keeping the canvas in sync
+## Keeping the drawings in sync
 
-Both canvases contain `file` nodes with vault-relative paths — `process/meta-ads/README.md`,
-`process/meta-ads/01 Find Competitors/01 Find Competitors.md`. If you rename or move a step
-or a channel folder, fix the canvas and the README table in the same commit. Obsidian will
-not repair it and a broken node renders as an empty box.
+Two pictures, both top views: `process/Process.excalidraw.md` for the channel queue and
+`process/meta-ads/Meta Ads.canvas` for the nine steps inside the active channel. A step gets a
+folder, not a drawing of its own.
 
-Two canvases, both top views: `process/Process.canvas` for the channels,
-`process/meta-ads/Meta Ads.canvas` for the steps inside the active one. A step gets a folder,
-not a canvas of its own.
+`Meta Ads.canvas` contains `file` nodes with vault-relative paths —
+`process/meta-ads/01 Find Competitors/01 Find Competitors.md`. The Excalidraw file keeps its
+targets in an **## Element Links** section. Move or rename a folder and both go stale in the
+same way: Obsidian will not repair them, a broken canvas node renders as an empty box, and a
+broken element link silently does nothing. Fix them, and the README tables, in the same
+commit as the move.

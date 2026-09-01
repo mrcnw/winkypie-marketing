@@ -7,13 +7,13 @@ updated: 2026-09-01
 
 Paying other people to show the product — UGC creators and influencer partnerships.
 **Nothing has been decided here.** This folder exists to hold a place on
-[[Process.canvas|the process canvas]], not to be filled in early.
+[[Process.excalidraw|the process drawing]], not to be filled in early.
 
 **Last in the queue**, after the paid and organic channels. By then we know which hooks
 convert and what a customer costs — both are what a creator brief and a rate negotiation are
 built on. Starting here first means paying strangers to guess.
 
-When it opens, build it in the shape described in [[process/README|Process]].
+When it opens, build it in the shape described in [[process/todo/README|todo]] and [[process/README|Process]].
 
 Known before it starts:
 

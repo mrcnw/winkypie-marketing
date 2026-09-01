@@ -10,9 +10,9 @@ the numbers come back and feed the next round of research.
 [[Meta Ads.canvas|Meta Ads canvas]] is the same loop seen from above — open it first. Every
 tile on it is a folder here. This is the channel's only canvas; steps do not get their own.
 
-One level up, [[process/Process.canvas|Process]] shows all five channels. **Meta Ads is the
-active one** — tiktok-ads, tiktok-organic, instagram-organic and influencers are empty folders
-until this loop produces a winner worth repeating.
+One level up, [[process/README|Process]] lists all five channels and
+[[process/Process.excalidraw|draws them]]. **Meta Ads is the active one** — the other four sit
+parked in `process/todo/` until this loop produces a winner worth repeating.
 
 Product facts are not repeated in this folder. They live in `../../../PRODUCT.md` and are
 linked to.

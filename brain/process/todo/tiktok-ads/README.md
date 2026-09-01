@@ -6,12 +6,12 @@ updated: 2026-09-01
 # TikTok Ads — not started
 
 Paid on TikTok. **Nothing has been decided here.** This folder exists to hold a place on
-[[Process.canvas|the process canvas]], not to be filled in early.
+[[Process.excalidraw|the process drawing]], not to be filled in early.
 
 **Second in the queue.** Opens when Meta Ads has a creative that wins repeatably — see
 [[process/meta-ads/README|meta-ads]]. Until then this file stays as it is.
 
-When it opens, build it in the shape described in [[process/README|Process]]: a README with
+When it opens, build it in the shape described in [[process/todo/README|todo]] and [[process/README|Process]]: a README with
 the loop and the gates, one canvas from above, one folder per step.
 
 Two things already known and worth not re-litigating later:

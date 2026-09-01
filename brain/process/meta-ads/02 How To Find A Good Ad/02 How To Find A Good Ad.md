@@ -1,6 +1,6 @@
 ---
 tags: [step, research]
-status: todo
+status: doing
 phase: research
 owner:
 updated: 2026-09-01

@@ -107,6 +107,13 @@ but dating stays the wedge.
 **Category it competes in:** AI headshot apps · dating-profile-photo services · "ask a friend
 with a camera" · doing nothing.
 
+**The competitor that matters is [ROAST](https://roast.dating)** — profile review plus AI
+dating photos, the only serious paid-Meta spender in the niche, self-reporting 724k users.
+They need 4–10 selfies, have no pose coaching and no pre-generation check, and their most
+common bad review is "it didn't look like me". Full profile and their keyword vocabulary:
+`brain/process/meta-ads/01 Find Competitors/`. Do not copy their proof claims or their
+"you're not ugly" framing — §11.
+
 **The line to hold:** not *"look better"* — *"get the photo you'd need a photographer for."*
 
 **Explicit non-claims.** Not a filter. Not a face swap. Not a photo editor. Not a dating app.

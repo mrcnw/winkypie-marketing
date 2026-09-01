@@ -22,7 +22,7 @@ restates it — a fact about the product lives there and is linked to from every
 
 ```
 brain/process/
-├── Process.canvas          the four channels, and which one is active
+├── Process.excalidraw.md   the queue, drawn
 ├── meta-ads/               ← ACTIVE — the only channel being worked
 │   ├── README.md           index, the loop, the gates, the rhythm
 │   ├── Meta Ads.canvas     the nine-step loop seen from above
@@ -31,15 +31,17 @@ brain/process/
 │       ├── NN Step Name.md documentation — the tile points here
 │       ├── NN TODO.md      the checklist
 │       └── …               every note that step produces
-├── tiktok-ads/             2 · next in line — README stub, nothing else
-├── tiktok-organic/         3 · queued — README stub, nothing else
-├── instagram-organic/      4 · queued — README stub, nothing else
-└── influencers/            5 · queued — README stub, nothing else
+└── todo/                   not started, in queue order
+    ├── tiktok-ads/         2 · next in line — README stub, nothing else
+    ├── tiktok-organic/     3 · queued — README stub, nothing else
+    ├── instagram-organic/  4 · queued — README stub, nothing else
+    └── influencers/        5 · queued — README stub, nothing else
 ```
 
-**One channel at a time, in that order.** A queued channel stays an empty folder until the
-channel before it produces a winner worth repeating — notes written for work nobody is doing
-go stale and then get believed. When a channel opens, it gets the same shape as `meta-ads/`.
+**A channel folder at `process/` level is live work; everything not started sits in `todo/`.**
+Opening a channel is a `mv` out of `todo/`, then giving it the shape of `meta-ads/`. A queued
+channel stays a stub until the channel before it produces a winner worth repeating — notes
+written for work nobody is doing go stale and then get believed.
 
 ## Division of labour
 

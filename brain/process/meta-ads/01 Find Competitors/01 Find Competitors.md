@@ -1,6 +1,6 @@
 ---
 tags: [step, research]
-status: todo
+status: done
 phase: research
 owner:
 updated: 2026-09-01
@@ -41,6 +41,7 @@ what they promise, and the one thing none of them can say that WinkyPie can.
 ## Output
 - `Competitor Landscape.md`
 - `competitors/<Name>.md` — one per competitor
+- `Keyword Map.md` — the leader's vocabulary, what we take from it, and our App Store fields
 
 ## Notes
 Watch out for: competitors that look identical but serve LinkedIn headshots, not dating.
