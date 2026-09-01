@@ -1,14 +1,10 @@
 {
 	"nodes":[
-		{"id":"todo","type":"text","text":"# TODO — channels, in order\n\n- [ ] **1 · meta-ads** — in progress\n- [ ] 2 · tiktok-ads\n- [ ] 3 · tiktok-organic\n- [ ] 4 · instagram-organic\n- [ ] 5 · influencers\n\nOne at a time. A channel is ticked when it has a repeatable winner — that is what opens the next one.","x":-40,"y":-360,"width":520,"height":300,"color":"4"},
-		{"id":"c1","type":"file","file":"process/meta-ads/README.md","x":-40,"y":0,"width":520,"height":260,"color":"4"},
-		{"id":"c2","type":"file","file":"process/tiktok-ads/README.md","x":-40,"y":320,"width":520,"height":260},
-		{"id":"c3","type":"file","file":"process/tiktok-organic/README.md","x":-40,"y":640,"width":520,"height":260},
-		{"id":"c4","type":"file","file":"process/instagram-organic/README.md","x":-40,"y":960,"width":520,"height":260},
-		{"id":"c5","type":"file","file":"process/influencers/README.md","x":-40,"y":1280,"width":520,"height":260},
-		{"id":"focus","type":"text","text":"**Only meta-ads is being worked.**\n\nThe other four are folders with a README stub and nothing else — no steps, no TODOs, no half-written strategy. A channel nobody is working collects stale notes, and stale notes get believed.","x":560,"y":0,"width":460,"height":260,"color":"4"},
-		{"id":"shape","type":"text","text":"**To open a channel:** copy the shape of `meta-ads/` — a `README.md` with the loop and the gates, one canvas seen from above, and one `NN Step Name/` folder per tile holding its documentation, its `NN TODO.md` and whatever it produces.\n\nSteps and numbering are per channel. Do not reuse Meta's nine steps unquestioned — TikTok's creative loop is faster, and an influencer brief is a different job from a media buy.","x":560,"y":320,"width":460,"height":260,"color":"6"},
-		{"id":"loop","type":"text","text":"**It is a queue, not a ladder.** Creator footage from 5 and organic winners from 3–4 come back as paid creative in 1. Nothing here is finished and closed.","x":560,"y":1280,"width":460,"height":260,"color":"6"}
+		{"id":"c1","type":"text","text":"# 1 · Meta Ads\n\n- [ ] in progress — [[process/meta-ads/README|open]]","x":-40,"y":0,"width":520,"height":180,"color":"4"},
+		{"id":"c2","type":"text","text":"# 2 · TikTok Ads\n\n- [ ] not started — [[process/tiktok-ads/README|open]]","x":-40,"y":260,"width":520,"height":180},
+		{"id":"c3","type":"text","text":"# 3 · TikTok Organic\n\n- [ ] not started — [[process/tiktok-organic/README|open]]","x":-40,"y":520,"width":520,"height":180},
+		{"id":"c4","type":"text","text":"# 4 · Instagram Organic\n\n- [ ] not started — [[process/instagram-organic/README|open]]","x":-40,"y":780,"width":520,"height":180},
+		{"id":"c5","type":"text","text":"# 5 · Influencers\n\n- [ ] not started — [[process/influencers/README|open]]","x":-40,"y":1040,"width":520,"height":180}
 	],
 	"edges":[
 		{"id":"e1","fromNode":"c1","fromSide":"bottom","toNode":"c2","toSide":"top","label":"a winner worth repeating"},

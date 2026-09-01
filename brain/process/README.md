@@ -4,8 +4,9 @@ updated: 2026-09-01
 ---
 # Process — the channels
 
-One folder per channel. [[Process.canvas|Process canvas]] is the to-do: the five channels as
-big tiles in queue order, with the checklist at the top.
+One folder per channel. [[Process.canvas|Process canvas]] is the to-do: five tiles in queue
+order, one checkbox each, each linking into its folder. The reasoning lives here, not on the
+canvas — the canvas stays a list.
 
 The queue is fixed. Each channel opens on what the one before it proved:
 
