@@ -1,7 +1,7 @@
 ---
 tags: [todo, setup]
 step: 06
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # 06 · TODO — Meta Ads Configuration
 
@@ -16,6 +16,8 @@ Documentation: [[06 Meta Ads Configuration]]
 - [ ] Decide which personas we are explicitly *not* targeting in round one.
 
 ## Account
+- [ ] Connect Claude to the ad account via Meta's official MCP —
+      `https://mcp.facebook.com/ads` (auth through Business Suite; no tokens in the vault).
 - [ ] Confirm the iOS SDK / SKAdNetwork setup on the app side.
 - [ ] Configure Aggregated Event Measurement and set the event priority order.
 - [ ] Define the conversion events: install, trial start, purchase.

@@ -3,7 +3,7 @@ tags: [step, setup]
 status: todo
 phase: setup
 owner:
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # 06 · Meta Ads Configuration
 
@@ -36,6 +36,12 @@ configuration is built from. They are one decision, not two.
 7. **Record every setting in the doc.** Six weeks from now "why is this campaign
    underperforming" starts with "what was it configured to do", and the UI will not tell
    you what it used to be.
+8. **Connect the ad account to Claude via Meta's official MCP** —
+   `https://mcp.facebook.com/ads`. Official server, auth through Business Suite (no
+   developer tokens to store), full Marketing API coverage — so configuration, checks and
+   later KPI pulls (step 09) run from the terminal and get recorded in this doc as they
+   happen. Community alternatives exist (pipeboard, markifact) but the official one wins on
+   auth and account-safety. Per the Notes rule: no tokens or account IDs in the vault.
 
 ## Done when
 - `Persona.md` holds the primary persona, the trigger, the objection and the answer.
