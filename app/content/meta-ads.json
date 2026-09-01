@@ -1,11 +1,11 @@
 [
   {
     "slug": "ad-library-page-111792985260795",
-    "title": "Ad Library — page 111792985260795",
-    "advertiser": null,
+    "title": "GIO: AI Portrait Photo Editor — all active ads",
+    "advertiser": "GIO: AI Portrait Photo Editor",
     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data[mode]=relevancy_monthly_grouped&sort_data[direction]=desc&source=fb-logo&view_all_page_id=111792985260795",
-    "note": "Seed entry — the link format this page expects. Nothing has been reviewed yet: fill in the advertiser and why it works, or delete it once the first real swipe lands.",
-    "tags": ["seed"],
+    "note": "Direct competitor — AI portrait app. Ad Library reported ~530 active ads on 2026-09-01, mostly video, Spanish-language upload-a-photo hook. Not read for hooks yet; that is steps 01 and 02.",
+    "tags": ["competitor", "ai-photo"],
     "added": "2026-09-01"
   }
 ]

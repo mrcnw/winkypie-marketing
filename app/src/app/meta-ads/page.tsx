@@ -61,12 +61,17 @@ export default async function MetaAdsPage() {
             <code className="font-mono text-foreground">{SWIPE_FILE}</code>.
           </li>
           <li>
-            Optional preview: drop a screenshot or screen recording into{" "}
+            Thumbnail: run <code className="font-mono text-foreground">npm run shot</code>.
+            It opens every ad without a preview in headless Chrome and saves the page to{" "}
             <code className="font-mono text-foreground">
-              app/public/{ASSET_DIRS.metaAds}/
-            </code>{" "}
-            named after the slug —{" "}
-            <code className="font-mono text-foreground">&lt;slug&gt;.png</code>, or a folder{" "}
+              app/public/{ASSET_DIRS.metaAds}/&lt;slug&gt;.png
+            </code>
+            . For one ad rather than a whole page, use its{" "}
+            <code className="font-mono text-foreground">?id=&lt;library id&gt;</code> link.
+          </li>
+          <li>
+            Or drop a screenshot or screen recording in there yourself, named{" "}
+            <code className="font-mono text-foreground">&lt;slug&gt;.png</code> — or a folder{" "}
             <code className="font-mono text-foreground">&lt;slug&gt;/</code> for several.
           </li>
           <li>

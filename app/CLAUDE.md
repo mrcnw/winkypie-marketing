@@ -46,6 +46,13 @@ Sub-folders are walked four levels deep and shown as a group label. Dotfiles are
 tags, added }`, where only `slug` and `url` are required. Broken JSON surfaces as a message on
 the page rather than an empty grid — do not "fix" that by swallowing the error.
 
+**Thumbnails: `npm run shot`.** `scripts/capture-previews.mjs` opens every ad that has no
+preview in headless Chrome and saves the viewport to `<slug>.png`. The Ad Library renders
+without a login, so this needs no credentials and no API key; it is the screenshot you would
+otherwise take by hand, kept for internal reference. `-- --force` recaptures, and passing
+slugs limits it to those ads. A `?id=<library id>` URL captures a single ad instead of a
+page's whole list.
+
 Assets are committed to the repo. A multi-hundred-MB video is worth a second thought before
 `git add`; everything else just goes in.
 

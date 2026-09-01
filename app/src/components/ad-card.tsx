@@ -34,6 +34,9 @@ export function AdCard({ ad }: { ad: AdSwipe }) {
                 <AssetPreview
                   asset={first}
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  // A page screenshot is landscape: fill the tile from the top
+                  // rather than letterboxing it into a 4:5 card.
+                  className="object-cover object-top"
                 />
               ) : (
                 <span className="flex flex-col items-center gap-2 p-6 text-center text-xs text-muted-foreground">
