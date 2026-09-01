@@ -13,6 +13,7 @@ restates it — a fact about the product lives there and is linked to from every
 | Path | What it is | Read first |
 |---|---|---|
 | `PRODUCT.md` | The product. Single source of truth for every claim about the app. | — |
+| `BRAND.md` | How the brand is built — mark, colour, type, UI patterns, store creative, ad rules. Audited against the live surfaces. | — |
 | `brain/` | The marketing process, one folder per channel. Markdown only, Obsidian vault — vault root is `brain/`. | `brain/CLAUDE.md` |
 | `app/` | Next.js helper — browse the creative assets, plus the reference views around them. | `app/CLAUDE.md` |
 | `_winkypie_marketing/` | Legacy vault. Emptied; content is in git history at `a72270a`. Do not add anything here. | — |
@@ -102,7 +103,8 @@ git ls-tree -r --name-only a72270a                                   # list the 
 
 ## When you are asked to do marketing work
 
-1. Read `PRODUCT.md` — every claim you are allowed to make is bounded by it.
+1. Read `PRODUCT.md` — every claim you are allowed to make is bounded by it. If the job is
+   making something look like WinkyPie, read `BRAND.md` too.
 2. Go to `brain/process/meta-ads/`. It is the active channel; if the job belongs to another
    one, say so rather than starting it. `README.md` or `Meta Ads.canvas` shows the loop.
 3. Find the step, work from its documentation, tick its `NN TODO.md`, and write what you

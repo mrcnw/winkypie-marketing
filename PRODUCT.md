@@ -209,6 +209,10 @@ live in the admin panel or say nothing.
 - Cancel path: Settings → [Your Name] → Subscriptions → WinkyPie.
 - **A monthly and a six-month subscriber get the same allowance.** Price is the only lever.
 
+**US price points, read off the public listing on 2026-09-01 — internal only:** WinkyPie
+Monthly `$19.99`, WinkyPie Half-Year `$44.99`. Other markets unknown. These are for LTV and
+CAC maths; they never appear in copy.
+
 🚩 **Never put a dollar figure anywhere off the App Store.** Prices vary by region and change;
 the App Store listing is authoritative. Say "free trial" and "cancel anytime", nothing more.
 Real prices live in RevenueCat / App Store Connect and are needed for LTV maths, never for copy.
@@ -292,6 +296,10 @@ Five pillars, weighted:
 
 ## 10. Brand kit
 
+The values below are canonical. **How they are applied** — the mark, the lockup, the UI
+patterns, the store-screenshot system, the ad rules — is in [`BRAND.md`](BRAND.md), which was
+audited against the live app, site and listing on 2026-09-01.
+
 **DNA:** Dark Premium Playful — luxury aesthetic, friendly edges, warm not cold.
 
 | Role | Value | Surface |
@@ -357,12 +365,17 @@ black. Use `rgba(255,255,255,0)` or `#RRGGBB00`.
 Both upstream repos still contain older documents that contradict the above. If you read one
 of these, this file wins.
 
+**The live App Store listing is the worst offender**, checked 2026-09-01. It is the surface a
+buyer actually reads, and it still carries four stale claims plus one that contradicts the
+privacy policy. See `BRAND.md` §12 for the full audit.
+
 | Stale claim | Where it still appears | Reality |
 |---|---|---|
-| "Winky Shots" credits: 25/week, 50/month, 300/6 months | `/terms` §6, landing FAQ | Quota engine: trial 5 over 3 days · Pro 50/week + 100/month |
+| Selfies "deleted from servers within 60 seconds" | **Live App Store description** | 7 days, per `/privacy` and §2. Two public surfaces, two numbers — fix the listing |
+| "Winky Shots" credits: 25/week, 50/month, 300/6 months | `/terms` §6, landing FAQ, **live App Store description** (25/50/50) | Quota engine: trial 5 over 3 days · Pro 50/week + 100/month |
 | Trial is 3 shots | Landing FAQ | 5 generations. The "3" is the number of *days* |
-| "70+ poses" / "101 poses" | `WINKYPIE_CONTEXT.md`, landing gallery | Backend-managed. Count it live or don't claim it |
-| "Upload a selfie, then pick a pose" | `WINKYPIE_CONTEXT.md` | Reversed: pick pose → coaching → selfie → free check → generate |
+| "70+ poses" / "101 poses" / "500+ poses" | `WINKYPIE_CONTEXT.md`, landing gallery, **live App Store description — which says both 70+ and 500+** | Backend-managed. Count it live or don't claim it |
+| "Upload a selfie, then pick a pose" | `WINKYPIE_CONTEXT.md`, **live App Store description** | Reversed: pick pose → coaching → selfie → free check → generate. The listing omits the free check entirely — the one differentiator |
 | "Both men and women, full gender support" | `WINKYPIE_CONTEXT.md` | Men-only catalog; female content flag-hidden |
 | 4-step onboarding, "Transform yourself, own the spotlight" | `WINKYPIE_CONTEXT.md` | 3 screens, dating-led, "She decided in 100 ms" |
 | Convex `lovely-mosquito-876` | `WINKYPIE_CONTEXT.md` | `glad-spaniel-840` |
@@ -380,12 +393,12 @@ Facts that cannot be read out of either codebase and that block specific claims.
 
 | # | Unknown | Where the answer is | Blocks |
 |---|---|---|---|
-| 1 | Live price points per plan per market | RevenueCat + App Store Connect | LTV/CAC maths |
+| 1 | Price points outside the US — US is `$19.99`/mo and `$44.99`/6mo as of 2026-09-01 | RevenueCat + App Store Connect | LTV/CAC maths per market |
 | 2 | Current live pose count | Admin panel | Any "N poses" claim |
 | 3 | Primary sources for the §8 stats | Research | Any stat in paid creative |
-| 4 | Real release status, install and conversion baseline. Any real reviews yet? | App Store Connect Analytics | Whether social proof exists at all |
+| 4 | Install and conversion baseline. **Ratings: none yet** — the listing showed "not enough ratings" on 2026-09-01 | App Store Connect Analytics | Social proof does not exist yet. Do not plan creative around it |
 | 5 | Median generation time — "~30 seconds" was never measured | Amplitude `generation_started` → `generation_completed` | Any speed claim |
-| 6 | One gold accent: `#D4A84B` or `#F4B942`. Is the app's serif Fraunces? | Design | Brand kit |
+| 6 | One gold accent: `#D4A84B` or `#F4B942`. **The web serif is confirmed Fraunces** (`--font-fraunces` in the shipped CSS, 2026-09-01); the app's own config is still unverified, and the store creative uses a third, unnamed face | Design · `BRAND.md` §13 | Brand kit |
 | 7 | Geo targeting. The App Store link is `/us/`, page locale `en_US` | Product | Campaign setup |
 | 8 | Whether female targeting reopens | Product | Whether creative can be male-coded permanently |
 | 9 | Is there a Play listing, or is Android dead? | Product | Terms cleanup, ad copy |
