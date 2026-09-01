@@ -15,7 +15,7 @@ Two tabs. One job each:
 | Route | What it shows |
 |---|---|
 | `/` | The two tiles, with a file count on each. |
-| `/winkypie` | **Brand Assets** — before/after pairs and brand marks — and **Mobile App** — icon, App Store screenshots, recordings. Click a file for a full preview, its repo path, and download. |
+| `/winkypie` | Three tabs: **Brand Assets** (logo marks, wordmarks), **Before / After** (pairs, with the disclosure) and **Mobile App** (icon, App Store screenshots, recordings). Click a file for a full preview, its repo path, and download. |
 | `/meta-ads` | Ads worth keeping. Preview, why it works, and a one-click link into the Meta Ad Library. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —

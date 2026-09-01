@@ -32,17 +32,21 @@ export default async function WinkyPiePage() {
       <Tabs defaultValue="brand" className="gap-6">
         <TabsList>
           <TabsTrigger value="brand">Brand Assets</TabsTrigger>
+          <TabsTrigger value="before-after">Before / After</TabsTrigger>
           <TabsTrigger value="mobile">Mobile App</TabsTrigger>
         </TabsList>
 
         <TabsContent value="brand" className="flex flex-col gap-10">
-          <BeforeAfterGallery assets={beforeAfter} dir={ASSET_DIRS.beforeAfter} />
           <AssetGallery
-            title="Brand"
-            description="Logo marks, wordmarks, the gradient, anything that carries the brand."
+            title="Brand Assets"
+            description="Logo marks, wordmarks, the gradient — anything that carries the brand."
             assets={brand}
             dir={ASSET_DIRS.brand}
           />
+        </TabsContent>
+
+        <TabsContent value="before-after" className="flex flex-col gap-10">
+          <BeforeAfterGallery assets={beforeAfter} dir={ASSET_DIRS.beforeAfter} />
         </TabsContent>
 
         <TabsContent value="mobile" className="flex flex-col gap-10">

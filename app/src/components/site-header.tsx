@@ -17,19 +17,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center gap-6 px-6 py-4">
-        <Link href="/" className="flex items-center gap-2.5 text-sm font-semibold">
-          <Image
-            src="/logo.png"
-            alt="WinkyPie"
-            width={32}
-            height={32}
-            priority
-            className="size-8"
-          />
-          <span className="brand-gradient-text font-heading text-lg italic leading-none">
-            WinkyPie
-          </span>
-          <span className="leading-none text-muted-foreground">Dashboard</span>
+        <Link
+          href="/"
+          aria-label="Home"
+          className="shrink-0 transition-opacity hover:opacity-80"
+        >
+          <Image src="/logo.png" alt="WinkyPie" width={36} height={36} priority className="size-9" />
         </Link>
 
         <nav className="flex items-center gap-1">
