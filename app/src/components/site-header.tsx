@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const TABS = [
   { href: "/winkypie", label: "WinkyPie" },
   { href: "/meta-ads", label: "Meta Ads" },
+  { href: "/competitors", label: "Competitors" },
 ] as const;
 
 export function SiteHeader() {

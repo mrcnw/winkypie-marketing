@@ -1,18 +1,20 @@
 import Link from "next/link";
-import { ArrowRight, Images, Megaphone } from "lucide-react";
+import { ArrowRight, Crosshair, Images, Megaphone } from "lucide-react";
 
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
+import { readLandscape } from "@/lib/competitors";
 import { readSwipes, SWIPE_SOURCES } from "@/lib/meta-ads";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [brand, beforeAfter, mobileApp, goodAds, competitors] = await Promise.all([
+  const [brand, beforeAfter, mobileApp, goodAds, competitorAds, landscape] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
+    readLandscape(),
   ]);
 
   const winkypieCount = brand.length + beforeAfter.length + mobileApp.length;
@@ -33,7 +35,17 @@ export default async function Home() {
         "Good Ads — single ads worth keeping",
         "Competitors — their whole live Ad Library",
       ],
-      count: `${goodAds.ads.length} good · ${competitors.ads.length} competitors`,
+      count: `${goodAds.ads.length} good · ${competitorAds.ads.length} competitors`,
+    },
+    {
+      href: "/competitors",
+      title: "Competitors",
+      icon: Crosshair,
+      lines: [
+        "Who else sells this, ranked",
+        "Read live from the research notes in brain/",
+      ],
+      count: `${landscape?.competitors.length ?? 0} profiled`,
     },
   ];
 
@@ -50,7 +62,7 @@ export default async function Home() {
         </p>
       </header>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {tiles.map((tile) => (
           <Link
             key={tile.href}

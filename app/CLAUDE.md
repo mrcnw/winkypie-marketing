@@ -10,13 +10,14 @@ and organises, it does not restate strategy and it does not track campaigns.
 
 ## Scope
 
-Two tabs. One job each:
+Three tabs. One job each:
 
 | Route | What it shows |
 |---|---|
-| `/` | The two tiles, with a file count on each. |
+| `/` | The three tiles, with a count on each. |
 | `/winkypie` | Three tabs: **Brand Assets** (logo marks, wordmarks), **Before / After** (pairs, with the disclosure) and **Mobile App** (icon, App Store screenshots, recordings). Click a file for a full preview, its repo path, and download. |
 | `/meta-ads` | Two tabs: **Good Ads** (single ads worth keeping) and **Competitors — Ad Library** (a competitor's page link, which always shows what they run today). Preview, why it works, one-click link into the library. |
+| `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —
 belongs in `brain/process/meta-ads/`, not here. If a view would need a checkbox or a status,
@@ -36,6 +37,8 @@ app/public/assets/winkypie/before-after/  → /winkypie · pairs on the file nam
 app/public/assets/winkypie/mobile-app/    → /winkypie · Mobile App
 app/content/good-ads.json                 → /meta-ads · Good Ads tab
 app/content/competitors.json              → /meta-ads · Competitors tab
+../brain/process/meta-ads/
+  01 Find Competitors/                    → /competitors, read straight from the vault
 app/public/assets/meta-ads/good-ads/      → previews for the first list, by slug:
 app/public/assets/meta-ads/competitors/     <slug>.png, or a <slug>/ folder for several
 ```
@@ -59,6 +62,16 @@ entry that has no preview in headless Chrome and saves the viewport to that list
 key; it is the screenshot you would otherwise take by hand, kept for internal reference.
 `-- --force` recaptures, and passing slugs limits it to those entries. Its `SOURCES` array
 must stay in sync with `SWIPE_SOURCES`.
+
+**`/competitors` reads `../brain/` and does not copy it.** `src/lib/competitors.ts` parses
+`Competitor Landscape.md` for the gap, the ranking order and the living-ads table, and one
+file per competitor for the lede and the Facts table; `src/lib/markdown.ts` is the small
+parser behind it (frontmatter, sections, tables, lists — no dependency). Editing a note in
+Obsidian changes the page on refresh. Two consequences: the app only works with the vault
+checked out beside it, and **a heading rename in the vault silently empties a section here** —
+sections are matched by their opening words (`The gap`, `Ranking`, `Where the best living
+ads`, `Checked and dismissed`, `Facts`). The page degrades to an explanatory error rather
+than crashing.
 
 Assets are committed to the repo. A multi-hundred-MB video is worth a second thought before
 `git add`; everything else just goes in.
