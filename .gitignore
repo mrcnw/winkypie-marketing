@@ -1,0 +1,4 @@
+.DS_Store
+
+# Obsidian per-machine UI state — the rest of .obsidian/ is shared config
+brain/.obsidian/workspace.json
