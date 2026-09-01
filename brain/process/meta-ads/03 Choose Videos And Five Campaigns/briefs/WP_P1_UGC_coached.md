@@ -17,21 +17,28 @@ contrast is clean. UGC-confession is the dominant proven format on the Roast pag
 
 ## Hook (spoken + overlay, 0.0–1.5 s)
 
-> You don't need to know how to pose.
+> All my photos were group shots and gym mirror selfies.
 
-## Beat sheet (target 20–30 s, 9:16 phone-shot)
+Customer language, verbatim from the step-02 doc's own hook example. Confession-story shape
+— the proven UGC formula in this niche is problem → discovery → twist → result, not a
+feature tour. The coaching is the **twist**, not the opener; "You don't need to know how to
+pose." moves to the overlay at the twist beat.
+
+## Beat sheet (target 20–30 s, 9:16 phone-shot, confession-story)
 
 | Time | Happens | Overlay |
 |---|---|---|
-| 0.0 | Man 25–35, phone in hand, natural light, mid-sentence energy | "you don't need to know how to pose" |
-| 1.5 | He flips the phone: pose card + coaching screen visible | "it coaches you — angle, gaze, hands" |
-| 5 | He mirrors the pose, takes the selfie; free check passes | "free check before it costs anything" |
-| 12 | Result reveal on his phone; genuine reaction ("wow, is that me?" energy — awe, not disbelief) | "Looks pro. *Still you.*" + §11.2 disclosure, small |
-| 20–30 | End card | "Pro photos. No photographer." + App Store badge + "3 days free. Cancel anytime." |
+| 0.0 | Man 25–35, phone in hand, natural light, direct to camera | "all my photos were group shots and gym mirror selfies" |
+| 1.5 | Still talking — the skeptic beat | "tried the AI photo thing. expected a fake face" |
+| 5 | The twist — he flips the phone: pose card + coaching card visible | "it *coached* me — angle, gaze, hands. you don't need to know how to pose" |
+| 9 | He mirrors the pose, takes the selfie; free check passes on screen | "and it checks the photo free, before anything costs" |
+| 14 | Result reveal on his phone; genuine reaction ("wow, is that me?" energy — awe, not disbelief) | "Looks pro. *Still you.*" + §11.2 disclosure, small |
+| 22–30 | End card | "Pro photos. No photographer." + App Store badge + "3 days free. Cancel anytime." |
 
 Script tone: PRODUCT.md §9 — short sentences, two-beat rhythm, no hype, no "10x". He talks
-about the *product*, not about his dating life (no "I was single for years" — that's a
-personal-attributes trap in reverse and off-voice).
+about his *photos* and the product, never his dating life (no "I was single for years" —
+personal-attributes trap in reverse and off-voice). **No outcome claims anywhere** — he
+never says matches went up; the story ends at the photo, not at the date.
 
 ## Primary text
 
@@ -47,6 +54,7 @@ proven look.
 
 ## Guardrail check (§11)
 
-Actor plays a user, not a testimonial with claims ✓ (no results promised, no numbers) · AI
-disclosed at reveal ✓ · §11.2 on generated imagery ✓ · men only ✓ · no viewer-attribute
-lines ✓.
+Actor plays a demo user — a product walkthrough in story form, **not** a testimonial: no
+results promised, no numbers, no claims of real-user experience ✓ · AI disclosed at reveal
+✓ · §11.2 on generated imagery ✓ · men only ✓ · no viewer-attribute lines ✓. The
+fabricated-friend story pattern (Roast's #1 ad) stays banned — see [[Hooks And Angles]].

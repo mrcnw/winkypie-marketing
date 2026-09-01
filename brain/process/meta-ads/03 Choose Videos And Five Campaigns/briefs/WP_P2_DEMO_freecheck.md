@@ -18,22 +18,29 @@ sells a free first step. Ours is the only one that checks the *input photo* befo
 
 ## Hook (0.0–1.5 s, on-screen text over the app)
 
-> It checks your photo **before** it costs you anything.
+> Would your photo **pass**?
 
-## Beat sheet (target 20–25 s, 9:16 screen recording)
+The diagnostic-question pattern of the niche's biggest proven ad (Charmd's "Is Your Profile
+Underperforming?", 191 days, 510k EU reach) — second person aimed at the *photo*, never the
+person. The check itself is the answer to the question.
+
+## Beat sheet (target 20–25 s, 9:16 screen recording — problem first, demo second)
 
 | Time | On screen | Overlay copy |
 |---|---|---|
-| 0.0 | Selfie on the Photo Check screen, analysis running | "It checks your photo *before* it costs you anything." |
-| 1.5 | Check result appears — pass, with match % | "Bad selfie? It tells you. Free." |
-| 5 | Quick rewind of the flow: pose picked → coaching card (angle, gaze, hands) → selfie taken | "Pick a pose. It coaches you." |
-| 12 | Generation staged copy ("Painting your shot…") → result reveal | "One selfie. The photo you needed." + §11.2 disclosure line, small |
-| 18–25 | Result full screen, then end card | "Pro photos. No photographer." + App Store badge + "3 days free. Cancel anytime." |
+| 0.0 | Selfie on the Photo Check screen, analysis running | "Would your photo *pass*?" |
+| 1.5 | Verdict lands — pass, with match % | "Most AI photo apps charge you for the bad result." |
+| 3.5 | Hold on the verdict | "This one checks first. Free." |
+| 6 | Quick rewind of the flow: pose picked → coaching card (angle, gaze, hands) → selfie taken | "Pick a pose. It coaches you." |
+| 13 | Generation staged copy ("Painting your shot…") → result reveal | "One selfie. The photo you needed." + §11.2 disclosure line, small |
+| 19–25 | Result full screen, then end card | "Pro photos. No photographer." + App Store badge + "3 days free. Cancel anytime." |
 
 ## Primary text
 
 > Most AI photo apps charge you for the bad result. WinkyPie won't let you make it — a free
 > check tells you if your selfie will work before you spend anything.
+
+Support line (backup hook, same idea): "It checks your photo before it costs you anything."
 
 ## To record
 

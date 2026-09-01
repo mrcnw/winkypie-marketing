@@ -17,6 +17,12 @@ alternative is a $200–900 session ([[Competitor Landscape]], adjacent competit
 still show **no dollar figures** of any kind on the creative — ours or theirs (§11.6 for
 ours; an unsourced range would break the citation rule for theirs).
 
+⚠️ **Kill-first candidate.** No winner in the *dating* niche runs on price (Aragon is a
+LinkedIn buyer — different price tolerance, step-01 Notes warn exactly this), and the
+persona's real alternative is doing nothing, not a photographer. Kept because it costs
+nothing to produce and cleanly tests the Savings pillar (15%) — but it gets no mercy at the
+step-09 thresholds.
+
 ## Hook (0.0–1.5 s)
 
 > Pro photos. **Not pro prices.**

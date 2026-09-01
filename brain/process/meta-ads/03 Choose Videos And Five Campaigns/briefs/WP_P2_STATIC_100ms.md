@@ -27,10 +27,12 @@ citation, no percentage anywhere on the creative.
 
 - Dark `#0E0E0E` ground, warm amber-pink radial glow. "100 ms" is the italic-gradient punch
   word (the one brand gradient).
-- Beat two, smaller: "Before she even read your name."
-- Beat three: "Make the first photo the right one."
+- Beat two, smaller — **the blame-shift, on the creative itself** (every proven ad in the
+  niche states the problem on-frame, not only in primary text): "The first photo does all
+  the work."
+- Beat three: "Make it the right one."
 - Footer: App Store badge + "3 days free. Cancel anytime."
-- Optional motion version: the two beats fade in sequence, 6 s loop. No other animation.
+- Optional motion version: the beats fade in sequence, 6 s loop. No other animation.
 
 ## Primary text (Meta placement)
 
