@@ -2,6 +2,13 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 
 import {
+  adLibrarySearch,
+  classify,
+  searchUrl,
+  type Channel,
+  type ChannelKind,
+} from "@/lib/channels";
+import {
   findSection,
   firstTable,
   parseSections,
@@ -16,106 +23,6 @@ const ABS_DIR = path.join(process.cwd(), "..", RESEARCH_DIR);
 
 export type Fact = { field: string; value: string; source: string | null };
 
-export type ChannelKind =
-  | "appstore"
-  | "play"
-  | "instagram"
-  | "tiktok"
-  | "facebook"
-  | "adlibrary"
-  | "trustpilot"
-  | "site";
-
-export type Channel = {
-  kind: ChannelKind;
-  label: string;
-  url: string;
-  /** false = we have no verified account, the link is a search on that platform */
-  found: boolean;
-};
-
-/** Always shown, in this order — an empty slot is information too. */
-const CHANNEL_SLOTS: ChannelKind[] = [
-  "site",
-  "appstore",
-  "adlibrary",
-  "instagram",
-  "tiktok",
-  "facebook",
-];
-/** Shown only when the note actually has one. */
-const EXTRA_SLOTS: ChannelKind[] = ["play", "trustpilot"];
-
-/** Nothing verified yet — point at the platform's own search so it can be found. */
-function searchUrl(kind: ChannelKind, name: string): string | null {
-  const q = encodeURIComponent(name);
-  switch (kind) {
-    case "instagram":
-      return `https://www.instagram.com/explore/search/keyword/?q=${q}`;
-    case "tiktok":
-      return `https://www.tiktok.com/search?q=${q}`;
-    case "facebook":
-      return `https://www.facebook.com/search/pages/?q=${q}`;
-    case "appstore":
-      return `https://apps.apple.com/us/search?term=${q}`;
-    case "site":
-      return `https://duckduckgo.com/?q=${q}`;
-    default:
-      return null;
-  }
-}
-
-// App-data aggregators and review farms rank well and end up in the notes as
-// sources. They are not the competitor's channel.
-const NOT_THEIRS =
-  /(mwm\.ai|appbrain|apkpure|apkgk|apkcombo|appadvice|justuseapp|appshunter|appfollow|similarweb|sensortower|data\.ai|screensdesign|swipestats|wikipedia|producthunt|g2\.com|reddit|quora|medium\.com|youtube)/;
-
-/** Where a link points, judged by host — never by the text someone typed around it. */
-function classify(url: string, brand: string): Channel | null {
-  let parsed: URL;
-  try {
-    parsed = new URL(url);
-  } catch {
-    return null;
-  }
-  const host = parsed.hostname.replace(/^www\./, "");
-  const handle = parsed.pathname.split("/").filter(Boolean)[0];
-
-  if (host.endsWith("apps.apple.com")) return { kind: "appstore", label: "App Store", url, found: true };
-  if (host.endsWith("play.google.com")) return { kind: "play", label: "Google Play", url, found: true };
-  if (host.endsWith("instagram.com") && handle)
-    return { kind: "instagram", label: `@${handle}`, url, found: true };
-  if (host.endsWith("tiktok.com") && handle?.startsWith("@"))
-    return { kind: "tiktok", label: handle, url, found: true };
-  if (host.endsWith("facebook.com"))
-    return parsed.pathname.startsWith("/ads/library")
-      ? { kind: "adlibrary", label: "Ad Library", url, found: true }
-      : { kind: "facebook", label: "Facebook", url, found: true };
-  if (host.endsWith("trustpilot.com")) return { kind: "trustpilot", label: "Trustpilot", url, found: true };
-
-  if (NOT_THEIRS.test(host)) return null;
-
-  // Their own domain nearly always carries the brand name. Without that, a
-  // link is somebody writing about them, not their site.
-  const domain = host.replace(/\.[a-z.]+$/, "").replace(/[^a-z0-9]/g, "");
-  if (!brand || !domain.includes(brand)) return null;
-
-  return { kind: "site", label: host, url, found: true };
-}
-
-/** Their live ads are always one click away, even when the note has no link. */
-function adLibrarySearch(name: string) {
-  const query = new URLSearchParams({
-    active_status: "active",
-    ad_type: "all",
-    country: "ALL",
-    media_type: "all",
-    q: name,
-    search_type: "keyword_unordered",
-  });
-  return `https://www.facebook.com/ads/library/?${query}`;
-}
-
 export type Competitor = {
   slug: string;
   /** `ROAST` out of `# ROAST (roast.dating)` */
@@ -124,7 +31,7 @@ export type Competitor = {
   qualifier: string | null;
   lede: string;
   facts: Fact[];
-  /** every link the note carries, deduped and classified */
+  /** every slot, verified or not */
   channels: Channel[];
   /** everything past Facts, kept as-is for the detail view */
   sections: MdSection[];
@@ -144,6 +51,18 @@ export type Landscape = {
   dismissed: { name: string; why: string }[];
   updated: string | null;
 };
+
+/** Always shown, in this order — an empty slot is information too. */
+const CHANNEL_SLOTS: ChannelKind[] = [
+  "site",
+  "appstore",
+  "adlibrary",
+  "instagram",
+  "tiktok",
+  "facebook",
+];
+/** Shown only when the note actually has one. */
+const EXTRA_SLOTS: ChannelKind[] = ["play", "trustpilot"];
 
 function linksIn(text: string) {
   const md = [...text.matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map((match) => match[1]);

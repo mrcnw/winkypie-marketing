@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
+import type { Channel } from "@/lib/channels";
 import {
   findSection,
   firstTable,
@@ -13,11 +14,7 @@ import {
 /** Both files live at the repo root. This app renders them; it never restates them. */
 const ROOT = path.join(process.cwd(), "..");
 
-export type OurChannel = {
-  label: string;
-  url: string | null;
-  detail: string;
-};
+
 
 export type Product = {
   oneLiner: string;
@@ -25,7 +22,7 @@ export type Product = {
   facts: MdTable | null;
   pricing: MdTable | null;
   flow: MdSection | undefined;
-  channels: OurChannel[];
+  channels: Channel[];
   sections: MdSection[];
 };
 
@@ -73,37 +70,40 @@ export async function readProduct(): Promise<Product | null> {
   const instagram = factValue(facts, "Social");
   const handle = instagram?.match(/@([\w.]+)/)?.[1] ?? null;
 
-  const channels: OurChannel[] = [
+  const site = urlish(factValue(facts, "Website"));
+  const appStore = urlish(factValue(facts, "App Store URL"));
+  const support = urlish(factValue(facts, "Support"));
+
+  // Same slots, same rules as the competitor cards: an empty one still shows.
+  const channels: Channel[] = [
     {
-      label: "Website",
-      url: urlish(factValue(facts, "Website")),
-      detail: factValue(facts, "Website") ?? "—",
+      kind: "site",
+      label: site ? site.replace(/^https?:\/\//, "") : "",
+      url: site,
+      found: Boolean(site),
     },
+    { kind: "appstore", label: "", url: appStore, found: Boolean(appStore) },
     {
-      label: "App Store",
-      url: urlish(factValue(facts, "App Store URL")),
-      detail: factValue(facts, "Platform sold") ?? "iOS",
-    },
-    {
-      label: "Instagram",
+      kind: "instagram",
+      label: handle ? `@${handle}` : "",
       url: handle ? `https://www.instagram.com/${handle}/` : null,
-      detail: instagram ?? "—",
+      found: Boolean(handle),
     },
     {
-      label: "Facebook Page",
+      kind: "facebook",
+      label: "",
       url: null,
-      detail: "Not set up — step 07 of the Meta Ads process",
+      found: false,
+      hint: "No Page yet — step 07 of the Meta Ads process sets it up",
     },
     {
-      label: "TikTok",
+      kind: "tiktok",
+      label: "",
       url: null,
-      detail: "No account. The channel is parked in process/todo/",
+      found: false,
+      hint: "No account. The channel is parked in brain/process/todo/",
     },
-    {
-      label: "Support",
-      url: urlish(factValue(facts, "Support")),
-      detail: factValue(facts, "Support") ?? "—",
-    },
+    { kind: "support", label: "", url: support, found: Boolean(support) },
   ];
 
   return {

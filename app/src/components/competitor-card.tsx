@@ -1,17 +1,5 @@
 "use client";
 
-import {
-  AtSign,
-  Globe,
-  Megaphone,
-  Music2,
-  Play,
-  Smartphone,
-  Star,
-  ThumbsUp,
-  type LucideIcon,
-} from "lucide-react";
-
 import { Markdown } from "@/components/markdown";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -23,67 +11,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import type { Channel, ChannelKind, Competitor, Fact } from "@/lib/competitors";
-import { cn } from "@/lib/utils";
-
-const CHANNEL_LABEL: Record<ChannelKind, string> = {
-  site: "Site",
-  appstore: "App Store",
-  play: "Play",
-  adlibrary: "Ad Library",
-  instagram: "Instagram",
-  tiktok: "TikTok",
-  facebook: "Facebook",
-  trustpilot: "Trustpilot",
-};
-
-const CHANNEL_ICON: Record<ChannelKind, LucideIcon> = {
-  site: Globe,
-  appstore: Smartphone,
-  play: Play,
-  adlibrary: Megaphone,
-  instagram: AtSign,
-  tiktok: Music2,
-  facebook: ThumbsUp,
-  trustpilot: Star,
-};
-
-function Channels({ channels }: { channels: Channel[] }) {
-  if (!channels.length) return null;
-  return (
-    <div className="flex flex-wrap gap-1.5">
-      {channels.map((channel) => {
-        const Icon = CHANNEL_ICON[channel.kind];
-        return (
-          <a
-            key={channel.kind}
-            href={channel.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={
-              channel.found
-                ? channel.url
-                : `Nothing verified yet — search ${channel.kind} and put the handle in the note`
-            }
-            className={cn(
-              "flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs transition-colors",
-              channel.found
-                ? "border-border bg-background/60 text-muted-foreground hover:border-foreground/25 hover:text-foreground"
-                : "border-dashed border-border/60 text-muted-foreground/50 hover:text-muted-foreground",
-            )}
-          >
-            <Icon className="size-3.5" />
-            {CHANNEL_LABEL[channel.kind]}
-            {channel.found && channel.label !== CHANNEL_LABEL[channel.kind] && (
-              <span className="text-muted-foreground/70">{channel.label}</span>
-            )}
-            {!channel.found && <span className="italic">?</span>}
-          </a>
-        );
-      })}
-    </div>
-  );
-}
+import { ChannelChips } from "@/components/channel-chips";
+import type { Competitor, Fact } from "@/lib/competitors";
 
 export function CompetitorCard({
   competitor,
@@ -112,7 +41,7 @@ export function CompetitorCard({
         </div>
       </header>
 
-      <Channels channels={competitor.channels} />
+      <ChannelChips channels={competitor.channels} />
 
       <p className="text-sm leading-relaxed text-muted-foreground">
         {competitor.lede}

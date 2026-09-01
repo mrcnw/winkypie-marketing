@@ -1,9 +1,63 @@
 [
   {
+    "slug": "ad-library-page-574845319034849",
+    "title": "Roast AI — all active ads",
+    "advertiser": "Roast AI",
+    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&search_type=page&sort_data[direction]=desc&sort_data[mode]=total_impressions&view_all_page_id=574845319034849",
+    "note": "The niche leader. 42 active ads on 2026-09-02; longest runner 131 days. Link is pre-sorted by impressions, so the first card is their current best ad. Full teardown: brain step 01, ROAST.md.",
+    "tags": ["competitor", "dating-photos", "top-1"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "ad-library-page-663945973475500",
+    "title": "Photoshoot Dating — ROAST's second brand",
+    "advertiser": "Photoshoot Dating",
+    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&search_type=page&sort_data[direction]=desc&sort_data[mode]=total_impressions&view_all_page_id=663945973475500",
+    "note": "Same company as Roast AI, separate funnel at photoshoot.dating. 20 active ads on 2026-09-02 — one 43-day image veteran plus a fresh 16-day video wave, i.e. their current testing ground.",
+    "tags": ["competitor", "dating-photos"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "ad-library-page-874777212395608",
+    "title": "ReGen - AI Profile Photos — all active ads",
+    "advertiser": "ReGen - AI Profile Photos",
+    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&search_type=page&sort_data[direction]=desc&sort_data[mode]=total_impressions&view_all_page_id=874777212395608",
+    "note": "The biggest current Meta budget in the niche: ~98 active ads, one control text replicated across video variants since 2026-07-09. Watch for when the control copy changes — that means it stopped converting.",
+    "tags": ["competitor", "dating-photos", "app-install"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "ad-library-page-391389437389627",
+    "title": "SWAY Ai — all active ads",
+    "advertiser": "SWAY Ai",
+    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&search_type=page&sort_data[direction]=desc&sort_data[mode]=total_impressions&view_all_page_id=391389437389627",
+    "note": "Only 2 active ads, both running since 2026-02-17 (~197 days) — the longest-proven creatives in the niche. A tiny, stable, profitable funnel: review-first, photos as upsell.",
+    "tags": ["competitor", "profile-review"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "ad-library-page-924014977461395",
+    "title": "Confessions of a Dater — Charmd's persona page",
+    "advertiser": "Confessions of a Dater (Charmd / Echelon Digital)",
+    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&search_type=page&sort_data[direction]=desc&sort_data[mode]=total_impressions&view_all_page_id=924014977461395",
+    "note": "7 active ads, all 175–191 days old, with real EU reach numbers (up to 510k). The single most delivery-proven ad set in the niche runs from this fake-persona page — study the ads, never the page tactic.",
+    "tags": ["competitor", "dating-photos", "persona-page"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "ad-library-page-1292203403984517",
+    "title": "Ethan Park — TruShot's advertorial persona",
+    "advertiser": "Ethan Park (TruShot)",
+    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&search_type=page&view_all_page_id=1292203403984517",
+    "note": "TruShot's long-copy advertorial page, fresh since 2026-08-28. Re-check at 30 days — if these survive September, story-format advertorials work in this niche.",
+    "tags": ["competitor", "advertorial", "fresh-test"],
+    "added": "2026-09-02"
+  },
+  {
     "slug": "ad-library-page-111792985260795",
     "title": "GIO: AI Portrait Photo Editor — all active ads",
     "advertiser": "GIO: AI Portrait Photo Editor",
-    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data[mode]=relevancy_monthly_grouped&sort_data[direction]=desc&source=fb-logo&view_all_page_id=111792985260795",
+    "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data[mode]=relevancy_monthly_grouped&sort_data[direction]=desc&view_all_page_id=111792985260795",
     "note": "Direct competitor — AI portrait app. Ad Library reported ~530 active ads on 2026-09-01, mostly video, Spanish-language upload-a-photo hook. Not read for hooks yet; that is steps 01 and 02.",
     "tags": ["competitor", "ai-photo"],
     "added": "2026-09-01"

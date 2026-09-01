@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { ExternalLink } from "lucide-react";
-
 import { AssetGallery } from "@/components/asset-gallery";
 import { BeforeAfterGallery } from "@/components/before-after-gallery";
+import { ChannelChips } from "@/components/channel-chips";
 import { CopyBlock } from "@/components/copy-block";
 import { Markdown } from "@/components/markdown";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -26,6 +25,9 @@ export default async function WinkyPiePage() {
   ]);
 
   const copyText = brandMarkdown(product, brand);
+  const gaps = (product?.channels ?? [])
+    .filter((channel) => !channel.found)
+    .map((channel) => channel.hint ?? channel.kind);
 
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-10">
@@ -53,32 +55,12 @@ export default async function WinkyPiePage() {
 
               <section className="flex flex-col gap-3">
                 <h2 className="text-lg font-semibold tracking-tight">Our channels</h2>
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {product.channels.map((channel) => (
-                    <div
-                      key={channel.label}
-                      className="flex flex-col gap-1 rounded-xl border border-border bg-card p-4"
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm font-medium">{channel.label}</span>
-                        {channel.url ? (
-                          <a
-                            href={channel.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
-                          >
-                            Open
-                            <ExternalLink className="size-3" />
-                          </a>
-                        ) : (
-                          <span className="text-xs text-muted-foreground">none</span>
-                        )}
-                      </div>
-                      <p className="text-xs text-muted-foreground">{channel.detail}</p>
-                    </div>
-                  ))}
-                </div>
+                <ChannelChips channels={product.channels} />
+                {gaps.length > 0 && (
+                  <p className="text-xs text-muted-foreground">
+                    Not wired yet: {gaps.join(" · ")}
+                  </p>
+                )}
               </section>
 
               {product.lockedLines && (

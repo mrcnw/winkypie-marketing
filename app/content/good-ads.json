@@ -1,1 +1,83 @@
-[]
+[
+  {
+    "slug": "charmd-profile-underperforming",
+    "title": "\"Is Your Profile Underperforming?\" — the niche's biggest proven ad",
+    "advertiser": "Confessions of a Dater (Charmd)",
+    "url": "https://www.facebook.com/ads/library/?id=914569270944890",
+    "note": "191 days live, 510,116 EU reach — the hardest public number in the niche. Mechanism: a neutral diagnostic question instead of an insult, then 'data-driven profile review' as the free first step. Proof that the compliance-safe variant out-delivers the personal-attributes one.",
+    "tags": ["191 days", "EU reach 510k", "video", "winner"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "sway-rates-your-profile",
+    "title": "SWAY — longest-living ad in the niche (197 days)",
+    "advertiser": "SWAY Ai",
+    "url": "https://www.facebook.com/ads/library/?id=1463034875380576",
+    "note": "Running since 2026-02-17. Mechanism: rate → fix → generate bundle in one sentence ('rates your profile, polishes your photos, delivers top-tier hinge prompts'). Opens with a personal-attributes question we must not copy — study the offer stack, not the hook.",
+    "tags": ["197 days", "video", "winner", "policy-risk hook"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "charmd-youre-not-ugly",
+    "title": "\"You're not ugly. Your photos are just terrible.\"",
+    "advertiser": "Confessions of a Dater (Charmd)",
+    "url": "https://www.facebook.com/ads/library/?id=2081006409408698",
+    "note": "185 days live, 50k EU reach; runs as a persistent 5-ad set (sister ads at 175–184 days). Mechanism: insult-then-absolve — the blame moves from the man to his photos, 'no fake filters, no weird AI look' answers the likeness objection in-copy. Second-person appearance framing = Meta policy risk we do not copy.",
+    "tags": ["185 days", "EU reach 50k", "video", "policy-risk hook"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "charmd-better-photos-more-matches",
+    "title": "\"Better Photos. More Matches.\" — the clean variant",
+    "advertiser": "Confessions of a Dater (Charmd)",
+    "url": "https://www.facebook.com/ads/library/?id=1358306919675950",
+    "note": "175 days live, 61k EU reach. Mechanism: same photos-are-the-problem angle compressed to four beats — 'No studio. No cringe. Just more right swipes.' Closest existing ad to our voice rules; the benchmark to beat with coached-pose + free-check.",
+    "tags": ["175 days", "EU reach 61k", "video", "winner"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "roast-same-face-10x",
+    "title": "\"Same face. 10x the matches.\" — Roast's top ad by impressions",
+    "advertiser": "Roast AI",
+    "url": "https://www.facebook.com/ads/library/?id=2014738899400393",
+    "note": "131 days live; #1 on Roast's page when sorted by impressions. Mechanism: third-person coworker-gatekeeping story + a phone-screenshot IMAGE of a full Hinge match list as the creative — social proof shown, not claimed. Low-fi static beats their polished video. The '10x' multiplier is an invented stat we never copy.",
+    "tags": ["131 days", "image", "story", "winner"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "roast-25-34-callout",
+    "title": "\"If you're between 25 and 34 and can't get more than 1 match a week\"",
+    "advertiser": "Roast AI",
+    "url": "https://www.facebook.com/ads/library/?id=986693823897984",
+    "note": "119 days live. Mechanism: explicit age-bracket callout of exactly our ICP + 'it's not your face, it's your photos' reframe + free 2-minute first step. Interesting: qualifying the audience in copy instead of only in targeting.",
+    "tags": ["119 days", "image", "ICP callout"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "roast-casting-30-guys",
+    "title": "\"We are looking for 30 guys who open Tinder and get zero matches\"",
+    "advertiser": "Roast AI",
+    "url": "https://www.facebook.com/ads/library/?id=1554803756031845",
+    "note": "107 days live. Mechanism: casting-call format — scarcity and selection without a fake countdown. The viewer applies rather than buys. A borrowable third-person structure.",
+    "tags": ["107 days", "image", "casting-call"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "photoshoot-she-swiped-left",
+    "title": "\"She swiped left before she even got to your bio\" — Photoshoot Dating",
+    "advertiser": "Photoshoot Dating (ROAST's 2nd brand)",
+    "url": "https://www.facebook.com/ads/library/?id=967085836345548",
+    "note": "43 days live — the veteran on ROAST's second page while its 16-day video wave is still testing. Mechanism: the 100-ms-decision moment dramatized ('girls decide in half a second and it's your photos making the call'), then 'that part's fixable'. Same territory as our locked line 'She decided in 100 ms.'",
+    "tags": ["43 days", "image", "decision-moment"],
+    "added": "2026-09-02"
+  },
+  {
+    "slug": "regen-control-copy",
+    "title": "ReGen control copy — one text, ~98 video variants",
+    "advertiser": "ReGen - AI Profile Photos",
+    "url": "https://www.facebook.com/ads/library/?id=1048223057893383",
+    "note": "54 days live and replicated across ~98 active variants — scaling by replication, not by one old ad. Mechanism: benefit inventory in plain third person ('no photographer, no outfit planning, no asking a friend'), Meta-safe throughout. The compliance template for app-install copy in this niche.",
+    "tags": ["54 days", "98 variants", "video", "compliance template"],
+    "added": "2026-09-02"
+  }
+]
