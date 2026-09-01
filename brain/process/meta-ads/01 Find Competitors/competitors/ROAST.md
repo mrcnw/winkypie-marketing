@@ -20,6 +20,19 @@ second brand, **"Photoshoot Dating"** (photoshoot.dating). Our most important co
 | Audience | Dating-specific, de facto men ("724,000+ guys" in ad copy) | ads, personas on site |
 | Traction | Self-reported: 724k+ users, 84k+ customers, 2M+ AI photos. Trustpilot 4.3★ / 200 reviews | [roast.dating](https://roast.dating) (self-reported), [Trustpilot](https://www.trustpilot.com/review/roast.dating) |
 
+## Channels
+
+Verified 2026-09-02. Their organic footprint is small next to their paid spend — the ads are
+the channel that matters.
+
+| Channel | Handle | Note |
+|---|---|---|
+| Site | [roast.dating](https://roast.dating) | Quiz funnel; second brand at photoshoot.dating |
+| App Store | [Roast: AI Dating Photos & Bio](https://apps.apple.com/us/app/roast-dating-profile-review/id6769668922) | 5.0★ on 3 ratings — the app is not where their volume is |
+| Instagram | [@roast.dating](https://www.instagram.com/roast.dating/) | ~8.4k followers, 185 posts |
+| TikTok | [@roastdating](https://www.tiktok.com/@roastdating) | ~5.8k followers, 55.6k likes |
+| Meta Ad Library | [Roast AI page](https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&q=roast.dating&search_type=keyword_unordered&media_type=all) | 42 active ads across two pages |
+
 ## Meta Ad Library (checked live 2026-09-01, US, active)
 
 The biggest active spender in the niche. ~9 active ads matching "roast.dating" exact phrase

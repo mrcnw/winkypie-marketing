@@ -87,6 +87,30 @@ noise — their GIO app advertises on TikTok, not Meta), `"radiantsnaps"` / `"da
 `"pose.ai"` (zero — SEO players don't buy ads). `"Retake AI"` works but is ~1,000 generic
 editor ads — scan only when checking whether they've entered dating.
 
+## Automated mode — the scraper
+
+The manual click path above has an automated equivalent: the local tool at
+`~/Downloads/meta-ads-library/` (GraphQL scraper, no login/browser needed; its README
+documents the method and pitfalls). It pulls ads + EU reach + creatives and ranks by the
+same winner signals. First run's results: [[Winning Ads 2026-09-02]]. Whether this is the
+best available method (yes, for our scale), its risks and the upgrade list: [[Scraper Verdict]].
+
+```bash
+cd ~/Downloads/meta-ads-library
+# who advertises on a phrase
+node scripts/meta-ads-research.mjs --who "dating photos" --country US --pages 6
+# full pull of one competitor page, with EU reach + creative downloads
+node scripts/meta-ads-research.mjs --page-id 574845319034849 --country US --pages 5 --details --media --out out/research-roast
+```
+
+Niche page-ids (verified 2026-09-02): Roast AI `574845319034849` · Photoshoot Dating
+`663945973475500` · ReGen `874777212395608` · SWAY Ai `391389437389627` · Confessions of a
+Dater (Charmd) `924014977461395` · Ethan Park (TruShot) `1292203403984517`.
+
+Caveats that stay true in the tool: no spend/impressions for commercial ads (EU reach is
+the only hard number, and only for ads delivered in the EU); the date filter means "ran in
+period", not "started"; Meta rotates `doc_id` — the repo's `12-capture-shapes.mjs` refreshes it.
+
 ## Current winners to study first
 
 The scan results and hooks live in [[Competitor Landscape]] (step 01) — start with the
