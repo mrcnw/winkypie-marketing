@@ -30,9 +30,9 @@ export function AssetCard({ asset }: { asset: Asset }) {
             <span className="flex flex-col gap-1 border-t border-border/60 p-3">
               <span className="truncate text-sm font-medium">{asset.name}</span>
               <span className="text-xs text-muted-foreground">
+                {asset.width && asset.height ? `${asset.width}×${asset.height} · ` : ""}
                 {formatBytes(asset.size)} ·{" "}
                 {asset.ext.replace(".", "").toUpperCase()}
-                {asset.group ? ` · ${asset.group}` : ""}
               </span>
             </span>
           </button>
@@ -44,6 +44,7 @@ export function AssetCard({ asset }: { asset: Asset }) {
         <DialogHeader>
           <DialogTitle className="truncate">{asset.name}</DialogTitle>
           <DialogDescription>
+            {asset.width && asset.height ? `${asset.width}×${asset.height} · ` : ""}
             {formatBytes(asset.size)} ·{" "}
             {asset.ext.replace(".", "").toUpperCase()} · added{" "}
             {formatDate(asset.modified)}

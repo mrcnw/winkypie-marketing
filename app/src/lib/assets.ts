@@ -19,6 +19,9 @@ export type Asset = {
   size: number;
   /** ISO date */
   modified: string;
+  /** Pixel size for PNG and JPEG. App Store slots have exact specs. */
+  width: number | null;
+  height: number | null;
 };
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
@@ -37,6 +40,48 @@ function kindOf(ext: string): AssetKind {
   if (IMAGE_EXT.has(ext)) return "image";
   if (VIDEO_EXT.has(ext)) return "video";
   return "other";
+}
+
+/**
+ * Pixel size straight out of the file header — PNG IHDR and JPEG SOFn. Enough
+ * to check an App Store slot is 1290×2796 without pulling in a dependency.
+ */
+async function readImageSize(file: string, ext: string) {
+  const empty = { width: null, height: null };
+  if (ext !== ".png" && ext !== ".jpg" && ext !== ".jpeg") return empty;
+
+  let handle;
+  try {
+    handle = await fs.open(file, "r");
+    const buffer = Buffer.alloc(65536);
+    const { bytesRead } = await handle.read(buffer, 0, buffer.length, 0);
+
+    if (ext === ".png") {
+      if (bytesRead < 24 || buffer.toString("ascii", 12, 16) !== "IHDR") return empty;
+      return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+    }
+
+    // JPEG: walk the marker segments until a start-of-frame carries the size.
+    let offset = 2;
+    while (offset + 9 < bytesRead) {
+      if (buffer[offset] !== 0xff) {
+        offset += 1;
+        continue;
+      }
+      const marker = buffer[offset + 1];
+      const length = buffer.readUInt16BE(offset + 2);
+      const isSOF = marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker);
+      if (isSOF) {
+        return { height: buffer.readUInt16BE(offset + 5), width: buffer.readUInt16BE(offset + 7) };
+      }
+      offset += 2 + length;
+    }
+    return empty;
+  } catch {
+    return empty;
+  } finally {
+    await handle?.close();
+  }
 }
 
 export function labelOf(fileName: string) {
@@ -67,19 +112,23 @@ export async function readAssets(relDir: string): Promise<Asset[]> {
         continue;
       }
       const stat = await fs.stat(full);
+      const ext = path.extname(entry.name).toLowerCase();
       const rel = path.relative(root, full).split(path.sep).join("/");
       const relToPublic = path.posix.join(relDir, rel);
       const group = rel.includes("/") ? rel.slice(0, rel.lastIndexOf("/")) : "";
+      const { width, height } = await readImageSize(full, ext);
       out.push({
         name: entry.name,
         label: labelOf(entry.name),
         href: `/${relToPublic}`,
         repoPath: `app/public/${relToPublic}`,
         group,
-        kind: kindOf(path.extname(entry.name).toLowerCase()),
-        ext: path.extname(entry.name).toLowerCase(),
+        kind: kindOf(ext),
+        ext,
         size: stat.size,
         modified: stat.mtime.toISOString(),
+        width,
+        height,
       });
     }
   }
