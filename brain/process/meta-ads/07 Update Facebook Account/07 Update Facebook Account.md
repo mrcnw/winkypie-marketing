@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # 07 · Update Facebook Account
 
-Checklist: [[07 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[07 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 The Facebook page and Business Manager in a state that will not stop a launch: verified,

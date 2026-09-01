@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # 02 · How To Find A Good Ad
 
-Checklist: [[02 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[02 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 A repeatable, timeboxed method for sourcing ad hooks — so that "we have no ideas" is never

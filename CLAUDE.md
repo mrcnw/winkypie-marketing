@@ -18,16 +18,15 @@ restates it — a fact about the product lives there and is linked to from every
 | `app/` | Next.js helper — browse the creative assets, plus the reference views around them. | `app/CLAUDE.md` |
 | `_winkypie_marketing/` | Legacy vault. Emptied; content is in git history at `a72270a`. Do not add anything here. | — |
 
-`brain/process/` is one folder per channel, with `Process.canvas` as the view from above:
+`brain/process/` is one folder per channel, with `Process.excalidraw.md` as the view from above:
 
 ```
 brain/process/
 ├── Process.excalidraw.md   the queue, drawn
 ├── meta-ads/               ← ACTIVE — the only channel being worked
 │   ├── README.md           index, the loop, the gates, the rhythm
-│   ├── Meta Ads.canvas     the nine-step loop seen from above
 │   ├── _Template/          copy this folder to add a step
-│   └── NN Step Name/       one folder per canvas tile, 01 → 09
+│   └── NN Step Name/       one folder per tile of the loop drawing, 01 → 09
 │       ├── NN Step Name.md documentation — the tile points here
 │       ├── NN TODO.md      the checklist
 │       └── …               every note that step produces
@@ -108,7 +107,7 @@ git ls-tree -r --name-only a72270a                                   # list the 
 1. Read `PRODUCT.md` — every claim you are allowed to make is bounded by it. If the job is
    making something look like WinkyPie, read `BRAND.md` too.
 2. Go to `brain/process/meta-ads/`. It is the active channel; if the job belongs to another
-   one, say so rather than starting it. `README.md` or `Meta Ads.canvas` shows the loop.
+   one, say so rather than starting it. `README.md` or `Process.excalidraw.md` shows the loop.
 3. Find the step, work from its documentation, tick its `NN TODO.md`, and write what you
    produce into that same step folder.
 4. Touch `app/` only when the job is showing or organising an asset.

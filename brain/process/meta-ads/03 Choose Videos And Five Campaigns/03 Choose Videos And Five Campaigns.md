@@ -7,7 +7,7 @@ updated: 2026-09-02
 ---
 # 03 · Choose Videos And Five Campaigns
 
-Checklist: [[03 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[03 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 Five campaigns picked, each testing exactly one idea, each with a brief and a named video

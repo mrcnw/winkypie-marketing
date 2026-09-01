@@ -7,8 +7,10 @@ updated: 2026-09-02
 Ten steps, one loop. Research feeds strategy, strategy feeds creative, creative goes live,
 the numbers come back and feed the next round of research.
 
-[[Meta Ads.canvas|Meta Ads canvas]] is the same loop seen from above — open it first. Every
-tile on it is a folder here. This is the channel's only canvas; steps do not get their own.
+Section 2 of [[Process.excalidraw|Process.excalidraw.md]] is the same loop seen from above —
+open it first. Every tile on it is a folder here. It is the single drawing for the whole
+process (the old `Meta Ads.canvas` was removed 2026-09-02); steps do not get drawings of
+their own.
 
 One level up, [[process/README|Process]] lists all five channels and
 [[process/Process.excalidraw|draws them]]. **Meta Ads is the active one** — the other four sit
@@ -21,7 +23,7 @@ linked to.
 
 ```
 NN Step Name/
-├── NN Step Name.md    documentation — goal, process, gate, outputs. The canvas tile.
+├── NN Step Name.md    documentation — goal, process, gate, outputs. The drawing's tile.
 ├── NN TODO.md         the checklist. The only place checkboxes live.
 └── …                  the notes this step produces, in the same folder
 ```
@@ -120,9 +122,10 @@ Recurring failure modes, and what actually causes them:
 
 ## Adding a step
 
-Copy `_Template/` to `NN Step Name/`, rename both files, fill them in, then add a tile to
-[[Meta Ads.canvas|the canvas]] and a row to the table above.
+Copy `_Template/` to `NN Step Name/`, rename both files, fill them in, then add a row to the
+table above and a tile to the loop in [[Process.excalidraw|Process.excalidraw.md]] — new
+Excalidraw elements are drawn in Obsidian, not edited as text.
 
 `NN` is the step's position in the loop, not its priority. Insert urgent work as a decimal —
-`06.1 Fix Pixel Events/` — rather than renumbering. Renumbering breaks the canvas and every
+`06.1 Fix Pixel Events/` — rather than renumbering. Renumbering breaks the drawing and every
 wiki link pointing at it.

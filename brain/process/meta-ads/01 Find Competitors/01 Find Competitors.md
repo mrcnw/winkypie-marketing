@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # 01 · Find Competitors
 
-Checklist: [[01 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[01 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 A written map of who else sells "better photos of you" to the same man, what they charge,

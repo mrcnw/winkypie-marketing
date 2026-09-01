@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # 04 · Highfield CLI And MCP Ad
 
-Checklist: [[04 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[04 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 > **Open question — resolve before starting.** Highfield CLI & MCP is a developer product.
 > It is not WinkyPie, and none of the WinkyPie positioning, personas or guardrails in this

@@ -19,10 +19,9 @@ brain/
     ├── Process.excalidraw.md       the queue, drawn
     ├── meta-ads/                   ← ACTIVE — the only channel outside todo/
     │   ├── README.md               index, the loop, the gates, the rhythm
-    │   ├── Meta Ads.canvas         the loop seen from above — the channel's only canvas
     │   ├── _Template/              copy this folder to add a step
     │   └── NN Step Name/
-    │       ├── NN Step Name.md     documentation — the canvas tile points here
+    │       ├── NN Step Name.md     documentation — the drawing's tile points here
     │       ├── NN TODO.md          the checklist
     │       └── …                   every note this step produces
     └── todo/                       not started, in queue order
@@ -69,7 +68,7 @@ updated: 2026-09-01
 ---
 # NN · Step Name
 
-Checklist: [[NN TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[NN TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal        One sentence. What is true when this is finished.
 ## Process     Numbered. How the work is actually done — repeatable next time.
@@ -84,7 +83,7 @@ the documentation and carries no prose.
 Rules:
 
 - **`status` in the documentation's frontmatter is the single source of truth.** Not the
-  README, not the canvas, not the number of ticked boxes.
+  README, not the drawing, not the number of ticked boxes.
 - **Update `updated:` whenever you touch a file.** Absolute date.
 - A step that has been `doing` for more than a week is either blocked or too big. Split it.
 - Finished steps stay in place with `status: done`. Do not delete them — the process notes
@@ -105,7 +104,7 @@ Rules:
 | 08–09 | launch |
 
 Insert urgent work as a decimal — `06.1 Fix Pixel Events/` — rather than renumbering
-everything. Renumbering breaks the canvas and every wiki link pointing at it.
+everything. Renumbering breaks the drawing and every wiki link pointing at it.
 
 ## Writing rules
 
@@ -119,15 +118,16 @@ everything. Renumbering breaks the canvas and every wiki link pointing at it.
   marker for work to do.
 - Internal notes are plain and technical. The brand voice rules apply to ad copy, not here.
 
-## Keeping the drawings in sync
+## Keeping the drawing in sync
 
-Two pictures, both top views: `process/Process.excalidraw.md` for the channel queue and
-`process/meta-ads/Meta Ads.canvas` for the nine steps inside the active channel. A step gets a
-folder, not a drawing of its own.
+One picture: `process/Process.excalidraw.md` — section 1 is the channel queue, section 2 the
+ten steps of the active channel. It is the single source of truth for the process seen from
+above (`Meta Ads.canvas` was removed 2026-09-02). A step gets a folder, not a drawing of its
+own.
 
-`Meta Ads.canvas` contains `file` nodes with vault-relative paths —
-`process/meta-ads/01 Find Competitors/01 Find Competitors.md`. The Excalidraw file keeps its
-targets in an **## Element Links** section. Move or rename a folder and both go stale in the
-same way: Obsidian will not repair them, a broken canvas node renders as an empty box, and a
-broken element link silently does nothing. Fix them, and the README tables, in the same
-commit as the move.
+The Excalidraw file keeps its link targets in an **## Element Links** section and its scene
+in a compressed `## Drawing` block. Existing text elements (lines ending `^blockID` under
+**## Text Elements**) may be edited as markdown — the plugin syncs them into the scene; the
+compressed block is never hand-edited, and **new elements are only added in Obsidian**. Move
+or rename a folder and the element links go stale silently — fix them, and the README
+tables, in the same commit as the move.

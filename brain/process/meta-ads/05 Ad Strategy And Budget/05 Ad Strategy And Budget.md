@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # 05 · Ad Strategy And Budget
 
-Checklist: [[05 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[05 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 A written spending plan: how much, split how, for how long, and the exact numbers at which

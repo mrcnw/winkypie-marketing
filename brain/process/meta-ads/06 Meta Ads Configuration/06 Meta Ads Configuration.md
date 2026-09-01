@@ -7,7 +7,7 @@ updated: 2026-09-02
 ---
 # 06 · Meta Ads Configuration
 
-Checklist: [[06 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[06 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 An ad account that can measure what it spends: persona defined, audiences built, events

@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # NN · Step Name
 
-Checklist: [[NN TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[NN TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 One sentence. What is true when this is finished — not what you will do, what will exist.

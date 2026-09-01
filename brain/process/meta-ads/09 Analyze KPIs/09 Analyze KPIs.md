@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # 09 · Analyze KPIs
 
-Checklist: [[09 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[09 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 For each campaign: a decision — scale, iterate or kill — reached by reading the funnel

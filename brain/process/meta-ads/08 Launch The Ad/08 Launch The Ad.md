@@ -7,7 +7,7 @@ updated: 2026-09-01
 ---
 # 08 · Launch The Ad
 
-Checklist: [[08 TODO]] · Canvas: [[Meta Ads.canvas|Meta Ads]]
+Checklist: [[08 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
 ## Goal
 Five campaigns live, each with its hypothesis written down *before* spend started, and a
