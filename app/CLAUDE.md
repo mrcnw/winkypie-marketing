@@ -49,7 +49,8 @@ Sub-folders are walked four levels deep and shown as a group label. Dotfiles are
 `.gitkeep` keeps an empty folder in git without appearing in the UI.
 
 Both swipe files are hand-edited and share one shape: an array of `{ slug, title, advertiser,
-url, note, tags, added }`, where only `slug` and `url` are required. `SWIPE_SOURCES` in
+url, note, tags, added, rank }`, where only `slug` and `url` are required. `rank` (1 = best)
+orders the grid — ranked entries first, the rest newest-first. `SWIPE_SOURCES` in
 `src/lib/meta-ads.ts` binds each file to its tab and its asset folder — add a list there, not
 by copying the loader. Broken JSON surfaces as a message on the page rather than an empty grid
 — do not "fix" that by swallowing the error.

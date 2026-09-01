@@ -100,8 +100,11 @@ export function AdCard({ ad }: { ad: AdSwipe }) {
 
         {ad.note && <p className="text-sm text-muted-foreground">{ad.note}</p>}
 
-        {(ad.tags.length > 0 || ad.pageId || ad.adId) && (
+        {(ad.tags.length > 0 || ad.pageId || ad.adId || ad.rank !== null) && (
           <div className="flex flex-wrap gap-1.5">
+            {ad.rank !== null && (
+              <Badge className="font-mono text-[0.7rem]">#{ad.rank}</Badge>
+            )}
             {ad.pageId && (
               <Badge variant="secondary" className="font-mono text-[0.7rem]">
                 page {ad.pageId}

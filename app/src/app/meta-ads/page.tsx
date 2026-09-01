@@ -25,7 +25,8 @@ const EXAMPLE = `[
     "url": "https://www.facebook.com/ads/library/?id=1101597932224599",
     "note": "Why it works — the mechanism, not 'nice video'.",
     "tags": ["screen-demo", "P2"],
-    "added": "2026-09-01"
+    "added": "2026-09-01",
+    "rank": 1
   }
 ]`;
 

@@ -12,6 +12,8 @@ export type AdSwipe = {
   note: string | null;
   tags: string[];
   added: string | null;
+  /** 1 = best. Ranked entries sort first; the rest fall back to newest-first. */
+  rank: number | null;
   /** Read out of the Ad Library URL, for a quick sanity check */
   pageId: string | null;
   adId: string | null;
@@ -55,7 +57,12 @@ type RawSwipe = {
   note?: unknown;
   tags?: unknown;
   added?: unknown;
+  rank?: unknown;
 };
+
+function num(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
 
 function str(value: unknown): string | null {
   return typeof value === "string" && value.trim() ? value.trim() : null;
@@ -134,13 +141,19 @@ export async function readSwipes(
         ? entry.tags.filter((tag): tag is string => typeof tag === "string")
         : [],
       added: str(entry?.added),
+      rank: num(entry?.rank),
       pageId,
       adId,
       previews: previewsFor(slug, assets),
     });
   }
 
-  ads.sort((a, b) => (b.added ?? "").localeCompare(a.added ?? "", "en"));
+  // Ranked entries first (1 = best), unranked after them, newest first.
+  ads.sort(
+    (a, b) =>
+      (a.rank ?? Infinity) - (b.rank ?? Infinity) ||
+      (b.added ?? "").localeCompare(a.added ?? "", "en"),
+  );
 
   return {
     ads,
