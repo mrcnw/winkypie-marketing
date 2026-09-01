@@ -24,6 +24,18 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import type { Channel, ChannelKind, Competitor, Fact } from "@/lib/competitors";
+import { cn } from "@/lib/utils";
+
+const CHANNEL_LABEL: Record<ChannelKind, string> = {
+  site: "Site",
+  appstore: "App Store",
+  play: "Play",
+  adlibrary: "Ad Library",
+  instagram: "Instagram",
+  tiktok: "TikTok",
+  facebook: "Facebook",
+  trustpilot: "Trustpilot",
+};
 
 const CHANNEL_ICON: Record<ChannelKind, LucideIcon> = {
   site: Globe,
@@ -48,10 +60,24 @@ function Channels({ channels }: { channels: Channel[] }) {
             href={channel.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 rounded-md border border-border bg-background/60 px-2 py-1 text-xs text-muted-foreground transition-colors hover:border-foreground/25 hover:text-foreground"
+            title={
+              channel.found
+                ? channel.url
+                : `Nothing verified yet — search ${channel.kind} and put the handle in the note`
+            }
+            className={cn(
+              "flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs transition-colors",
+              channel.found
+                ? "border-border bg-background/60 text-muted-foreground hover:border-foreground/25 hover:text-foreground"
+                : "border-dashed border-border/60 text-muted-foreground/50 hover:text-muted-foreground",
+            )}
           >
             <Icon className="size-3.5" />
-            {channel.label}
+            {CHANNEL_LABEL[channel.kind]}
+            {channel.found && channel.label !== CHANNEL_LABEL[channel.kind] && (
+              <span className="text-muted-foreground/70">{channel.label}</span>
+            )}
+            {!channel.found && <span className="italic">?</span>}
           </a>
         );
       })}

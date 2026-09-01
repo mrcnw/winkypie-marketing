@@ -66,7 +66,7 @@ export default async function CompetitorsPage() {
             {landscape.updated ? ` · ${landscape.updated}` : ""}
           </p>
         </div>
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="flex flex-col gap-5">
           {landscape.competitors.map((competitor) => (
             <CompetitorCard
               key={competitor.slug}

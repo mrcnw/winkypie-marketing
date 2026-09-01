@@ -26,21 +26,52 @@ export type ChannelKind =
   | "trustpilot"
   | "site";
 
-export type Channel = { kind: ChannelKind; label: string; url: string };
+export type Channel = {
+  kind: ChannelKind;
+  label: string;
+  url: string;
+  /** false = we have no verified account, the link is a search on that platform */
+  found: boolean;
+};
 
-const CHANNEL_ORDER: ChannelKind[] = [
+/** Always shown, in this order — an empty slot is information too. */
+const CHANNEL_SLOTS: ChannelKind[] = [
   "site",
   "appstore",
-  "play",
   "adlibrary",
   "instagram",
   "tiktok",
   "facebook",
-  "trustpilot",
 ];
+/** Shown only when the note actually has one. */
+const EXTRA_SLOTS: ChannelKind[] = ["play", "trustpilot"];
+
+/** Nothing verified yet — point at the platform's own search so it can be found. */
+function searchUrl(kind: ChannelKind, name: string): string | null {
+  const q = encodeURIComponent(name);
+  switch (kind) {
+    case "instagram":
+      return `https://www.instagram.com/explore/search/keyword/?q=${q}`;
+    case "tiktok":
+      return `https://www.tiktok.com/search?q=${q}`;
+    case "facebook":
+      return `https://www.facebook.com/search/pages/?q=${q}`;
+    case "appstore":
+      return `https://apps.apple.com/us/search?term=${q}`;
+    case "site":
+      return `https://duckduckgo.com/?q=${q}`;
+    default:
+      return null;
+  }
+}
+
+// App-data aggregators and review farms rank well and end up in the notes as
+// sources. They are not the competitor's channel.
+const NOT_THEIRS =
+  /(mwm\.ai|appbrain|apkpure|apkgk|apkcombo|appadvice|justuseapp|appshunter|appfollow|similarweb|sensortower|data\.ai|screensdesign|swipestats|wikipedia|producthunt|g2\.com|reddit|quora|medium\.com|youtube)/;
 
 /** Where a link points, judged by host — never by the text someone typed around it. */
-function classify(url: string): Channel | null {
+function classify(url: string, brand: string): Channel | null {
   let parsed: URL;
   try {
     parsed = new URL(url);
@@ -50,23 +81,26 @@ function classify(url: string): Channel | null {
   const host = parsed.hostname.replace(/^www\./, "");
   const handle = parsed.pathname.split("/").filter(Boolean)[0];
 
-  if (host.endsWith("apps.apple.com")) return { kind: "appstore", label: "App Store", url };
-  if (host.endsWith("play.google.com")) return { kind: "play", label: "Google Play", url };
+  if (host.endsWith("apps.apple.com")) return { kind: "appstore", label: "App Store", url, found: true };
+  if (host.endsWith("play.google.com")) return { kind: "play", label: "Google Play", url, found: true };
   if (host.endsWith("instagram.com") && handle)
-    return { kind: "instagram", label: `@${handle}`, url };
+    return { kind: "instagram", label: `@${handle}`, url, found: true };
   if (host.endsWith("tiktok.com") && handle?.startsWith("@"))
-    return { kind: "tiktok", label: handle, url };
+    return { kind: "tiktok", label: handle, url, found: true };
   if (host.endsWith("facebook.com"))
     return parsed.pathname.startsWith("/ads/library")
-      ? { kind: "adlibrary", label: "Ad Library", url }
-      : { kind: "facebook", label: "Facebook", url };
-  if (host.endsWith("trustpilot.com")) return { kind: "trustpilot", label: "Trustpilot", url };
+      ? { kind: "adlibrary", label: "Ad Library", url, found: true }
+      : { kind: "facebook", label: "Facebook", url, found: true };
+  if (host.endsWith("trustpilot.com")) return { kind: "trustpilot", label: "Trustpilot", url, found: true };
 
-  // Reference material — app-data aggregators, wikis, press. Not their channel.
-  const NOT_THEIRS = /(mwm\.ai|appbrain|apkpure|apkgk|appadvice|wikipedia|screensdesign|swipestats|appshunter|sensortower|similarweb)/;
   if (NOT_THEIRS.test(host)) return null;
 
-  return { kind: "site", label: host, url };
+  // Their own domain nearly always carries the brand name. Without that, a
+  // link is somebody writing about them, not their site.
+  const domain = host.replace(/\.[a-z.]+$/, "").replace(/[^a-z0-9]/g, "");
+  if (!brand || !domain.includes(brand)) return null;
+
+  return { kind: "site", label: host, url, found: true };
 }
 
 /** Their live ads are always one click away, even when the note has no link. */
@@ -148,21 +182,33 @@ async function readCompetitorFile(file: string): Promise<Competitor | null> {
     urls.unshift(`https://${qualifier}`);
   }
 
+  const brandToken = name.toLowerCase().replace(/[^a-z0-9]/g, "");
   for (const url of urls) {
-    const channel = classify(url);
+    const channel = classify(url, brandToken);
     if (channel && !found.has(channel.kind)) found.set(channel.kind, channel);
   }
   if (!found.has("adlibrary")) {
-    found.set("adlibrary", { kind: "adlibrary", label: "Ad Library", url: adLibrarySearch(name) });
+    found.set("adlibrary", {
+      kind: "adlibrary",
+      label: "Ad Library",
+      url: adLibrarySearch(name),
+      found: true,
+    });
   }
 
   return {
     slug: file.replace(/\.md$/, ""),
     name,
     qualifier,
-    channels: CHANNEL_ORDER.map((kind) => found.get(kind)).filter(
-      (channel): channel is Channel => channel !== undefined,
-    ),
+    channels: [
+      ...CHANNEL_SLOTS.map((kind): Channel | null => {
+        const hit = found.get(kind);
+        if (hit) return hit;
+        const url = searchUrl(kind, name);
+        return url ? { kind, label: "search", url, found: false } : null;
+      }),
+      ...EXTRA_SLOTS.map((kind) => found.get(kind) ?? null),
+    ].filter((channel): channel is Channel => channel !== null),
     lede: toPlainText(lede),
     facts:
       factsTable?.rows.map((row) => ({
