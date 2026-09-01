@@ -16,6 +16,72 @@ const ABS_DIR = path.join(process.cwd(), "..", RESEARCH_DIR);
 
 export type Fact = { field: string; value: string; source: string | null };
 
+export type ChannelKind =
+  | "appstore"
+  | "play"
+  | "instagram"
+  | "tiktok"
+  | "facebook"
+  | "adlibrary"
+  | "trustpilot"
+  | "site";
+
+export type Channel = { kind: ChannelKind; label: string; url: string };
+
+const CHANNEL_ORDER: ChannelKind[] = [
+  "site",
+  "appstore",
+  "play",
+  "adlibrary",
+  "instagram",
+  "tiktok",
+  "facebook",
+  "trustpilot",
+];
+
+/** Where a link points, judged by host — never by the text someone typed around it. */
+function classify(url: string): Channel | null {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return null;
+  }
+  const host = parsed.hostname.replace(/^www\./, "");
+  const handle = parsed.pathname.split("/").filter(Boolean)[0];
+
+  if (host.endsWith("apps.apple.com")) return { kind: "appstore", label: "App Store", url };
+  if (host.endsWith("play.google.com")) return { kind: "play", label: "Google Play", url };
+  if (host.endsWith("instagram.com") && handle)
+    return { kind: "instagram", label: `@${handle}`, url };
+  if (host.endsWith("tiktok.com") && handle?.startsWith("@"))
+    return { kind: "tiktok", label: handle, url };
+  if (host.endsWith("facebook.com"))
+    return parsed.pathname.startsWith("/ads/library")
+      ? { kind: "adlibrary", label: "Ad Library", url }
+      : { kind: "facebook", label: "Facebook", url };
+  if (host.endsWith("trustpilot.com")) return { kind: "trustpilot", label: "Trustpilot", url };
+
+  // Reference material — app-data aggregators, wikis, press. Not their channel.
+  const NOT_THEIRS = /(mwm\.ai|appbrain|apkpure|apkgk|appadvice|wikipedia|screensdesign|swipestats|appshunter|sensortower|similarweb)/;
+  if (NOT_THEIRS.test(host)) return null;
+
+  return { kind: "site", label: host, url };
+}
+
+/** Their live ads are always one click away, even when the note has no link. */
+function adLibrarySearch(name: string) {
+  const query = new URLSearchParams({
+    active_status: "active",
+    ad_type: "all",
+    country: "ALL",
+    media_type: "all",
+    q: name,
+    search_type: "keyword_unordered",
+  });
+  return `https://www.facebook.com/ads/library/?${query}`;
+}
+
 export type Competitor = {
   slug: string;
   /** `ROAST` out of `# ROAST (roast.dating)` */
@@ -24,6 +90,8 @@ export type Competitor = {
   qualifier: string | null;
   lede: string;
   facts: Fact[];
+  /** every link the note carries, deduped and classified */
+  channels: Channel[];
   /** everything past Facts, kept as-is for the detail view */
   sections: MdSection[];
   repoPath: string;
@@ -43,6 +111,12 @@ export type Landscape = {
   updated: string | null;
 };
 
+function linksIn(text: string) {
+  const md = [...text.matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map((match) => match[1]);
+  const bare = [...text.matchAll(/(?<!\()\bhttps?:\/\/[^\s|)]+/g)].map((match) => match[0]);
+  return [...md, ...bare];
+}
+
 function slugFromLink(cell: string) {
   const wiki = cell.match(/\[\[([^\]|]+)/);
   return (wiki ? wiki[1] : toPlainText(cell)).trim();
@@ -59,11 +133,36 @@ async function readCompetitorFile(file: string): Promise<Competitor | null> {
 
   const titleMatch = title.match(/^([^(]+?)(?:\s*\(([^)]*)\))?$/);
   const factsTable = firstTable(findSection(sections, "Facts"));
+  const name = (titleMatch?.[1] ?? title).trim();
+  const qualifier = titleMatch?.[2]?.trim() ?? null;
+
+  // A `## Channels` section wins; otherwise take whatever links the note carries.
+  const channelsTable = firstTable(findSection(sections, "Channels"));
+  const found = new Map<ChannelKind, Channel>();
+  const urls = channelsTable
+    ? channelsTable.rows.flatMap((row) => row.flatMap(linksIn))
+    : [...raw.matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map((match) => match[1]);
+
+  // `# ROAST (roast.dating)` — the parenthetical is often the site itself.
+  if (qualifier && /^[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(qualifier)) {
+    urls.unshift(`https://${qualifier}`);
+  }
+
+  for (const url of urls) {
+    const channel = classify(url);
+    if (channel && !found.has(channel.kind)) found.set(channel.kind, channel);
+  }
+  if (!found.has("adlibrary")) {
+    found.set("adlibrary", { kind: "adlibrary", label: "Ad Library", url: adLibrarySearch(name) });
+  }
 
   return {
     slug: file.replace(/\.md$/, ""),
-    name: (titleMatch?.[1] ?? title).trim(),
-    qualifier: titleMatch?.[2]?.trim() ?? null,
+    name,
+    qualifier,
+    channels: CHANNEL_ORDER.map((kind) => found.get(kind)).filter(
+      (channel): channel is Channel => channel !== undefined,
+    ),
     lede: toPlainText(lede),
     facts:
       factsTable?.rows.map((row) => ({

@@ -1,5 +1,17 @@
 "use client";
 
+import {
+  AtSign,
+  Globe,
+  Megaphone,
+  Music2,
+  Play,
+  Smartphone,
+  Star,
+  ThumbsUp,
+  type LucideIcon,
+} from "lucide-react";
+
 import { Markdown } from "@/components/markdown";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,7 +23,41 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import type { Competitor, Fact } from "@/lib/competitors";
+import type { Channel, ChannelKind, Competitor, Fact } from "@/lib/competitors";
+
+const CHANNEL_ICON: Record<ChannelKind, LucideIcon> = {
+  site: Globe,
+  appstore: Smartphone,
+  play: Play,
+  adlibrary: Megaphone,
+  instagram: AtSign,
+  tiktok: Music2,
+  facebook: ThumbsUp,
+  trustpilot: Star,
+};
+
+function Channels({ channels }: { channels: Channel[] }) {
+  if (!channels.length) return null;
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {channels.map((channel) => {
+        const Icon = CHANNEL_ICON[channel.kind];
+        return (
+          <a
+            key={channel.kind}
+            href={channel.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 rounded-md border border-border bg-background/60 px-2 py-1 text-xs text-muted-foreground transition-colors hover:border-foreground/25 hover:text-foreground"
+          >
+            <Icon className="size-3.5" />
+            {channel.label}
+          </a>
+        );
+      })}
+    </div>
+  );
+}
 
 export function CompetitorCard({
   competitor,
@@ -39,6 +85,8 @@ export function CompetitorCard({
           )}
         </div>
       </header>
+
+      <Channels channels={competitor.channels} />
 
       <p className="text-sm leading-relaxed text-muted-foreground">
         {competitor.lede}

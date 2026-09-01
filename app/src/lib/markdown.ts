@@ -7,6 +7,7 @@ export type MdBlock =
   | { kind: "heading"; level: number; text: string }
   | { kind: "list"; items: string[]; ordered: boolean }
   | { kind: "quote"; text: string }
+  | { kind: "code"; text: string }
   | { kind: "table"; table: MdTable };
 
 export type MdSection = { heading: string; blocks: MdBlock[] };
@@ -55,6 +56,18 @@ export function parseBlocks(source: string): MdBlock[] {
 
     if (!line.trim()) {
       flush();
+      continue;
+    }
+
+    if (line.trimStart().startsWith("```")) {
+      flush();
+      const code: string[] = [];
+      i += 1;
+      while (i < lines.length && !lines[i].trimStart().startsWith("```")) {
+        code.push(lines[i]);
+        i += 1;
+      }
+      blocks.push({ kind: "code", text: code.join("\n") });
       continue;
     }
 

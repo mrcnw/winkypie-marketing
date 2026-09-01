@@ -85,6 +85,15 @@ export function Markdown({ blocks }: { blocks: MdBlock[] }) {
                 {inline(block.text, key)}
               </blockquote>
             );
+          case "code":
+            return (
+              <pre
+                key={key}
+                className="overflow-x-auto rounded-lg bg-background/70 p-4 font-mono text-xs leading-relaxed"
+              >
+                {block.text}
+              </pre>
+            );
           case "list":
             return block.ordered ? (
               <ol key={key} className="flex list-decimal flex-col gap-1.5 pl-5">

@@ -15,7 +15,7 @@ Three tabs. One job each:
 | Route | What it shows |
 |---|---|
 | `/` | The three tiles, with a count on each. |
-| `/winkypie` | Three tabs: **Brand Assets** (logo marks, wordmarks), **Before / After** (pairs, with the disclosure) and **Mobile App** (icon, App Store screenshots, recordings). Click a file for a full preview, its repo path, and download. |
+| `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
 | `/meta-ads` | Two tabs: **Good Ads** (single ads worth keeping) and **Competitors — Ad Library** (a competitor's page link, which always shows what they run today). Preview, why it works, one-click link into the library. |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
 
@@ -39,6 +39,8 @@ app/content/good-ads.json                 → /meta-ads · Good Ads tab
 app/content/competitors.json              → /meta-ads · Competitors tab
 ../brain/process/meta-ads/
   01 Find Competitors/                    → /competitors, read straight from the vault
+../PRODUCT.md                             → /winkypie · Overview
+../BRAND.md                               → /winkypie · Branding
 app/public/assets/meta-ads/good-ads/      → previews for the first list, by slug:
 app/public/assets/meta-ads/competitors/     <slug>.png, or a <slug>/ folder for several
 ```
@@ -62,6 +64,12 @@ entry that has no preview in headless Chrome and saves the viewport to that list
 key; it is the screenshot you would otherwise take by hand, kept for internal reference.
 `-- --force` recaptures, and passing slugs limits it to those entries. Its `SOURCES` array
 must stay in sync with `SWIPE_SOURCES`.
+
+**`/winkypie` Overview and Branding read `../PRODUCT.md` and `../BRAND.md`.** Our own channel
+links come out of the §2 facts table, so adding a Facebook Page there makes it appear here.
+Colour swatches are every hex found in BRAND.md §3, grouped by its sub-headings. The copyable
+block in Branding is assembled by `brandMarkdown()` from both files — if a brand fact is wrong
+there, fix the markdown, not the component.
 
 **`/competitors` reads `../brain/` and does not copy it.** `src/lib/competitors.ts` parses
 `Competitor Landscape.md` for the gap, the ranking order and the living-ads table, and one
