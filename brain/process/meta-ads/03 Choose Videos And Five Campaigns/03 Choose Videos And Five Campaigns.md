@@ -1,9 +1,9 @@
 ---
 tags: [step, strategy]
-status: todo
+status: doing
 phase: strategy
 owner:
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # 03 · Choose Videos And Five Campaigns
 
@@ -53,3 +53,9 @@ concept — so production knows what to shoot and analysis knows what the result
 ## Notes
 Five is the number because it is the smallest set that can produce a clear winner and a
 clear loser at a sane budget. Do not stretch to eight because eight hooks looked good.
+
+Round one (2026-09-02) is drafted from the step-01/02 research: hooks scored in
+[[Hooks And Angles]], evidence in [[Winning Ads 2026-09-02]], names in [[Creative Naming]].
+Research says: low-fi beats polished (Roast's longest runners are statics), the free first
+step is the niche's universal CTA, and the compliance-safe variant out-delivered the
+policy-risk one — our guardrails cost us nothing.
