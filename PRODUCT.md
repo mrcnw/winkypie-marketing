@@ -49,6 +49,7 @@ anytime."* · *"No payment today. Apple notifies you before any charge."*
 | App name | **WinkyPie** |
 | Category | AI photo generator / dating-profile photo app (App Store: PhotoApplication) |
 | Platform sold | **iOS.** App Store ID `6757441777` |
+| Minimum iOS | **15.1** — App Store listing, checked 2026-09-02. The floor for ad targeting: below it the install cannot happen |
 | App Store URL | `apps.apple.com/us/app/winkypie/id6757441777` |
 | Review deep link | `https://apps.apple.com/app/id6757441777?action=write-review` |
 | Bundle | `com.notforget.winkypie` · URL scheme `winkypie://` |
