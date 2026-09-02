@@ -31,12 +31,18 @@ configuration is built from. They are one decision, not two.
 5. **Broad beats clever, usually.** With a small budget, narrow interest stacking mostly
    raises costs and starves the learning phase. Test broad as the control; make interest
    targeting earn its place.
-6. **Verify before you launch, not after.** Fire a real test event and watch it arrive. A
+6. **Every ad set targets iOS, and nothing else.** Only the iOS listing is live —
+   PRODUCT.md §2. App Promotion campaigns inherit the constraint from the selected app, but
+   traffic campaigns pointing at the App Store link do **not**: they serve to Android unless
+   mobile OS is set by hand, and every one of those clicks is spend on a store page the user
+   cannot buy from. Set devices to mobile only, mobile OS to iOS, and the minimum iOS version
+   to the app's real deployment target — read it off the build, do not guess it.
+7. **Verify before you launch, not after.** Fire a real test event and watch it arrive. A
    tracking bug found on day four costs the entire test budget.
-7. **Record every setting in the doc.** Six weeks from now "why is this campaign
+8. **Record every setting in the doc.** Six weeks from now "why is this campaign
    underperforming" starts with "what was it configured to do", and the UI will not tell
    you what it used to be.
-8. **Connect the ad account to Claude via Meta's official MCP** —
+9. **Connect the ad account to Claude via Meta's official MCP** —
    `https://mcp.facebook.com/ads`. Official server, auth through Business Suite (no
    developer tokens to store), full Marketing API coverage — so configuration, checks and
    later KPI pulls (step 09) run from the terminal and get recorded in this doc as they
@@ -49,6 +55,8 @@ configuration is built from. They are one decision, not two.
 - A test event has been observed arriving in Events Manager.
 - Attribution window, event priority order and conversion-value mapping are all written down.
 - The campaign shell exists, named per convention, paused, ready to launch.
+- Every ad set is set to iOS only, and the setting is written into
+  `Meta Ads Configuration.md` alongside the reason.
 
 ## Output
 - `Persona.md`

@@ -1,7 +1,7 @@
 ---
 tags: [todo, launch]
 step: 08
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # 08 · TODO — Launch The Ad
 
@@ -25,5 +25,6 @@ Nothing launches until every line is checked:
 - [ ] Guardrails: men only · AI disclosed · no unsourced stat · no assumed dating status ·
       before/after clearly the same person
 - [ ] Landing surface and App Store link tested on a real phone
+- [ ] Device targeting is iOS only — verified on every ad set, not just the campaign
 - [ ] Budget matches the plan — check the number twice, the currency once
 - [ ] Payment method valid ([[07 Update Facebook Account]])

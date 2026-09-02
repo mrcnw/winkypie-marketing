@@ -23,6 +23,9 @@ Documentation: [[06 Meta Ads Configuration]]
 - [ ] Define the conversion events: install, trial start, purchase.
 - [ ] Set the attribution window and record which one you chose.
 - [ ] Build the audiences: broad, plus any interest sets worth testing.
+- [ ] Set device targeting to iOS only on every ad set — devices mobile-only, mobile OS
+      iOS, minimum version from the app's deployment target. Android is not sold
+      (PRODUCT.md §2).
 - [ ] Set up the campaign structure and naming to match [[03 Choose Videos And Five Campaigns]].
 - [ ] Fire a test event and confirm it lands in Events Manager.
 - [ ] Confirm creative specs pass Meta's review rules before upload.

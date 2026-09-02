@@ -1,9 +1,9 @@
 ---
 tags: [step, setup]
-status: todo
+status: doing
 phase: setup
 owner:
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # 07 · Update Facebook Account
 
