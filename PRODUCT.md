@@ -410,6 +410,7 @@ Facts that cannot be read out of either codebase and that block specific claims.
 | 7 | Geo targeting. The App Store link is `/us/`, page locale `en_US` | Product | Campaign setup |
 | 8 | Whether female targeting reopens | Product | Whether creative can be male-coded permanently |
 | 9 | Is there a Play listing, or is Android dead? | Product | Terms cleanup, ad copy |
+| 10 | Whether **15.1 stays** the floor. The listing says 15.1 (§2), but `dream-pie` pins no `deploymentTarget` in `app.json` and has no `expo-build-properties` override — the floor is whatever Expo SDK 54 defaults to, so an SDK bump can raise it with no signal to advertising | `dream-pie` build + App Store Connect | The Meta minimum-iOS targeting floor, which has to match |
 
 ---
 

@@ -17,3 +17,8 @@ Documentation: [[07 Update Facebook Account]]
 - [ ] Confirm the linked Instagram account for placements.
 - [ ] Post enough real content that the Page does not look abandoned to a click-through.
 - [ ] Confirm the App Store link and the app's Meta association.
+- [ ] Verify the minimum iOS version yourself, in both places, before the first launch:
+      the **App Store listing** (Information → Compatibility → "Requires iOS …") and the
+      **build** in `dream-pie`. Both should read 15.1 (PRODUCT.md §2). The repo pins no
+      `deploymentTarget`, so the floor is the Expo SDK default and an SDK bump can raise it
+      silently — if it ever moves, the Meta targeting floor moves the same day ([[06 TODO]]).
