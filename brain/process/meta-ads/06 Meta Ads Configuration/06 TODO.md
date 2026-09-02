@@ -29,3 +29,17 @@ Documentation: [[06 Meta Ads Configuration]]
 - [ ] Set up the campaign structure and naming to match [[03 Choose Videos And Five Campaigns]].
 - [ ] Fire a test event and confirm it lands in Events Manager.
 - [ ] Confirm creative specs pass Meta's review rules before upload.
+
+## To review before configuring
+Two inputs that are not yet part of this step. Neither has been analysed — treat everything
+in them as unverified until it has been.
+
+- [ ] Extract the workflow from [Claude + Facebook Ads](https://www.youtube.com/watch?v=0iS2DL1_cgU)
+      — what it automates that this step still does by hand, what is worth taking, and what
+      is specific to a business model that is not ours (it sells a service, we sell an iOS
+      app). Its revenue claim is marketing for the video: it is not a source, and no number
+      from it ships. Write the verdict into `Meta Ads Configuration.md`, not here.
+- [ ] Audit the Claude skills available in this workspace against this step and step 09 —
+      which parts of the configuration, the QA pass and the KPI pull are repeatable enough
+      to become a skill, and which are judgement calls that must stay manual. Today the
+      workspace has one skill (`draw`), so this is mostly a question of what to write.
