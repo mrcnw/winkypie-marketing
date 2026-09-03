@@ -1,6 +1,6 @@
 ---
 tags: [research, moc]
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # Competitor Landscape
 
@@ -99,6 +99,7 @@ photo" are supporting mechanics with live counter-examples — never the headlin
 |---|---|---|
 | Dating-profile photographer | Typically $200–900 US ([Locallens 2026](https://locallens.com/online-dating-photographer-profile-photography/)); NYC packages $450–2,200 ([Signal Studio](https://signalstudionyc.com/blog/how-much-does-nyc-photographer-cost), [Isabella Dellolio](https://www.isabelladellolio.com/dating-profile-portraits)) | Price, scheduling, awkwardness. US prices run above the €150–300 in PRODUCT.md §3 — the savings pillar is stronger in the US |
 | Fiverr shooter | ~$150 | Quality lottery |
+| **Done-for-you AI pack from a dating influencer** ([[Red Beard Rants]]) | $650 / 10 photos, $1,000 / 20, 5–7 days, per-person model training, sold as "100% undetectable" (checked 2026-09-02) | Price, the wait, and a pitch built on misrepresentation — the anti-thesis of guardrail 5. No ads, 0 reviews, 22 clients self-reported. The best price anchor the savings pillar has found; also the first rival to answer "why not ChatGPT / Nano Banana?" out loud |
 | Friend with a camera | Free | Doesn't happen; no posing skill either way |
 | **Tinder AI Photo Selector** | Free, native | **Selects** from the camera roll, cannot generate — useless to the man whose roll has nothing good ([Tinder pressroom](https://www.tinderpressroom.com/Tinder-R-Unveils-Photo-Selector-AI-Feature-to-Make-Choosing-Profile-Pictures-Easier)) |
 | Doing nothing | Free | The real competitor. PRODUCT.md §3 trigger moments are when he stops doing nothing |
