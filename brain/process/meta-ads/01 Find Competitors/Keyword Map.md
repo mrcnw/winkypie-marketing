@@ -1,6 +1,6 @@
 ---
 tags: [research]
-updated: 2026-09-02
+updated: 2026-09-01
 ---
 # Keyword Map
 
@@ -38,9 +38,8 @@ Feeling Invisible"), "get more dates / matches" (everyone).
 | **"No photographer"** — already ours, locked line | Any match-rate number ("10x the matches", "3x more") — invented stat |
 | **Free-first-step CTA** — ours is stronger: "It checks your photo before it costs you anything." | User counts / "724,000+ guys" — no invented proof |
 | **Story-shaped copy** (coworker, friend, weekend) in third person | Fake-persona pages ("Ethan Park", "Confessions of a Dater") — deception |
-| "Looks like you" said as product truth — "Looks pro. Still you." | "Undetectable AI" (UnrealPhotos), "100% undetectable / anti-detect / she can't tell" ([[Red Beard Rants]]) — anti-thesis of guardrail 5 |
+| "Looks like you" said as product truth — "Looks pro. Still you." | "Undetectable AI" (UnrealPhotos) — anti-thesis of guardrail 5 |
 | Lowercase UGC register for ad copy tests | Fake countdowns, "gatekept secret" urgency mechanics |
-| **An answer to "why not ChatGPT / Nano Banana for free?"** — the free-general-model objection, first seen answered on [[Red Beard Rants]]. Ours is the workflow (pose → coaching → free check → render) and dating curation | Answering it with detectability or watermark talk — deception framing, and it names AI vendors (PRODUCT.md §2) |
 
 ## Our App Store fields (proposal — final ASO ships via the release checklist in `dream-pie`)
 
