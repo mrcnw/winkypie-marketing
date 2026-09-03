@@ -42,7 +42,7 @@ pattern (the mechanic of the niche's biggest ad), campaign 3 to a confession-sto
 |---|---|
 | "You're not ugly. Your photos are just terrible." (Charmd, 185 d proof) | Fails Honest/guardrails: second-person appearance = Meta personal-attributes violation, and body-insecurity is an emotion we do not use (PRODUCT.md §9) |
 | "Struggling to get a girlfriend?" (SWAY, 197 d proof) | Same rule — implies relationship status |
-| "We are looking for 30 guys…" casting call (Roast, 107 d) | Fails Honest today: fake scarcity/selection we cannot fulfil. Revisit as a *genuine* beta-call if we ever run one |
+| "We are looking for 30 guys…" casting call (Roast, 107 d) | Fails Honest today: fake scarcity/selection we cannot fulfil. **Conditional candidate since 2026-09-02:** allowed only as a *genuine* beta programme — 30 real free months, real feedback, permission to quote — written up as [[WP_P2_STATIC_betacall]] (wave two). Roast's wording "get zero matches" stays banned: it implies the viewer's dating performance (personal attributes) |
 | "10x / 3x / 9× more matches" | Invented multipliers — banned (§11.1, §8) |
 | "724,000+ guys already did it" class social proof | No real numbers yet — banned until 50+ reviews exist (§11.1) |
 | "New week. New pose." variety angle | Depends on live catalog cadence we haven't verified; weakest pillar (12%). Parked, not dead |

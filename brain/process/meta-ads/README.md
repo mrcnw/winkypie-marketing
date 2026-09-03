@@ -8,9 +8,10 @@ Ten steps, one loop. Research feeds strategy, strategy feeds creative, creative 
 the numbers come back and feed the next round of research.
 
 Section 2 of [[Process.excalidraw|Process.excalidraw.md]] is the same loop seen from above —
-open it first. Every tile on it is a folder here. It is the single drawing for the whole
-process (the old `Meta Ads.canvas` was removed 2026-09-02); steps do not get drawings of
-their own.
+open it first. Every tile on it is a folder here. It is the single drawing *of the process*
+(the old `Meta Ads.canvas` was removed 2026-09-02). A step may ship a drawing as one of its
+outputs — step 05's `Campaign Plan.excalidraw.md` is the first — but never a second process
+map.
 
 One level up, [[process/README|Process]] lists all five channels and
 [[process/Process.excalidraw|draws them]]. **Meta Ads is the active one** — the other four sit
@@ -41,8 +42,8 @@ Status is in each step doc's frontmatter — this table is a map, not a tracker.
 | 02 | [[02 How To Find A Good Ad]] | [[02 TODO]] | research | `Swipe Method.md`, `Hooks And Angles.md`, `swipe/` |
 | 03 | [[03 Choose Videos And Five Campaigns]] | [[03 TODO]] | strategy | `briefs/<name>.md` ×5, `Creative Naming.md` |
 | 04 | [[04 Highfield CLI And MCP Ad]] | [[04 TODO]] | produce | `highfield/Positioning.md`, `briefs/highfield-cli-mcp.md` |
-| 04.1 | [[04.1 Outsource The Shoot]] | [[04.1 TODO]] | produce | `Production Platforms.md`, `Shoot Order.md` |
-| 05 | [[05 Ad Strategy And Budget]] | [[05 TODO]] | strategy | `Budget And Thresholds.md`, `KPI.md` |
+| 04.1 | [[04.1 Outsource The Shoot]] | [[04.1 TODO]] | produce | `Production Platforms.md`, `AI Production Platforms.md`, `Production Guardrails.md`, `Shoot Order.md` |
+| 05 | [[05 Ad Strategy And Budget]] | [[05 TODO]] | strategy | `Budget And Thresholds.md`, `KPI.md`, `KPI Scenarios.md`, `Campaign Plan.excalidraw.md` |
 | 06 | [[06 Meta Ads Configuration]] | [[06 TODO]] | setup | `Persona.md`, `Meta Ads Configuration.md`, `Audiences.md` |
 | 07 | [[07 Update Facebook Account]] | [[07 TODO]] | setup | `Account Setup.md` |
 | 08 | [[08 Launch The Ad]] | [[08 TODO]] | launch | `Campaign Tracker.md`, `hypotheses/` |

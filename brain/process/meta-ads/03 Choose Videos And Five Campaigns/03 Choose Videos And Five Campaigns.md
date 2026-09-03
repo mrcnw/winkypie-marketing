@@ -47,7 +47,9 @@ concept — so production knows what to shoot and analysis knows what the result
 - The dropped candidates and the reason for dropping them are recorded.
 
 ## Output
-- `briefs/<name>.md` — five of them
+- `briefs/<name>.md` — five of them, plus candidates marked `status: candidate` in their
+  frontmatter (2026-09-02: `WP_P2_STATIC_betacall`, wave two, conditional on running a real
+  beta programme — it is not one of the five)
 - `Creative Naming.md`
 
 ## Notes

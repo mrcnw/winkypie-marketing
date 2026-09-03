@@ -3,12 +3,23 @@ tags: [step, produce]
 status: blocked
 phase: produce
 owner:
-updated: 2026-09-01
+updated: 2026-09-02
 ---
 # 04 · Highfield CLI And MCP Ad
 
 Checklist: [[04 TODO]] · Drawing: [[Process.excalidraw|Process]]
 
+> **Candidate answer, 2026-09-02 — confirm with the owner before acting.** "Highfield" is
+> most likely **Higgsfield** (higgsfield.ai), the AI video platform, and this step was meant
+> as *"produce the WinkyPie ad with the Higgsfield CLI and MCP"* — not as an ad for a
+> developer product. Evidence: Higgsfield ships exactly a CLI and an official MCP server
+> (since 2026-04-30); that MCP is connected to this project; and the owner listed "highfield"
+> next to TopView as a tool for making the ads. If confirmed, this step becomes the
+> **synthetic production lane** and the two questions below dissolve. The research already
+> lives in [[AI Production Platforms]] (step 04.1) and moves here on confirmation; renaming
+> this folder means fixing the drawing's element links and the README table in the same
+> commit. Everything below the banner is the old reading and is left untouched until then.
+>
 > **Open question — resolve before starting.** Highfield CLI & MCP is a developer product.
 > It is not WinkyPie, and none of the WinkyPie positioning, personas or guardrails in this
 > vault apply to it: different buyer, different channel, different proof. This step is

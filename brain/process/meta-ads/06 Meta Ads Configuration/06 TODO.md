@@ -29,6 +29,15 @@ Documentation: [[06 Meta Ads Configuration]]
 - [ ] Set up the campaign structure and naming to match [[03 Choose Videos And Five Campaigns]].
 - [ ] Fire a test event and confirm it lands in Events Manager.
 - [ ] Confirm creative specs pass Meta's review rules before upload.
+- [ ] **Resolve the Dating-policy classification before the first dollar.** Meta's dating
+      policy covers "dating facilitation (for example, dating profile management)", needs
+      prior written permission and 18+ targeting, and bans **selfies / people photographing
+      themselves** and "fictitious individuals" in dating ads
+      ([Meta help 765622867361201](https://www.facebook.com/business/help/765622867361201),
+      read 2026-09-02). Our mechanic is a selfie. Get Meta's answer on whether a
+      dating-photo app is "dating facilitation"; write the verdict and the creative
+      consequences (phone-in-hand vs. selfie-taking on frame) into `Meta Ads Configuration.md`.
+      Found while checking AI-UGC rules — see [[AI Production Platforms]].
 
 ## To review before configuring
 Two inputs that are not yet part of this step. Neither has been analysed — treat everything

@@ -58,3 +58,19 @@ Actor plays a demo user — a product walkthrough in story form, **not** a testi
 results promised, no numbers, no claims of real-user experience ✓ · AI disclosed at reveal
 ✓ · §11.2 on generated imagery ✓ · men only ✓ · no viewer-attribute lines ✓. The
 fabricated-friend story pattern (Roast's #1 ad) stays banned — see [[Hooks And Angles]].
+
+## Production flags (from step 04.1, 2026-09-02 — resolve before the order goes out)
+
+Full handling in [[Production Guardrails]]; sources in [[Production Platforms]].
+
+1. **He must have used the app.** The hook ("all my photos were…", "tried the AI photo
+   thing") represents use; FTC 16 CFR 255.1(c) requires a bona fide user, so "actor plays a
+   demo user" is not enough on its own. Deliverable zero: his own result screenshot before the
+   shoot; warranty in the contract. The hook stays — it is honest once he has used it.
+2. **The 9 s beat is shot twice.** Meta's dating policy bans "selfies, images where a person
+   is visibly photographing themselves" in dating ads, and whether WinkyPie counts as "dating
+   facilitation" is unresolved ([[06 Meta Ads Configuration]]). Variant A as written; variant B
+   with the selfie implied by the cut, phone in hand only. Master chosen when Meta answers.
+3. **On-frame text is added by us**, not the creator — overlays, §11.2, end card.
+4. **Human only.** This confession-story format is not produced on the AI lane; a generated
+   presenter may only deliver host copy — see [[AI Production Platforms]].

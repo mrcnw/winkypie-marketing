@@ -120,10 +120,17 @@ everything. Renumbering breaks the drawing and every wiki link pointing at it.
 
 ## Keeping the drawing in sync
 
-One picture: `process/Process.excalidraw.md` — section 1 is the channel queue, section 2 the
-ten steps of the active channel. It is the single source of truth for the process seen from
-above (`Meta Ads.canvas` was removed 2026-09-02). A step gets a folder, not a drawing of its
-own.
+One *process* picture: `process/Process.excalidraw.md` — section 1 is the channel queue,
+section 2 the ten steps of the active channel. It is the single source of truth for the
+process seen from above (`Meta Ads.canvas` was removed 2026-09-02). A step gets a folder, not
+a process drawing of its own.
+
+A step **may** produce a drawing as one of its outputs — a plan, a structure, a timeline that
+belongs to that step (first one: `05 Ad Strategy And Budget/Campaign Plan.excalidraw.md`,
+2026-09-02). Such a drawing is listed in the step's Output section, linked from the note it
+illustrates, and generated with the `draw` skill from a script kept in
+`.claude/skills/draw/generators/` so it can be re-run. Once someone has moved boxes by hand in
+Obsidian, the script is stale — ask before regenerating. It never duplicates the process map.
 
 The Excalidraw file keeps its link targets in an **## Element Links** section and its scene
 in a compressed `## Drawing` block. Existing text elements (lines ending `^blockID` under
