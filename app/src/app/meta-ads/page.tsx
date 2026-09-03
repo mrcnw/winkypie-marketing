@@ -3,7 +3,9 @@ import { AlertTriangle } from "lucide-react";
 
 import { AdCard } from "@/components/ad-card";
 import { DropHint } from "@/components/drop-hint";
+import { KpiDashboard } from "@/components/kpi-dashboard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { readKpi } from "@/lib/kpi";
 import {
   readSwipes,
   SWIPE_SOURCES,
@@ -106,10 +108,12 @@ function SwipeList({
 }
 
 export default async function MetaAdsPage() {
-  const [goodAds, competitors] = await Promise.all([
+  const [goodAds, competitors, kpi] = await Promise.all([
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
+    readKpi(),
   ]);
+  const activeAds = kpi.ads.filter((ad) => ad.status === "active").length;
 
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-10">
@@ -136,6 +140,12 @@ export default async function MetaAdsPage() {
               {competitors.ads.length}
             </span>
           </TabsTrigger>
+          <TabsTrigger value="kpi">
+            KPI
+            <span className="ms-1.5 font-mono text-xs text-muted-foreground">
+              {activeAds} active
+            </span>
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="good-ads">
@@ -152,6 +162,10 @@ export default async function MetaAdsPage() {
             ads={competitors.ads}
             error={competitors.error}
           />
+        </TabsContent>
+
+        <TabsContent value="kpi">
+          <KpiDashboard data={kpi} />
         </TabsContent>
       </Tabs>
     </main>

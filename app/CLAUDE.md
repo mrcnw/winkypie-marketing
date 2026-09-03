@@ -16,12 +16,14 @@ Three tabs. One job each:
 |---|---|
 | `/` | The three tiles, with a count on each. |
 | `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
-| `/meta-ads` | Two tabs: **Good Ads** (single ads worth keeping) and **Competitors — Ad Library** (a competitor's page link, which always shows what they run today). Preview, why it works, one-click link into the library. |
+| `/meta-ads` | Three tabs: **Good Ads** (single ads worth keeping), **Competitors — Ad Library** (a competitor's page link, which always shows what they run today) and **KPI** (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, and the projected margin at scale; a keep example and an unprofitable example on top). Preview, why it works, one-click link into the library. |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —
 belongs in `brain/process/meta-ads/`, not here. If a view would need a checkbox or a status,
-it is process, and it is in the wrong repo half.
+it is process, and it is in the wrong repo half. The KPI tab respects this the same way
+`/competitors` does: it **renders** the vault's review tables and applies the thresholds
+written there; the numbers and the recorded decisions are typed in the vault, never here.
 
 ## Where the content comes from
 
@@ -39,6 +41,9 @@ app/content/good-ads.json                 → /meta-ads · Good Ads tab
 app/content/competitors.json              → /meta-ads · Competitors tab
 ../brain/process/meta-ads/
   01 Find Competitors/                    → /competitors, read straight from the vault
+  05 Ad Strategy And Budget/KPI.md        → /meta-ads · KPI tab: thresholds table
+  05 Ad Strategy And Budget/KPI Scenarios.md → /meta-ads · KPI tab, until a real review exists
+  09 Analyze KPIs/KPI Review *.md         → /meta-ads · KPI tab: real rounds
 ../PRODUCT.md                             → /winkypie · Overview
 ../BRAND.md                               → /winkypie · Branding
 app/public/assets/meta-ads/good-ads/      → previews for the first list, by slug:
@@ -81,6 +86,21 @@ checked out beside it, and **a heading rename in the vault silently empties a se
 sections are matched by their opening words (`The gap`, `Ranking`, `Where the best living
 ads`, `Checked and dismissed`, `Facts`). The page degrades to an explanatory error rather
 than crashing.
+
+**`/meta-ads` KPI tab reads two vault locations.** `src/lib/kpi.ts` loads every
+`../brain/process/meta-ads/09 Analyze KPIs/KPI Review *.md` (real rounds, newest first) and,
+when no real review exists, `../brain/process/meta-ads/05 Ad Strategy And Budget/KPI
+Scenarios.md` — worked examples with `scenario: true` in the frontmatter, which the tab shows
+behind a "Scenario data" banner and never mixes with real rows. Each file carries an
+`## Assumptions` table (net first payment, 12-month net LTV, scale budget, floors) and an
+`## Ads` table whose columns are Meta's own (`Spend`, `Impressions`, `3s plays`, `ThruPlays`,
+`Link clicks`, `Installs`, `Trials`, `Payers`) plus `Round`, `Status` (`active` | `previous`),
+`Decision` (optional, a human's recorded verdict wins) and `Note`. Hook rate, hold rate, CTR,
+CPI, CAC and the projected margin are computed here; **the decision rules in `decide()`
+mirror the "Targets for round one" table in `05 Ad Strategy And Budget/KPI.md` — change
+both or the dashboard lies.** The thresholds table itself is rendered from that note. Root
+guardrail 2 applies: no invented results anywhere in this app — scenario rows exist only to
+exercise the rules and say so on screen.
 
 Assets are committed to the repo. A multi-hundred-MB video is worth a second thought before
 `git add`; everything else just goes in.
