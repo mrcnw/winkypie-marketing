@@ -5,7 +5,9 @@ persona: P2 Grinder
 format: static (phone screenshot or printed-note look)
 variable: genuine beta call — scarcity that is true
 status: candidate — wave two, conditional on running the programme for real
-updated: 2026-09-02
+order: 6
+modelled_on: [roast-casting-30-guys]
+updated: 2026-09-06
 ---
 # Brief — WP_P2_STATIC_betacall (candidate)
 
@@ -27,7 +29,7 @@ self-select as men with a photo problem, without the ad ever saying so about the
 
 ## Hook (verbatim — third person about the programme, never about the viewer)
 
-> We're looking for 30 men to test a new AI photo app.
+> We're looking for 30 men to test a new dating-photo app.
 
 Second beat, smaller: "Free month. Honest feedback. Pick a pose, take one selfie, tell us
 what you got." Footer: App Store badge + "Apply in the app" or a short form link.
@@ -82,3 +84,17 @@ are later quoted: real users, material connection disclosed ✓.
 - Offer-code mechanics and quotas in App Store Connect — verify before promising anything.
 - Whether "Apply in the app" or an external form — the form filters better, the app installs
   faster.
+
+## Do this, in order
+
+1. The owner decides whether the programme runs at all — 30 real free months, real feedback,
+   permission to quote. No decision, no ad.
+2. Verify subscription offer codes and their quotas in App Store Connect before anything is
+   promised; write the mechanics into this brief.
+3. Write the application form (age band 22–40, iPhone, one sentence on his photos) and the
+   day-7 and day-30 questionnaires, with the permission-to-quote line.
+4. Only then design the static: a screenshot of the real Photo Check pass screen, or the
+   printed-note look, with the two lines over it. No age callout, no "matches" on frame.
+5. Export 9:16, 4:5 and 1:1; name `WP_P2_STATIC_betacall_<ratio>_v1` per [[Creative Naming]].
+6. Run it in the same ad set as everything else; pause it the day the 30 seats fill — the
+   scarcity is honest only while it is true.

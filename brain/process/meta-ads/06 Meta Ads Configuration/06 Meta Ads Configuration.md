@@ -3,7 +3,7 @@ tags: [step, setup]
 status: todo
 phase: setup
 owner:
-updated: 2026-09-02
+updated: 2026-09-06
 ---
 # 06 · Meta Ads Configuration
 
@@ -20,7 +20,9 @@ configuration is built from. They are one decision, not two.
 1. **Persona first, audience second.** Targeting settings are the *implementation* of a
    persona. Writing them in the other order gets you an audience nobody wrote a hook for.
    Starting point from the existing strategy work: men 22–38, iOS, active on
-   Hinge / Tinder / Bumble, English-speaking tier-1 markets.
+   Hinge / Tinder / Bumble, English-speaking tier-1 markets. Decided 2026-09-06:
+   **United States only** in round one, English, iOS 15.1+, no age or gender settings —
+   the evidence and the round-two option (Ireland + UK) are in [[Audiences]].
 2. **Name the trigger, not the pain.** "Has bad photos" is a condition; "made a new profile
    last week and got no matches" is a trigger. Ads convert on triggers.
 3. **On iOS, tracking is the hard part.** SKAdNetwork limits what comes back and how fast.
@@ -52,6 +54,7 @@ configuration is built from. They are one decision, not two.
 ## Done when
 - `Persona.md` holds the primary persona, the trigger, the objection and the answer.
 - Every one of the five campaigns is mapped to a persona.
+- Country, language and OS are written in `Audiences.md` with the evidence behind them.
 - A test event has been observed arriving in Events Manager.
 - Attribution window, event priority order and conversion-value mapping are all written down.
 - The campaign shell exists, named per convention, paused, ready to launch.
@@ -61,7 +64,8 @@ configuration is built from. They are one decision, not two.
 ## Output
 - `Persona.md`
 - `Meta Ads Configuration.md` — every setting, with the reason for it
-- `Audiences.md`
+- `Audiences.md` — country, language, OS and the competitor delivery data behind them
+  (written 2026-09-06)
 
 ## Notes
 Do not put ad account IDs, pixel IDs or access tokens in this vault. Reference them by name

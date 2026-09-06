@@ -31,7 +31,8 @@ Locked lines, identical in the app and on the site. Do not drift them:
 
 | Line | Role |
 |---|---|
-| `Pro photos. No photographer.` | Primary brand line — also the live paywall headline |
+| `Pro photos. More matches.` | **Primary brand line — decided 2026-09-06** (rationale in `BRAND.md` §7). Not yet in the app: the live paywall headline still reads the support line below until the app ships the change (§12) |
+| `Pro photos. No photographer.` | Support line — ease and savings; the live paywall headline today |
 | `She decided in 100 ms.` | Hero hook, onboarding screen 1 |
 | `First photo. First chance.` | Problem line, onboarding screen 2 |
 | `Looks pro. Still you.` | Product-truth line |
@@ -388,6 +389,7 @@ privacy policy. See `BRAND.md` §12 for the full audit.
 | 4-step onboarding, "Transform yourself, own the spotlight" | `WINKYPIE_CONTEXT.md` | 3 screens, dating-led, "She decided in 100 ms" |
 | Convex `lovely-mosquito-876` | `WINKYPIE_CONTEXT.md` | `glad-spaniel-840` |
 | "Android coming" / Play billing | `/terms` | iOS only is what we sell |
+| Paywall headline `Pro photos. No photographer.` | **Live app paywall**, site | Primary brand line is `Pro photos. More matches.` since 2026-09-06 (§1). Ship it in the app and on the site; until then the ads and the paywall disagree |
 | "~30 seconds to generate" | Repo docs | `[unsourced]` — never timed. See §13 |
 
 `dream-pie`'s `release-checklist/apple-store-connect/WINKYPIE_CONTEXT.md` describes v1 in

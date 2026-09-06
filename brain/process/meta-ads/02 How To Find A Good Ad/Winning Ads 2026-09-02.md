@@ -1,6 +1,6 @@
 ---
 tags: [research, swipe]
-updated: 2026-09-02
+updated: 2026-09-06
 ---
 # Winning Ads — niche scrape 2026-09-02
 
@@ -44,3 +44,25 @@ Full data: `~/Downloads/meta-ads-library/out/research-{roast,regen,photoshoot,co
 "You're not ugly" second-person appearance framing · "Struggling to get a girlfriend?" ·
 fake-persona pages (Confessions of a Dater, Ethan Park) · invented multipliers ("10x the
 matches") · "724,000+ guys" class social proof until we have real numbers.
+
+## Update 2026-09-06 — full-page reads of Roast AI and Confessions of a Dater
+
+Every ad on both pages read through the library's per-ad detail panel (EU and UK reach with
+demographics); the ad-by-ad tables are in [[ROAST]] and [[Charmd]], the targeting
+consequences in [[Audiences]]. What changed in the picture:
+
+1. **The cut decides, not the copy.** Charmd runs the #1 copy in two cuts: the 0:32 video
+   (914569270944890) is at **521,572** EU reach, the 0:27 sibling with identical text
+   (1374983617735721) at 15,530 — a 34× gap Meta's optimiser produced from the same words.
+   One hypothesis in two cuts is the cheapest test in the set.
+2. **The diagnostic-question family took 76% of everything Charmd delivered in the EU**
+   (~609k of ~798k across 17 ads); "Better Photos. More Matches." ~99k, "You're not ugly"
+   ~90k. #1's lead is the family's, not one lucky ad's.
+3. **Roast's newest wave sells the photos, not the quiz.** Seven variants launched
+   2026-08-26 → 08-31 ("he swapped his hinge photos with roast… she still thinks he owns a
+   yacht", UGC video 0:37–0:50): the front door is moving from "free profile roast" to
+   "AI photos" — our core promise. The deception angle stays banned (PRODUCT.md §11.5).
+   Every active creative transcribed and frame-sampled: [[Roast AI Creative Teardown 2026-09-06]].
+4. **Roast is ~960 ads deep** (40 active, ~920 inactive) since at least 2025-08-25 — the
+   "~84 since May" count of 2026-09-01 was one page-view's worth. Five of the 2026-08-17
+   batch carry the library's "<100 impressions" flag: their losers are visible too.

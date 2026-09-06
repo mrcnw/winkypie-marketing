@@ -1,6 +1,6 @@
 ---
 tags: [produce, order]
-updated: 2026-09-02
+updated: 2026-09-06
 ---
 # Shoot Order — the creator brief for Billo
 
@@ -9,7 +9,9 @@ male US creators on Billo.** The creator-facing export is `Creator Brief EN+PL.p
 folder (English first, Polish mirror; `Creator Brief EN.pdf` and `Creator Brief PL.pdf` are
 the single-language cuts). This note is the English source of that PDF; the Polish text
 exists only in the PDF. The PDF was rendered from this content as HTML through headless
-Chrome on 2026-09-02 — regenerate it whenever this note changes.
+Chrome on 2026-09-02 — regenerate it whenever this note changes. **PDF stale since
+2026-09-06:** the hooks of ads 2 and 3 changed (dating context, see [[Hooks And Angles]]);
+regenerate all three PDFs before the order goes out.
 
 ## The order — internal, not in the PDF
 
@@ -178,7 +180,7 @@ preamble, no "hey guys". The first word is the first frame.
 | 5 | "So make it the right one. Here's what I did." Flip the phone: poses grid, pick a pose. INSERT | Make it the right one. |
 | 8 | Over your shoulder, the pose card and the coaching. "It tells you how to stand. The angle, where to look, your hands." | Pick a pose. It coaches you. |
 | 12 | "One selfie." A / B. Then the check runs and passes. "It checks the photo first. If it won't work, it tells you. Free." | Free check before anything costs. |
-| 16 | Result on your phone, turn it to camera. Real reaction. "That's the photo." | Pro photos. No photographer. + AI note, small |
+| 16 | Result on your phone, turn it to camera. Real reaction. "That's the photo." | Pro photos. More matches. + AI note, small |
 | 20–25 | To camera: "Three days free. Cancel anytime." Hold two seconds, don't wave | End card: App Store badge · 3 days free. Cancel anytime. |
 
 Sample script: **She decided in a hundred milliseconds.** / Before she even read your name.
@@ -199,7 +201,7 @@ Only for this ad: "a hundred milliseconds" is a line, not a statistic. Never "st
 show", "science says", no percentages, no "most guys". Don't describe her, and don't
 describe the viewer. The word "she" is only ever the person swiping.
 
-### Ad 2 of 5 · `WP_P2_UGC_freecheck` — Would your photo pass?
+### Ad 2 of 5 · `WP_P2_UGC_freecheck` — Would your profile photo pass?
 
 | | |
 |---|---|
@@ -210,25 +212,25 @@ describe the viewer. The word "she" is only ever the person swiping.
 In one sentence: the check is the ad. Show it clearly, hold on it, then show the rest of the
 flow fast.
 
-**Hook, first 1.5 s, LOCKED:** "Would your photo pass?" Phone up in frame with the photo
+**Hook, first 1.5 s, LOCKED:** "Would your profile photo pass?" Phone up in frame with the photo
 check already running. Say the line to camera, then look down at the phone.
 
 | Time | You — say and do | We add on screen |
 |---|---|---|
-| 0.0 | LOCKED "Would your photo pass?" Phone up, check screen visible, analysis running | Would your photo *pass*? |
+| 0.0 | LOCKED "Would your profile photo pass?" Phone up, check screen visible, analysis running | Would your profile photo *pass*? |
 | 1.5 | The verdict lands: green tick, match %. Hold on it 2 s. LOCKED "Most AI photo apps charge you for the bad result. This one checks first. Free." | Most AI photo apps charge you for the bad result. / This one checks first. Free. |
 | 6 | "Here's the whole thing." Quick rewind over your shoulder: pick a pose → the coaching card. "Pick a pose. It tells you how to stand — angle, where to look, hands." INSERT | Pick a pose. It coaches you. |
 | 10 | "Take one selfie." A / B | One selfie. |
 | 13 | "It checks the selfie against the pose. If it won't work, it says so — before you've spent anything." | Free check before anything costs. |
-| 16 | Generating, then the result. Turn the phone to camera, real reaction. "One selfie. That's the photo I needed." | One selfie. The photo you needed. + AI note, small |
-| 20–25 | To camera: LOCKED "Pro photos. No photographer." Then "Three days free. Cancel anytime." | End card: App Store badge · 3 days free. Cancel anytime. |
+| 16 | Generating, then the result. Turn the phone to camera, real reaction. "One selfie. That's the photo I needed." | One selfie. The photo your profile needed. + AI note, small |
+| 20–25 | To camera: LOCKED "Pro photos. More matches." Then "Three days free. Cancel anytime." | End card: App Store badge · 3 days free. Cancel anytime. |
 
-Sample script: **Would your photo pass?** *(the green tick lands)* / **Most AI photo apps
+Sample script: **Would your profile photo pass?** *(the green tick lands)* / **Most AI photo apps
 charge you for the bad result. This one checks first. Free.** / Here's the whole thing.
 *(rewind: poses, coaching card)* / Pick a pose. It tells you how to stand. Angle, where to
 look, hands. / Take one selfie. *(A / B)* / It checks the selfie against the pose. If it
 won't work, it says so. Before you've spent anything. *(generating, result, turn to camera)*
-/ One selfie. That's the photo I needed. / **Pro photos. No photographer.** / Three days
+/ One selfie. That's the photo I needed. / **Pro photos. More matches.** / Three days
 free. Cancel anytime.
 
 Shots: the hook with the check screen in frame, three takes — the shot that matters most ·
@@ -243,7 +245,7 @@ Only for this ad: if your own first check gave you a warning or a retake, show i
 the product working. Never stage a fail. The check screen with the green tick and the
 match % must be clearly readable on camera for at least two seconds.
 
-### Ad 3 of 5 · `WP_P1_UGC_coached` — All my photos were group shots and gym mirror selfies.
+### Ad 3 of 5 · `WP_P1_UGC_coached` — My Hinge profile was four group shots and a gym mirror selfie.
 
 | | |
 |---|---|
@@ -254,24 +256,25 @@ match % must be clearly readable on camera for at least two seconds.
 In one sentence: problem → tried it, sceptical → the twist is the coaching → the result.
 The story ends at the photo, not at a date.
 
-**Hook, first 1.5 s, LOCKED:** "All my photos were group shots and gym mirror selfies."
-Direct to camera, natural light, phone in hand but down. Flat and honest, not a joke.
+**Hook, first 1.5 s, LOCKED:** "My Hinge profile was four group shots and a gym mirror selfie."
+Say the app you actually use and what your photos actually were — the shape is locked, the
+facts are yours. Direct to camera, natural light, phone in hand but down. Flat and honest, not a joke.
 
 | Time | You — say and do | We add on screen |
 |---|---|---|
-| 0.0 | LOCKED "All my photos were group shots and gym mirror selfies." | all my photos were group shots and gym mirror selfies |
+| 0.0 | LOCKED "My Hinge profile was four group shots and a gym mirror selfie." | my hinge profile was four group shots and a gym mirror selfie |
 | 1.5 | The sceptic beat, your words: "So I tried the AI photo thing. Honestly, I expected a fake face." | tried the AI photo thing. expected a fake face |
 | 5 | The twist. Flip the phone: pose card and coaching card visible. LOCKED "It coached me. Angle, gaze, hands. You don't need to know how to pose." INSERT | it *coached* me — angle, gaze, hands. you don't need to know how to pose |
 | 9 | You mirror the pose, take the selfie (A / B), the check passes on screen. "And it checks the photo first. Free, before anything costs." | and it checks the photo free, before anything costs |
 | 14 | Result on your phone. Genuine reaction — awe, not disbelief. "Wait. That's me." | Looks pro. *Still you.* + AI note, small |
-| 22–30 | To camera: LOCKED "Pro photos. No photographer." Hold two seconds | End card: App Store badge · 3 days free. Cancel anytime. |
+| 22–30 | To camera: LOCKED "Pro photos. More matches." Hold two seconds | End card: App Store badge · 3 days free. Cancel anytime. |
 
-Sample script: **All my photos were group shots and gym mirror selfies.** / So I tried the
+Sample script: **My Hinge profile was four group shots and a gym mirror selfie.** / So I tried the
 AI photo thing. Honestly, I expected a fake face. / Here's what actually happened. *(flip
 the phone: pose card, coaching)* / **It coached me. Angle, gaze, hands. You don't need to
 know how to pose.** / I copied the pose. Took one selfie. *(A / B)* / And it checked the
 photo first. Free, before anything costs. *(result, turn the phone to camera)* / Wait.
-That's me. / **Pro photos. No photographer.**
+That's me. / **Pro photos. More matches.**
 
 Shots: talking head, all lines, two full takes — one flatter, one warmer · over the
 shoulder: pose card, coaching card, the selfie moment, check with the green tick, result ·
@@ -282,8 +285,8 @@ Alternative openings: "You don't need to know how to pose. It coaches you." · "
 Mirror it. Done."
 
 Only for this ad: the first line has to be true for you. If your photos weren't group shots
-or gym selfies, tell us before filming — we'll match the words to your actual photos and
-keep the shape. Never say how long you've been single, never mention dates, never "and then
+or gym selfies, or you're not on Hinge, tell us before filming — we'll match the words to
+your actual photos and your actual app and keep the shape. Never say how long you've been single, never mention dates, never "and then
 I matched with…". Your photos, the app, the photo. That's the whole story.
 
 ### Ad 4 of 5 · `WP_P3_UGC_stillyou` — Looks pro. Still you.
@@ -309,13 +312,13 @@ with the sound off.
 | 8 | Coaching card, then the selfie (A / B). "Mirrored it with one selfie. Same angle, same look." | Mirrored it with one selfie. |
 | 12 | Result full screen, then scroll to the **Pose used / Photo used** row. "My face. My build. That scene." | Looks pro. *Still you.* + AI note |
 | 16 | Back to camera, phone still up. "It's AI. And it's still me." | Stylized AI representation, not a filter. |
-| 20–25 | To camera: LOCKED "Pro photos. No photographer." Hold two seconds | End card: Be the right *swipe*. · App Store badge · 3 days free. Cancel anytime. |
+| 20–25 | To camera: LOCKED "Pro photos. More matches." Hold two seconds | End card: Be the right *swipe*. · App Store badge · 3 days free. Cancel anytime. |
 
 Sample script: *(your result next to your face)* **Looks pro. Still you.** / **Not a filter.
 Not a face swap.** / I didn't think an AI photo would look like me either. / I picked this
 pose. *(pose card)* / Mirrored it with one selfie. Same angle, same look. *(A / B)* *(result,
 then the Pose used / Photo used row)* / My face. My build. That scene. / It's AI. And it's
-still me. / **Pro photos. No photographer.**
+still me. / **Pro photos. More matches.**
 
 Shots: the hook frame — face plus result — three takes, steady hand, phone screen readable
 · over the shoulder: pose card, coaching card, result, the Pose used / Photo used row held
@@ -350,7 +353,7 @@ pause after "prices".
 | 5 | LOCKED "This took one selfie. Tonight." Flip the phone: poses grid, pick a pose. INSERT | One selfie. Tonight. |
 | 8 | Over your shoulder, the coaching. "It tells you how to stand." Then the selfie (A / B) | Pick a pose. It coaches you. |
 | 12 | The check passes. "It checks the photo free, before anything costs." | Free check before anything costs. |
-| 15 | Result, turn the phone to camera, real reaction. "That's a photographer's shot. Out of my kitchen." (or wherever you are) | Pro photos. No photographer. + AI note, small |
+| 15 | Result, turn the phone to camera, real reaction. "That's a photographer's shot. Out of my kitchen." (or wherever you are) | Pro photos. More matches. + AI note, small |
 | 20–25 | To camera: "Three days free. Cancel anytime." Hold two seconds | End card: App Store badge · 3 days free. Cancel anytime. |
 
 Sample script: **Pro photos. Not pro prices.** / A photographer means booking. Outfits.

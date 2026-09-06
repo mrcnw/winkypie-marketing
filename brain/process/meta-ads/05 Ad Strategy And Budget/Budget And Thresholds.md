@@ -33,7 +33,7 @@ campaigns. Reasons, all from Meta's own guidance:
   supported" — each "limited to one ad set", up to 24 campaigns per app, and Meta suggests
   "up to six creative options in the ad set for optimal results"
   ([iOS 14.5+ considerations](https://www.facebook.com/business/help/651033805513936)). Five
-  ads is inside that.
+  ads is inside that — six, with `freecheck` in two cuts (2026-09-06), still is.
 - Advantage+ app campaigns take up to 50 images or videos per ad set and report per creative
   unit ([about AAC](https://www.facebook.com/business/help/309994246788275),
   [creative reporting](https://www.facebook.com/business/help/716015512512235)) — the
@@ -51,6 +51,7 @@ the next wave rather than declaring it dead.
 |---|---|---|
 | `WP_P2_STATIC_100ms` | ad (image, 3 ratios) | in-house design |
 | `WP_P2_DEMO_freecheck` | ad (video, screen capture) | in-house capture + AI host voice variants optional |
+| `WP_P2_DEMO_verdict` | ad (video, screen capture) — **cut B of the same hypothesis**, ≤ 15 s, verdict-first; the sixth creative, added 2026-09-06 on the Charmd cut-gap evidence ([[Winning Ads 2026-09-02]]) | same capture, second edit |
 | `WP_P1_UGC_coached` | ad (video, UGC) — **the only one needing a creator**; the Billo package's 3–5 creators are 3–5 variants of this one ad | external creator — [[04.1 Outsource The Shoot]] |
 | `WP_P3_POSERESULT_stillyou` | ad (video slideshow or image) | in-house from a real generation pair |
 | `WP_P1_STATIC_proprices` | ad (image, 3 ratios) | in-house design |
@@ -66,7 +67,7 @@ five need no human on camera at all.
 | Optimisation | **App installs** in round one | Most frequent event → fastest exit from learning. Optimising for trial start needs ~50 trials/week ([app event optimisation](https://www.facebook.com/business/help/2308889442692949)); at an assumed 15% install→trial that is ~330 installs/week — not round one |
 | Bid strategy | Lowest cost, **no bid cap, no cost cap** | Meta's recommendation for AAC; cost-per-result goal needs 50–100 weekly conversions and a daily budget ≥5× the goal ([AAC best practices](https://www.facebook.com/business/help/711378409718185), [cost per result goal](https://www.facebook.com/business/help/272336376749096), [minimum budgets](https://www.facebook.com/business/help/203183363050448)) |
 | Attribution | **Aggregated Event Measurement** as the reporting view; SKAdNetwork configured alongside | AEM reports near real time with 7-day click; SKAN reports with "delays of at least 24 hours", campaign-level aggregates, statistical modelling at ad level, and A/B tests only at campaign level ([SKAN reporting](https://www.facebook.com/business/help/584603712214119), [AEM vs SKAN](https://www.facebook.com/business/help/1356268495231843)) |
-| Targeting | US · iOS · English. Nothing else is available in AAC (no age, gender, interests) | [AAC targeting](https://www.facebook.com/business/help/1153577308409919). Men-only reach comes from the creative, not the settings — the briefs already do this |
+| Targeting | US · iOS · English. Nothing else is available in AAC (no age, gender, interests) | [AAC targeting](https://www.facebook.com/business/help/1153577308409919). Men-only reach comes from the creative, not the settings — the briefs already do this. Country decision and the competitor delivery data behind it: [[Audiences]] (2026-09-06) |
 | Placements | Advantage+ placements (forced in AAC) | Same article. Deliver 9:16 master + 4:5 + 1:1 so every placement has a native ratio |
 | Budget type | Campaign budget (default on for App Promotion), **daily** | [campaign vs ad set budgets](https://www.facebook.com/business/help/458847204894307) |
 
@@ -183,6 +184,30 @@ P90, not the median. Round one is not expected to be profitable; it is expected 
 which row we live in, so round two can be planned against a real CAC. That is a legitimate
 goal and it is the one written on the tracker. The worked example of a round that *does*
 clear the gates — and what it still costs in cash — is in [[KPI Scenarios]].
+
+## Break-even for round one — how many have to install and pay
+
+**For the $650–850 test to pay for itself within the year, 13–17 men have to pay; to pay
+for itself in the first month, 39–50 (or 47–61 if Apple takes 30%).** "Sixty at $19" is the
+harshest version of the month-one case, not the plan. Net revenue per payer as above:
+$17.00 first payment, $52.90 over twelve months (15% commission `[tier unconfirmed]`).
+
+| Spend | Payers, year-1 payback | Payers, month-1 payback | Installs needed for year-1 payback at median funnel (1.8%) · P90 (3.8%) · hard-paywall median (10.7%) | Max CPI for year-1 payback at the hard-paywall rate |
+|---|---|---|---|---|
+| $650 | **13** | 39 | 719 · 340 · **122** | **$5.33** |
+| $750 | **15** | 45 | 829 · 393 · **141** | **$5.32** |
+| $850 | **17** | 50 | 939 · 445 · **159** | **$5.35** |
+
+Read across: at the RevenueCat median funnel the test would need 700–950 installs at under
+$1 each — not a real market. At the hard-paywall median (one payer per ~9 installs) it needs
+120–160 installs at ≤ $5.35, which is a plausible US iOS CPI. So the round-one question in one
+line: **do we get roughly one payer per ten installs?** If yes, the plan closes at CPIs the
+market actually sells; if no, no creative fixes it — the paywall, the check and the coaching do.
+
+The scenario in [[KPI Scenarios]] spends $760 for 151 installs and 9 payers — below the
+year-one break-even of 15 for that spend, with the best single ad (`DEMO_freecheck`) the only
+one whose own CAC pays back. That is the realistic shape of a first round: one ad that works,
+a total that does not yet. The app's KPI tab computes this table live from the same inputs.
 
 ## Reserve rule
 

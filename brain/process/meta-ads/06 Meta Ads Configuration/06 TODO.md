@@ -1,7 +1,7 @@
 ---
 tags: [todo, setup]
 step: 06
-updated: 2026-09-02
+updated: 2026-09-06
 ---
 # 06 · TODO — Meta Ads Configuration
 
@@ -22,7 +22,12 @@ Documentation: [[06 Meta Ads Configuration]]
 - [ ] Configure Aggregated Event Measurement and set the event priority order.
 - [ ] Define the conversion events: install, trial start, purchase.
 - [ ] Set the attribution window and record which one you chose.
-- [ ] Build the audiences: broad, plus any interest sets worth testing.
+- [x] Build the audiences: broad, plus any interest sets worth testing. → decided
+      2026-09-06: **United States · English · iOS 15.1+, broad.** Advantage+ app
+      campaigns offer no age, gender or interest settings, and the two competitors with
+      visible delivery land 93–99% of reach on men, 82–95% of it aged 18–34, with none.
+      Ireland + UK are the round-two option; Poland and any EU-wide audience are out.
+      Evidence: [[Audiences]]
 - [ ] Set device targeting to iOS only on every ad set — devices mobile-only, mobile OS
       iOS, minimum version 15.1 (PRODUCT.md §2). Android is not sold. Raising the floor
       above 15.1 to bias towards newer devices is a separate test, not a requirement.

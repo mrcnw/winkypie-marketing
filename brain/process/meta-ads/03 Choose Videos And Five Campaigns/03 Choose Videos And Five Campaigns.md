@@ -3,7 +3,7 @@ tags: [step, strategy]
 status: doing
 phase: strategy
 owner:
-updated: 2026-09-02
+updated: 2026-09-06
 ---
 # 03 · Choose Videos And Five Campaigns
 
@@ -61,3 +61,10 @@ Round one (2026-09-02) is drafted from the step-01/02 research: hooks scored in
 Research says: low-fi beats polished (Roast's longest runners are statics), the free first
 step is the niche's universal CTA, and the compliance-safe variant out-delivered the
 policy-risk one — our guardrails cost us nothing.
+
+Revised 2026-09-06 after the full-page reads in [[Winning Ads 2026-09-02]] (update section):
+`WP_P2_DEMO_freecheck` ships in two cuts (`WP_P2_DEMO_verdict` is the sixth creative in the ad
+set — Charmd's #1 copy delivers 521,572 in one cut and 15,530 in another, identical words);
+the UGC brief casts 28–35 and targets 25–35 s; every brief now ends with a "Do this, in order"
+list, which the app renders as the steps behind each campaign card. Targeting for the whole
+set is decided in [[Audiences]].

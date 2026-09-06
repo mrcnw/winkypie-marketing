@@ -1,6 +1,6 @@
 ---
 tags: [research, hooks]
-updated: 2026-09-02
+updated: 2026-09-06
 ---
 # Hooks And Angles
 
@@ -17,13 +17,30 @@ Revised 2026-09-02 after re-reading the winners: campaign 2 moved to the diagnos
 pattern (the mechanic of the niche's biggest ad), campaign 3 to a confession-story opener
 (the proven UGC shape) with coaching as the twist.
 
+Revised again 2026-09-06 after the full-page reads ([[Winning Ads 2026-09-02]], update; [[Roast AI
+Creative Teardown 2026-09-06]]): every winner in the niche says *profile*, *Hinge*, *swipe* or
+*match* in its first line, and ours said none of them. Each hook and primary text now carries the
+dating context in the words PRODUCT.md §9 lists as Do — "matches", "swipes", "your profile" — and
+the §11 ✅ form "for your dating profile". Still third person about the man's status, still no
+outcome numbers; the locked lines "First photo. First chance." and "Be the right swipe." do the
+on-frame work.
+
 | # | Campaign | Hook (verbatim) | Sp | Si | Ho | Sn | Angle it tests | Evidence |
 |---|---|---|---|---|---|---|---|---|
-| 1 | `WP_P2_STATIC_100ms` | **"She decided in 100 ms."** + on-frame blame-shift "The first photo does all the work." | ✓ | ✓ | ✓* | ✓ | The decision moment | Photoshoot Dating's 43-day "she swiped left before your bio"; Roast statics 104–131 d. *Locked narrative line, never framed as a stat (PRODUCT.md §8) |
-| 2 | `WP_P2_DEMO_freecheck` | **"Would your photo pass?"** | ✓ | ✓ | ✓ | ✓ | Free pre-flight check (risk reversal) | The diagnostic-question mechanic of Charmd's 191-day / 510k-reach winner, aimed at the *photo*, not the person; ReGen's dominant 1★ theme is "$50 before seeing anything" |
-| 3 | `WP_P1_UGC_coached` | **"All my photos were group shots and gym mirror selfies."** (coaching = the twist) | ✓ | ✓ | ✓ | ✓ | Pose coaching | Confession-story is the proven UGC shape (Roast pages); coaching unique to us; ReGen literally sells the opposite ("no guesswork") |
+| 1 | `WP_P2_STATIC_100ms` | **"She decided in 100 ms."** + on-frame "First photo. First chance." + "Be the right swipe." (locked lines) | ✓ | ✓ | ✓* | ✓ | The decision moment | Photoshoot Dating's 43-day "she swiped left before your bio"; Roast statics 104–131 d. *Locked narrative line, never framed as a stat (PRODUCT.md §8) |
+| 2 | `WP_P2_DEMO_freecheck` | **"Would your profile photo pass?"** | ✓ | ✓ | ✓ | ✓ | Free pre-flight check (risk reversal) | The diagnostic-question mechanic of Charmd's 191-day / 510k-reach winner, aimed at the *photo*, not the person; ReGen's dominant 1★ theme is "$50 before seeing anything" |
+| 3 | `WP_P1_UGC_coached` | **"My Hinge profile was four group shots and a gym mirror selfie."** (the creator's own app and photos; coaching = the twist) | ✓ | ✓ | ✓ | ✓ | Pose coaching | Confession-story is the proven UGC shape (Roast pages); coaching unique to us; ReGen literally sells the opposite ("no guesswork") |
 | 4 | `WP_P3_POSERESULT_stillyou` | **"Looks pro. Still you."** | ✓ | ✓ | ✓ | ✓ | Likeness trust | #1 bad-review theme at every rival is "doesn't look like me" — the objection is pre-loaded in the market |
 | 5 | `WP_P1_STATIC_proprices` | **"Pro photos. Not pro prices."** | ✓ | ✓ | ✓ | ✓ | Savings | Photographer anchor $200–900 (sourced, Landscape); Aragon's price-led ads run 95+ days. ⚠️ Kill-first candidate: no *dating* winner runs on price — see the brief |
+
+## Brand line (decided 2026-09-06)
+
+**`Pro photos. More matches.`** replaces `Pro photos. No photographer.` as the primary brand line
+and the end-card/closer line in every brief and script; the old line stays as the ease/savings
+support line and, until the app ships the change, as the live paywall headline (PRODUCT.md §1,
+§12; BRAND.md §7 has the reasoning). Rubric: Specific ✓ (photos → matches is the niche's
+language) · Silent ✓ · Honest ✓ (no number; "more matches" rests on the sourced Hinge 2024
+industry average in PRODUCT.md §8 and is never quantified) · Single ✓.
 
 ## Backup (passed the rubric, not in round one)
 

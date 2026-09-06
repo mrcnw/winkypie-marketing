@@ -184,7 +184,8 @@ Locked lines — identical in the app, on the site, and in ads. Do not paraphras
 
 | Line | Role |
 |---|---|
-| `Pro photos. No photographer.` | Primary brand line |
+| `Pro photos. More matches.` | Primary brand line — since 2026-09-06 |
+| `Pro photos. No photographer.` | Support line — ease and savings; still the live paywall headline until the app ships the new one |
 | `She decided in 100 ms.` | Hero hook |
 | `First photo. First chance.` | Problem line |
 | `Looks pro. Still you.` | Product-truth line |
@@ -192,6 +193,17 @@ Locked lines — identical in the app, on the site, and in ads. Do not paraphras
 
 Formulas that already work on live surfaces: `Old → New` · `Thing. Thing. Punchline.` ·
 `Pro X. Not pro Y.` · `Number + benefit`.
+
+**Why the primary line changed on 2026-09-06.** Every proven ad in the niche states the dating
+outcome in its headline — Charmd's "Better Photos. More Matches." (179 days live), Roast's
+"Fix your photos. Get more matches." and its most-cloned title "Same face. 10x the matches."
+(~257 ads) — while our line stated the mechanism. "Pro photos. More matches." keeps the
+"Pro photos." equity of the paywall and the `Pro X.` family, and puts the outcome in the second
+beat, in the word PRODUCT.md §9 lists first among the Do-words. No number, ever: the multiplier
+is what §11 bans. Considered and not taken: "One selfie. More matches." (one selfie is not a
+headline — GIO and Pose AI take one photo too, see the competitor landscape), "Same face. More
+matches." (Roast's phrase, in 257 of their ads). Backup if Meta ever objects to "matches":
+"Pro photos. Right swipes." The evidence: `brain/process/meta-ads/02 How To Find A Good Ad/`.
 
 The five weighted messaging pillars live in `PRODUCT.md` §9 — transformation 40 %, ease 25 %,
 savings 15 %, variety 12 %, trust 8 %. Creative briefs pick **one** pillar, not three.
