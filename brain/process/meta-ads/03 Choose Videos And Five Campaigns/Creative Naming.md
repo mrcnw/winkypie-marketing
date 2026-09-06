@@ -31,7 +31,7 @@ WP_<persona>_<format>_<hook-slug>_<ratio>_v<n>
 | `WP_P2_DEMO_verdict_<ratio>_v1` | [[WP_P2_DEMO_freecheck]] — cut B | Same hook, ≤ 15 s, opens on the verdict. The sixth creative, added 2026-09-06 on the Charmd cut-gap evidence |
 | `WP_P1_UGC_coached_<ratio>_v1` | [[WP_P1_UGC_coached]] | Pose coaching |
 | `WP_P3_POSERESULT_stillyou_<ratio>_v1` | [[WP_P3_POSERESULT_stillyou]] | Likeness trust |
-| `WP_P1_STATIC_proprices_<ratio>_v1` | [[WP_P1_STATIC_proprices]] | Savings |
+| `WP_P1_STATIC_algorithm_<ratio>_v1` | [[WP_P1_STATIC_algorithm]] | Blame-shift — replaced the savings hook 2026-09-06 |
 
 Every campaign ships all three ratios (9:16 master, 4:5, 1:1). Persona split 2×P2 / 2×P1 /
 1×P3 per the step doc. The primary test axis across the set is the **hook/angle**; format
@@ -47,7 +47,7 @@ The synthetic lane renders each hook as an AI host clip — same hook slug, form
 | `WP_P2_HOST_freecheck_9x16_v1` | Would your selfie pass? | first to run |
 | `WP_P2_HOST_100ms_9x16_v1` | She decided in 100 ms. | |
 | `WP_P1_HOST_coached_9x16_v1` | You don't need to know how to pose. | host hook, **not** the confession line — that stays human |
-| `WP_P1_HOST_proprices_9x16_v1` | Pro photos. Not pro prices. | |
+| `WP_P1_HOST_algorithm_9x16_v1` | Not the algorithm. The first photo. | |
 | `WP_P3_HOST_stillyou_9x16_v1` | Looks pro. Still you. | wave two |
 
 Dropped hook candidates and the reasons live in [[Hooks And Angles]] (step 02) — recorded

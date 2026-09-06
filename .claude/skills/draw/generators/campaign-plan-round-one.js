@@ -44,10 +44,10 @@ s.text(100, 560, 'Meta splits the budget across the five as it likes — judge a
 
 const ads = [
   ['WP_P2_STATIC_100ms', 'static · in-house design · "She decided in 100 ms."', 'ink', '[[WP_P2_STATIC_100ms]]'],
-  ['WP_P2_DEMO_freecheck', 'video · our own screen capture · "Would your photo pass?"', 'teal', '[[WP_P2_DEMO_freecheck]]'],
+  ['WP_P2_DEMO_freecheck', 'video · our own screen capture · "Would your selfie pass?"', 'teal', '[[WP_P2_DEMO_freecheck]]'],
   ['WP_P1_UGC_coached', 'video · human creator, Billo, 3–5 men · confession hook', 'orange', '[[WP_P1_UGC_coached]]'],
   ['WP_P3_POSERESULT_stillyou', 'video or static · one real generation pair · "Looks pro. Still you."', 'ink', '[[WP_P3_POSERESULT_stillyou]]'],
-  ['WP_P1_STATIC_proprices', 'static · in-house design · the kill-first candidate', 'ink', '[[WP_P1_STATIC_proprices]]'],
+  ['WP_P1_STATIC_algorithm', 'static · in-house design · "Not the algorithm. The first photo."', 'ink', '[[WP_P1_STATIC_algorithm]]'],
 ];
 const adNodes = ads.map(([name, sub, accent, link], i) =>
   s.node(520, 170 + i * 116, 280, 96, name, {

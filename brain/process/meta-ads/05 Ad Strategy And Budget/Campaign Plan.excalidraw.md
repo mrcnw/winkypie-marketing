@@ -41,7 +41,7 @@ ms." ^t0000016
 WP_P2_DEMO_freecheck ^t0000018
 
 video · our own screen capture · "Would your
-photo pass?" ^t0000019
+selfie pass?" ^t0000019
 
 WP_P1_UGC_coached ^t0000021
 
@@ -53,10 +53,10 @@ WP_P3_POSERESULT_stillyou ^t0000024
 video or static · one real generation pair ·
 "Looks pro. Still you." ^t0000025
 
-WP_P1_STATIC_proprices ^t0000027
+WP_P1_STATIC_algorithm ^t0000027
 
-static · in-house design · the kill-first
-candidate ^t0000028
+static · in-house design · "Not the algorithm.
+The first photo." ^t0000028
 
 white = in-house · teal = app capture · orange = external creator — four of the five need no human on camera ^t0000034
 
@@ -132,7 +132,7 @@ e0000020: [[WP_P1_UGC_coached]]
 
 e0000023: [[WP_P3_POSERESULT_stillyou]]
 
-e0000026: [[WP_P1_STATIC_proprices]]
+e0000026: [[WP_P1_STATIC_algorithm]]
 
 e0000057: [[KPI]]
 
@@ -875,9 +875,9 @@ e0000060: [[09 Analyze KPIs]]
 			"y": 356.25,
 			"width": 280,
 			"height": 28,
-			"text": "video · our own screen capture · \"Would your\nphoto pass?\"",
-			"rawText": "video · our own screen capture · \"Would your\nphoto pass?\"",
-			"originalText": "video · our own screen capture · \"Would your\nphoto pass?\"",
+			"text": "video · our own screen capture · \"Would your\nselfie pass?\"",
+			"rawText": "video · our own screen capture · \"Would your\nselfie pass?\"",
+			"originalText": "video · our own screen capture · \"Would your\nselfie pass?\"",
 			"fontSize": 11,
 			"fontFamily": 5,
 			"textAlign": "center",
@@ -1140,7 +1140,7 @@ e0000060: [[09 Analyze KPIs]]
 				}
 			],
 			"updated": 1,
-			"link": "[[WP_P1_STATIC_proprices]]",
+			"link": "[[WP_P1_STATIC_algorithm]]",
 			"locked": false,
 			"type": "rectangle",
 			"x": 520,
@@ -1174,9 +1174,9 @@ e0000060: [[09 Analyze KPIs]]
 			"y": 648,
 			"width": 164,
 			"height": 18,
-			"text": "WP_P1_STATIC_proprices",
-			"rawText": "WP_P1_STATIC_proprices",
-			"originalText": "WP_P1_STATIC_proprices",
+			"text": "WP_P1_STATIC_algorithm",
+			"rawText": "WP_P1_STATIC_algorithm",
+			"originalText": "WP_P1_STATIC_algorithm",
 			"fontSize": 14,
 			"fontFamily": 5,
 			"textAlign": "center",
@@ -1211,9 +1211,9 @@ e0000060: [[09 Analyze KPIs]]
 			"y": 704.25,
 			"width": 280,
 			"height": 28,
-			"text": "static · in-house design · the kill-first\ncandidate",
-			"rawText": "static · in-house design · the kill-first\ncandidate",
-			"originalText": "static · in-house design · the kill-first\ncandidate",
+			"text": "static · in-house design · \"Not the algorithm.\nThe first photo.\"",
+			"rawText": "static · in-house design · \"Not the algorithm.\nThe first photo.\"",
+			"originalText": "static · in-house design · \"Not the algorithm.\nThe first photo.\"",
 			"fontSize": 11,
 			"fontFamily": 5,
 			"textAlign": "center",

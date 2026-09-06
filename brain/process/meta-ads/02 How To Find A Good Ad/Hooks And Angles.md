@@ -23,7 +23,8 @@ Creative Teardown 2026-09-06]]): every winner in the niche says *profile*, *Hing
 dating context in the words PRODUCT.md §9 lists as Do — "matches", "swipes", "your profile" — and
 the §11 ✅ form "for your dating profile". Still third person about the man's status, still no
 outcome numbers; the locked lines "First photo. First chance." and "Be the right swipe." do the
-on-frame work. One thing we do not borrow from the winners: the profile-review question. Roast
+on-frame work. Campaign 5 swapped the savings hook for the blame-shift the same day (row 5).
+One thing we do not borrow from the winners: the profile-review question. Roast
 and Charmd audit a dating profile; WinkyPie checks the selfie it is about to render. Every
 hook and overlay says "selfie" where the check is meant, never "profile" (fixed 2026-09-06).
 
@@ -33,7 +34,7 @@ hook and overlay says "selfie" where the check is meant, never "profile" (fixed 
 | 2 | `WP_P2_DEMO_freecheck` | **"Would your selfie pass?"** | ✓ | ✓ | ✓ | ✓ | Free pre-flight check (risk reversal) | The diagnostic-question *shape* of Charmd's 195-day / 521k-reach winner, aimed at the *selfie*, not the person — and not at his profile: we check the selfie before rendering, we do not review accounts (their mechanic, not ours); ReGen's dominant 1★ theme is "$50 before seeing anything" |
 | 3 | `WP_P1_UGC_coached` | **"My Hinge profile was four group shots and a gym mirror selfie."** (the creator's own app and photos; coaching = the twist) | ✓ | ✓ | ✓ | ✓ | Pose coaching | Confession-story is the proven UGC shape (Roast pages); coaching unique to us; ReGen literally sells the opposite ("no guesswork") |
 | 4 | `WP_P3_POSERESULT_stillyou` | **"Looks pro. Still you."** | ✓ | ✓ | ✓ | ✓ | Likeness trust | #1 bad-review theme at every rival is "doesn't look like me" — the objection is pre-loaded in the market |
-| 5 | `WP_P1_STATIC_proprices` | **"Pro photos. Not pro prices."** | ✓ | ✓ | ✓ | ✓ | Savings | Photographer anchor $200–900 (sourced, Landscape); Aragon's price-led ads run 95+ days. ⚠️ Kill-first candidate: no *dating* winner runs on price — see the brief |
+| 5 | `WP_P1_STATIC_algorithm` | **"Not the algorithm. The first photo."** | ✓ | ✓ | ✓ | ✓ | Blame-shift | The most consistent reframe on the Roast page — "Most guys blame Tinder. The problem is the photos." (123 days), "Stop blaming the algorithm" (87-day silent video), "It was never the face." — and the common mechanism of every winner (#2 in [[Winning Ads 2026-09-02]]); ours says nothing about the viewer. Replaced the savings hook on 2026-09-06 |
 
 ## Brand line (decided 2026-09-06)
 
@@ -54,6 +55,7 @@ industry average in PRODUCT.md §8 and is never quantified) · Single ✓.
 | "The first photo does all the work." | Promoted onto campaign 1's creative as the on-frame blame-shift |
 | "Same face. New level." | Honest replacement for Roast's "Same face. 10x the matches." — swap into campaign 4 statics |
 | "Pick a pose. Mirror it. Done." | Ease pillar three-beat; campaign 3 alt overlay |
+| "Pro photos. Not pro prices." | Campaign 5 until 2026-09-06 — savings pillar. Parked: among ~980 ads read on the two niche pages, none runs on price. Wave two at most, as a static in campaign 1's layout |
 
 ## Dropped — and why (so they stay dropped)
 

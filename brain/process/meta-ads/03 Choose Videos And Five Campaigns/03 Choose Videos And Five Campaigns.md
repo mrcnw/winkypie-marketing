@@ -68,3 +68,8 @@ set — Charmd's #1 copy delivers 521,572 in one cut and 15,530 in another, iden
 the UGC brief casts 28–35 and targets 25–35 s; every brief now ends with a "Do this, in order"
 list, which the app renders as the steps behind each campaign card. Targeting for the whole
 set is decided in [[Audiences]].
+
+Later the same day: campaign 5 re-chosen. The savings static (`WP_P1_STATIC_proprices`,
+kill-first by its own brief; no price-led ad among ~980 read) gave way to the blame-shift
+static `WP_P1_STATIC_algorithm` — campaign 1's layout with the hook swapped, so the two
+statics isolate the angle cleanly. The price hook is parked in [[Hooks And Angles]] (Backup).

@@ -20,3 +20,6 @@ Documentation: [[03 Choose Videos And Five Campaigns]]
       cut of `WP_P2_DEMO_freecheck` (`WP_P2_DEMO_verdict`) to [[Creative Naming]].
 - [x] 2026-09-06: every brief carries a "Do this, in order" list — production steps in sequence,
       rendered on the campaign's page in the app.
+
+- [x] 2026-09-06: campaign 5 re-chosen — savings out, blame-shift in ([[WP_P1_STATIC_algorithm]]);
+      naming, budget table, shoot order and host script follow.

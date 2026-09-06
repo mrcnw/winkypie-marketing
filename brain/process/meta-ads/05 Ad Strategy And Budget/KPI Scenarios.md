@@ -26,6 +26,12 @@ the hook test. That is the full vocabulary of verdicts the reviewer needs.
 | Impression floor per ad | 3000 | [[KPI]] |
 | Install floor per ad for CPI | 20 | [[KPI]] |
 | Learning exit | 50 | installs in 7 days per ad set (Meta) |
+| Round-one spend, low | $650 | 14 days × $45, [[Budget And Thresholds]] |
+| Round-one spend, high | $850 | 14 days × $60 |
+| Download → trial, median | 7.1% | RevenueCat 2026, North America |
+| Download → trial, P90 | 15% | RevenueCat 2026, North America |
+| Trial → paid, ≤4-day trials | 25.5% | RevenueCat 2026 (Photo & Video 22.2%) |
+| Download → paid by day 35, hard-paywall median | 10.7% | RevenueCat 2026 |
 
 ## Ads
 
@@ -39,8 +45,8 @@ Columns are Meta's own where Meta has one. `3s plays` and `ThruPlays` are blank 
 | Round one | active | WP_P1_UGC_coached_9x16_v1 | video · UGC | 14 | $198 | 44,000 | 17,600 | 3,520 | 396 | 36 | 5 | 1 | | Best hook of the five, worst hold — the middle beats lose them; recut from raw footage |
 | Round one | active | WP_P3_POSERESULT_stillyou_9x16_v1 | video · slideshow | 14 | $41 | 2,600 | 780 | 300 | 26 | 6 | 1 | 0 | | Starved by the auction: below the impression floor, so not judged — re-run in wave two |
 | Round one | active | WP_P2_STATIC_100ms_4x5_v1 | static | 14 | $117 | 39,000 | | | 429 | 27 | 3 | 1 | | Holding: CTR above average, CPI not low enough to scale, one payer is no evidence |
-| Round one | previous | WP_P1_STATIC_proprices_4x5_v1 | static | 14 | $142 | 41,800 | | | 142 | 14 | 1 | 0 | | The unprofitable example: CTR under half the ad set average, CPI over twice the average, zero payers — the brief called it the kill-first candidate |
-| Hook test | previous | WP_P2_DEMO_hostA_pass_9x16_v1 | video · AI host | 7 | $70 | 21,000 | 6,090 | 1,830 | 210 | 15 | 2 | 0 | Test done | "Would your photo pass?" — won the host test on hook rate; feeds the DEMO campaign's overlay |
+| Round one | previous | WP_P1_STATIC_algorithm_4x5_v1 | static | 14 | $142 | 41,800 | | | 142 | 14 | 1 | 0 | | The unprofitable example: CTR under half the ad set average, CPI over twice the average, zero payers — invented numbers that show what a kill looks like, not a prediction for this ad |
+| Hook test | previous | WP_P2_DEMO_hostA_pass_9x16_v1 | video · AI host | 7 | $70 | 21,000 | 6,090 | 1,830 | 210 | 15 | 2 | 0 | Test done | "Would your selfie pass?" — won the host test on hook rate; feeds the DEMO campaign's overlay |
 | Hook test | previous | WP_P2_DEMO_hostB_charge_9x16_v1 | video · AI host | 7 | $70 | 22,400 | 4,930 | 1,380 | 179 | 13 | 1 | 0 | Test done | "Most AI photo apps charge you for the bad result…" — second; kept as the support line |
 
 ## How to read the two examples
@@ -54,10 +60,10 @@ one; against $52.90 net over twelve months it earns ≈ $15 per payer. At $1,800
 ≈ 48 payers, ≈ +$740/month on the twelve-month basis and ≈ −$980 cash in the first month —
 profitable, and it needs about three months of runway per cohort. Scale it, and watch trial→paid.
 
-**Unprofitable (`WP_P1_STATIC_proprices`).** $142 spent, 14 installs at $10.14, one trial, no
+**Unprofitable (`WP_P1_STATIC_algorithm`).** $142 spent, 14 installs at $10.14, one trial, no
 payer. CTR 0.34% is under half the ad set average, so the creative gate kills it before the
-business gate is even reached; the realised result is −$142 with nothing to project. The
-brief predicted this (no dating winner runs on price); the lesson goes to the retired list.
+business gate is even reached; the realised result is −$142 with nothing to project. The row
+is invented to show a kill, not to predict this ad; the lesson would go to the retired list.
 
 **The honest third reading.** At the RevenueCat medians rather than this scenario's optimistic
 funnel, 68 installs would yield about one payer and a CAC above $200. The scale example only

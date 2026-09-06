@@ -36,7 +36,7 @@ regenerate all three PDFs before the order goes out.
 | 2 | `WP_P2_UGC_freecheck_9x16_v1` | [[WP_P2_DEMO_freecheck]] | the free check |
 | 3 | `WP_P1_UGC_coached_9x16_v1` | [[WP_P1_UGC_coached]] | pose coaching |
 | 4 | `WP_P3_UGC_stillyou_9x16_v1` | [[WP_P3_POSERESULT_stillyou]] | likeness |
-| 5 | `WP_P1_UGC_proprices_9x16_v1` | [[WP_P1_STATIC_proprices]] | savings |
+| 5 | `WP_P1_UGC_algorithm_9x16_v1` | [[WP_P1_STATIC_algorithm]] | the blame-shift |
 
 Ads 1, 2, 4 and 5 are UGC *versions* of hooks whose round-one briefs are design-only or
 screen capture; the in-house pieces stay as briefed. Shooting all five hooks in one format
@@ -332,46 +332,48 @@ after", no "old me, new me". This ad is pose → result: the pose you picked, th
 got. The Pose used / Photo used row is the proof — show it. Never say "it made me look
 better". Say "it looks like me".
 
-### Ad 5 of 5 · `WP_P1_UGC_proprices` — Pro photos. Not pro prices.
+### Ad 5 of 5 · `WP_P1_UGC_algorithm` — Not the algorithm. The first photo.
 
 | | |
 |---|---|
-| Idea tested | Photographer-quality photos without the photographer — the booking, the outfits, the weeks, the budget |
-| Who it's for | The guy who has looked at booking a photographer and closed the tab |
-| Length · format | 20–25 s · 9:16 · you to camera, then the app over your shoulder |
+| Idea tested | The blame-shift — it is not the app and not the algorithm, it is the first photo, and that one is fixable tonight |
+| Who it's for | The guy who has read three threads about the algorithm and changed nothing about his photos |
+| Length · format | 20–25 s · 9:16 · you to camera, phone in hand, then the app over your shoulder |
 
-In one sentence: the old way costs effort, time and money. This took one selfie, tonight.
-Not a single number is said.
+In one sentence: stop arguing with the app; the first photo does the work, here is how to
+make that photo. Not a word about anyone's results.
 
-**Hook, first 1.5 s, LOCKED:** "Pro photos. Not pro prices." To camera, dry, a beat of a
-pause after "prices".
+**Hook, first 1.5 s, LOCKED:** "Not the algorithm. The first photo." To camera, flat and
+certain, a beat after "algorithm".
 
 | Time | You — say and do | We add on screen |
 |---|---|---|
-| 0.0 | LOCKED "Pro photos. Not pro prices." | Pro photos. *Not pro prices.* |
-| 1.5 | The old way, your words, four hard stops: "A photographer means booking. Outfits. Waiting weeks. A budget." | Booking. Outfits. Weeks. A budget. |
-| 5 | LOCKED "This took one selfie. Tonight." Flip the phone: poses grid, pick a pose. INSERT | One selfie. Tonight. |
-| 8 | Over your shoulder, the coaching. "It tells you how to stand." Then the selfie (A / B) | Pick a pose. It coaches you. |
-| 12 | The check passes. "It checks the selfie free, before anything costs." | Free selfie check before anything costs. |
-| 15 | Result, turn the phone to camera, real reaction. "That's a photographer's shot. Out of my kitchen." (or wherever you are) | Pro photos. More matches. + AI note, small |
-| 20–25 | To camera: "Three days free. Cancel anytime." Hold two seconds | End card: App Store badge · 3 days free. Cancel anytime. |
+| 0.0 | LOCKED "Not the algorithm. The first photo." To camera, phone in hand | Not the algorithm. *The first photo.* |
+| 1.5 | Your words: "Everyone blames the app. On Hinge, Tinder, Bumble — the first photo does the work." | First photo. First chance. |
+| 5 | "So I made that photo. Here's how." Flip the phone: poses grid, pick a pose. INSERT | Pick a pose. |
+| 8 | Over your shoulder, the pose card and the coaching. "It tells you how to stand. The angle, where to look, your hands." | It coaches you. |
+| 12 | "One selfie." A / B. Then the check runs and passes. "It checks the selfie first. If it won't work, it says so. Free." | Free selfie check before anything costs. |
+| 16 | Result on your phone, turn it to camera. Real reaction. "That's the first photo." | Pro photos. More matches. + AI note, small |
+| 20–25 | To camera: "Three days free. Cancel anytime." Hold two seconds | End card: Be the right swipe. · App Store badge · 3 days free. Cancel anytime. |
 
-Sample script: **Pro photos. Not pro prices.** / A photographer means booking. Outfits.
-Waiting weeks. A budget. / **This took one selfie. Tonight.** *(flip the phone, pick a pose)*
-/ It tells you how to stand. *(coaching card)* / One selfie. *(A / B)* / It checks the selfie
-free, before anything costs. *(result, turn to camera)* / That's a photographer's shot. Out
-of my kitchen. / Three days free. Cancel anytime.
+Sample script: **Not the algorithm. The first photo.** / Everyone blames the app. On Hinge,
+Tinder, Bumble — the first photo does the work. / So I made that photo. Here's how. *(flip
+the phone, pick a pose)* / It tells you how to stand. The angle, where to look, your hands.
+/ One selfie. *(A / B)* / It checks the selfie first. If it won't work, it says so. Free.
+*(result, turn the phone to camera)* / That's the first photo. / Three days free. Cancel
+anytime.
 
 Shots: talking head, all lines, two full takes · over the shoulder: poses grid, pose card
 with coaching, check with the green tick, result · selfie beat A and B · reaction held 3 s ·
-10–15 s b-roll at home, phone in hand, ordinary evening light.
+10–15 s b-roll, phone in hand, scrolling poses.
 
-Alternative openings: "Skip the session. Keep the quality." · "No booking. No outfits. No
-waiting. One selfie."
+Alternative openings (film both, first 3–5 s only): "Not the app. Not luck. The first
+photo." · "Stop arguing with the algorithm. Fix the first photo."
 
-Only for this ad: not one number. Not what a photographer costs, not what the app costs,
-not "cheaper than", not "for the price of a coffee". No named studios or services. The
-comparison is effort and time — never an amount of money.
+Only for this ad: you talk about apps and photos, never about anyone's results — not yours,
+not the viewer's. No "shadowban", no "no matches", no percentages, no "most guys". The app
+names are where the photo works, not the villain; the hook is the only line that argues with
+the algorithm.
 
 ### 6 · Deliverables and checklist
 

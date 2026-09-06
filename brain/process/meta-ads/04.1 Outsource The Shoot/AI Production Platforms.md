@@ -1,6 +1,6 @@
 ---
 tags: [research, produce]
-updated: 2026-09-02
+updated: 2026-09-03
 ---
 # AI Production Platforms — the synthetic lane
 
@@ -13,11 +13,11 @@ Human-creator platforms are in [[Production Platforms]].
 
 | Piece of round one | Produce with | Why |
 |---|---|---|
-| `WP_P2_STATIC_100ms`, `WP_P1_STATIC_proprices` | In-house design | Decided in [[03 Choose Videos And Five Campaigns]]; nothing to generate |
+| `WP_P2_STATIC_100ms`, `WP_P1_STATIC_algorithm` | In-house design | Decided in [[03 Choose Videos And Five Campaigns]]; nothing to generate |
 | `WP_P3_POSERESULT_stillyou` | In-house, from a real generation pair | Same |
 | `WP_P2_DEMO_freecheck` | Real in-app capture + text overlays | The mechanism is the ad; an AI person adds risk and nothing else. Optional: an AI **host** voice-over line, third person |
 | `WP_P1_UGC_coached` — **final creative** | **Human creator (Billo; Upwork for a single video)** — see [[Production Platforms]] | The confession-story hook is first-person lived experience. A generated person cannot say it honestly (§11.1, FTC fake-testimonial rule, and Higgsfield's own truth gate refuses it — below). The phone-flip + reaction beat is exactly where avatars break |
-| **Host-style angle test** — feeds `WP_P2_DEMO_freecheck` and the backup hooks; runs **in parallel** with the shoot | **Higgsfield `ugc-website-video`** — AI host + our real app screenshots | 3–5 host lines ("Would your photo pass?", "Most AI photo apps charge you for the bad result…") at ~$8–16 each. It **cannot** test the confession hook — that is first-person and human-only — so the Billo package's 3–5 creators are the test for campaign 3. Do not hold the shoot for the AI lane. The workflow composites *real* captured screens and never generates UI — matches our "we supply the app screens" rule |
+| **Host-style angle test** — feeds `WP_P2_DEMO_freecheck` and the backup hooks; runs **in parallel** with the shoot | **Higgsfield `ugc-website-video`** — AI host + our real app screenshots; scripts in [[Host Scripts]] | 3–5 host lines ("Would your photo pass?", "Most AI photo apps charge you for the bad result…") at ~$8–16 each. It **cannot** test the confession hook — that is first-person and human-only — so the Billo package's 3–5 creators are the test for campaign 3. Do not hold the shoot for the AI lane. The workflow composites *real* captured screens and never generates UI — matches our "we supply the app screens" rule |
 | Post-win multiplication | Higgsfield `ad-multiplier` on the delivered human video | Same take, different generated person — a look/casting variable at no reshoot. Needs a likeness + derivative-edit clause in the creator contract first |
 
 **Rule for the AI lane:** a generated creator is a *host or demonstrator*, never a user.

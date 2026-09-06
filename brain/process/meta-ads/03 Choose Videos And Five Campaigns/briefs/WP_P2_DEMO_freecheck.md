@@ -57,9 +57,9 @@ inside Meta's "up to six creative options" guidance ([[Budget And Thresholds]]).
 | A | `WP_P2_DEMO_freecheck_<ratio>_v1` | 20–25 s | The beat sheet above, as written: question → verdict → rewind of the flow → result |
 | B | `WP_P2_DEMO_verdict_<ratio>_v1` | ≤ 15 s | Opens on the verdict landing at 0.0 s with the hook over it; **no voice, captions only, music bed** — the silent screen-recording shape that is the longest-running video family on the Roast page ([[Roast AI Creative Teardown 2026-09-06]]); 3 s rewind of pose → coaching → selfie; result at ~8 s; end card |
 
-Both cuts ship all three ratios. If the ad set is capped at six creatives and the budget
-cannot carry it, cut B takes the slot of `WP_P1_STATIC_proprices` (kill-first candidate),
-not the other way round.
+Both cuts ship all three ratios. If the ad set must stay at five creatives, cut B is the one
+that waits for wave two — a second cut never displaces a hypothesis (the savings static it
+was once meant to replace left the set on 2026-09-06).
 
 ## Primary text
 

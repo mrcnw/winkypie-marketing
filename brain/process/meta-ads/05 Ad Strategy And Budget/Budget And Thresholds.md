@@ -54,7 +54,7 @@ the next wave rather than declaring it dead.
 | `WP_P2_DEMO_verdict` | ad (video, screen capture) — **cut B of the same hypothesis**, ≤ 15 s, verdict-first; the sixth creative, added 2026-09-06 on the Charmd cut-gap evidence ([[Winning Ads 2026-09-02]]) | same capture, second edit |
 | `WP_P1_UGC_coached` | ad (video, UGC) — **the only one needing a creator**; the Billo package's 3–5 creators are 3–5 variants of this one ad | external creator — [[04.1 Outsource The Shoot]] |
 | `WP_P3_POSERESULT_stillyou` | ad (video slideshow or image) | in-house from a real generation pair |
-| `WP_P1_STATIC_proprices` | ad (image, 3 ratios) | in-house design |
+| `WP_P1_STATIC_algorithm` | ad (image, 3 ratios) — the blame-shift static, campaign 1's layout with the hook swapped (replaced the savings static 2026-09-06) | in-house design |
 
 So: one creator, one brief, several takes — not one creator recording all five. Four of the
 five need no human on camera at all.
