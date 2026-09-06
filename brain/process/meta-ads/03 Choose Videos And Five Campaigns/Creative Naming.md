@@ -44,7 +44,7 @@ The synthetic lane renders each hook as an AI host clip — same hook slug, form
 
 | Host clip | Hook it carries | Note |
 |---|---|---|
-| `WP_P2_HOST_freecheck_9x16_v1` | Would your profile photo pass? | first to run |
+| `WP_P2_HOST_freecheck_9x16_v1` | Would your selfie pass? | first to run |
 | `WP_P2_HOST_100ms_9x16_v1` | She decided in 100 ms. | |
 | `WP_P1_HOST_coached_9x16_v1` | You don't need to know how to pose. | host hook, **not** the confession line — that stays human |
 | `WP_P1_HOST_proprices_9x16_v1` | Pro photos. Not pro prices. | |

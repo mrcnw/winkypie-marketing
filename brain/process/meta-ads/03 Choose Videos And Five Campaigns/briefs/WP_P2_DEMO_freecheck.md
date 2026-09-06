@@ -22,11 +22,15 @@ stands at 15,530 — the cut decides, so this hypothesis ships in two cuts (see 
 
 ## Hook (0.0–1.5 s, on-screen text over the app)
 
-> Would your profile photo **pass**?
+> Would your selfie **pass**?
 
-Revised 2026-09-06: "profile photo", not "photo" — the dating context every winner
-carries, inside the §11 ✅ form ("for your dating profile"); the question is still about the
-photo, never about the man. The diagnostic-question pattern of the niche's biggest proven ad (Charmd's "Is Your Profile
+Revised 2026-09-06: "selfie", not "photo" — WinkyPie checks the selfie he takes for the
+pose, before it renders or charges. **It does not review a dating profile**: the profile
+roast / "Is your profile underperforming?" mechanic is Roast's and Charmd's, not ours, and
+no hook or overlay may imply we audit his account. The dating context lives in the
+overlays and the primary text ("the photo that earns the match"), never in a promise to
+check his profile. The question is about the selfie, never about the man. The
+diagnostic-question pattern of the niche's biggest proven ad (Charmd's "Is Your Profile
 Underperforming?", 195 days, 521,572 EU reach on 2026-09-06) — second person aimed at the *photo*, never the
 person. The check itself is the answer to the question.
 
@@ -34,9 +38,9 @@ person. The check itself is the answer to the question.
 
 | Time | On screen | Overlay copy |
 |---|---|---|
-| 0.0 | Selfie on the Photo Check screen, analysis running | "Would your profile photo *pass*?" |
+| 0.0 | Selfie on the Photo Check screen, analysis running | "Would your selfie *pass*?" |
 | 1.5 | Verdict lands — pass, with match % | "Most AI photo apps charge you for the bad result." |
-| 3.5 | Hold on the verdict | "This one checks first. Free." |
+| 3.5 | Hold on the verdict | "This one checks your selfie first. Free." |
 | 6 | Quick rewind of the flow: pose picked → coaching card (angle, gaze, hands) → selfie taken | "Pick a pose. It coaches you." |
 | 13 | Generation staged copy ("Painting your shot…") → result reveal | "One selfie. The photo your profile needed." + §11.2 disclosure line, small |
 | 19–25 | Result full screen, then end card | "Pro photos. More matches." · "Be the right swipe." + App Store badge + "3 days free. Cancel anytime." |
@@ -63,7 +67,7 @@ not the other way round.
 > bad one. WinkyPie checks your selfie for free first — then renders the photo that earns
 > the match.
 
-Support line (backup hook, same idea): "It checks your photo before it costs you anything."
+Support line (backup hook, same idea): "It checks your selfie before it costs you anything."
 
 ## To record
 
@@ -76,12 +80,13 @@ from the reveal on.
 ## Guardrail check (§11)
 
 AI disclosed on the reveal ✓ · results-vary disclosure on generated imagery ✓ · no match
-promise ✓ · male demo subject ✓ · no pricing beyond "3 days free, cancel anytime" ✓.
+promise ✓ · no profile-review implication — it is the selfie check, not an account audit ✓ · male demo subject ✓ · no pricing beyond "3 days free, cancel anytime" ✓.
 
 ## Do this, in order
 
 1. Watch the two model ads (links in the app card): note the diagnostic question in the first
-   1.5 s and the free first step. Study the mechanism, never the wording.
+   1.5 s and the free first step. Study the mechanism, never the wording — their free step is
+   a profile review, ours is the selfie check; nothing on frame may imply we audit his profile.
 2. Set up a demo profile in the app. Pick a pose, run the coaching, take a selfie that passes
    the Photo Check — the pass state with its match percentage is the shot this ad exists for.
 3. Record the real flow on an iPhone (screen recording, portrait, no notifications): pose →

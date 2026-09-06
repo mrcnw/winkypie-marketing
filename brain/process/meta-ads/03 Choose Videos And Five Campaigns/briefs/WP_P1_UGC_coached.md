@@ -42,7 +42,7 @@ pose." moves to the overlay at the twist beat.
 | 0.0 | Man 28–35, phone in hand, natural light, direct to camera | "my hinge profile was four group shots and a gym mirror selfie" |
 | 1.5 | Still talking — the skeptic beat | "tried the AI photo thing. expected a fake face" |
 | 5 | The twist — he flips the phone: pose card + coaching card visible | "it *coached* me — angle, gaze, hands. you don't need to know how to pose" |
-| 9 | He mirrors the pose, takes the selfie; free check passes on screen | "and it checks the photo free, before anything costs" |
+| 9 | He mirrors the pose, takes the selfie; free check passes on screen | "and it checks the selfie free, before anything costs" |
 | 14 | Result reveal on his phone; genuine reaction ("wow, is that me?" energy — awe, not disbelief) | "Looks pro. *Still you.*" + §11.2 disclosure, small |
 | 22–30 | End card | "Pro photos. More matches." · "Be the right swipe." + App Store badge + "3 days free. Cancel anytime." |
 

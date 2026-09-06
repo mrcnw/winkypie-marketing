@@ -292,7 +292,7 @@ Five pillars, weighted:
 | 2 | **Absurd ease** | 25% | 3 taps, no skill, no gear | "Pick a pose. Mirror it. Done." · "You don't need to know how to pose." |
 | 3 | **Savings** | 15% | Photographer quality without photographer prices | "Skip the €300 session. Keep the quality." · "Pro photos. Not pro prices." |
 | 4 | **Variety** | 12% | Every scene, every mood | "Street. Café. Golden hour. Night out." · "New week. New pose." |
-| 5 | **Trust / quality** | 8% | Real AI, looks like you, safe data | "Not a filter. Real AI." · "It checks your photo before it charges you." |
+| 5 | **Trust / quality** | 8% | Real AI, looks like you, safe data | "Not a filter. Real AI." · "It checks your selfie before it charges you." |
 
 **Copy formulas:** `Old → New` · `Thing. Thing. Punchline.` · `Pro X. Not pro Y.` ·
 `POV: [relatable]` · `Number + benefit`.

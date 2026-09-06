@@ -23,12 +23,14 @@ Creative Teardown 2026-09-06]]): every winner in the niche says *profile*, *Hing
 dating context in the words PRODUCT.md §9 lists as Do — "matches", "swipes", "your profile" — and
 the §11 ✅ form "for your dating profile". Still third person about the man's status, still no
 outcome numbers; the locked lines "First photo. First chance." and "Be the right swipe." do the
-on-frame work.
+on-frame work. One thing we do not borrow from the winners: the profile-review question. Roast
+and Charmd audit a dating profile; WinkyPie checks the selfie it is about to render. Every
+hook and overlay says "selfie" where the check is meant, never "profile" (fixed 2026-09-06).
 
 | # | Campaign | Hook (verbatim) | Sp | Si | Ho | Sn | Angle it tests | Evidence |
 |---|---|---|---|---|---|---|---|---|
 | 1 | `WP_P2_STATIC_100ms` | **"She decided in 100 ms."** + on-frame "First photo. First chance." + "Be the right swipe." (locked lines) | ✓ | ✓ | ✓* | ✓ | The decision moment | Photoshoot Dating's 43-day "she swiped left before your bio"; Roast statics 104–131 d. *Locked narrative line, never framed as a stat (PRODUCT.md §8) |
-| 2 | `WP_P2_DEMO_freecheck` | **"Would your profile photo pass?"** | ✓ | ✓ | ✓ | ✓ | Free pre-flight check (risk reversal) | The diagnostic-question mechanic of Charmd's 191-day / 510k-reach winner, aimed at the *photo*, not the person; ReGen's dominant 1★ theme is "$50 before seeing anything" |
+| 2 | `WP_P2_DEMO_freecheck` | **"Would your selfie pass?"** | ✓ | ✓ | ✓ | ✓ | Free pre-flight check (risk reversal) | The diagnostic-question *shape* of Charmd's 195-day / 521k-reach winner, aimed at the *selfie*, not the person — and not at his profile: we check the selfie before rendering, we do not review accounts (their mechanic, not ours); ReGen's dominant 1★ theme is "$50 before seeing anything" |
 | 3 | `WP_P1_UGC_coached` | **"My Hinge profile was four group shots and a gym mirror selfie."** (the creator's own app and photos; coaching = the twist) | ✓ | ✓ | ✓ | ✓ | Pose coaching | Confession-story is the proven UGC shape (Roast pages); coaching unique to us; ReGen literally sells the opposite ("no guesswork") |
 | 4 | `WP_P3_POSERESULT_stillyou` | **"Looks pro. Still you."** | ✓ | ✓ | ✓ | ✓ | Likeness trust | #1 bad-review theme at every rival is "doesn't look like me" — the objection is pre-loaded in the market |
 | 5 | `WP_P1_STATIC_proprices` | **"Pro photos. Not pro prices."** | ✓ | ✓ | ✓ | ✓ | Savings | Photographer anchor $200–900 (sourced, Landscape); Aragon's price-led ads run 95+ days. ⚠️ Kill-first candidate: no *dating* winner runs on price — see the brief |
@@ -46,7 +48,7 @@ industry average in PRODUCT.md §8 and is never quantified) · Single ✓.
 
 | Hook | Note |
 |---|---|
-| "It checks your photo before it costs you anything." | Campaign 2's original hook — now the support line; strong retargeting opener |
+| "It checks your selfie before it costs you anything." | Campaign 2's original hook — now the support line; strong retargeting opener |
 | "Most AI photo apps charge you for the bad result. This one won't let you make it." | Campaign 2 primary text — category contrast, Charmd runs the same move ("No fake filters. No weird AI look.") |
 | "You don't need to know how to pose. It coaches you." | Campaign 3's original opener — now the twist-beat overlay |
 | "The first photo does all the work." | Promoted onto campaign 1's creative as the on-frame blame-shift |
