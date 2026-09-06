@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { AlertTriangle } from "lucide-react";
 
 import { AdCard } from "@/components/ad-card";
+import { CampaignCard } from "@/components/campaign-card";
 import { DropHint } from "@/components/drop-hint";
 import { KpiDashboard } from "@/components/kpi-dashboard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BRIEFS_DIR, readCampaigns, type CampaignsData } from "@/lib/campaigns";
 import { readKpi } from "@/lib/kpi";
 import {
   readSwipes,
@@ -32,6 +34,19 @@ const EXAMPLE = `[
   }
 ]`;
 
+function Count({ children }: { children: React.ReactNode }) {
+  return <span className="ms-1.5 font-mono text-xs text-muted-foreground">{children}</span>;
+}
+
+function ErrorNote({ message }: { message: string }) {
+  return (
+    <div className="flex items-start gap-3 rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm">
+      <AlertTriangle className="mt-0.5 size-4 shrink-0 text-destructive" />
+      <p>{message}</p>
+    </div>
+  );
+}
+
 function SwipeList({
   source,
   ads,
@@ -50,12 +65,7 @@ function SwipeList({
         </p>
       </div>
 
-      {error && (
-        <div className="flex items-start gap-3 rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm">
-          <AlertTriangle className="mt-0.5 size-4 shrink-0 text-destructive" />
-          <p>{error}</p>
-        </div>
-      )}
+      {error && <ErrorNote message={error} />}
 
       {ads.length > 0 ? (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -107,65 +117,154 @@ function SwipeList({
   );
 }
 
-export default async function MetaAdsPage() {
+function CampaignList({ data }: { data: CampaignsData }) {
+  const roundOne = data.briefs.filter((brief) => !brief.isCandidate);
+  const candidates = data.briefs.filter((brief) => brief.isCandidate);
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <p className="max-w-2xl text-sm text-muted-foreground">
+          The step-03 briefs as written in the vault: the hook, the one variable each ad
+          tests, the primary text, and the saved Good Ads it was modelled on. Open a card for
+          the whole brief and the steps to produce it. Edit the brief in Obsidian; this view
+          follows on refresh.
+        </p>
+        <p className="font-mono text-xs text-muted-foreground">
+          {roundOne.length} in round one
+          {candidates.length ? ` · ${candidates.length} candidate` : ""} · {BRIEFS_DIR}
+        </p>
+      </div>
+
+      {data.error && <ErrorNote message={data.error} />}
+
+      {roundOne.length > 0 && (
+        <div className="grid gap-5 md:grid-cols-2">
+          {roundOne.map((brief) => (
+            <CampaignCard key={brief.repoPath} brief={brief} />
+          ))}
+        </div>
+      )}
+
+      {candidates.length > 0 && (
+        <section className="flex flex-col gap-3">
+          <h2 className="text-sm font-semibold">Candidates — not in round one</h2>
+          <div className="grid gap-5 md:grid-cols-2">
+            {candidates.map((brief) => (
+              <CampaignCard key={brief.repoPath} brief={brief} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {!data.briefs.length && !data.error && (
+        <DropHint dir={BRIEFS_DIR} verb="Write a brief into">
+          <p>
+            Frontmatter <code className="font-mono text-foreground">order</code>,{" "}
+            <code className="font-mono text-foreground">modelled_on</code> and a{" "}
+            <code className="font-mono text-foreground">## Hook</code> blockquote are what this
+            view reads.
+          </p>
+        </DropHint>
+      )}
+    </div>
+  );
+}
+
+export default async function MetaAdsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string }>;
+}) {
+  // /meta-ads?tab=campaigns opens on the Campaigns section — the way back from a brief.
+  const { tab } = await searchParams;
+  const section = tab === "campaigns" ? "campaigns" : "research";
   const [goodAds, competitors, kpi] = await Promise.all([
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readKpi(),
   ]);
-  const activeAds = kpi.ads.filter((ad) => ad.status === "active").length;
+  const campaigns = await readCampaigns(goodAds.ads);
+  const kpiLabel = kpi.sources.some((source) => source.scenario) ? "KPI Example" : "KPI";
+  const roundOne = campaigns.briefs.filter((brief) => !brief.isCandidate).length;
 
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-10">
       <header className="flex flex-col gap-2">
         <h1 className="font-heading text-3xl font-semibold tracking-tight">Meta Ads</h1>
         <p className="max-w-2xl text-sm text-muted-foreground">
-          Links worth keeping, one click from the Ad Library. What to do with them is step{" "}
-          <code className="font-mono">02 How To Find A Good Ad</code> in{" "}
-          <code className="font-mono">brain/process/meta-ads/</code>.
+          Research is what the niche runs and why it works; Campaigns is what we make of it —
+          our briefs mapped back to their models, and the KPI read. The decisions live in{" "}
+          <code className="font-mono">brain/process/meta-ads/</code>; this page renders them.
         </p>
       </header>
 
-      <Tabs defaultValue="good-ads" className="gap-6">
-        <TabsList>
-          <TabsTrigger value="good-ads">
-            Good Ads
-            <span className="ms-1.5 font-mono text-xs text-muted-foreground">
-              {goodAds.ads.length}
-            </span>
+      <Tabs defaultValue={section} className="gap-8">
+        {/* Level one: section switch — underlined headings, no counts. The pill tabs
+            inside each section are level two. */}
+        <TabsList
+          variant="line"
+          aria-label="Section"
+          className="w-full justify-start gap-8 border-b border-border p-0 group-data-horizontal/tabs:h-auto"
+        >
+          <TabsTrigger
+            value="research"
+            className="h-auto flex-none px-0 pb-3 font-heading text-xl font-semibold tracking-tight after:bottom-[-1px] after:bg-brand"
+          >
+            Research
           </TabsTrigger>
-          <TabsTrigger value="competitors">
-            Competitors — Ad Library
-            <span className="ms-1.5 font-mono text-xs text-muted-foreground">
-              {competitors.ads.length}
-            </span>
-          </TabsTrigger>
-          <TabsTrigger value="kpi">
-            KPI
-            <span className="ms-1.5 font-mono text-xs text-muted-foreground">
-              {activeAds} active
-            </span>
+          <TabsTrigger
+            value="campaigns"
+            className="h-auto flex-none px-0 pb-3 font-heading text-xl font-semibold tracking-tight after:bottom-[-1px] after:bg-brand"
+          >
+            Campaigns
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="good-ads">
-          <SwipeList
-            source={SWIPE_SOURCES["good-ads"]}
-            ads={goodAds.ads}
-            error={goodAds.error}
-          />
+        <TabsContent value="research">
+          <Tabs defaultValue="good-ads" className="gap-6">
+            <TabsList>
+              <TabsTrigger value="good-ads">
+                Good Ads
+                <Count>{goodAds.ads.length}</Count>
+              </TabsTrigger>
+              <TabsTrigger value="competitors">
+                Competitors — Ad Library
+                <Count>{competitors.ads.length}</Count>
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="good-ads">
+              <SwipeList
+                source={SWIPE_SOURCES["good-ads"]}
+                ads={goodAds.ads}
+                error={goodAds.error}
+              />
+            </TabsContent>
+            <TabsContent value="competitors">
+              <SwipeList
+                source={SWIPE_SOURCES.competitors}
+                ads={competitors.ads}
+                error={competitors.error}
+              />
+            </TabsContent>
+          </Tabs>
         </TabsContent>
 
-        <TabsContent value="competitors">
-          <SwipeList
-            source={SWIPE_SOURCES.competitors}
-            ads={competitors.ads}
-            error={competitors.error}
-          />
-        </TabsContent>
-
-        <TabsContent value="kpi">
-          <KpiDashboard data={kpi} />
+        <TabsContent value="campaigns">
+          <Tabs defaultValue="our-ads" className="gap-6">
+            <TabsList>
+              <TabsTrigger value="our-ads">
+                Our Ads
+                <Count>{roundOne}</Count>
+              </TabsTrigger>
+              <TabsTrigger value="kpi">{kpiLabel}</TabsTrigger>
+            </TabsList>
+            <TabsContent value="our-ads">
+              <CampaignList data={campaigns} />
+            </TabsContent>
+            <TabsContent value="kpi">
+              <KpiDashboard data={kpi} />
+            </TabsContent>
+          </Tabs>
         </TabsContent>
       </Tabs>
     </main>

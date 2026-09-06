@@ -15,8 +15,8 @@ Three tabs. One job each:
 | Route | What it shows |
 |---|---|
 | `/` | The three tiles, with a count on each. |
-| `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
-| `/meta-ads` | Three tabs: **Good Ads** (single ads worth keeping), **Competitors — Ad Library** (a competitor's page link, which always shows what they run today) and **KPI** (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, and the projected margin at scale; a keep example and an unprofitable example on top). Preview, why it works, one-click link into the library. |
+| `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
+| `/meta-ads` | Two sections, each with two tabs. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Our Ads* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section) and *KPI* (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; a keep example and an unprofitable example on top; labelled *KPI Example* while only scenario data exists). |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —
@@ -37,10 +37,18 @@ app/public/assets/winkypie/before-after/  → /winkypie · pairs on the file nam
                                             hero_1_before.png + hero_1_after.png
                                             (before|pre and after|post both work)
 app/public/assets/winkypie/mobile-app/    → /winkypie · Mobile App
+app/public/assets/winkypie/poses/         → /winkypie · Poses — a snapshot of the in-app
+                                            catalog; its file count is not a pose count
 app/content/good-ads.json                 → /meta-ads · Good Ads tab
 app/content/competitors.json              → /meta-ads · Competitors tab
 ../brain/process/meta-ads/
   01 Find Competitors/                    → /competitors, read straight from the vault
+  03 Choose Videos And Five Campaigns/briefs/*.md
+                                          → /meta-ads · Campaigns · Our Ads (frontmatter
+                                            `order`, `status`, `modelled_on: [good-ads slugs]`;
+                                            Hook and Primary text quotes; Evidence paragraph;
+                                            `## Do this, in order` list → the steps on
+                                            /meta-ads/campaigns/<campaign>)
   05 Ad Strategy And Budget/KPI.md        → /meta-ads · KPI tab: thresholds table
   05 Ad Strategy And Budget/KPI Scenarios.md → /meta-ads · KPI tab, until a real review exists
   09 Analyze KPIs/KPI Review *.md         → /meta-ads · KPI tab: real rounds

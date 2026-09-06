@@ -4,10 +4,11 @@
     "title": "\"Is Your Profile Underperforming?\" — the niche's biggest proven ad",
     "advertiser": "Confessions of a Dater (Charmd)",
     "url": "https://www.facebook.com/ads/library/?id=914569270944890",
-    "note": "191 days live, 510,116 EU reach — the hardest public number in the niche. Mechanism: a neutral diagnostic question instead of an insult, then 'data-driven profile review' as the free first step. Proof that the compliance-safe variant out-delivers the personal-attributes one.",
+    "note": "195 days live, 521,572 EU reach on 2026-09-06 (510,116 on 09-02) — the hardest public number in the niche. Mechanism: a neutral diagnostic question instead of an insult, then 'data-driven profile review' as the free first step. Proof that the compliance-safe variant out-delivers the personal-attributes one. And proof that the cut decides: its 0:27 sibling with identical copy (1374983617735721) sits at 15,530.",
     "tags": [
-      "191 days",
-      "EU reach 510k",
+      "195 days",
+      "EU reach 521k",
+      "0:32 cut",
       "video",
       "winner"
     ],
@@ -34,10 +35,10 @@
     "title": "\"You're not ugly. Your photos are just terrible.\"",
     "advertiser": "Confessions of a Dater (Charmd)",
     "url": "https://www.facebook.com/ads/library/?id=2081006409408698",
-    "note": "185 days live, 50k EU reach; runs as a persistent 5-ad set (sister ads at 175–184 days). Mechanism: insult-then-absolve — the blame moves from the man to his photos, 'no fake filters, no weird AI look' answers the likeness objection in-copy. Second-person appearance framing = Meta policy risk we do not copy.",
+    "note": "189 days live, 50,758 EU reach (2026-09-06); the family (8 ads, 0:21–1:14) totals ~90k — the weakest of Charmd's three families in delivery, though it survives. Mechanism: insult-then-absolve — the blame moves from the man to his photos, 'no fake filters, no weird AI look' answers the likeness objection in-copy. Second-person appearance framing = Meta policy risk we do not copy.",
     "tags": [
-      "185 days",
-      "EU reach 50k",
+      "189 days",
+      "EU reach 51k",
       "video",
       "policy-risk hook"
     ],
@@ -49,9 +50,9 @@
     "title": "\"Better Photos. More Matches.\" — the clean variant",
     "advertiser": "Confessions of a Dater (Charmd)",
     "url": "https://www.facebook.com/ads/library/?id=1358306919675950",
-    "note": "175 days live, 61k EU reach. Mechanism: same photos-are-the-problem angle compressed to four beats — 'No studio. No cringe. Just more right swipes.' Closest existing ad to our voice rules; the benchmark to beat with coached-pose + free-check.",
+    "note": "179 days live, 61,355 EU reach (2026-09-06); the family (4 ads) totals ~99k. Mechanism: same photos-are-the-problem angle compressed to four beats — 'No studio. No cringe. Just more right swipes.' Closest existing ad to our voice rules; the benchmark to beat with coached-pose + free-check.",
     "tags": [
-      "175 days",
+      "179 days",
       "EU reach 61k",
       "video",
       "winner"
@@ -64,9 +65,10 @@
     "title": "\"Same face. 10x the matches.\" — Roast's top ad by impressions",
     "advertiser": "Roast AI",
     "url": "https://www.facebook.com/ads/library/?id=2014738899400393",
-    "note": "131 days live; #1 on Roast's page when sorted by impressions. Mechanism: third-person coworker-gatekeeping story + a phone-screenshot IMAGE of a full Hinge match list as the creative — social proof shown, not claimed. Low-fi static beats their polished video. The '10x' multiplier is an invented stat we never copy.",
+    "note": "Ran 2026-04-24 → 2026-09-02 (131 days), #1 on Roast's page by impressions while it lived; the 'Same face' family (~257 ads) keeps running with new variants. Mechanism: third-person coworker-gatekeeping story + a phone-screenshot IMAGE of a full Hinge match list as the creative — social proof shown, not claimed. Low-fi static beats their polished video. The '10x' multiplier is an invented stat we never copy.",
     "tags": [
       "131 days",
+      "ended 2026-09-02",
       "image",
       "story",
       "winner"
@@ -79,9 +81,9 @@
     "title": "\"If you're between 25 and 34 and can't get more than 1 match a week\"",
     "advertiser": "Roast AI",
     "url": "https://www.facebook.com/ads/library/?id=986693823897984",
-    "note": "119 days live. Mechanism: explicit age-bracket callout of exactly our ICP + 'it's not your face, it's your photos' reframe + free 2-minute first step. Interesting: qualifying the audience in copy instead of only in targeting.",
+    "note": "123 days live (2026-09-06). Mechanism: explicit age-bracket callout of exactly our ICP + 'it's not your face, it's your photos' reframe + free 2-minute first step. Interesting: qualifying the audience in copy instead of only in targeting. Side-market read: 782 UK accounts in four months (England only) — Roast's money is in the US.",
     "tags": [
-      "119 days",
+      "123 days",
       "image",
       "ICP callout"
     ],
@@ -95,7 +97,7 @@
     "url": "https://www.facebook.com/ads/library/?id=1554803756031845",
     "note": "107 days live. Mechanism: casting-call format — scarcity and selection without a fake countdown. The viewer applies rather than buys. A borrowable third-person structure.",
     "tags": [
-      "107 days",
+      "111 days",
       "image",
       "casting-call"
     ],
@@ -130,5 +132,51 @@
     ],
     "added": "2026-09-02",
     "rank": 9
+  },
+  {
+    "slug": "roast-selfies-to-photos-ugc",
+    "title": "\"roast generated 10/10 photos from his selfies\" — Roast's scaling wave, UGC",
+    "advertiser": "Roast AI",
+    "url": "https://www.facebook.com/ads/library/?id=1641583357688301",
+    "note": "Live since 2026-08-30, 0:50 UGC video, 'Use AI to get more matches / No photographer needed'. One of seven variants of a single concept launched 2026-08-26 → 08-31 — the category leader scaling AI photos as the front door instead of the quiz. Mechanism: third-person story about him (dead profile → generated photos from selfies → inbox), the product named late, a two-minute first step. Unproven by longevity (days, not months) and its outcome claims ('matches won't stop texting', '10/10') are not ours; the shape is: he, his photos, no photographer.",
+    "tags": [
+      "7 variants in 5 days",
+      "UGC",
+      "video",
+      "scaling wave",
+      "unproven by longevity"
+    ],
+    "added": "2026-09-06",
+    "rank": 10
+  },
+  {
+    "slug": "roast-blame-tinder",
+    "title": "\"Most guys blame Tinder. The problem is the photos.\" — the blame-shift, static",
+    "advertiser": "Roast AI",
+    "url": "https://www.facebook.com/ads/library/?id=2213072699509422",
+    "note": "Live since 2026-05-06 (123 days on 2026-09-06); a direct-response card, Tinder ✗ vs ROAST ✓. Mechanism: the blame moves from the app to the photos in one line, then a small first step ('Upload 4 and Roast tells you exactly what to fix in 2 minutes'). The reframe every winner in the niche shares — the model for our campaign 5, minus any diagnosis of the viewer.",
+    "tags": [
+      "123 days",
+      "image",
+      "blame-shift",
+      "winner"
+    ],
+    "added": "2026-09-06",
+    "rank": 11
+  },
+  {
+    "slug": "roast-stop-blaming-algorithm",
+    "title": "\"Stop blaming the algorithm\" — a 12-second silent screen recording",
+    "advertiser": "Roast AI",
+    "url": "https://www.facebook.com/ads/library/?id=1524577909408074",
+    "note": "Live since 2026-06-11 (87 days), 0:12, no voice, captions only — one of the three longest-running videos on the Roast page and the format the teardown scored 'Brief it'. Mechanism: 'the reason is sitting in your photos and you can't see it' → the free two-minute quiz. We take the silent format and the blame-shift; the 'you're getting no matches' diagnosis stays theirs.",
+    "tags": [
+      "87 days",
+      "0:12 silent",
+      "video",
+      "blame-shift"
+    ],
+    "added": "2026-09-06",
+    "rank": 12
   }
 ]

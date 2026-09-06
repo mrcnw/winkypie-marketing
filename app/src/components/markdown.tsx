@@ -2,10 +2,10 @@ import { Fragment, type ReactNode } from "react";
 
 import type { MdBlock } from "@/lib/markdown";
 
-/** `**bold**`, `code`, [text](url) and [[wiki links]] — nothing else is used in the vault. */
+/** `**bold**`, `*italic*`, `code`, [text](url) and [[wiki links]] — nothing else is used in the vault. */
 function inline(text: string, keyPrefix: string): ReactNode[] {
   const pattern =
-    /(\*\*[^*]+\*\*)|(`[^`]+`)|(\[\[[^\]]+\]\])|(\[[^\]]+\]\((?:https?:\/\/|\/)[^)]+\))/g;
+    /(\*\*[^*]+\*\*)|(\*[^*\n]+\*)|(`[^`]+`)|(\[\[[^\]]+\]\])|(\[[^\]]+\]\((?:https?:\/\/|\/)[^)]+\))/g;
   const nodes: ReactNode[] = [];
   let last = 0;
   let match: RegExpExecArray | null;
@@ -21,6 +21,12 @@ function inline(text: string, keyPrefix: string): ReactNode[] {
         <strong key={key} className="font-medium text-foreground">
           {token.slice(2, -2)}
         </strong>,
+      );
+    } else if (token.startsWith("*")) {
+      nodes.push(
+        <em key={key} className="italic">
+          {token.slice(1, -1)}
+        </em>,
       );
     } else if (token.startsWith("`")) {
       nodes.push(
@@ -53,6 +59,11 @@ function inline(text: string, keyPrefix: string): ReactNode[] {
 
   if (last < text.length) nodes.push(text.slice(last));
   return nodes;
+}
+
+/** One line of vault markdown, inline only — for text rendered outside a block. */
+export function Inline({ text }: { text: string }) {
+  return <>{inline(text, "inline")}</>;
 }
 
 export function Markdown({ blocks }: { blocks: MdBlock[] }) {
