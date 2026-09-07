@@ -1,6 +1,6 @@
 ---
 tags: [process, moc]
-updated: 2026-09-02
+updated: 2026-09-03
 ---
 # Meta Ads — the process
 
@@ -42,7 +42,7 @@ Status is in each step doc's frontmatter — this table is a map, not a tracker.
 | 02 | [[02 How To Find A Good Ad]] | [[02 TODO]] | research | `Swipe Method.md`, `Hooks And Angles.md`, `swipe/` |
 | 03 | [[03 Choose Videos And Five Campaigns]] | [[03 TODO]] | strategy | `briefs/<name>.md` ×5, `Creative Naming.md` |
 | 04 | [[04 Highfield CLI And MCP Ad]] | [[04 TODO]] | produce | `highfield/Positioning.md`, `briefs/highfield-cli-mcp.md` |
-| 04.1 | [[04.1 Outsource The Shoot]] | [[04.1 TODO]] | produce | `Production Platforms.md`, `AI Production Platforms.md`, `Production Guardrails.md`, `Shoot Order.md` |
+| 04.1 | [[04.1 Outsource The Shoot]] | [[04.1 TODO]] | produce | `Production Platforms.md`, `AI Production Platforms.md`, `Production Guardrails.md`, `Shoot Order.md`, `Host Scripts.md` |
 | 05 | [[05 Ad Strategy And Budget]] | [[05 TODO]] | strategy | `Budget And Thresholds.md`, `KPI.md`, `KPI Scenarios.md`, `Campaign Plan.excalidraw.md` |
 | 06 | [[06 Meta Ads Configuration]] | [[06 TODO]] | setup | `Persona.md`, `Meta Ads Configuration.md`, `Audiences.md` |
 | 07 | [[07 Update Facebook Account]] | [[07 TODO]] | setup | `Account Setup.md` |

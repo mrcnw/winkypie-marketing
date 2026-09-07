@@ -77,6 +77,14 @@ export type Assumptions = {
   scaleBudget: number;
   impressionFloor: number;
   installFloor: number;
+  /** round-one test spend range, for the break-even table */
+  spendLow: number;
+  spendHigh: number;
+  /** funnel rates as fractions: download→trial median and P90, trial→paid, hard-paywall download→paid */
+  trialMedian: number;
+  trialP90: number;
+  trialToPaid: number;
+  hardPaywall: number;
   lines: { label: string; value: string; source: string }[];
 };
 
@@ -94,8 +102,10 @@ export type KpiData = {
   sources: KpiSource[];
   ads: KpiAd[];
   assumptions: Assumptions;
-  /** the "Targets" table out of KPI.md, rendered as-is */
+  /** the "Targets for round one" table out of KPI.md, rendered as-is */
   targets: MdTable | null;
+  /** the "Targets by day" table out of KPI.md — day 7 / 14 / 28 */
+  targetsByDay: MdTable | null;
   kpiNotePath: string;
   errors: string[];
 };
@@ -106,8 +116,44 @@ const DEFAULT_ASSUMPTIONS: Assumptions = {
   scaleBudget: 1800,
   impressionFloor: 3000,
   installFloor: 20,
+  spendLow: 650,
+  spendHigh: 850,
+  trialMedian: 0.071,
+  trialP90: 0.15,
+  trialToPaid: 0.255,
+  hardPaywall: 0.107,
   lines: [],
 };
+
+/** How many payers and installs a given spend needs to pay back — the break-even row. */
+export function breakEven(spend: number, a: Assumptions) {
+  const payersYear1 = Math.ceil(spend / a.ltv12);
+  const payersMonth1 = Math.ceil(spend / a.net1);
+  const rates = {
+    median: a.trialMedian * a.trialToPaid,
+    p90: a.trialP90 * a.trialToPaid,
+    hardPaywall: a.hardPaywall,
+  };
+  const installs = (payers: number, rate: number) => (rate > 0 ? Math.ceil(payers / rate) : null);
+  const year1 = {
+    median: installs(payersYear1, rates.median),
+    p90: installs(payersYear1, rates.p90),
+    hardPaywall: installs(payersYear1, rates.hardPaywall),
+  };
+  return {
+    spend,
+    payersYear1,
+    payersMonth1,
+    installsYear1: year1,
+    installsMonth1: {
+      median: installs(payersMonth1, rates.median),
+      p90: installs(payersMonth1, rates.p90),
+      hardPaywall: installs(payersMonth1, rates.hardPaywall),
+    },
+    maxCpiYear1HardPaywall: year1.hardPaywall ? spend / year1.hardPaywall : null,
+    rates,
+  };
+}
 
 /** Identifiers keep their underscores — `toPlainText` would strip them as emphasis. */
 function rawCell(cell: string | undefined) {
@@ -145,11 +191,19 @@ function assumptionsFrom(table: MdTable | undefined): Assumptions {
     const n = num(row[1]);
     if (n === null) continue;
     const key = label.toLowerCase();
+    const isPercent = /%/.test(toPlainText(row[1] ?? ""));
+    const rate = isPercent ? n / 100 : n;
     if (key.includes("first payment")) out.net1 = n;
     else if (key.includes("12 months")) out.ltv12 = n;
     else if (key.includes("scale budget")) out.scaleBudget = n;
     else if (key.includes("impression floor")) out.impressionFloor = n;
     else if (key.includes("install floor")) out.installFloor = n;
+    else if (key.includes("spend") && key.includes("low")) out.spendLow = n;
+    else if (key.includes("spend") && key.includes("high")) out.spendHigh = n;
+    else if (key.includes("trial") && key.includes("p90")) out.trialP90 = rate;
+    else if (key.includes("download") && key.includes("trial")) out.trialMedian = rate;
+    else if (key.includes("trial") && key.includes("paid")) out.trialToPaid = rate;
+    else if (key.includes("hard-paywall") || key.includes("hard paywall")) out.hardPaywall = rate;
   }
   return out;
 }
@@ -397,9 +451,11 @@ export async function readKpi(): Promise<KpiData> {
   const kpiNotePath = `${STRATEGY_DIR}/KPI.md`;
   const kpiRaw = await fs.readFile(path.join(ROOT, kpiNotePath), "utf8").catch(() => null);
   let targets: MdTable | null = null;
+  let targetsByDay: MdTable | null = null;
   if (kpiRaw) {
     const { sections } = parseSections(splitFrontmatter(kpiRaw).body);
-    targets = firstTable(findSection(sections, "Targets")) ?? null;
+    targets = firstTable(findSection(sections, "Targets for round one")) ?? null;
+    targetsByDay = firstTable(findSection(sections, "Targets by day")) ?? null;
   } else {
     errors.push(`Could not read ${kpiNotePath} — thresholds table not shown.`);
   }
@@ -409,6 +465,7 @@ export async function readKpi(): Promise<KpiData> {
     ads,
     assumptions,
     targets,
+    targetsByDay,
     kpiNotePath,
     errors,
   };

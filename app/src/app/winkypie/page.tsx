@@ -16,10 +16,11 @@ export const metadata: Metadata = {
 };
 
 export default async function WinkyPiePage() {
-  const [brandAssets, beforeAfter, mobileApp, product, brand] = await Promise.all([
+  const [brandAssets, beforeAfter, mobileApp, poses, product, brand] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
+    readAssets(ASSET_DIRS.poses),
     readProduct(),
     readBrand(),
   ]);
@@ -125,6 +126,13 @@ export default async function WinkyPiePage() {
             description="App icon, App Store screenshots, screen recordings, store templates."
             assets={mobileApp}
             dir={ASSET_DIRS.mobileApp}
+          />
+          <AssetGallery
+            title="Poses"
+            description="Reference poses from the in-app catalog. The catalog is backend-managed and changes without a release — this folder is a snapshot, so never quote its size as a pose count."
+            assets={poses}
+            dir={ASSET_DIRS.poses}
+            dense
           />
         </TabsContent>
 

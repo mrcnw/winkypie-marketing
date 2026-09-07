@@ -1,7 +1,7 @@
 ---
 tags: [todo, research]
 step: 02
-updated: 2026-09-02
+updated: 2026-09-06
 ---
 # 02 · TODO — How To Find A Good Ad
 
@@ -10,6 +10,7 @@ Documentation: [[02 How To Find A Good Ad]]
 - [ ] Define the weekly ritual: day, duration, sources. Put it in the calendar.
 - [ ] Build the swipe file structure in `swipe/`.
 - [ ] Collect 20 swipes to start: 10 from competitors, 10 from outside the category.
+      → 40 Roast AI ads with transcripts and frames: [[Roast AI Creative Teardown 2026-09-06]] (not yet split into `swipe/` files)
 - [ ] For each swipe, write *why* it works — the mechanism, not "nice video".
 - [x] Extract 10 hooks in the customer's own words from Reddit / App Store reviews.
       → [[Hooks And Angles]] — from proven ads + rival 1-star reviews

@@ -49,6 +49,19 @@ Round one has no baseline, so targets are of two kinds: **relative** (decide) an
 | Trial → paid | Measured, not targeted, in round one | RevenueCat 2026: **25.5% median for ≤4-day trials, 22.2% Photo & Video**; hard-paywall apps convert 10.7% of downloads to paid by day 35 |
 | CAC per payer | Measured; compared against the payback table in [[Budget And Thresholds]] | Month-1 payback needs CAC ≤ $30–36 net; year-1 payback CAC ≤ $43–53 net (RevenueCat high-priced-tier LTV, less Apple) |
 
+## Targets by day — what "good" looks like at each read
+
+Targets, not benchmarks: they say what we are aiming at so the read has a yardstick before
+the numbers arrive. Absolute percentages carry the same `[unsourced]` caveat as above until
+our own data replaces them; the install and payer counts derive from the break-even table in
+[[Budget And Thresholds]].
+
+| Day | Good looks like | Red flag → action |
+|---|---|---|
+| **7** | Ad set out of learning, or clearly heading there: ≈50 installs since launch. Spend on plan. Every ad has impressions. Best video hook rate ≥ 30%, weakest ≥ 20%; CTR ≥ 1% on at least two ads | Learning limited → one budget raise, note the reset. An ad with zero impressions → check for rejection, not creative |
+| **14** | ≥ 100 installs in total, so the ad set CPI is a real number. At least one ad with ≥ 20 installs and CPI ≤ 0.8× the average — the scale candidate. At least one clear kill. Install → trial ≥ 15% (the P90) is good, ≥ 7% is the median | Only one ad above 3,000 impressions → a budget or auction problem, not five bad creatives. No ad under 0.8× average → nothing to scale yet; iterate hooks, do not raise spend |
+| **28** | Trial → paid ≥ 25% (median for ≤4-day trials) is good, ≥ 40% is strong. Payers at or above the **year-one break-even** for the spend (13–17 payers for $650–850). CAC ≤ $43–53 net = pays back within the year; ≤ $30–36 = pays back in month one | Healthy CPI but payers below break-even → the funnel, not the ads: paywall copy, the free check, the coaching. Fix one step, re-run |
+
 ## Reading rules
 
 1. **One funnel step at a time.** The worst step gets the fix; the others wait a round

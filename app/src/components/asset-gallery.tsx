@@ -1,6 +1,7 @@
 import { AssetCard } from "@/components/asset-card";
 import { DropHint } from "@/components/drop-hint";
 import type { Asset } from "@/lib/assets";
+import { cn } from "@/lib/utils";
 
 /** Root-level files first, then one entry per sub-folder, alphabetically. */
 function groupsOf(assets: Asset[]): [string, Asset[]][] {
@@ -19,6 +20,8 @@ type AssetGalleryProps = {
   assets: Asset[];
   dir: string;
   hint?: React.ReactNode;
+  /** Tighter grid for a large set of same-shaped files, e.g. the pose catalog. */
+  dense?: boolean;
 };
 
 export function AssetGallery({
@@ -27,6 +30,7 @@ export function AssetGallery({
   assets,
   dir,
   hint,
+  dense = false,
 }: AssetGalleryProps) {
   return (
     <section className="flex flex-col gap-4">
@@ -54,7 +58,14 @@ export function AssetGallery({
                 {group} · {groupAssets.length}
               </h3>
             )}
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            <div
+              className={cn(
+                "grid gap-4",
+                dense
+                  ? "grid-cols-3 sm:grid-cols-4 lg:grid-cols-6"
+                  : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4",
+              )}
+            >
               {groupAssets.map((asset) => (
                 <AssetCard key={asset.href} asset={asset} />
               ))}

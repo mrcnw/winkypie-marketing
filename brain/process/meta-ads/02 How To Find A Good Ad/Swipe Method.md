@@ -1,6 +1,6 @@
 ---
 tags: [research, method]
-updated: 2026-09-01
+updated: 2026-09-06
 ---
 # Swipe Method — finding ads that pay for themselves
 
@@ -89,11 +89,16 @@ editor ads — scan only when checking whether they've entered dating.
 
 ## Automated mode — the scraper
 
-The manual click path above has an automated equivalent: the local tool at
-`~/Downloads/meta-ads-library/` (GraphQL scraper, no login/browser needed; its README
-documents the method and pitfalls). It pulls ads + EU reach + creatives and ranks by the
-same winner signals. First run's results: [[Winning Ads 2026-09-02]]. Whether this is the
-best available method (yes, for our scale), its risks and the upgrade list: [[Scraper Verdict]].
+The manual click path above had an automated equivalent: a local GraphQL scraper at
+`~/Downloads/meta-ads-library/` (no login, no browser; pulls ads + EU reach + creatives and
+ranks by the winner signals). First run's results: [[Winning Ads 2026-09-02]]. Whether it
+was the best available method (yes, for our scale), its risks and the upgrade list:
+[[Scraper Verdict]].
+
+**2026-09-06: the folder is not on this Mac** — Spotlight, `~/Downloads` and the Trash
+have no `meta-ads-research.mjs`. The commands are kept for when it is restored; until then
+the page-level pull is the Ad Library page view (all IDs are in the page text after "See
+more") and the single-ad teardown below does the creatives.
 
 ```bash
 cd ~/Downloads/meta-ads-library
@@ -110,6 +115,46 @@ Dater (Charmd) `924014977461395` · Ethan Park (TruShot) `1292203403984517`.
 Caveats that stay true in the tool: no spend/impressions for commercial ads (EU reach is
 the only hard number, and only for ads delivered in the EU); the date filter means "ran in
 period", not "started"; Meta rotates `doc_id` — the repo's `12-capture-shapes.mjs` refreshes it.
+
+## Single-ad teardown — download, transcript, frames
+
+For "what is actually in this ad": video file, spoken words with timecodes, one frame every
+three seconds. Verified 2026-09-06 on the whole Roast AI page (19 videos, 21 statics) —
+result in [[Roast AI Creative Teardown 2026-09-06]]. Options weighed:
+
+| Tool | Gets | Verdict |
+|---|---|---|
+| **yt-dlp** (`facebook:ads` extractor) + **whisper-cpp** + **ffmpeg** | mp4, headline + primary text (`.info.json`), transcript `.txt`/`.srt`, contact sheet | **The pick.** Free, local, ~20 s per ad on an M-series Mac. Video ads only |
+| Meta Ads MCP `ads_library_search` (`page_ids`) | IDs, headline, dates, snapshot URL | Metadata only; caps at 25 per call, no paging, no media |
+| Ad Library page in a browser | Primary text, headline, CTA, durations, `<100` flags, EU/UK reach panel, image URLs | The only source for statics and for the full 40-ID list; no transcript |
+| Apify / ScrapeCreators | Same data as the scraper, paid | Cold standby ([[Scraper Verdict]]) |
+| Higgsfield `video_analysis` (MCP) | Scene-by-scene description | Needs an upload, costs credits, 3–5 min per clip; whisper + a contact sheet does it in seconds |
+
+```bash
+brew install yt-dlp whisper-cpp ffmpeg                     # one-time
+mkdir -p ~/models && curl -L -o ~/models/ggml-small.en.bin \
+  https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en.bin   # 488 MB, one-time
+
+ID=1382118217386363                                        # the library ID from the ad URL
+yt-dlp -o "%(id)s.%(ext)s" --write-info-json "https://www.facebook.com/ads/library/?id=$ID"
+ffmpeg -i "$ID.mp4" -ar 16000 -ac 1 "$ID.wav" \
+  && whisper-cli -m ~/models/ggml-small.en.bin -f "$ID.wav" -l en -otxt -osrt -of "$ID"
+ffmpeg -i "$ID.mp4" -vf "fps=1/3,scale=270:-1,tile=5x3" "${ID}_sheet.jpg"   # one frame per 3 s
+```
+
+Rules learned on the first run:
+
+- **Rate limit:** more than ~10 downloads a minute gets `HTTP 429` on yt-dlp's
+  verification cookie. Eight seconds between ads was clean for 16 in a row.
+- **`Unable to extract ad data` = an image ad.** yt-dlp only takes video. For statics, open
+  the page view and read the card's `<img>` URL from the DOM (signed CDN links, valid for a
+  few hours), then `curl` them.
+- **All IDs of a page:** the page view, click "See more" once, then regex the page text for
+  `Library ID: (\d+)` (`Identyfikator biblioteki` in a Polish locale). 40 IDs on Roast.
+- **Sound-off ads transcribe as `[Music]`** — that is the answer, not a failure; read the
+  contact sheet instead.
+- **Keep the output outside the repo:** `~/Downloads/<page>-ads-<date>/{media,transcripts,frames,images,index.tsv}`.
+  The vault gets the teardown note, not the files.
 
 ## Current winners to study first
 

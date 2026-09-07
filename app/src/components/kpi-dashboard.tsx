@@ -10,8 +10,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { DECISION_LABEL, type Decision, type KpiAd, type KpiData } from "@/lib/kpi";
-import { toPlainText } from "@/lib/markdown";
+import {
+  breakEven,
+  DECISION_LABEL,
+  type Assumptions,
+  type Decision,
+  type KpiAd,
+  type KpiData,
+} from "@/lib/kpi";
+import { toPlainText, type MdTable } from "@/lib/markdown";
 import { cn } from "@/lib/utils";
 
 const money = (v: number | null, digits = 0) =>
@@ -209,6 +216,170 @@ function AdsTable({ ads }: { ads: KpiAd[] }) {
   );
 }
 
+function TargetsByDay({ table }: { table: MdTable }) {
+  return (
+    <section className="flex flex-col gap-3">
+      <h2 className="text-sm font-semibold">Targets — what good looks like at each read</h2>
+      <div className="grid gap-4 md:grid-cols-3">
+        {table.rows.map((row, i) => (
+          <article
+            key={i}
+            className="flex flex-col gap-2 rounded-xl border border-border bg-card/50 p-4"
+          >
+            <p className="font-heading text-lg font-semibold">Day {toPlainText(row[0] ?? "")}</p>
+            <p className="text-sm leading-snug">{toPlainText(row[1] ?? "")}</p>
+            <p className="text-xs leading-snug text-muted-foreground">
+              <span className="text-destructive">Red flag → </span>
+              {toPlainText(row[2] ?? "")}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function RoundSoFar({ ads, assumptions }: { ads: KpiAd[]; assumptions: Assumptions }) {
+  const round = ads.find((a) => a.status === "active")?.round ?? ads[0]?.round;
+  const rows = ads.filter((a) => a.round === round);
+  if (!rows.length) return null;
+  const sum = (f: (a: KpiAd) => number) => rows.reduce((acc, a) => acc + f(a), 0);
+  const spend = sum((a) => a.spend);
+  const installs = sum((a) => a.installs);
+  const trials = sum((a) => a.trials);
+  const payers = sum((a) => a.payers);
+  const be = breakEven(spend, assumptions);
+  const gapYear1 = be.payersYear1 - payers;
+  const gapMonth1 = be.payersMonth1 - payers;
+  const state = gapMonth1 <= 0 ? "month1" : gapYear1 <= 0 ? "year1" : "short";
+
+  const steps: [string, string][] = [
+    ["Spent", money(spend)],
+    ["Installs", `${int(installs)} · CPI ${money(installs ? spend / installs : null, 2)}`],
+    ["Trials", `${int(trials)} · ${pct(installs ? trials / installs : null)} of installs`],
+    ["Payers", `${int(payers)} · ${pct(trials ? payers / trials : null)} of trials`],
+    ["CAC", money(payers ? spend / payers : null, 2)],
+  ];
+
+  return (
+    <section
+      className={cn(
+        "flex flex-col gap-4 rounded-xl border p-5",
+        state === "short" ? "border-destructive/40 bg-destructive/5" : "border-brand/40 bg-brand/5",
+      )}
+    >
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="text-sm font-semibold">{round} — the whole ad set so far</h2>
+        <p className="text-xs text-muted-foreground">
+          break-even at this spend: {be.payersYear1} payers over twelve months · {be.payersMonth1}{" "}
+          in month one
+        </p>
+      </div>
+      <ol className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+        {steps.map(([label, value], i) => (
+          <li key={label} className="flex flex-col">
+            <span className="text-xs text-muted-foreground">
+              {i + 1}. {label}
+            </span>
+            <span className="font-mono text-sm tabular-nums">{value}</span>
+          </li>
+        ))}
+      </ol>
+      <p className="text-sm">
+        {state === "month1" && (
+          <>
+            <span className="font-semibold text-brand">Paid back in month one.</span> {payers}{" "}
+            payers against {be.payersMonth1} needed at {money(assumptions.net1, 2)} net each.
+          </>
+        )}
+        {state === "year1" && (
+          <>
+            <span className="font-semibold text-brand">Pays back within the year, not in month
+            one.</span>{" "}
+            {payers} payers clear the twelve-month bar of {be.payersYear1}; month one would need{" "}
+            {be.payersMonth1}.
+          </>
+        )}
+        {state === "short" && (
+          <>
+            <span className="font-semibold text-destructive">Not paying back yet.</span> {payers}{" "}
+            payers; the twelve-month bar for {money(spend)} is {be.payersYear1} ({gapYear1} short),
+            the month-one bar is {be.payersMonth1}. At {pct(assumptions.hardPaywall)} download→paid
+            that is ≈ {int(be.installsYear1.hardPaywall)} installs — the question is the funnel,
+            not the spend.
+          </>
+        )}
+      </p>
+    </section>
+  );
+}
+
+function BreakEvenTable({ assumptions }: { assumptions: Assumptions }) {
+  const spends = [
+    assumptions.spendLow,
+    Math.round((assumptions.spendLow + assumptions.spendHigh) / 2),
+    assumptions.spendHigh,
+  ];
+  const rows = spends.map((s) => breakEven(s, assumptions));
+  return (
+    <section className="flex flex-col gap-3 rounded-xl border border-border bg-card/50 p-5">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="text-sm font-semibold">
+          Break-even — how many must install and pay for the test to pay for itself
+        </h2>
+        <p className="text-xs text-muted-foreground">
+          {money(assumptions.net1, 2)} net first payment · {money(assumptions.ltv12, 2)} net over
+          twelve months
+        </p>
+      </div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Spend</TableHead>
+            <TableHead className="text-right">Payers · 12-mo payback</TableHead>
+            <TableHead className="text-right">Payers · month-1 payback</TableHead>
+            <TableHead className="text-right whitespace-normal">
+              Installs for 12-mo payback
+              <span className="block text-[0.65rem] font-normal">
+                median {pct(rows[0].rates.median)} · P90 {pct(rows[0].rates.p90)} · hard paywall{" "}
+                {pct(rows[0].rates.hardPaywall)}
+              </span>
+            </TableHead>
+            <TableHead className="text-right whitespace-normal">
+              Max CPI · 12-mo payback at hard-paywall rate
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rows.map((r) => (
+            <TableRow key={r.spend}>
+              <TableCell className="font-mono tabular-nums">{money(r.spend)}</TableCell>
+              <TableCell className="text-right font-mono tabular-nums text-brand">
+                {r.payersYear1}
+              </TableCell>
+              <TableCell className="text-right font-mono tabular-nums">{r.payersMonth1}</TableCell>
+              <TableCell className="text-right font-mono tabular-nums">
+                {int(r.installsYear1.median)} · {int(r.installsYear1.p90)} ·{" "}
+                <span className="text-brand">{int(r.installsYear1.hardPaywall)}</span>
+              </TableCell>
+              <TableCell className="text-right font-mono tabular-nums text-brand">
+                {money(r.maxCpiYear1HardPaywall, 2)}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <p className="text-xs text-muted-foreground">
+        Read across: at the median funnel the test needs hundreds of installs at under $1 each —
+        not a real market. At the hard-paywall median (about one payer per nine installs) it
+        needs the highlighted install count at the highlighted CPI. The round-one question in one
+        line: do we get roughly one payer per ten installs? Funnel rates from RevenueCat 2026,
+        via the assumptions below.
+      </p>
+    </section>
+  );
+}
+
 export function KpiDashboard({ data }: { data: KpiData }) {
   const active = data.ads.filter((a) => a.status === "active");
   const previous = data.ads.filter((a) => a.status === "previous");
@@ -260,6 +431,12 @@ export function KpiDashboard({ data }: { data: KpiData }) {
           <p>{error}</p>
         </div>
       ))}
+
+      {data.targetsByDay && <TargetsByDay table={data.targetsByDay} />}
+
+      <RoundSoFar ads={data.ads} assumptions={assumptions} />
+
+      <BreakEvenTable assumptions={assumptions} />
 
       {(keep || loss) && (
         <div className="grid gap-4 md:grid-cols-2">
