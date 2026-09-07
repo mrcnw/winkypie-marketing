@@ -1,6 +1,6 @@
 ---
 tags: [produce, scripts]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # Host Scripts — the AI host lane, five hooks
 
@@ -26,11 +26,17 @@ below maps its beats to cards. Three things the workflow wants that we override,
   is third person about the product. The script is passed verbatim; the run may not
   rewrite it (Lane B rules 1–2).
 - **Its craft rule wants a number in every claim.** Ours forbids numbers except the locked
-  ones. "A hundred milliseconds", "one selfie" and "three days free" are the only ones
-  spoken.
+  ones. "A hundred milliseconds" and "one selfie" are the only ones spoken; the trial is
+  never mentioned (owner's rule, 2026-09-07).
 - **It captures a URL first.** Do not let it capture `apps.apple.com` (the listing carries
   the stale pose counts, PRODUCT.md §12) or `winkypie.app`. Supply the stills below through
   its "I'll send screenshots" path; the workflow uses them as-is.
+
+**2026-09-07, two changes in every script (owner's decisions):** `Pro photos.` became
+`Authentic pro photos.`, and the closer "Three days free. Cancel anytime." became "Be the right
+swipe." — the trial is never spoken and is not on the end card; the App Store listing carries
+it. Word counts are unchanged net (+1 −1). S2 was rendered before both changes and says the
+old lines; it is regenerated only on the owner's command, at 480p first.
 
 ## Run parameters — identical for all five
 
@@ -45,6 +51,8 @@ below maps its beats to cards. Three things the workflow wants that we override,
 | Cards | 4–5 per script from the set below, 3:4 crops | Legibility — see the card set |
 | Disclosures | Persistent "AI-generated presenter. Not a real customer." from frame one; the §11.2 line baked onto every result card | Lane B rule 5; PRODUCT.md §11.2 |
 | Output name | `WP_<persona>_HOST_<slug>_9x16_v1` per [[Creative Naming]] | 4:5 and 1:1 cut from the master in post |
+| **Go** | **Nothing is generated without the owner's explicit command, per run.** Free preparation — prompts, card crops, local ffmpeg, sandbox captions — may proceed unasked | Owner's rule, 2026-09-07 |
+| **Resolution** | **Test runs at 480p** (2.5 credits/s → 62.5 per 25 s run). 1080p (9 credits/s → 225) only after the owner has approved the 480p test — and a 1080p render is a *new take* of the same prompt and seed, not an upscale | Credit ladder measured 2026-09-07, [[AI Production Platforms]] |
 
 ## The card set — what to capture from the app
 
@@ -93,8 +101,9 @@ record"), not for the host clips — but it is the same session, the same profil
 same five minutes.
 
 **Not from the app, needed in post for every lane:** the end card, 1080×1920 — App Store
-badge, "Pro photos. More matches.", "3 days free. Cancel anytime." — from the brand kit
-(PRODUCT.md §10). Design-only, shared with the human lane's edits.
+badge, "Authentic pro photos. More matches.", "Be the right swipe." — from the brand kit (PRODUCT.md
+§10). Design-only, shared with the human lane's edits. **Decided 2026-09-07: the trial is never mentioned — not on the end card, not spoken**; the
+closer is "Be the right swipe." and the App Store listing carries the trial. The badge is `app/public/assets/winkypie/brand/app-store-badge.png`.
 
 **Crops.** A full phone screenshot contain-fit into the workflow's card box (0.78 of the
 width, at most 0.60 of the height) lands about 530 px wide, and the match pill and the tick
@@ -108,8 +117,7 @@ files.
 
 Hook (locked, ≤8 words, no card) → the first body beat names WinkyPie and brings the hero
 card → one card per beat, in the order in each table → the result card, with the §11.2
-line, holds through "Pro photos. More matches." → closer "Three days free. Cancel
-anytime." with the phone action, no card → end card (ours, 2 s). The closer and the brand
+line, holds through "Authentic pro photos. More matches." → closer "Be the right swipe." with the phone action, no card → end card (ours, 2 s). The closer and the brand
 line are held constant across all five; the hook is the variable. Nobody on screen says
 "I", "my" or "me" as a user: the host narrates the demo in the present tense, the demo man
 on the cards is "he", the viewer's photo is "your photo". Word counts are exact and sit in
@@ -132,8 +140,8 @@ on-screen text.
 
 **Clip 2 · 10 s · 20 words**
 
-> It checks the selfie first. Free. Then it renders the shot. Pro photos. More matches.
-> Three days free. Cancel anytime.
+> It checks the selfie first. Free. Then it renders the shot. Authentic pro photos. More matches.
+> Be the right swipe.
 
 | Spoken beat | Card |
 |---|---|
@@ -141,8 +149,8 @@ on-screen text.
 | WinkyPie makes that photo from one selfie. Pick a pose | 01 poses grid — hero |
 | It tells you how to stand. Angle, gaze, hands | 03 coaching |
 | It checks the selfie first. Free | 05 check pass |
-| Then it renders the shot. Pro photos. No photographer | 08 result + §11.2, hold ≥2.5 s |
-| Three days free. Cancel anytime | none — closer, phone in hand, screen away |
+| Then it renders the shot. Authentic pro photos. No photographer | 08 result + §11.2, hold ≥2.5 s |
+| Be the right swipe | none — closer, phone in hand, screen away |
 
 Guardrails: "a hundred milliseconds" is a line, never a statistic — no "studies", no
 percentage. "A name", not "your name": the softer form for a host talking to the viewer
@@ -167,8 +175,8 @@ Alt opening, wave two: "One swipe. One photo. One shot."
 
 **Clip 2 · 10 s · 24 words**
 
-> The rest is quick. Pick a pose, it tells you how to stand. One selfie. Pro photos. No
-> photographer. Three days free. Cancel anytime.
+> The rest is quick. Pick a pose, it tells you how to stand. One selfie. Authentic pro photos. No
+> photographer. Be the right swipe.
 
 | Spoken beat | Card |
 |---|---|
@@ -176,8 +184,8 @@ Alt opening, wave two: "One swipe. One photo. One shot."
 | WinkyPie checks the selfie first. Free. Green tick, it's a go | 05 check pass — hero, hold ≥2 s |
 | If it won't work, it says why. Retake. Nothing charged | 06 check warn (04 running if no warn was captured; no card otherwise) |
 | The rest is quick. Pick a pose, it tells you how to stand | 03 coaching |
-| One selfie. Pro photos. No photographer | 08 result + §11.2, hold ≥2.5 s |
-| Three days free. Cancel anytime | none — closer |
+| One selfie. Authentic pro photos. No photographer | 08 result + §11.2, hold ≥2.5 s |
+| Be the right swipe | none — closer |
 
 Guardrails: the hook carries no numeric token, which the workflow's hook rule asks for —
 the locked line wins. "Most AI photo apps…" is the §5 framing verbatim; no app is named.
@@ -201,8 +209,8 @@ Alt opening, wave two: "It checks your selfie before it costs you anything."
 
 **Clip 2 · 10 s · 21 words**
 
-> It checks the selfie first. Free. His pose, his selfie, his result. Pro photos. No
-> photographer. Three days free. Cancel anytime.
+> It checks the selfie first. Free. His pose, his selfie, his result. Authentic pro photos. No
+> photographer. Be the right swipe.
 
 | Spoken beat | Card |
 |---|---|
@@ -211,8 +219,8 @@ Alt opening, wave two: "It checks your selfie before it costs you anything."
 | It tells you how to stand. Body angle, where to look, hands, expression | 03 coaching — hold ≥2 s, the variable |
 | Mirror it. One selfie | none — face |
 | It checks the selfie first. Free | 05 check pass |
-| His pose, his selfie, his result. Pro photos. No photographer | 08 result with the Pose used / Photo used row + §11.2, hold ≥2.5 s |
-| Three days free. Cancel anytime | none — closer |
+| His pose, his selfie, his result. Authentic pro photos. No photographer | 08 result with the Pose used / Photo used row + §11.2, hold ≥2.5 s |
+| Be the right swipe | none — closer |
 
 Guardrails: "his" is the demo man on the card, never the host. "Catalog", never a count.
 The hook is exactly 8 words — the workflow's ceiling.
@@ -235,8 +243,8 @@ Alt opening, wave two: "Pick a pose. Mirror it. Done."
 
 **Clip 2 · 10 s · 22 words**
 
-> It's AI. It says so on screen. It checks the selfie first, free. Pro photos. No
-> photographer. Three days free. Cancel anytime.
+> It's AI. It says so on screen. It checks the selfie first, free. Authentic pro photos. No
+> photographer. Be the right swipe.
 
 | Spoken beat | Card |
 |---|---|
@@ -246,8 +254,8 @@ Alt opening, wave two: "Pick a pose. Mirror it. Done."
 | Pose used, photo used, right there on the result | 08 again, cropped to the Pose used / Photo used row |
 | Same guy | 09 result-2 — the same face, another scene |
 | It's AI. It says so on screen | none — face; the §11.2 line was just on screen |
-| It checks the selfie first, free. Pro photos. No photographer | 05 check pass, then 08 result + §11.2 through the brand line |
-| Three days free. Cancel anytime | none — closer |
+| It checks the selfie first, free. Authentic pro photos. No photographer | 05 check pass, then 08 result + §11.2 through the brand line |
+| Be the right swipe | none — closer |
 
 Guardrails: never an old photo of anyone next to a result — pose → result only. "It says
 so on screen" is true only if the §11.2 line is on every result card. Never "better";
@@ -271,8 +279,8 @@ Alt opening, wave two: "Same face. New level."
 
 **Clip 2 · 10 s · 20 words**
 
-> It checks the selfie first. Free. Then it renders the shot. Pro photos. More matches.
-> Three days free. Cancel anytime.
+> It checks the selfie first. Free. Then it renders the shot. Authentic pro photos. More matches.
+> Be the right swipe.
 
 | Spoken beat | Card |
 |---|---|
@@ -280,8 +288,8 @@ Alt opening, wave two: "Same face. New level."
 | WinkyPie makes that photo from one selfie. Pick a pose | 01 poses grid — hero |
 | It tells you how to stand. Angle, gaze, hands | 03 coaching |
 | It checks the selfie first. Free | 05 check pass |
-| Then it renders the shot. Pro photos. More matches | 08 result + §11.2, hold ≥2.5 s |
-| Three days free. Cancel anytime | none — closer |
+| Then it renders the shot. Authentic pro photos. More matches | 08 result + §11.2, hold ≥2.5 s |
+| Be the right swipe | none — closer |
 
 Guardrails: the host never diagnoses the viewer — no "you're not getting matches", no
 "shadowban", no percentages. The app names are where the photo works; only the hook argues
@@ -306,9 +314,12 @@ Credits, from the estimates in [[AI Production Platforms]]: one 25 s run ≈ 250
 Seedance 2.5 clips at 1080p with audio, plus captions), plus ~60–100 once for the host seed;
 three runs with retries ≈ 1,000 — the Plus month. An alternate opening costs a full clip-1
 regeneration (~120–165 each); alternates are wave two, after the human takes have been
-read. The trial's 100 credits prove the pipeline (one short clip, the disclosure burn, the
-card crop) and nothing else. Record the real `transactions` read-out here after the first
-run.
+read. **First run 2026-09-07 — S2 went through the whole chain for 228.24 credits measured**
+(clips 135 + 90, de-slop 3, two seeds 0.24; captions and ffmpeg free); the estimate above was
+high. The de-slopped seed — Higgsfield job `9310da71-0129-404f-9892-38d3fded0cfa` — is the
+host for runs 2–5. The run, its overrides and its QA: [[Host Run 2026-09-07]]. Runs 2–5 wait
+for the released card set: the clips are the cost, the composite is free, so nothing is lost
+by waiting.
 
 ## Post-production — ours, after the workflow delivers
 
@@ -339,7 +350,9 @@ away · one host across the set.
 
 - The card captures (table above) and the release for the man on them.
 - Which selfie variant the check accepts without a phone in frame.
-- Credit cost per run and the disclosure recipe — after the first run.
-- Whether the composite step takes per-card durations.
+- ~~Credit cost per run and the disclosure recipe~~ — measured and recorded 2026-09-07 in
+  [[Host Run 2026-09-07]] and [[Production Guardrails]] (Lane B rule 5).
+- ~~Whether the composite step takes per-card durations~~ — we composite locally from the real
+  Whisper word times, so the windows are ours; the script is in [[Host Run 2026-09-07]].
 - Meta's dating classification: if "dating", these clips are internal animatics only
   ([[Production Guardrails]]); the Billo order goes ahead regardless.

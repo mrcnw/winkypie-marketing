@@ -31,12 +31,14 @@ Locked lines, identical in the app and on the site. Do not drift them:
 
 | Line | Role |
 |---|---|
-| `Pro photos. More matches.` | **Primary brand line — decided 2026-09-06** (rationale in `BRAND.md` §7). Not yet in the app: the live paywall headline still reads the support line below until the app ships the change (§12) |
-| `Pro photos. No photographer.` | Support line — ease and savings; the live paywall headline today |
+| `Authentic pro photos. More matches.` | **Primary brand line — decided 2026-09-06, *Authentic* added 2026-09-07** (rationale in `BRAND.md` §7). Not yet in the app: the live paywall headline still reads the support line below until the app ships the change (§12) |
+| `Authentic pro photos. No photographer.` | Support line — ease and savings; the live paywall headline today |
 | `She decided in 100 ms.` | Hero hook, onboarding screen 1 |
 | `First photo. First chance.` | Problem line, onboarding screen 2 |
 | `Looks pro. Still you.` | Product-truth line |
 | `Be the right swipe.` | Closing CTA |
+
+**2026-09-07:** both lines gained the word *Authentic* in front (owner's decision) — it answers the persona's first buying blocker, "thinks AI photos look fake" (§3). Everything produced before that date says `Pro photos.` — the S2 host clip and its captions included; the live paywall still shows the 2026-09-06 wording (§12).
 
 Supporting paywall copy in production: *"One selfie. AI does the rest. 3 days free, cancel
 anytime."* · *"No payment today. Apple notifies you before any charge."*
@@ -290,7 +292,7 @@ Five pillars, weighted:
 |---|---|---|---|---|
 | 1 | **Transformation** | 40% | One selfie → a photo that stops the scroll | "Same face. New level." · "One selfie. Endless profiles." |
 | 2 | **Absurd ease** | 25% | 3 taps, no skill, no gear | "Pick a pose. Mirror it. Done." · "You don't need to know how to pose." |
-| 3 | **Savings** | 15% | Photographer quality without photographer prices | "Skip the €300 session. Keep the quality." · "Pro photos. Not pro prices." |
+| 3 | **Savings** | 15% | Photographer quality without photographer prices | "Skip the €300 session. Keep the quality." · "Authentic pro photos. Not pro prices." |
 | 4 | **Variety** | 12% | Every scene, every mood | "Street. Café. Golden hour. Night out." · "New week. New pose." |
 | 5 | **Trust / quality** | 8% | Real AI, looks like you, safe data | "Not a filter. Real AI." · "It checks your selfie before it charges you." |
 
@@ -361,7 +363,7 @@ black. Use `rgba(255,255,255,0)` or `#RRGGBB00`.
 - **Personal attributes.** Meta prohibits copy implying knowledge of a person's attributes,
   including relationship status and appearance. Write in the third person about the product.
   ❌ "Still single?" · "Tired of being ignored?" · "Your photos are why you're single"
-  ✅ "One selfie → pro photos for your dating profile" · "Photos that get a second look"
+  ✅ "One selfie → authentic pro photos for your dating profile" · "Photos that get a second look"
 - **Before/after imagery** is restricted in appearance-adjacent categories. Prefer
   **"reference pose → result"** framing over "bad me → hot me".
 - **Dating-adjacent targeting** carries extra restrictions in some markets. Check per country.
@@ -389,7 +391,7 @@ privacy policy. See `BRAND.md` §12 for the full audit.
 | 4-step onboarding, "Transform yourself, own the spotlight" | `WINKYPIE_CONTEXT.md` | 3 screens, dating-led, "She decided in 100 ms" |
 | Convex `lovely-mosquito-876` | `WINKYPIE_CONTEXT.md` | `glad-spaniel-840` |
 | "Android coming" / Play billing | `/terms` | iOS only is what we sell |
-| Paywall headline `Pro photos. No photographer.` | **Live app paywall**, site | Primary brand line is `Pro photos. More matches.` since 2026-09-06 (§1). Ship it in the app and on the site; until then the ads and the paywall disagree |
+| Paywall headline `Pro photos. No photographer.` | **Live app paywall**, site | Primary brand line is `Authentic pro photos. More matches.` since 2026-09-07 (§1; `Pro photos. More matches.` on 2026-09-06, *Authentic* added the next day). Ship it in the app and on the site; until then the ads and the paywall disagree |
 | "~30 seconds to generate" | Repo docs | `[unsourced]` — never timed. See §13 |
 
 `dream-pie`'s `release-checklist/apple-store-connect/WINKYPIE_CONTEXT.md` describes v1 in

@@ -6,7 +6,7 @@ format: static (text-led)
 variable: decision-moment hook
 order: 1
 modelled_on: [photoshoot-she-swiped-left, roast-same-face-10x]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # Brief — WP_P2_STATIC_100ms
 
@@ -37,7 +37,7 @@ citation, no percentage anywhere on the creative.
   screen 2, so the ad and the app say one thing. Replaced "The first photo does all the
   work." on 2026-09-06: every winner in the niche puts the dating context on frame.
 - Beat three: "Be the right swipe." — the locked closing CTA.
-- Footer: App Store badge + "3 days free. Cancel anytime."
+- Footer: App Store badge.
 - Optional motion version: the beats fade in sequence, 6 s loop. No other animation.
 
 ## Primary text (Meta placement)
@@ -61,8 +61,7 @@ Third person about the product ✓ · no viewer-attribute implication ✓ · no 
 1. Look at the two model ads (links in the app card): the decision moment dramatized, and
    the blame-shift stated on the creative itself, not only in the caption.
 2. Design the single frame in the brand kit (PRODUCT.md §10): dark ground, the warm glow,
-   "100 ms" as the italic-gradient punch word, the three beats, the footer with the App Store
-   badge and "3 days free. Cancel anytime."
+   "100 ms" as the italic-gradient punch word, the three beats, the footer with the App Store badge.
 3. Optional: the 6-second motion version — the beats fade in, nothing else moves.
 4. Export 9:16, 4:5 and 1:1 with Meta's caption-crop safe margins; name
    `WP_P2_STATIC_100ms_<ratio>_v1` per [[Creative Naming]].

@@ -6,7 +6,7 @@ format: screen demo
 variable: free pre-flight check (risk reversal)
 order: 2
 modelled_on: [charmd-profile-underperforming, regen-control-copy]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # Brief — WP_P2_DEMO_freecheck
 
@@ -43,7 +43,7 @@ person. The check itself is the answer to the question.
 | 3.5 | Hold on the verdict | "This one checks your selfie first. Free." |
 | 6 | Quick rewind of the flow: pose picked → coaching card (angle, gaze, hands) → selfie taken | "Pick a pose. It coaches you." |
 | 13 | Generation staged copy ("Painting your shot…") → result reveal | "One selfie. The photo your profile needed." + §11.2 disclosure line, small |
-| 19–25 | Result full screen, then end card | "Pro photos. More matches." · "Be the right swipe." + App Store badge + "3 days free. Cancel anytime." |
+| 19–25 | Result full screen, then end card | "Authentic pro photos. More matches." · "Be the right swipe." + App Store badge |
 
 ## Cuts (added 2026-09-06)
 
@@ -80,7 +80,7 @@ from the reveal on.
 ## Guardrail check (§11)
 
 AI disclosed on the reveal ✓ · results-vary disclosure on generated imagery ✓ · no match
-promise ✓ · no profile-review implication — it is the selfie check, not an account audit ✓ · male demo subject ✓ · no pricing beyond "3 days free, cancel anytime" ✓.
+promise ✓ · no profile-review implication — it is the selfie check, not an account audit ✓ · male demo subject ✓ · no pricing and no trial line ✓.
 
 ## Do this, in order
 
@@ -94,8 +94,7 @@ promise ✓ · no profile-review implication — it is the selfie check, not an 
 4. Edit cut A (`WP_P2_DEMO_freecheck_9x16_v1`, 20–25 s) per the beat sheet, then cut B
    (`WP_P2_DEMO_verdict_9x16_v1`, ≤ 15 s) opening on the verdict — see Cuts.
 5. Overlays: the hook legible with sound off inside 1.5 s; the §11.2 results-vary disclosure
-   on frame from the reveal on; end card with the App Store badge and "3 days free. Cancel
-   anytime." No dollar figures anywhere.
+   on frame from the reveal on; end card with the App Store badge. No dollar figures anywhere.
 6. Export the 9:16 master, then 4:5 and 1:1 with Meta's caption-crop safe margins; name every
    file per [[Creative Naming]].
 7. Run the Guardrail check above line by line; fix what fails, do not argue with it.

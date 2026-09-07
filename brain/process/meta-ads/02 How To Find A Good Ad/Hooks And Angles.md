@@ -1,6 +1,6 @@
 ---
 tags: [research, hooks]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # Hooks And Angles
 
@@ -55,7 +55,7 @@ industry average in PRODUCT.md §8 and is never quantified) · Single ✓.
 | "The first photo does all the work." | Promoted onto campaign 1's creative as the on-frame blame-shift |
 | "Same face. New level." | Honest replacement for Roast's "Same face. 10x the matches." — swap into campaign 4 statics |
 | "Pick a pose. Mirror it. Done." | Ease pillar three-beat; campaign 3 alt overlay |
-| "Pro photos. Not pro prices." | Campaign 5 until 2026-09-06 — savings pillar. Parked: among ~980 ads read on the two niche pages, none runs on price. Wave two at most, as a static in campaign 1's layout |
+| "Authentic pro photos. Not pro prices." | Campaign 5 until 2026-09-06 — savings pillar. Parked: among ~980 ads read on the two niche pages, none runs on price. Wave two at most, as a static in campaign 1's layout |
 
 ## Dropped — and why (so they stay dropped)
 

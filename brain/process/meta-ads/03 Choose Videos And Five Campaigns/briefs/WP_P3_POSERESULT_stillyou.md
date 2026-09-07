@@ -6,7 +6,7 @@ format: pose → result
 variable: likeness-trust hook
 order: 4
 modelled_on: [roast-same-face-10x, charmd-youre-not-ugly]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # Brief — WP_P3_POSERESULT_stillyou
 
@@ -34,7 +34,7 @@ Locked line. "Still you." carries the italic-gradient punch.
 | 0.0 | The pose card from the catalog (reference image) | "He picked this pose for his profile." |
 | 1.5 | Coaching card flash + selfie moment (can be a still) | "Mirrored it with one selfie." |
 | 5 | The generated result, full frame | "Looks pro. *Still you.*" + §11.2 disclosure |
-| 10–15 | End card | "Be the right *swipe*." + App Store badge + "3 days free. Cancel anytime." |
+| 10–15 | End card | "Be the right *swipe*." + App Store badge |
 
 Static variant: left = pose reference, right = result, same overlays; disclosure under the
 right panel. Alt overlay for the static, if a second frame is wanted: "Same face. New level." —

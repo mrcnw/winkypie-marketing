@@ -6,7 +6,7 @@ format: static (text-led)
 variable: blame-shift hook
 order: 5
 modelled_on: [roast-blame-tinder, roast-stop-blaming-algorithm]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # Brief — WP_P1_STATIC_algorithm
 
@@ -43,7 +43,7 @@ percentages, no "shadowban".
   the italic-gradient punch (the one brand gradient).
 - Beat two, smaller: "First photo. First chance." — the locked problem line.
 - Beat three: "Be the right swipe." — the locked closing CTA.
-- Footer: App Store badge + "3 days free. Cancel anytime."
+- Footer: App Store badge.
 - No people, no generated imagery → no §11.2 needed. If a result image is added later, the
   disclosure comes with it.
 - Optional motion version: the beats fade in sequence, 6 s loop — the same build as campaign 1.

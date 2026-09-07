@@ -3,7 +3,7 @@ tags: [step, strategy]
 status: doing
 phase: strategy
 owner:
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # 03 · Choose Videos And Five Campaigns
 
@@ -73,3 +73,8 @@ Later the same day: campaign 5 re-chosen. The savings static (`WP_P1_STATIC_prop
 kill-first by its own brief; no price-led ad among ~980 read) gave way to the blame-shift
 static `WP_P1_STATIC_algorithm` — campaign 1's layout with the hook swapped, so the two
 statics isolate the angle cleanly. The price hook is parked in [[Hooks And Angles]] (Backup).
+
+2026-09-07: the owner added a sixth campaign, `WP_P3_UGC_triedthemall` — the switcher's likeness
+story in the UGC format ("I tried every AI photo app. None of them looked like me."). The
+five-campaign rule above stands as the default; the sixth is a deliberate exception, and the
+ad set decides which creative waits for wave two.

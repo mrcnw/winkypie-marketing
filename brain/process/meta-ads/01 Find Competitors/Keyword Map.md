@@ -1,6 +1,6 @@
 ---
 tags: [research]
-updated: 2026-09-01
+updated: 2026-09-07
 ---
 # Keyword Map
 
@@ -25,7 +25,7 @@ store listings. Ad-hunting keywords (what to type into the Ad Library) live in
 | **the game / the whole game** | "photos are the whole game and nobody told you" | Locker-room register, on-voice for us |
 
 Category vocabulary from the other proven ads: "AI dating photos" (ReGen, Charmd, GetDates),
-"no photographer" (ReGen — collides with our locked line "Pro photos. No photographer."),
+"no photographer" (ReGen — collides with our locked line "Authentic pro photos. No photographer."),
 "look like you / looks completely real" (Charmd, TruShot — the trust objection said out
 loud), "invisible" (TruShot "You're Not Invisible. Your Photos Are."; Charmd subtitle "Stop
 Feeling Invisible"), "get more dates / matches" (everyone).
@@ -50,7 +50,7 @@ holds "AI Dating Photos" as a live subtitle. Fields are proposals bounded by PRO
 | Field | Proposal | Why |
 |---|---|---|
 | Title | `WinkyPie: AI Dating Photos` | The category phrase with search volume and a dead former owner; brand first |
-| Subtitle | `Pro photos. No photographer.` | Locked brand line, keyword-bearing (photos, photographer) |
+| Subtitle | `Authentic pro photos. No photographer.` | Locked brand line, keyword-bearing (photos, photographer) |
 | Keyword field candidates | `dating,photos,tinder,hinge,bumble,profile,picture,selfie,pose,headshot,matches,ai` | Union of the niche's proven vocabulary; dedupe against title/subtitle at submission |
 | Never in metadata | match multipliers, user counts, "best", competitor names | Guardrails + App Store rules |
 

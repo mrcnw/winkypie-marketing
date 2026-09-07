@@ -1,6 +1,6 @@
 ---
 tags: [research, produce]
-updated: 2026-09-03
+updated: 2026-09-07
 ---
 # AI Production Platforms — the synthetic lane
 
@@ -67,7 +67,16 @@ and it is also what the platform enforces.
    screenshot-capture + disclosure-burn test, not the hook set) → Plus monthly $49 for the
    test month, scoped to 3 variants → Ultra monthly $129 only if the AI lane earns a volume
    role. No annual: credits expire, tiers were renamed three times in 2026, and cancellation
-   friction is the top Trustpilot complaint.**
+   friction is the top Trustpilot complaint.** **Measured 2026-09-07: the 25 s S2 run cost
+   228 credits** — Seedance 2.5 at 1080p with audio is a flat 9 credits per second (135 + 90),
+   the Soul seed 0.12, the Seedream de-slop 3, Whisper and ffmpeg in the sandbox 0. Five runs
+   ≈ 1,150 credits, one Plus month if nothing is regenerated ([[Host Run 2026-09-07]]).
+   **The resolution ladder, preflighted 2026-09-07** (`get_cost`, Seedance 2.5, 9:16, 15 s +
+   10 s; audio on or off makes no difference): **480p 37.5 + 25 = 62.5** · 720p 97.5 + 65 =
+   162.5 · 1080p 135 + 90 = 225. **Rule since 2026-09-07: test runs at 480p, the final at
+   1080p only on the owner's command** — five 480p tests ≈ 313 credits, and each 1080p
+   re-render of a winner is a fresh take (same seed and prompt, different performance), 225
+   each; `upscale_video` exists on the MCP as the alternative, cost and quality unverified.
 5. **Rights.** Marketing Studio: "content you generate is yours to publish … from organic posts
    to paid campaigns, subject to Higgsfield's Terms of Use"
    ([marketing-studio-intro](https://higgsfield.ai/marketing-studio-intro)). Third-party
@@ -75,9 +84,9 @@ and it is also what the platform enforces.
    ([imagine.art](https://www.imagine.art/blogs/higgsfield-ai-pricing), secondary source; read the
    ToS before the first paid ad).
 
-**The account today is on the Free plan with 10 credits and is eligible for the 3-day MCP
-trial** (read via the MCP `balance` and billing tools, 2026-09-02). Nothing for ads can be
-generated until it is upgraded — and nothing generated on Free may run as an ad.
+**The account is on Plus since 2026-09-06** — 1,200 credits granted; `balance` read 1,210 on
+2026-09-07 before the first run and 982 after it. Nothing generated on the earlier Free plan
+may run as an ad; everything from 2026-09-06 on is paid-plan output.
 
 **Trade-offs to manage.** Trustpilot 4.0 / 4,122 reviews, 19% one-star: credits expire, queues
 over an hour on unlimited plans, slow support, pricing renamed three times in 2026
@@ -162,9 +171,8 @@ says either. Meta's own policy text was pulled live through the Meta Ads MCP on 
 
 ## What we do not know yet
 
-- Exact credit cost of one `ugc-website-video` run at 30 s (two 15 s Seedance 2.5 clips at
-  1080p with audio + Soul + Seedream) — the MCP model card does not list credit prices. Run one
-  and record the `transactions` read-out here.
+- ~~Exact credit cost of one `ugc-website-video` run~~ — measured 2026-09-07, 228 credits for
+  25 s; the `transactions` read-out and the per-step table are in [[Host Run 2026-09-07]].
 - Whether Higgsfield's ToS treats `ad-multiplier` output over a *human creator's* footage as
   our content — and whether a Billo-standard release covers a face replacement. Assume no until
   the contract says yes.

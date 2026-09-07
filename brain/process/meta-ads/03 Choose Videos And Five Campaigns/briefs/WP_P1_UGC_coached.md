@@ -6,7 +6,7 @@ format: UGC, phone-shot, talking
 variable: pose-coaching hook
 order: 3
 modelled_on: [roast-selfies-to-photos-ugc, charmd-better-photos-more-matches, charmd-youre-not-ugly]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 # Brief — WP_P1_UGC_coached
 
@@ -44,7 +44,7 @@ pose." moves to the overlay at the twist beat.
 | 5 | The twist — he flips the phone: pose card + coaching card visible | "it *coached* me — angle, gaze, hands. you don't need to know how to pose" |
 | 9 | He mirrors the pose, takes the selfie; free check passes on screen | "and it checks the selfie free, before anything costs" |
 | 14 | Result reveal on his phone; genuine reaction ("wow, is that me?" energy — awe, not disbelief) | "Looks pro. *Still you.*" + §11.2 disclosure, small |
-| 22–30 | End card | "Pro photos. More matches." · "Be the right swipe." + App Store badge + "3 days free. Cancel anytime." |
+| 22–30 | End card | "Authentic pro photos. More matches." · "Be the right swipe." + App Store badge |
 
 Script tone: PRODUCT.md §9 — short sentences, two-beat rhythm, no hype, no "10x". He talks
 about his *photos* and the product, never his dating life (no "I was single for years" —

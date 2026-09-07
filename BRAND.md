@@ -31,7 +31,7 @@ guideline that drifts.
 
 ## 1. The brand in one line
 
-**Pro photos. No photographer.** Dark, premium, a little playful — a studio that lives in
+**Authentic pro photos. No photographer.** Dark, premium, a little playful — a studio that lives in
 your phone and is honest about being AI.
 
 Personality, in the order it should read:
@@ -184,8 +184,8 @@ Locked lines — identical in the app, on the site, and in ads. Do not paraphras
 
 | Line | Role |
 |---|---|
-| `Pro photos. More matches.` | Primary brand line — since 2026-09-06 |
-| `Pro photos. No photographer.` | Support line — ease and savings; still the live paywall headline until the app ships the new one |
+| `Authentic pro photos. More matches.` | Primary brand line — since 2026-09-06; *Authentic* added 2026-09-07 |
+| `Authentic pro photos. No photographer.` | Support line — ease and savings; still the live paywall headline until the app ships the new one |
 | `She decided in 100 ms.` | Hero hook |
 | `First photo. First chance.` | Problem line |
 | `Looks pro. Still you.` | Product-truth line |
@@ -203,7 +203,14 @@ beat, in the word PRODUCT.md §9 lists first among the Do-words. No number, ever
 is what §11 bans. Considered and not taken: "One selfie. More matches." (one selfie is not a
 headline — GIO and Pose AI take one photo too, see the competitor landscape), "Same face. More
 matches." (Roast's phrase, in 257 of their ads). Backup if Meta ever objects to "matches":
-"Pro photos. Right swipes." The evidence: `brain/process/meta-ads/02 How To Find A Good Ad/`.
+"Authentic pro photos. Right swipes." The evidence: `brain/process/meta-ads/02 How To Find A Good Ad/`.
+
+**2026-09-07 — *Authentic* in front of both lines** (owner's decision): `Authentic pro photos. More
+matches.` and `Authentic pro photos. No photographer.` The `Pro X.` family and the outcome in the
+second beat stay; the added word answers the persona's first blocker — he thinks AI photos look
+fake (PRODUCT.md §3) — and it is not a claim, so §11 is untouched. Every line and end card in the
+repo was updated the same day; creative rendered before it (the S2 host clip) still says the
+old line.
 
 The five weighted messaging pillars live in `PRODUCT.md` §9 — transformation 40 %, ease 25 %,
 savings 15 %, variety 12 %, trust 8 %. Creative briefs pick **one** pillar, not three.
@@ -242,7 +249,7 @@ Construction rules, read off the files:
 - Lead with the mechanism, not the logo. A frame of the photo check or the proof row says more
   in a second than a wordmark does.
 - **Meta personal-attributes rule:** write in the third person about the product. Never imply
-  the viewer's relationship status. ❌ "Still single?" ✅ "One selfie → pro photos for your
+  the viewer's relationship status. ❌ "Still single?" ✅ "One selfie → authentic pro photos for your
   dating profile."
 - Prefer **reference pose → result** framing over "bad me → hot me". Before/after in an
   appearance category attracts review, and the reference-pose framing is both safer and more

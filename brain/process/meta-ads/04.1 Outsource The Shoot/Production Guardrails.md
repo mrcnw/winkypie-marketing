@@ -1,6 +1,6 @@
 ---
 tags: [produce, guardrails]
-updated: 2026-09-02
+updated: 2026-09-07
 ---
 # Production Guardrails — the one-pager that goes into every order and every AI run
 
@@ -48,6 +48,9 @@ Paste these into the order. Every line is a deliverable or a warranty, not advic
    [[Production Platforms]].
 6. **What he must not do:** claim outcomes; mention other apps by name; show anyone but
    himself; improvise "proof" (numbers, friends' stories); use the word "review" on screen.
+7. **The trial is never mentioned** — not spoken, not on the end card (owner\'s decision,
+   2026-09-07). The closing line is "Be the right swipe."; the App Store listing carries the
+   trial. Nothing about money or days on camera.
 
 ## Lane B — Higgsfield (AI host clips for the hook test)
 
@@ -74,8 +77,15 @@ Paste these into the run brief. The workflow enforces some of them; we enforce t
 5. **Disclosure from the first frame:** "AI-generated presenter. Not a real customer." as a
    persistent caption, not an end card — same-modality (visible) and at first exposure (EU
    Art. 50). The workflow's caption layers cover the hook plate and subtitles; the persistent
-   line is burned by us in post (`video-editing` workflow or ffmpeg). **Verify on the first
-   run** that the burn does not collide with the hook plate, then record the recipe here.
+   line is burned by us in post (`video-editing` workflow or ffmpeg). **Recipe, verified on the
+   first run 2026-09-07** (frame 1080×1920, full parameters and the script in
+   [[Host Run 2026-09-07]]): the line sits in a 75 % `#0E0E0E` pill at y = 290–370 (just under
+   Meta's top 14 %), Helvetica 30, every presenter frame; the workflow's hook plate is forced to
+   ONE line at size 56 and top margin 0.09 H so it ends above the pill — the default two-line
+   plate covers the disclosure for the whole hook; cards contain-fit 0.78 W × 0.50 H centred at
+   0.47 H; captions bottom-aligned with margin 0.22 H (Stories-safe; inside Meta's Reels 35 %
+   band — check the Reels template before a paid run). The §11.2 line is baked onto the result
+   card at 42 px so it survives the scale-down.
 6. **Keep the metadata.** Do not strip C2PA/IPTC marks from the export; Meta's automatic
    "AI info" label is neutral to delivery and removing marks is the one thing that turns a
    labelled ad into a deceptive one.
@@ -84,6 +94,12 @@ Paste these into the run brief. The workflow enforces some of them; we enforce t
 8. **QA before anything leaves the sandbox:** the list in [[AI Production Platforms]] —
    script reads like speech, clean lips mid-word, ≤2 hands, no baked text, no generated
    screen, disclosure legible on a phone.
+9. **No generation without the owner's explicit per-run command** (rule set 2026-09-07 after
+   the first run went out on the strength of the plan alone). Test runs at the lowest
+   resolution, 480p; 1080p only once the owner has approved the test. Everything that costs
+   nothing — prompts, cards, ffmpeg, the sandbox caption pass — may be prepared unasked.
+10. **No trial line, spoken or on frame** (owner\'s decision, 2026-09-07) — the closer is "Be
+    the right swipe." Same rule as Lane A item 7.
 
 ## What the creator brief inherits from this note
 
@@ -98,5 +114,5 @@ stays — it is honest once he has used the app.
 - Meta's classification (dating facilitation or not). Everything above is built to survive
   either answer; the answer decides which selfie variant is the master and whether Lane B may
   run as paid media.
-- The disclosure burn-in recipe for Lane B — record after the first run.
+- ~~The disclosure burn-in recipe for Lane B~~ — recorded above, 2026-09-07.
 - Whether Billo's standard release is enough for `ad-multiplier` face replacement — assume no.
