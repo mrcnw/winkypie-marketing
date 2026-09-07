@@ -21,10 +21,13 @@ export function AssetPreview({
   sizes = "(max-width: 768px) 50vw, 25vw",
   className,
 }: AssetPreviewProps) {
+  // The URL never changes when a file is replaced in place, so the browser and the image
+  // optimizer would keep the old pixels. The modified time on the src busts both.
+  const src = `${asset.href}?v=${Date.parse(asset.modified)}`;
   if (asset.kind === "image") {
     return (
       <Image
-        src={asset.href}
+        src={src}
         alt={asset.label}
         fill
         sizes={sizes}
@@ -38,7 +41,7 @@ export function AssetPreview({
     return (
       <>
         <video
-          src={asset.href}
+          src={src}
           controls={interactive}
           muted={!interactive}
           playsInline

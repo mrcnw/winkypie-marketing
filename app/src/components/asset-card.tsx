@@ -34,6 +34,11 @@ export function AssetCard({ asset }: { asset: Asset }) {
                 {formatBytes(asset.size)} ·{" "}
                 {asset.ext.replace(".", "").toUpperCase()}
               </span>
+              {asset.caption && (
+                <span className="line-clamp-3 text-xs italic leading-snug text-muted-foreground">
+                  {asset.caption}
+                </span>
+              )}
             </span>
           </button>
         </DialogTrigger>
@@ -58,6 +63,15 @@ export function AssetCard({ asset }: { asset: Asset }) {
             sizes="(max-width: 768px) 100vw, 768px"
           />
         </div>
+
+        {asset.caption && (
+          <p className="rounded-lg border border-border/60 bg-background/60 p-3 text-sm leading-relaxed">
+            <span className="me-2 font-mono text-[0.7rem] uppercase tracking-wide text-muted-foreground">
+              Caption
+            </span>
+            {asset.caption}
+          </p>
+        )}
 
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="secondary" className="font-mono text-[0.7rem]">

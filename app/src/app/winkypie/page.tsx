@@ -16,11 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default async function WinkyPiePage() {
-  const [brandAssets, beforeAfter, mobileApp, poses, product, brand] = await Promise.all([
+  const [brandAssets, beforeAfter, mobileApp, poses, badPhotos, creatives, product, brand] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
     readAssets(ASSET_DIRS.poses),
+    readAssets(ASSET_DIRS.badPhotos),
+    readAssets(ASSET_DIRS.creatives),
     readProduct(),
     readBrand(),
   ]);
@@ -133,6 +135,18 @@ export default async function WinkyPiePage() {
             assets={poses}
             dir={ASSET_DIRS.poses}
             dense
+          />
+          <AssetGallery
+            title="Bad Photos"
+            description="Problem-side material: what a first photo looks like when it is wrong — group shots, mirror selfies, bad light. The LIKE / NOPE half of a creative. Real people, men only; a likeness release before any of them runs in an ad, and never framed as bad-me → hot-me next to a result (PRODUCT.md §11)."
+            assets={badPhotos}
+            dir={ASSET_DIRS.badPhotos}
+          />
+          <AssetGallery
+            title="Creatives"
+            description="Delivered creatives, named per the step-03 convention, one sub-folder per lane: `ugc/` (human creator and the disclosed AI host — never a testimonial) and `static/` (stills, silent motion statics). A `.txt` next to a file is its caption. Nothing here is cleared to run until the step-04.1 QA and the likeness release for anyone on screen are done. The same set, by lane: /meta-ads · Our creations."
+            assets={creatives}
+            dir={ASSET_DIRS.creatives}
           />
         </TabsContent>
 

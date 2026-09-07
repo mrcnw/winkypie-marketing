@@ -186,6 +186,8 @@ export default async function CampaignPage({ params }: Props) {
                   <ModelCard key={ad.slug} ad={ad} />
                 ))}
               </ul>
+            ) : brief.modelledOn.length === 0 ? (
+              <p className="text-sm text-muted-foreground">Our own idea — not modelled on a saved ad.</p>
             ) : (
               <p className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Link2Off className="mt-0.5 size-4 shrink-0" />

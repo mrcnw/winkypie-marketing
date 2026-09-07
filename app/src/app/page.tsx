@@ -9,24 +9,32 @@ import { readSwipes, SWIPE_SOURCES } from "@/lib/meta-ads";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [brand, beforeAfter, mobileApp, goodAds, competitorAds, landscape, instagram] = await Promise.all([
+  const [brand, beforeAfter, mobileApp, badPhotos, creatives, goodAds, competitorAds, landscape, instagram] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
+    readAssets(ASSET_DIRS.badPhotos),
+    readAssets(ASSET_DIRS.creatives),
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readLandscape(),
     readInstagramAudit(),
   ]);
 
-  const winkypieCount = brand.length + beforeAfter.length + mobileApp.length;
+  const winkypieCount =
+    brand.length + beforeAfter.length + mobileApp.length + badPhotos.length + creatives.length;
 
   const tiles = [
     {
       href: "/winkypie",
       title: "WinkyPie",
       icon: Images,
-      lines: ["Brand Assets — including Before / After", "Mobile App"],
+      lines: [
+        "Brand Assets — including Before / After",
+        "Mobile App",
+        "Bad Photos — the problem side",
+        "Creatives — our delivered ads",
+      ],
       count: `${winkypieCount} file${winkypieCount === 1 ? "" : "s"}`,
     },
     {

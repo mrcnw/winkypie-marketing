@@ -22,12 +22,16 @@ export type Asset = {
   /** Pixel size for PNG and JPEG. App Store slots have exact specs. */
   width: number | null;
   height: number | null;
+  /** A `.txt` next to the file with the same stem — what is said, or what is on screen. */
+  caption: string | null;
 };
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 const IMAGE_EXT = new Set([".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif", ".svg"]);
 const VIDEO_EXT = new Set([".mp4", ".webm", ".mov", ".m4v"]);
 const MAX_DEPTH = 4;
+/** `clip.txt` beside `clip.mp4` is that clip's caption, never an asset of its own. */
+const CAPTION_EXT = ".txt";
 
 /** Where each category lives under `app/public/`. Drop files in, refresh the page. */
 export const ASSET_DIRS = {
@@ -35,6 +39,10 @@ export const ASSET_DIRS = {
   beforeAfter: "assets/winkypie/before-after",
   mobileApp: "assets/winkypie/mobile-app",
   poses: "assets/winkypie/poses",
+  /** Problem-side photos — what a first photo looks like when it is wrong. Real people: release before any ad use. */
+  badPhotos: "assets/winkypie/bad-photos",
+  /** Our own delivered creatives — one sub-folder per lane (`host/` = AI host clips). */
+  creatives: "assets/winkypie/creatives",
 } as const;
 
 function kindOf(ext: string): AssetKind {
@@ -93,10 +101,14 @@ export function labelOf(fileName: string) {
     .trim();
 }
 
-/** Every file under `public/<relDir>`, recursively. Missing folder → empty list. */
+/**
+ * Every file under `public/<relDir>`, recursively. Missing folder → empty list.
+ * A `.txt` with the same stem as a media file is attached to it as `caption`.
+ */
 export async function readAssets(relDir: string): Promise<Asset[]> {
   const root = path.join(PUBLIC_DIR, relDir);
   const out: Asset[] = [];
+  const captions = new Map<string, string>();
 
   async function walk(dir: string, depth: number) {
     let entries;
@@ -116,6 +128,10 @@ export async function readAssets(relDir: string): Promise<Asset[]> {
       const ext = path.extname(entry.name).toLowerCase();
       const rel = path.relative(root, full).split(path.sep).join("/");
       const relToPublic = path.posix.join(relDir, rel);
+      if (ext === CAPTION_EXT) {
+        captions.set(relToPublic.slice(0, -ext.length), (await fs.readFile(full, "utf8")).trim());
+        continue;
+      }
       const group = rel.includes("/") ? rel.slice(0, rel.lastIndexOf("/")) : "";
       const { width, height } = await readImageSize(full, ext);
       out.push({
@@ -130,11 +146,15 @@ export async function readAssets(relDir: string): Promise<Asset[]> {
         modified: stat.mtime.toISOString(),
         width,
         height,
+        caption: null,
       });
     }
   }
 
   await walk(root, 0);
+  for (const asset of out) {
+    asset.caption = captions.get(asset.href.slice(1).replace(/\.[^.]+$/, "")) ?? null;
+  }
   return out.sort((a, b) => a.href.localeCompare(b.href, "en"));
 }
 

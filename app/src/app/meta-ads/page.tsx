@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { AlertTriangle } from "lucide-react";
 
 import { AdCard } from "@/components/ad-card";
+import { AssetGallery } from "@/components/asset-gallery";
 import { CampaignCard } from "@/components/campaign-card";
 import { DropHint } from "@/components/drop-hint";
 import { KpiDashboard } from "@/components/kpi-dashboard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { BRIEFS_DIR, readCampaigns, type CampaignsData } from "@/lib/campaigns";
 import { readKpi } from "@/lib/kpi";
 import {
@@ -175,13 +177,17 @@ export default async function MetaAdsPage({
 }: {
   searchParams: Promise<{ tab?: string }>;
 }) {
-  // /meta-ads?tab=campaigns opens on the Campaigns section — the way back from a brief.
+  // /meta-ads?tab=campaigns opens on the Campaigns section — the way back from a brief;
+  // ?tab=creations opens the same section on Our creations.
   const { tab } = await searchParams;
-  const section = tab === "campaigns" ? "campaigns" : "research";
-  const [goodAds, competitors, kpi] = await Promise.all([
+  const section = tab === "campaigns" || tab === "creations" ? "campaigns" : "research";
+  const campaignTab = tab === "creations" ? "creations" : "ads-to-copy";
+  const [goodAds, competitors, kpi, ugc, statics] = await Promise.all([
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readKpi(),
+    readAssets(`${ASSET_DIRS.creatives}/ugc`),
+    readAssets(`${ASSET_DIRS.creatives}/static`),
   ]);
   const campaigns = await readCampaigns(goodAds.ads);
   const kpiLabel = kpi.sources.some((source) => source.scenario) ? "KPI Example" : "KPI";
@@ -193,7 +199,7 @@ export default async function MetaAdsPage({
         <h1 className="font-heading text-3xl font-semibold tracking-tight">Meta Ads</h1>
         <p className="max-w-2xl text-sm text-muted-foreground">
           Research is what the niche runs and why it works; Campaigns is what we make of it —
-          our briefs mapped back to their models, and the KPI read. The decisions live in{" "}
+          our briefs mapped back to their models, the creatives we have made, and the KPI read. The decisions live in{" "}
           <code className="font-mono">brain/process/meta-ads/</code>; this page renders them.
         </p>
       </header>
@@ -250,16 +256,41 @@ export default async function MetaAdsPage({
         </TabsContent>
 
         <TabsContent value="campaigns">
-          <Tabs defaultValue="our-ads" className="gap-6">
+          <Tabs defaultValue={campaignTab} className="gap-6">
             <TabsList>
-              <TabsTrigger value="our-ads">
-                Our Ads
+              <TabsTrigger value="ads-to-copy">
+                Ads to copy
                 <Count>{roundOne}</Count>
+              </TabsTrigger>
+              <TabsTrigger value="creations">
+                Our creations
+                <Count>{ugc.length + statics.length}</Count>
               </TabsTrigger>
               <TabsTrigger value="kpi">{kpiLabel}</TabsTrigger>
             </TabsList>
-            <TabsContent value="our-ads">
+            <TabsContent value="ads-to-copy">
               <CampaignList data={campaigns} />
+            </TabsContent>
+            <TabsContent value="creations" className="flex flex-col gap-10">
+              <p className="max-w-2xl text-sm text-muted-foreground">
+                What we have actually made, one lane per sub-folder. A file is not cleared to
+                run by being here — the step-04.1 QA, the §11 guardrails and the likeness
+                release for anyone on screen still apply. A{" "}
+                <code className="font-mono text-foreground">.txt</code> next to a file is its
+                caption: what the presenter says, or what is on screen.
+              </p>
+              <AssetGallery
+                title="UGC"
+                description="Talking-head pieces: the human creator lane and the AI host lane (a disclosed AI presenter, third person about the product — never a testimonial)."
+                assets={ugc}
+                dir={`${ASSET_DIRS.creatives}/ugc`}
+              />
+              <AssetGallery
+                title="Static"
+                description="Design-only pieces: stills and silent motion statics. Before/after framing needs the §11.2 disclosure on frame."
+                assets={statics}
+                dir={`${ASSET_DIRS.creatives}/static`}
+              />
             </TabsContent>
             <TabsContent value="kpi">
               <KpiDashboard data={kpi} />

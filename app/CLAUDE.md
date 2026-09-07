@@ -15,8 +15,8 @@ Four tabs. One job each:
 | Route | What it shows |
 |---|---|
 | `/` | The four tiles, with a count on each. |
-| `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
-| `/meta-ads` | Two sections, each with two tabs. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Our Ads* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section) and *KPI* (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; a keep example and an unprofitable example on top; labelled *KPI Example* while only scenario data exists). |
+| `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot, bad photos (the problem side), our creatives; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
+| `/meta-ads` | Two sections, each with two tabs. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Ads to copy* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section), *Our creations* (what we have made, read from `app/public/assets/winkypie/creatives/` and split by sub-folder into *UGC* and *Static*; a `.txt` beside a file is shown under it as its caption — what the presenter says or what is on screen; `/meta-ads?tab=creations` opens here) and *KPI* (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; a keep example and an unprofitable example on top; labelled *KPI Example* while only scenario data exists). |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
 | `/instagram` | The step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, and the paste-ready name field and bio behind a copy button. Both profile links come out of the note's frontmatter. |
 
@@ -40,12 +40,17 @@ app/public/assets/winkypie/before-after/  → /winkypie · pairs on the file nam
 app/public/assets/winkypie/mobile-app/    → /winkypie · Mobile App
 app/public/assets/winkypie/poses/         → /winkypie · Poses — a snapshot of the in-app
                                             catalog; its file count is not a pose count
+app/public/assets/winkypie/bad-photos/    → /winkypie · Bad Photos — problem-side examples;
+                                            real people, release before any ad use
+app/public/assets/winkypie/creatives/     → /winkypie · Creatives, and /meta-ads · Campaigns ·
+  ugc/  static/                             Our creations (one lane per sub-folder). `x.txt`
+                                            beside `x.mp4` or `x.png` is that file's caption
 app/content/good-ads.json                 → /meta-ads · Good Ads tab
 app/content/competitors.json              → /meta-ads · Competitors tab
 ../brain/process/meta-ads/
   01 Find Competitors/                    → /competitors, read straight from the vault
   03 Choose Videos And Five Campaigns/briefs/*.md
-                                          → /meta-ads · Campaigns · Our Ads (frontmatter
+                                          → /meta-ads · Campaigns · Ads to copy (frontmatter
                                             `order`, `status`, `modelled_on: [good-ads slugs]`;
                                             Hook and Primary text quotes; Evidence paragraph;
                                             `## Do this, in order` list → the steps on
@@ -66,7 +71,9 @@ app/public/assets/meta-ads/competitors/     <slug>.png, or a <slug>/ folder for 
 ```
 
 Sub-folders are walked four levels deep and shown as a group label. Dotfiles are skipped, so
-`.gitkeep` keeps an empty folder in git without appearing in the UI.
+`.gitkeep` keeps an empty folder in git without appearing in the UI. A `.txt` with the same
+stem as a media file is not listed on its own — it becomes that file's `caption`, shown under
+the preview in the card and in the dialog.
 
 Both swipe files are hand-edited and share one shape: an array of `{ slug, title, advertiser,
 url, note, tags, added, rank }`, where only `slug` and `url` are required. `rank` (1 = best)
