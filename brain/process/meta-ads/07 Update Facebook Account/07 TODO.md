@@ -1,7 +1,7 @@
 ---
 tags: [todo, setup]
 step: 07
-updated: 2026-09-01
+updated: 2026-09-07
 ---
 # 07 · TODO — Update Facebook Account
 
@@ -15,6 +15,9 @@ Documentation: [[07 Update Facebook Account]]
 - [ ] Check Account Quality for existing restrictions or rejected ads.
 - [ ] Set two-factor authentication and check admin access — remove anyone who left.
 - [ ] Confirm the linked Instagram account for placements.
+- [ ] Fix the `@winkypie.app` profile in the order in [[Instagram Profile]]: archive the
+      female-model post, rename the name field, paste the new bio, App Store link first,
+      three pinned tiles, four highlights. Audited 2026-09-07.
 - [ ] Post enough real content that the Page does not look abandoned to a click-through.
 - [ ] Confirm the App Store link and the app's Meta association.
 - [ ] Verify the minimum iOS version yourself, in both places, before the first launch:

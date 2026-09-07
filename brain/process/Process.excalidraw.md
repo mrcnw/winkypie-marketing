@@ -92,7 +92,7 @@ Persona · Audiences ^tp06Conf
 07 · Update
 Facebook Account ^tt07Acct
 
-Account Setup ^tp07Acct
+Account Setup · Instagram Profile ^tp07Acct
 
 08 · Launch The Ad ^tt08Laun
 
@@ -2522,9 +2522,9 @@ st09Kpis: [[09 Analyze KPIs]]
 			"y": 1142,
 			"width": 260,
 			"height": 13.75,
-			"text": "Account Setup",
-			"rawText": "Account Setup",
-			"originalText": "Account Setup",
+			"text": "Account Setup · Instagram Profile",
+			"rawText": "Account Setup · Instagram Profile",
+			"originalText": "Account Setup · Instagram Profile",
 			"fontSize": 11,
 			"fontFamily": 1,
 			"textAlign": "center",

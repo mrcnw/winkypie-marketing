@@ -3,7 +3,7 @@ tags: [step, setup]
 status: doing
 phase: setup
 owner:
-updated: 2026-09-02
+updated: 2026-09-07
 ---
 # 07 · Update Facebook Account
 
@@ -20,9 +20,10 @@ branded, permissioned, with billing that works and no policy flags outstanding.
 2. **Ownership before access.** Assets owned by a personal profile rather than Business
    Manager are a permanent risk — one lost account and the ad history goes with it. Move
    them, then grant access, never the reverse.
-3. **The Page is a landing surface.** People do click the profile from an ad. An empty Page
-   with a 2024 cover image undercuts everything the ad just claimed. A handful of real posts
-   is enough; it does not need a content strategy.
+3. **The Page is a landing surface, and so is the Instagram profile.** People do click the
+   profile from an ad. An empty Page with a 2024 cover image undercuts everything the ad just
+   claimed. A handful of real posts is enough; it does not need a content strategy. The
+   Instagram side of this is [[Instagram Profile]].
 4. **Check Account Quality first, not after a rejection.** Existing restrictions silently
    throttle delivery, and you will misread the result as a bad creative.
 5. **Branding matches the app, and the app is canonical.** Copy flows app → web → ads,
@@ -38,6 +39,8 @@ branded, permissioned, with billing that works and no policy flags outstanding.
 
 ## Output
 - `Account Setup.md` — what is configured, who has access, what is still pending
+- `Instagram Profile.md` — the `@winkypie.app` profile audited against `@roast.dating`, the
+  fix list in order, the paste-ready bio. Rendered at `/instagram` in `app/`
 
 ## Notes
 Access lists rot fast. Put a date next to each name in the doc and re-check it at the start
