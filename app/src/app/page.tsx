@@ -1,20 +1,22 @@
 import Link from "next/link";
-import { ArrowRight, Crosshair, Images, Megaphone } from "lucide-react";
+import { ArrowRight, AtSign, Crosshair, Images, Megaphone } from "lucide-react";
 
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { readLandscape } from "@/lib/competitors";
+import { instagramHandle, readInstagramAudit } from "@/lib/instagram";
 import { readSwipes, SWIPE_SOURCES } from "@/lib/meta-ads";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [brand, beforeAfter, mobileApp, goodAds, competitorAds, landscape] = await Promise.all([
+  const [brand, beforeAfter, mobileApp, goodAds, competitorAds, landscape, instagram] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readLandscape(),
+    readInstagramAudit(),
   ]);
 
   const winkypieCount = brand.length + beforeAfter.length + mobileApp.length;
@@ -47,6 +49,17 @@ export default async function Home() {
       ],
       count: `${landscape?.competitors.length ?? 0} profiled`,
     },
+    {
+      href: "/instagram",
+      title: "Instagram",
+      icon: AtSign,
+      lines: [
+        `${instagramHandle(instagram?.profile ?? null) ?? "Our profile"} — what to fix, in order`,
+        `Modelled on ${instagramHandle(instagram?.reference ?? null) ?? "the reference account"}`,
+        "Read live from the step-07 audit in brain/",
+      ],
+      count: `${instagram?.steps.length ?? 0} fix${instagram?.steps.length === 1 ? "" : "es"}`,
+    },
   ];
 
   return (
@@ -62,7 +75,7 @@ export default async function Home() {
         </p>
       </header>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {tiles.map((tile) => (
           <Link
             key={tile.href}

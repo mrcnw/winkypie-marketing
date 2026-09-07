@@ -10,6 +10,7 @@ const TABS = [
   { href: "/winkypie", label: "WinkyPie" },
   { href: "/competitors", label: "Competitors" },
   { href: "/meta-ads", label: "Meta Ads" },
+  { href: "/instagram", label: "Instagram" },
 ] as const;
 
 export function SiteHeader() {

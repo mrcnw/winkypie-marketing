@@ -10,14 +10,15 @@ and organises, it does not restate strategy and it does not track campaigns.
 
 ## Scope
 
-Three tabs. One job each:
+Four tabs. One job each:
 
 | Route | What it shows |
 |---|---|
-| `/` | The three tiles, with a count on each. |
+| `/` | The four tiles, with a count on each. |
 | `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
 | `/meta-ads` | Two sections, each with two tabs. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Our Ads* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section) and *KPI* (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; a keep example and an unprofitable example on top; labelled *KPI Example* while only scenario data exists). |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
+| `/instagram` | The step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, and the paste-ready name field and bio behind a copy button. Both profile links come out of the note's frontmatter. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —
 belongs in `brain/process/meta-ads/`, not here. If a view would need a checkbox or a status,
@@ -51,6 +52,12 @@ app/content/competitors.json              → /meta-ads · Competitors tab
                                             /meta-ads/campaigns/<campaign>)
   05 Ad Strategy And Budget/KPI.md        → /meta-ads · KPI tab: thresholds table
   05 Ad Strategy And Budget/KPI Scenarios.md → /meta-ads · KPI tab, until a real review exists
+  07 Update Facebook Account/Instagram Profile.md
+                                          → /instagram: frontmatter `profile` and `reference`
+                                            are the two links; `## Do this, in order` → the
+                                            fix list; `## New bio` code fences → copy blocks;
+                                            `## Where we are` and `## The model` tables →
+                                            one card per row; every other section in order
   09 Analyze KPIs/KPI Review *.md         → /meta-ads · KPI tab: real rounds
 ../PRODUCT.md                             → /winkypie · Overview
 ../BRAND.md                               → /winkypie · Branding
@@ -94,6 +101,13 @@ checked out beside it, and **a heading rename in the vault silently empties a se
 sections are matched by their opening words (`The gap`, `Ranking`, `Where the best living
 ads`, `Checked and dismissed`, `Facts`). The page degrades to an explanatory error rather
 than crashing.
+
+**`/instagram` reads one note and lays it out by heading.** `src/lib/instagram.ts` loads
+`07 Update Facebook Account/Instagram Profile.md`; the sections it treats specially are
+matched by their opening words (`Do this`, `New bio`, `Where we are`, `The model`), so a rename
+in the vault silently turns that part back into plain markdown rather than breaking the page.
+Nothing here is a tracker: the fix list is numbered, never ticked — the checkboxes stay in
+`07 TODO.md`.
 
 **`/meta-ads` KPI tab reads two vault locations.** `src/lib/kpi.ts` loads every
 `../brain/process/meta-ads/09 Analyze KPIs/KPI Review *.md` (real rounds, newest first) and,
