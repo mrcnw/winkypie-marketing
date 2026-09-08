@@ -1,6 +1,6 @@
 ---
 tags: [produce, guardrails]
-updated: 2026-09-08
+updated: 2026-09-09
 ---
 # Production Guardrails — the one-pager that goes into every order and every AI run
 
@@ -103,6 +103,18 @@ Paste these into the run brief. The workflow enforces some of them; we enforce t
    nothing — prompts, cards, ffmpeg, the sandbox caption pass — may be prepared unasked.
 10. **No trial line, spoken or on frame** (owner\'s decision, 2026-09-07) — the closer is "Be
     the right swipe." Same rule as Lane A item 7.
+11. **Write to clips; the assembly is ours** (rule set 2026-09-09). No model on this platform
+    renders past 15 s ([[AI Production Platforms]] item 6), so a script is a list of clips
+    before it is anything else: each clip ≤15 s, boundaries on sentence ends, words sized to
+    ≈2.4 words/s. The platform delivers **talking clips and nothing else** — the wall of
+    results, the caption plates, the inset and its hide/show windows, the watermark, the end
+    card and the mix are all ours, after the fact. Marketing Studio cannot do any of it
+    ([[AI Production Platforms]] item 7); do not reach for it.
+12. **Assemble in the Higgsfield sandbox, not on the Mac, whenever captions are involved.**
+    The local Homebrew ffmpeg has no `drawtext`, `subtitles` or `ass` filter, so rule 5's ASS
+    recipe cannot run there at all — it only actually works in the sandbox, which ships libass,
+    libfreetype and the Montserrat/Metropolis caption fonts. Full recipe and the traps:
+    [[Host Run 2026-09-08 S7]].
 
 ## What the creator brief inherits from this note
 

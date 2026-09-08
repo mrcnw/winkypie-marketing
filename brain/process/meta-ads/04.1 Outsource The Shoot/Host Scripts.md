@@ -1,6 +1,6 @@
 ---
 tags: [produce, scripts]
-updated: 2026-09-08
+updated: 2026-09-09
 ---
 # Host Scripts — the AI host lane, seven hooks
 
@@ -42,7 +42,7 @@ old lines; it is regenerated only on the owner's command, at 480p first.
 
 | Parameter | Value | Why |
 |---|---|---|
-| Duration | 25 s → clip 1 = 15 s, clip 2 = 10 s | The Shoot Order's 20–25 s; two Seedance 2.5 clips |
+| Duration | **Two clips, never one continuous read** — 15 s + 10 s. Nothing on this platform renders past 15 s ([[AI Production Platforms]] item 6), so the split is a constraint, not a style choice; boundaries fall on sentence ends so the seam is inaudible | The Shoot Order's 20–25 s |
 | Words | clip 1 ≤ 40, clip 2 ≤ 26; totals 55–61 | Workflow ceiling; ≈2.3–2.5 words/s, the calm end of its band |
 | Creator | male, 25–40, US accent, plain room, natural light, self-filmed framing | Persona match; the workflow generates him (Soul 2.0 → Seedream de-slop) |
 | **One host for all five** | Reuse the de-slopped seed from the first run as the "person photo" of runs 2–5 | Holds the person constant so the hook stays the only variable; saves the Soul + Seedream credits four times |
@@ -330,48 +330,55 @@ inset replaces the result card, so the §11.2 line is not needed on it (nothing 
 shown — only the catalog of reference poses, which are themselves AI demo assets: keep the
 §11.2 line on any frame that shows a *result*).
 
-### S7 · `WP_P2_PORTFOLIO_oneselfie_9x16_v1` — One selfie in. A profile's worth out.
+### S7 · `WP_P2_PORTFOLIO_oneselfie_9x16_v4` — One selfie in. A profile's worth out.
 
 | | |
 |---|---|
-| Hypothesis | Proof density — [[WP_P2_PORTFOLIO_oneselfie]], campaign 7, from [[Reface Male Portfolio Cut 2026-09-08]]. **The format is inverted:** the host is a corner inset for 23 of 25 seconds and the full frame is a wall of finished results. He is the ad's voice, not its subject |
+| Hypothesis | Proof density — [[WP_P2_PORTFOLIO_oneselfie]], campaign 7, from [[Reface Male Portfolio Cut 2026-09-08]]. **The format is inverted:** the full frame is a wall of finished results and the host is a corner inset — and from 2026-09-08 he is only there for the first ten seconds |
 | Hook plate | One selfie in. A profile's worth out. |
-| Delivery | Even, unhurried, no lift — the frame is doing the selling. A single slow-down on "Nobody stood in a studio." Long pauses are the point, not dead air |
-| **Cards** | **None. Take `creator_full.mp4` and composite ourselves.** The workflow's overlay cards are unusable here — every full frame is one of our own result stills, sequenced at ~1.8 s. Post-production rule 2 already gives us that path |
+| Delivery | Even, unhurried, no lift — the frame is doing the selling. Long pauses are the point, not dead air |
+| **Cards** | **None. Take the clips and composite ourselves.** Every full frame is one of our own result stills. Post-production rule 2 gives us that path |
+| Run | Seedance 2.0 Mini, 480p, 9:16, `image_references` = the source selfie, native audio. The host ends up 25 % of frame height, so 480p is the *final* quality here, not a test compromise |
 
-**Clip 1 · 15 s · 27 words**
+**Clip 1 · 12 s · 25 words**
 
-> One selfie in. A profile's worth of photos out. Same face. Same build. Street. Café.
-> Studio. Night out. Nobody booked a photographer. Nobody stood in a studio.
+> One selfie in. This one. Same face, same build, same shirt you had on. Pick a pose from
+> the collection, or upload your own pose.
 
-**Clip 2 · 10 s · 19 words**
+**Clip 2 · 10 s · 16 words**
 
-> One selfie. A pose to mirror. That's the whole thing. Authentic pro photos. More matches.
+> Nobody booked a photographer. Nobody hired a studio. Authentic pro photos. More matches.
 > Be the right swipe.
 
-**46 words total, against the 55–61 band above — deliberate.** Eleven seconds of speech in a
-fifteen-second clip and eight in a ten-second one leaves the wall running silent twice. In
-this format the silence is the proof beat; filling it to the ceiling would turn the ad back
-into an explanation, which is the thing campaign 7 exists to test against.
+**41 words total, against the 55-61 band above — deliberate.** In this format the silence is
+the proof beat; filling it to the ceiling turns the ad back into an explanation, which is the
+thing campaign 7 exists to test against.
 
-| Spoken beat | Full frame |
-|---|---|
-| One selfie in … A profile's worth of photos out | results 1–2 — hook plate over the first, host talking from frame one |
-| Same face. Same build | results 3–4 |
-| (silence, ~1.5 s) | **the source selfie**, alone, no phone in shot |
-| Street. Café. Studio. Night out | results 5–8, one per beat |
-| Nobody booked a photographer. Nobody stood in a studio | result 8 holds |
-| (silence, clip 1 → clip 2 seam) | results 9–10 |
-| One selfie. A pose to mirror. That's the whole thing | result 11 |
-| Authentic pro photos. More matches | results 12–13, the last held ≥2.5 s with the §11.2 line |
-| Be the right swipe | **the inset scales to full frame** — host to camera, phone held low, screen away |
+| Spoken beat | Full frame | Host |
+|---|---|---|
+| One selfie in. | result 1 | inset, bottom-left |
+| This one. / Same face, same build, | **the source selfie**, held 3.4 s | inset |
+| same shirt you had on. | result 2 | inset |
+| Pick a pose from the collection, | result 3 | inset |
+| or upload your own pose. | the custom-pose result | inset — **last frame he appears in** |
+| Nobody booked a photographer … More matches. | eight results, ~1.0 s each | **hidden — the wall runs alone** |
+| Be the right swipe. | — | **full frame**, to camera |
+| (end card, 2 s) | Try it yourself. + the AI line | — |
 
 Guardrails: nothing first person — "nobody booked a photographer" is the third-person form of
 the swipe's "I've never done a photoshoot", which stays in a human mouth (Lane B rule 1). No
-count of results, ever, spoken or on frame. The §11.2 line is persistent here, not per-card:
-every full frame is generated. The presenter line rides the inset from frame one, and it is
-the one disclosure that disappears if this is shot on Lane A instead — the script does not
-change between lanes.
+count of results, ever. "Same shirt **you** had on" is second person about the viewer's photo,
+which this note already allows ("the viewer's photo is *your photo*"); it drifted in from the
+model on the first run and was kept.
+
+**Disclosures — owner's decisions, 2026-09-08, and a deviation from Lane B rule 5.** The
+persistent "AI-generated presenter. Not a real customer." line was removed; the §11.2
+results-vary line was removed from the frames and replaced with a small `*AI Creator`
+watermark, bottom right; `This ad contains AI-Generated Content` was added to the end card,
+which carries it for the last two seconds of twenty-two. This is narrower than
+PRODUCT.md §11.2 and BRAND.md ("ships with the §11.2 disclosure or it does not ship") and
+than rule 5 above. Recorded here as the owner's call rather than folded into the rules; the
+open risk is that nothing on the frames says the man talking does not exist.
 
 ## Priority and credits
 

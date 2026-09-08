@@ -1,6 +1,6 @@
 ---
 tags: [research, produce]
-updated: 2026-09-08
+updated: 2026-09-09
 ---
 # AI Production Platforms — the synthetic lane
 
@@ -113,6 +113,27 @@ Avatars cannot reliably hold a phone with a legible screen — the workflow itse
 product out of the body of the clip and shows the app as overlay cards. Max clip 15 s per
 generation; a 30 s ad is two clips cut together. MCP calls timed out repeatedly on 2026-09-02;
 plan generation time generously.
+
+6. **Nothing here renders longer than 15 seconds.** Read across the video catalog 2026-09-08:
+   Marketing Studio declares `duration_range` 12–15 s, and Seedance 2.5, 2.0 and 2.0 Mini all
+   cap at 15 s. **So every creative longer than 15 s is a splice, by definition** — a script is
+   written as clips from the first draft, never as one continuous read, and the join is ours.
+   Put the clip boundary on a sentence end, never mid-clause: the seam is exactly where the two
+   renders meet, and a sentence break hides it.
+7. **Marketing Studio is not the tool for our formats** (read 2026-09-08, both the model schema
+   and the preset gallery). Its video side is five formats — UGC talking-head, plus 2D product
+   motion, hypermotion, mixed media and SaaS motion. Everything else in the gallery (Ads,
+   Posters, Product shot, Marketplace) outputs **images**, not video; the `ads` tab alone holds
+   986 static presets. The `saas` presets are decorative motion graphics ("Echo Wave", "Paper
+   Carousel", one of them 16:9), not screen capture — no use for an app whose product is a
+   photograph. The model takes a product, an avatar, a preset slug and optionally a hook +
+   setting or an `ad_reference_id`, and **there is no shot-list input**: nothing accepts "these
+   thirteen stills, in this order, with these cut points". It *does* take our images
+   (`product_ids`, avatars, `start_image` / `end_image`) but composes its own scenes around
+   them. For a bottle that is fine. For us it is fatal: the thing on screen *is* a photograph,
+   so a synthesised frame derived from ours stops being the output WinkyPie returned — invented
+   proof under §11.1. Use it for nothing in this channel; the talking clip we get cheaper and
+   with full control straight from `generate_video`.
 
 ## The comparison (checked 2026-09-02)
 

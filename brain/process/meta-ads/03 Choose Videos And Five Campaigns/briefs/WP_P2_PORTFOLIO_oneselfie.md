@@ -33,34 +33,42 @@ and changes without a release (guardrail 7), and the wall shows the volume witho
 stating it. "Profile" carries the dating context every winner in the niche puts in its first
 line ([[Hooks And Angles]], 2026-09-06 revision). Nothing is claimed about the viewer.
 
-## Beat sheet (27 s: a 25 s master + a 2 s end card, 9:16)
+## Beat sheet (22.2 s: an 18.2 s wall + 2 s of the host full frame + a 2 s end card, 9:16)
 
-The composition is the variable. The narrator sits in a rounded inset, bottom-left, ~25 % of
-frame height, from frame one. Everything behind him is a finished result, replaced every
-~1.8 s. He never holds up a phone, and the app is never on screen.
+Built 2026-09-08. The composition is the variable. The host sits in a rounded inset,
+bottom-left, ~25 % of frame height — **but only for the first ten seconds.** From 10.0 s his
+voice keeps going and he leaves the frame entirely, so the middle of the ad is nothing but
+results. He returns full frame for the closer. The app is never on screen.
 
-| Time | Full frame | Inset / voice | Overlay |
-|---|---|---|---|
-| 0.0 | Result 1 — studio portrait, high contrast | Narrator, talking on the first frame | Hook plate; §11.2 line starts and never leaves |
-| 1.5–7.0 | Results 2–4 | "…A profile's worth of photos out. Same face. Same build." | word subtitles |
-| 7.0–8.5 | **The source selfie**, full frame — plain room, ordinary light, no phone in shot | one beat of silence | "this one", small |
-| 8.5–13.0 | Results 5–7 — street, café, studio | "Street. Café. Studio. Night out." — one result per beat | word subtitles |
-| 13.0–15.0 | Result 8 — night out | "Nobody booked a photographer. Nobody stood in a studio." | |
-| 15.0–19.0 | Results 9–11 | "One selfie. A pose to mirror. That's the whole thing." | |
-| 19.0–23.0 | Results 12–13, the last held ≥2.5 s | "Authentic pro photos. More matches." | |
-| 23.0–25.0 | **The inset scales up to full frame** — the wall gives way to the person | Narrator to camera, phone held low, screen away | "Be the right swipe." |
-| 25.0–27.0 | End card | — | "Authentic pro photos. More matches." · "Be the right swipe." + App Store badge |
+| Time | Full frame | Host / voice |
+|---|---|---|
+| 0.0–2.1 | Result 1 | inset · "One selfie in." |
+| 2.1–5.5 | **The source selfie**, held 3.4 s | inset · "This one. Same face, same build," |
+| 5.5–7.0 | Result 2 | inset · "same shirt you had on." |
+| 7.0–8.2 | Result 3 | inset · "Pick a pose from the collection," |
+| 8.2–10.0 | The custom-pose result | inset · "or upload your own pose." |
+| 10.0–18.2 | Eight results, ~1.0 s each | **gone from frame** · "Nobody booked a photographer. Nobody hired a studio. Authentic pro photos. More matches." |
+| 18.2–20.2 | The host, full frame | to camera · "Be the right swipe." |
+| 20.2–22.2 | End card | "Try it yourself." + the AI line + App Store badge |
 
-The scale-up at 23.0 is ours, not Reface's, and it is the point of the format: twenty-three
-seconds of photographs, then the man they belong to.
+Twelve results plus the source selfie. The middle section runs at about a second a frame —
+fast, and the place a music bed would earn its keep if one is ever licensed.
 
 ## On-screen copy
 
 - Hook plate: **One selfie in. A profile's worth out.**
-- Persistent, small, bottom: the §11.2 line — *"Demo. Your photos use your actual face and
-  body. Results vary based on selfie quality, lighting, and pose."*
-- Persistent on the inset, Lane B only: *"AI-generated presenter. Not a real customer."*
-- End card: **Authentic pro photos. More matches.** · **Be the right swipe.** · App Store badge
+- Caption plates: black text on a white rounded box, bottom band, one phrase at a time,
+  anchored to the real Whisper word timings.
+- Persistent, small, bottom right: **`*AI Creator`**
+- End card: **Authentic pro photos. More matches.** · **Be the right swipe.** ·
+  **Try it yourself.** · App Store badge · **This ad contains AI-Generated Content**
+
+**Disclosure deviation, owner's decision 2026-09-08.** The §11.2 results-vary line and the
+"AI-generated presenter. Not a real customer." line were both removed from the frames; the
+watermark and the end-card line replace them. That is narrower than PRODUCT.md §11.2,
+BRAND.md ("ships with the §11.2 disclosure or it does not ship") and Lane B rule 5 in
+[[Production Guardrails]]. Recorded, not normalised: nothing on the frames now says the man
+talking does not exist, and the AI line rides two seconds of twenty-two.
 
 ## Primary text
 
@@ -89,50 +97,57 @@ throughout — nobody says "I", "my" or "me" as a user:
 
 ## Guardrail check (§11)
 
-Men only, one man, no female frame anywhere ✓ · every frame is a generated result, so §11.2
-is persistent rather than per-card ✓ · no number spoken or written, no result count, no pose
-count ✓ · no before/after — the source selfie appears once, alone, never side by side with a
-result ✓ · nothing about the viewer's dating status, no second-person appearance claim ✓ ·
-no price, no trial line ✓ · no competitor named or shown ✓ · "same face, same build", never
-"better" ✓ · no bare-torso or physique frames — this is about photographs, not bodies ✓.
+Men only, one man, no female frame anywhere ✓ · no number spoken or written, no result count,
+no pose count ✓ · no before/after — the source selfie appears once, alone, never side by side
+with a result ✓ · nothing about the viewer's dating status, no appearance claim ✓ · no price,
+no trial line ✓ · no competitor named or shown ✓ · "same face, same build", never "better" ✓ ·
+no bare-torso or physique frames ✓ · **§11.2 not on the frames — see the deviation recorded
+under On-screen copy.**
 
-## Production flags (resolve before anything is composited)
+## Production flags
 
-1. **The blocking input is a release, not a render.** Thirteen results of one man in a paid ad
-   are his likeness. [[Host Scripts]] card rule 1 already flags that the man in
-   `app/public/assets/winkypie/mobile-app/app-flow/` (2026-09-01) has not signed one. Use
-   yourself, or a signed release — name, image, likeness; paid social; perpetual; AI-labelled
-   output. Nothing renders until that exists.
-2. **One man across all thirteen frames.** Mixing subjects breaks "same face, same build" and
-   reads as a stock gallery — the single fastest way to lose this format.
-3. **The source selfie must not be a visible self-photograph.** Meta's dating policy bans a
-   person visibly photographing themselves; a mirror shot with the phone in frame is exactly
-   that. Shoot the input at the same body angle on a tripod or front camera and check it
-   passes. If only the mirror shot passes, cut the 7.0 s beat rather than ship the phone.
-4. **Wardrobe and location range is the proof.** Thirteen near-identical studio frames prove
-   nothing. Spread them across the catalog's registers the way the swipe does — and pick the
-   poses from the live catalog on the day, never from a remembered list.
-5. **Two persistent disclosures is the format's real cost.** The §11.2 line plus the presenter
-   line both ride the whole runtime. Lay them out against Meta's safe-zone template on the
-   first composite; if they crowd the frame, that is the argument for Lane A, which drops one.
+1. **The man is synthetic, so there is no release to get.** He was generated by the owner
+   (confirmed 2026-09-08), and the twelve results are genuine WinkyPie renders made from his
+   selfie. That is what makes the wall honest: the app really produced those frames. It also
+   permanently rules out the first person — a generated face saying "I uploaded one selfie"
+   is a fabricated testimonial by a person who does not exist, 16 CFR 465, the row already in
+   [[Production Guardrails]]. Every line stays third person or about the viewer's own photo.
+2. **The wall is never generated elsewhere.** Higgsfield could render the same man in the same
+   places, and it must not: the ad's claim is that the app returned these from one selfie.
+   Images made anywhere else are invented proof (§11.1). More frames means another WinkyPie
+   session, never another platform.
+3. **One man across all twelve frames**, or "same face, same build" collapses and it reads as
+   a stock gallery.
+4. **The source selfie must not be a visible self-photograph.** Meta's dating policy bans a
+   person visibly photographing themselves. The one in use is a front-camera shot with no
+   phone in frame ✓.
+5. **The results in hand are 768×1024.** They arrived downscaled, so the 1080×1920 frame
+   upscales them ~1.9× and crops 25 % of the width — soft, and monuments and palms lose their
+   edges. Fine for an animatic; **get the originals before this is ever bought.**
+6. **Wardrobe range is doing the variety work, and there isn't any** — the same grey shirt is
+   in every frame. The script turns that into the proof ("same shirt you had on") rather than
+   hiding it, but a second outfit in a future session would widen the format.
 
 ## Do this, in order
 
-1. Read [[Reface Male Portfolio Cut 2026-09-08]] — the beat rhythm, the inset size and the
-   persistent disclosure are all measured there. Take the composition, not the copy.
-2. Get the release signed. Then one WinkyPie session, one man: the source selfie plus results
-   across street, café, studio and night-out registers. Keep every original.
-3. Pick thirteen. Reject any two that read as the same photograph, and any that show torso
-   rather than face. Sequence them so no two neighbours share a background.
-4. Narrator: Lane B now — run [[Host Scripts]] S7 on the existing host seed, test at 480p,
-   final only on the owner's go. Or hold it for the Billo session and add it to [[Shoot Order]].
-5. Composite locally: results full-frame at ~1.8 s each, host scaled into the bottom-left
-   inset, the scale-up at 23.0 s, word subtitles from the real Whisper timings, the §11.2 line
-   from frame one. Same ffmpeg path as [[Host Run 2026-09-07]].
-6. QA against the beat sheet and the guardrail check: hook legible sound-off inside 1.5 s, no
-   "I / my / me", no number, no UI, no before/after pairing, disclosures inside the safe zone.
+1. Read [[Reface Male Portfolio Cut 2026-09-08]] — the beat rhythm and the inset size are
+   measured there. Take the composition, not the copy.
+2. One WinkyPie session, one man: the source selfie plus results across as many registers as
+   the catalog offers. Keep the originals at full resolution.
+3. Sequence them so no two neighbours share a register — indoor against outdoor, day against
+   night, sitting against standing. The order lives in the build script, not the file names.
+4. Narrator: Lane B — [[Host Scripts]] S7 on the existing seed, Seedance 2.0 Mini at 480p.
+   The host ends up a 25 % inset, so 480p is the final quality, not a test compromise. Two
+   clips, ~22 credits.
+5. Composite locally: the wall with a slow 1.00→1.06 push and 0.15 s crossfades, the host
+   scaled into the bottom-left inset for the first ten seconds only, caption plates from the
+   real Whisper word timings, the watermark, then the end card. **This ffmpeg build has no
+   `drawtext`, `subtitles` or `ass`** — plates are rendered in PIL and laid on with `overlay`,
+   and rounded corners come from `alphamerge`. Recipe in [[Host Run 2026-09-08 S7]].
+6. QA against the beat sheet: hook legible sound-off inside 1.5 s, no "I / my / me", no
+   number, no UI, no before/after pairing, disclosures inside the safe zone.
 7. Export 9:16, then 4:5 and 1:1 — the inset moves to the bottom-left of the new crop, it does
-   not get cropped off. Name `WP_P2_PORTFOLIO_oneselfie_<ratio>_v1` per [[Creative Naming]].
+   not get cropped off. Name `WP_P2_PORTFOLIO_oneselfie_<ratio>_v<n>` per [[Creative Naming]].
 8. Register in the app's asset browser; hand to [[08 Launch The Ad]] with the hypothesis line
-   written before spend. The ad set is now eight creatives against Meta's six — decide here
-   which two wait for wave two.
+   written before spend. The ad set is eight creatives against Meta's six — decide here which
+   two wait for wave two.
