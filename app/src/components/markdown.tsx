@@ -2,7 +2,11 @@ import { Fragment, type ReactNode } from "react";
 
 import type { MdBlock } from "@/lib/markdown";
 
-/** `**bold**`, `*italic*`, `code`, [text](url) and [[wiki links]] — nothing else is used in the vault. */
+/**
+ * `**bold**`, `*italic*`, `code`, [text](url) and [[wiki links]] — nothing else is used in the
+ * vault. Bold and italic recurse, so `**a [[link]]**` renders the link rather than its brackets;
+ * the pattern is non-greedy per token, so nesting is one level deep and cannot loop.
+ */
 function inline(text: string, keyPrefix: string): ReactNode[] {
   const pattern =
     /(\*\*[^*]+\*\*)|(\*[^*\n]+\*)|(`[^`]+`)|(\[\[[^\]]+\]\])|(\[[^\]]+\]\((?:https?:\/\/|\/)[^)]+\))/g;
@@ -17,15 +21,16 @@ function inline(text: string, keyPrefix: string): ReactNode[] {
     const key = `${keyPrefix}-${index++}`;
 
     if (token.startsWith("**")) {
+      // Recurse: a wiki link or code span inside bold is common in the vault.
       nodes.push(
         <strong key={key} className="font-medium text-foreground">
-          {token.slice(2, -2)}
+          {inline(token.slice(2, -2), key)}
         </strong>,
       );
     } else if (token.startsWith("*")) {
       nodes.push(
         <em key={key} className="italic">
-          {token.slice(1, -1)}
+          {inline(token.slice(1, -1), key)}
         </em>,
       );
     } else if (token.startsWith("`")) {

@@ -16,13 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default async function WinkyPiePage() {
-  const [brandAssets, beforeAfter, mobileApp, poses, badPhotos, creatives, product, brand] = await Promise.all([
+  const [brandAssets, beforeAfter, mobileApp, poses, badPhotos, creatives, instagram, product, brand] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
     readAssets(ASSET_DIRS.poses),
     readAssets(ASSET_DIRS.badPhotos),
     readAssets(ASSET_DIRS.creatives),
+    readAssets(ASSET_DIRS.instagram),
     readProduct(),
     readBrand(),
   ]);
@@ -147,6 +148,12 @@ export default async function WinkyPiePage() {
             description="Delivered creatives, named per the step-03 convention, one sub-folder per lane: `ugc/` (human creator and the disclosed AI host — never a testimonial) and `static/` (stills, silent motion statics). A `.txt` next to a file is its caption. Nothing here is cleared to run until the step-04.1 QA and the likeness release for anyone on screen are done. The same set, by lane: /meta-ads · Our creations."
             assets={creatives}
             dir={ASSET_DIRS.creatives}
+          />
+          <AssetGallery
+            title="Instagram"
+            description="Organic tiles for @winkypie.app, 4:5. `pinned/` is the three-tile pitch above the fold — pick a pose, upload a photo, more matches. The `.txt` beside a tile is its post caption, pasted as-is. Men only, no number without a source, and the results-vary disclosure wherever a result is shown (PRODUCT.md §11). The same set with copy buttons: /instagram · Pinned tiles."
+            assets={instagram}
+            dir={ASSET_DIRS.instagram}
           />
         </TabsContent>
 

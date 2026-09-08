@@ -5,24 +5,27 @@ import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { readLandscape } from "@/lib/competitors";
 import { instagramHandle, readInstagramAudit } from "@/lib/instagram";
 import { readSwipes, SWIPE_SOURCES } from "@/lib/meta-ads";
+import { readPostsCalendar } from "@/lib/posts-calendar";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [brand, beforeAfter, mobileApp, badPhotos, creatives, goodAds, competitorAds, landscape, instagram] = await Promise.all([
+  const [brand, beforeAfter, mobileApp, badPhotos, creatives, instagramTiles, goodAds, competitorAds, landscape, instagram, calendar] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
     readAssets(ASSET_DIRS.badPhotos),
     readAssets(ASSET_DIRS.creatives),
+    readAssets(ASSET_DIRS.instagram),
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readLandscape(),
     readInstagramAudit(),
+    readPostsCalendar(),
   ]);
 
   const winkypieCount =
-    brand.length + beforeAfter.length + mobileApp.length + badPhotos.length + creatives.length;
+    brand.length + beforeAfter.length + mobileApp.length + badPhotos.length + creatives.length + instagramTiles.length;
 
   const tiles = [
     {
@@ -34,6 +37,7 @@ export default async function Home() {
         "Mobile App",
         "Bad Photos — the problem side",
         "Creatives — our delivered ads",
+        "Instagram — the organic tiles",
       ],
       count: `${winkypieCount} file${winkypieCount === 1 ? "" : "s"}`,
     },
@@ -64,9 +68,10 @@ export default async function Home() {
       lines: [
         `${instagramHandle(instagram?.profile ?? null) ?? "Our profile"} — what to fix, in order`,
         `Modelled on ${instagramHandle(instagram?.reference ?? null) ?? "the reference account"}`,
-        "Read live from the step-07 audit in brain/",
+        "Pinned tiles with their captions, ready to post",
+        "Posts calendar — the month, today marked, one pillar per weekday",
       ],
-      count: `${instagram?.steps.length ?? 0} fix${instagram?.steps.length === 1 ? "" : "es"}`,
+      count: `${instagram?.steps.length ?? 0} fix${instagram?.steps.length === 1 ? "" : "es"} · ${instagramTiles.length} tile${instagramTiles.length === 1 ? "" : "s"} · ${calendar?.posts.length ?? 0} post${calendar?.posts.length === 1 ? "" : "s"}`,
     },
   ];
 

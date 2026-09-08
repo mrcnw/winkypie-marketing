@@ -18,7 +18,7 @@ Four tabs. One job each:
 | `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot, bad photos (the problem side), our creatives; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
 | `/meta-ads` | Two sections, each with two tabs. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Ads to copy* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section), *Our creations* (what we have made, read from `app/public/assets/winkypie/creatives/` and split by sub-folder into *UGC* and *Static*; a `.txt` beside a file is shown under it as its caption — what the presenter says or what is on screen; `/meta-ads?tab=creations` opens here) and *KPI* (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; a keep example and an unprofitable example on top; labelled *KPI Example* while only scenario data exists). |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
-| `/instagram` | The step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, and the paste-ready name field and bio behind a copy button. Both profile links come out of the note's frontmatter. |
+| `/instagram` | Three tabs. **Profile** — the step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, the paste-ready name field and bio behind a copy button, and *Pinned tiles* — the three 4:5 tiles from `assets/winkypie/instagram/pinned/` with the caption beside each behind a copy button. Both profile links come out of the note's frontmatter. **Posts calendar** — the step-07 posting plan on a month grid: Monday-first, today marked, one chip per planned post coloured by pillar (dashed while it still `needs asset`), the month's rows as a table under it, then the note's other sections; a chip or a table row opens a dialog with the whole row, and a link into the post when one is written; `/instagram?tab=calendar` opens here. **Posts** — every written post, read from the step-07 `posts/` folder: the hook drawn at its own ratio because slide one is the grid tile, whether it is a carousel or a single tile, the slide table verbatim, and the caption and first comment behind copy buttons; `/instagram?tab=posts` opens here, and `#<post slug>` scrolls to one. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —
 belongs in `brain/process/meta-ads/`, not here. If a view would need a checkbox or a status,
@@ -45,6 +45,9 @@ app/public/assets/winkypie/bad-photos/    → /winkypie · Bad Photos — proble
 app/public/assets/winkypie/creatives/     → /winkypie · Creatives, and /meta-ads · Campaigns ·
   ugc/  static/                             Our creations (one lane per sub-folder). `x.txt`
                                             beside `x.mp4` or `x.png` is that file's caption
+app/public/assets/winkypie/instagram/     → /winkypie · Instagram, and /instagram · Profile ·
+  pinned/                                   Pinned tiles (the `pinned/` sub-folder only). `x.txt`
+                                            beside `x.png` is the post caption, pasted as-is
 app/content/good-ads.json                 → /meta-ads · Good Ads tab
 app/content/competitors.json              → /meta-ads · Competitors tab
 ../brain/process/meta-ads/
@@ -63,6 +66,16 @@ app/content/competitors.json              → /meta-ads · Competitors tab
                                             fix list; `## New bio` code fences → copy blocks;
                                             `## Where we are` and `## The model` tables →
                                             one card per row; every other section in order
+  07 Update Facebook Account/posts/*.md   → /instagram · Posts, one card per note (frontmatter
+                                            `pillar`, `format`, `slides`, `ratio`, `posts` as the
+                                            date, `status`; `## The hook`, `## The description` and
+                                            `## The first comment` each hand over their first code
+                                            fence; `## The carousel` hands over its table)
+  07 Update Facebook Account/Posts Calendar.md
+                                          → /instagram · Posts calendar: the `## Schedule`
+                                            table (`Date` as YYYY-MM-DD, `Time` optional, `Pillar`,
+                                            `Format`, `Asset`, `Line`, `Status`) → the month grid and
+                                            the rows under it; every other section in order
   09 Analyze KPIs/KPI Review *.md         → /meta-ads · KPI tab: real rounds
 ../PRODUCT.md                             → /winkypie · Overview
 ../BRAND.md                               → /winkypie · Branding
@@ -109,12 +122,22 @@ sections are matched by their opening words (`The gap`, `Ranking`, `Where the be
 ads`, `Checked and dismissed`, `Facts`). The page degrades to an explanatory error rather
 than crashing.
 
-**`/instagram` reads one note and lays it out by heading.** `src/lib/instagram.ts` loads
+**`/instagram` reads three places in the vault and copies none of them.** `src/lib/instagram.ts` loads
 `07 Update Facebook Account/Instagram Profile.md`; the sections it treats specially are
 matched by their opening words (`Do this`, `New bio`, `Where we are`, `The model`), so a rename
 in the vault silently turns that part back into plain markdown rather than breaking the page.
+`src/lib/posts-calendar.ts` loads `Posts Calendar.md` from the same folder: the first table
+under `## Schedule` is the plan, columns matched by header name (`Date`, `Time`, `Pillar`, `Format`,
+`Asset`, `Line`, `Status`; `Time` optional, the poster's clock), a row without a `YYYY-MM-DD` date is skipped, and the pillar is
+matched on the cell's opening words in `src/lib/pillars.ts` (`Pinned`, `Pose`, `Education`,
+`UGC`, `Text card`) — a new pillar needs a key there and a colour token in `globals.css`
+(`--pillar-*`). Today comes from the server's clock, which is the reader's own machine. `src/lib/instagram-posts.ts` reads every `.md` in `posts/`; its sections are matched on their
+opening words too (`The hook`, `The carousel`, `The description`, `The first comment`, `Do this`),
+and a section it cannot find degrades to a missing block on the card rather than an error. Whether
+a post is a carousel is the note's `format`, with the slide count as the fallback — the app never
+decides it.
 Nothing here is a tracker: the fix list is numbered, never ticked — the checkboxes stay in
-`07 TODO.md`.
+`07 TODO.md` — and a post's `Status` is typed in the vault, never here.
 
 **`/meta-ads` KPI tab reads two vault locations.** `src/lib/kpi.ts` loads every
 `../brain/process/meta-ads/09 Analyze KPIs/KPI Review *.md` (real rounds, newest first) and,

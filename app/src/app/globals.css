@@ -25,6 +25,10 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-pillar-result: var(--pillar-result);
+  --color-pillar-education: var(--pillar-education);
+  --color-pillar-ugc: var(--pillar-ugc);
+  --color-pillar-card: var(--pillar-card);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -57,6 +61,11 @@
 :root {
   --brand-start: #f59e0b;
   --brand-end: #ec4899;
+  /* The content pillars on the Instagram posts calendar — one hue each, read against the dark surface. */
+  --pillar-result: oklch(0.78 0.14 65);
+  --pillar-education: oklch(0.74 0.12 235);
+  --pillar-ugc: oklch(0.76 0.14 150);
+  --pillar-card: oklch(0.72 0 0);
 }
 
 @utility brand-gradient {

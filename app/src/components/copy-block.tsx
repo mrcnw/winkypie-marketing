@@ -1,6 +1,7 @@
 "use client";
 
 import { CopyButton } from "@/components/copy-button";
+import { cn } from "@/lib/utils";
 
 /** A block of text meant to be taken, not read. */
 export function CopyBlock({
@@ -9,12 +10,15 @@ export function CopyBlock({
   text,
   copyLabel = "Copy markdown",
   toastMessage = "Branding copied",
+  wrap = false,
 }: {
   title: string;
   description?: string;
   text: string;
   copyLabel?: string;
   toastMessage?: string;
+  /** Wrap long lines instead of scrolling sideways — for prose meant to be read here too. */
+  wrap?: boolean;
 }) {
   return (
     <section className="flex flex-col gap-3 rounded-xl border border-border bg-card/50 p-5">
@@ -25,7 +29,12 @@ export function CopyBlock({
         </div>
         <CopyButton value={text} label={copyLabel} toastMessage={toastMessage} />
       </div>
-      <pre className="max-h-96 overflow-auto rounded-lg bg-background/70 p-4 font-mono text-xs leading-relaxed text-muted-foreground">
+      <pre
+        className={cn(
+          "max-h-96 overflow-auto rounded-lg bg-background/70 p-4 font-mono text-xs leading-relaxed text-muted-foreground",
+          wrap && "whitespace-pre-wrap break-words",
+        )}
+      >
         {text}
       </pre>
     </section>
