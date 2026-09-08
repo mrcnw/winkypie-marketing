@@ -1,6 +1,6 @@
 ---
 tags: [research, produce]
-updated: 2026-09-07
+updated: 2026-09-08
 ---
 # AI Production Platforms — the synthetic lane
 
@@ -77,6 +77,23 @@ and it is also what the platform enforces.
    1080p only on the owner's command** — five 480p tests ≈ 313 credits, and each 1080p
    re-render of a winner is a fresh take (same seed and prompt, different performance), 225
    each; `upscale_video` exists on the MCP as the alternative, cost and quality unverified.
+   **Cheaper test models, preflighted 2026-09-08** (`get_cost`, 9:16, 12 s, 480p unless noted, native
+   audio, all take an `image_references` face): Seedance 2.0 Mini **12** (1.0/s) · Wan 3.0 **12** (1.0/s)
+   · Gemini Omni Flash 1.1 at 360p, 10 s max **10** · Seedance 2.0 fast 18 · Wan 3.0 Prime 18 ·
+   MiniMax H3 Max 18 · Grok Video 1.5 30 · Seedance 2.5 30 (2.5/s) · Seedance 2.0 std 36 · FLUX 3
+   Video (720p min) 66. **Owner's decision 2026-09-08: every test runs on Seedance 2.0 Mini at 480p** — same family
+   and prompt conventions as the locked 2.5, 60 % cheaper (a 25 s run ≈ 25 credits); its
+   talking-head quality against 2.5 is unverified until the first Mini run. The 1080p final
+   stays on Seedance 2.5, the workflow's locked model.
+   **Kling, asked 2026-09-08:** no "Kling Avatar" exists on the Higgsfield MCP (catalog searched for
+   avatar / lip-sync — only Sync Lipsync 3, a video-plus-audio lip-sync tool, and the Kling video
+   models). Kling 2.6 / 3.0 / 3.0 Turbo take a `start_image` (the seed becomes the literal first
+   frame — 3:4 seed into a 9:16 output, weaker framing control), not an `image_references` face,
+   which is why they sat outside the first ladder. Prices for 12 s, 9:16: Kling 3.0 std with
+   sound **24** (2.0/s, 720p — no resolution switch) · sound off 18 · Kling 3.0 pro with sound 30 ·
+   Kling 3.0 Turbo 720p 18 (no speech parameter) · Kling 2.6, 10 s with sound 20. So Kling 3.0 std
+   is the cheapest *720p* talking option (Seedance 2.5 at 720p is 78), while Seedance 2.0 Mini at
+   480p (12) stays the cheapest test overall.
 5. **Rights.** Marketing Studio: "content you generate is yours to publish … from organic posts
    to paid campaigns, subject to Higgsfield's Terms of Use"
    ([marketing-studio-intro](https://higgsfield.ai/marketing-studio-intro)). Third-party

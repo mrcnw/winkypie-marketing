@@ -1,6 +1,6 @@
 ---
 tags: [produce, guardrails]
-updated: 2026-09-07
+updated: 2026-09-08
 ---
 # Production Guardrails — the one-pager that goes into every order and every AI run
 
@@ -84,7 +84,9 @@ Paste these into the run brief. The workflow enforces some of them; we enforce t
    ONE line at size 56 and top margin 0.09 H so it ends above the pill — the default two-line
    plate covers the disclosure for the whole hook; cards contain-fit 0.78 W × 0.50 H centred at
    0.47 H; captions bottom-aligned with margin 0.22 H (Stories-safe; inside Meta's Reels 35 %
-   band — check the Reels template before a paid run). The §11.2 line is baked onto the result
+   band — check the Reels template before a paid run), **black text on a white box** (ASS
+   BorderStyle 3, white outline/back colour, outline ≈ 8 as padding — owner's rule
+   2026-09-08: every burned transcript sits at the bottom, black on white, legible on a phone). The §11.2 line is baked onto the result
    card at 42 px so it survives the scale-down.
 6. **Keep the metadata.** Do not strip C2PA/IPTC marks from the export; Meta's automatic
    "AI info" label is neutral to delivery and removing marks is the one thing that turns a
@@ -95,8 +97,9 @@ Paste these into the run brief. The workflow enforces some of them; we enforce t
    script reads like speech, clean lips mid-word, ≤2 hands, no baked text, no generated
    screen, disclosure legible on a phone.
 9. **No generation without the owner's explicit per-run command** (rule set 2026-09-07 after
-   the first run went out on the strength of the plan alone). Test runs at the lowest
-   resolution, 480p; 1080p only once the owner has approved the test. Everything that costs
+   the first run went out on the strength of the plan alone). **Test runs on Seedance 2.0 Mini
+   at 480p** (owner's rule 2026-09-08, 1 credit/s); the final on Seedance 2.5 at 1080p only
+   once the owner has approved the test. Everything that costs
    nothing — prompts, cards, ffmpeg, the sandbox caption pass — may be prepared unasked.
 10. **No trial line, spoken or on frame** (owner\'s decision, 2026-09-07) — the closer is "Be
     the right swipe." Same rule as Lane A item 7.

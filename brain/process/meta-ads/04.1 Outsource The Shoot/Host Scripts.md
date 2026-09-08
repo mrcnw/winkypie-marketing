@@ -1,8 +1,8 @@
 ---
 tags: [produce, scripts]
-updated: 2026-09-07
+updated: 2026-09-08
 ---
-# Host Scripts — the AI host lane, five hooks
+# Host Scripts — the AI host lane, seven hooks
 
 **Five third-person host monologues for Higgsfield's `ugc-website-video` workflow, one per
 round-one hook, sized to the workflow's limits (25 s = a 15 s clip plus a 10 s clip, ≤40
@@ -52,7 +52,8 @@ old lines; it is regenerated only on the owner's command, at 480p first.
 | Disclosures | Persistent "AI-generated presenter. Not a real customer." from frame one; the §11.2 line baked onto every result card | Lane B rule 5; PRODUCT.md §11.2 |
 | Output name | `WP_<persona>_HOST_<slug>_9x16_v1` per [[Creative Naming]] | 4:5 and 1:1 cut from the master in post |
 | **Go** | **Nothing is generated without the owner's explicit command, per run.** Free preparation — prompts, card crops, local ffmpeg, sandbox captions — may proceed unasked | Owner's rule, 2026-09-07 |
-| **Resolution** | **Test runs at 480p** (2.5 credits/s → 62.5 per 25 s run). 1080p (9 credits/s → 225) only after the owner has approved the 480p test — and a 1080p render is a *new take* of the same prompt and seed, not an upscale | Credit ladder measured 2026-09-07, [[AI Production Platforms]] |
+| **Test model** | **Every test run: Seedance 2.0 Mini at 480p** (1 credit/s → 12 for a 12 s clip, ≈ 25 per 25 s run), `image_references` = the same host seed, `generate_audio: true`, clips ≤ 15 s. Owner's rule 2026-09-08 | The cheapest model in the catalog that takes the seed and speaks — [[AI Production Platforms]] |
+| **Final model** | **Seedance 2.5 at 1080p** (9 credits/s → 225 per 25 s run), only after the owner has approved the test — a 1080p render is a *new take* of the same prompt and seed, not an upscale | The workflow's locked model |
 
 ## The card set — what to capture from the app
 
@@ -298,6 +299,80 @@ check, not a profile review.
 
 Alt opening, wave two: "Not the app. Not luck. The first photo."
 
+### S6 · `WP_P3_HOST_triedthemall_9x16_v1` — Someone else's face. That's most AI photo apps.
+
+| | |
+|---|---|
+| Hypothesis | The switcher's likeness angle — [[WP_P3_UGC_triedthemall]] (the owner's sixth campaign, 2026-09-07). **Not the first-person line**: "I tried every AI photo app" is his experience and stays human (Lane B rule 1). The host says the brief's primary text in the third person |
+| Hook plate | Someone else's face. That's most AI photo apps. |
+| Delivery | Dry and flat on the first two sentences, a small lift on "pose", slow down and hold on "Still you." |
+| **Card** | **The app screen recording, not a still** — a 9:16 capture of the Explore tab being scrolled (City & Street → Café → Studio → Night Out → a pose card), status bar cropped off, played as a moving inset while the host looks down and scrolls his own phone. Run 2026-09-08 |
+
+**Clip 1 · 12 s · 28 words** — to camera
+
+> Someone else's face. That's most AI photo apps. WinkyPie starts from a pose. It coaches
+> you. One selfie. It renders your face, your build. Looks pro. Still you.
+
+**Clip 2 · 10 s · 9 words** — five seconds of him scrolling a phone (screen turned away,
+never rendered), then up to the lens
+
+> Authentic pro photos. No photographer. Be the right swipe.
+
+| Spoken beat | Card |
+|---|---|
+| Someone else's face … Still you | none — face; the whole of clip 1 is the pitch |
+| (silent scroll, clip 2 first 5 s) | the screen recording, from clip-2 start + 0.3 s to the closer − 0.3 s |
+| Authentic pro photos. No photographer. Be the right swipe | none — closer, phone held low |
+
+Guardrails: "someone else's face" is about the apps' output, never the viewer; no app named;
+"your face, your build" is the brief's primary text; "same", never "better". The moving
+inset replaces the result card, so the §11.2 line is not needed on it (nothing generated is
+shown — only the catalog of reference poses, which are themselves AI demo assets: keep the
+§11.2 line on any frame that shows a *result*).
+
+### S7 · `WP_P2_PORTFOLIO_oneselfie_9x16_v1` — One selfie in. A profile's worth out.
+
+| | |
+|---|---|
+| Hypothesis | Proof density — [[WP_P2_PORTFOLIO_oneselfie]], campaign 7, from [[Reface Male Portfolio Cut 2026-09-08]]. **The format is inverted:** the host is a corner inset for 23 of 25 seconds and the full frame is a wall of finished results. He is the ad's voice, not its subject |
+| Hook plate | One selfie in. A profile's worth out. |
+| Delivery | Even, unhurried, no lift — the frame is doing the selling. A single slow-down on "Nobody stood in a studio." Long pauses are the point, not dead air |
+| **Cards** | **None. Take `creator_full.mp4` and composite ourselves.** The workflow's overlay cards are unusable here — every full frame is one of our own result stills, sequenced at ~1.8 s. Post-production rule 2 already gives us that path |
+
+**Clip 1 · 15 s · 27 words**
+
+> One selfie in. A profile's worth of photos out. Same face. Same build. Street. Café.
+> Studio. Night out. Nobody booked a photographer. Nobody stood in a studio.
+
+**Clip 2 · 10 s · 19 words**
+
+> One selfie. A pose to mirror. That's the whole thing. Authentic pro photos. More matches.
+> Be the right swipe.
+
+**46 words total, against the 55–61 band above — deliberate.** Eleven seconds of speech in a
+fifteen-second clip and eight in a ten-second one leaves the wall running silent twice. In
+this format the silence is the proof beat; filling it to the ceiling would turn the ad back
+into an explanation, which is the thing campaign 7 exists to test against.
+
+| Spoken beat | Full frame |
+|---|---|
+| One selfie in … A profile's worth of photos out | results 1–2 — hook plate over the first, host talking from frame one |
+| Same face. Same build | results 3–4 |
+| (silence, ~1.5 s) | **the source selfie**, alone, no phone in shot |
+| Street. Café. Studio. Night out | results 5–8, one per beat |
+| Nobody booked a photographer. Nobody stood in a studio | result 8 holds |
+| (silence, clip 1 → clip 2 seam) | results 9–10 |
+| One selfie. A pose to mirror. That's the whole thing | result 11 |
+| Authentic pro photos. More matches | results 12–13, the last held ≥2.5 s with the §11.2 line |
+| Be the right swipe | **the inset scales to full frame** — host to camera, phone held low, screen away |
+
+Guardrails: nothing first person — "nobody booked a photographer" is the third-person form of
+the swipe's "I've never done a photoshoot", which stays in a human mouth (Lane B rule 1). No
+count of results, ever, spoken or on frame. The §11.2 line is persistent here, not per-card:
+every full frame is generated. The presenter line rides the inset from frame one, and it is
+the one disclosure that disappears if this is shot on Lane A instead — the script does not
+change between lanes.
+
 ## Priority and credits
 
 Run in this order; stop where the credits stop.
@@ -309,6 +384,7 @@ Run in this order; stop where the credits stop.
 | 3 | S3 coached-host | The only AI read available on hypothesis 3 — under a host hook, not the confession |
 | 4 | S5 algorithm | The blame-shift under a host; its static already tests the angle, the host read is the cheap second look |
 | 5 | S4 stillyou | Weakest fit for a generated face; runs only with the disclosure doing the work |
+| 6 | S6 triedthemall-host | The owner's sixth hook under a host; **ran 2026-09-08 at 480p, 55 credits** — the first run with a moving inset ([[Host Run 2026-09-08]]) |
 
 Credits, from the estimates in [[AI Production Platforms]]: one 25 s run ≈ 250–330 (two
 Seedance 2.5 clips at 1080p with audio, plus captions), plus ~60–100 once for the host seed;

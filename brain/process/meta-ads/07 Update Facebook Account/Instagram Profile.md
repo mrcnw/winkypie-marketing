@@ -2,7 +2,7 @@
 tags: [setup, instagram, audit]
 step: 07
 status: todo
-updated: 2026-09-07
+updated: 2026-09-08
 profile: https://www.instagram.com/winkypie.app/
 reference: https://www.instagram.com/roast.dating/
 ---
@@ -97,12 +97,30 @@ store-screenshot captions (`BRAND.md` §8).
 
 A *Results* highlight comes later and only with the §11.2 disclosure on every story.
 
+## Pinned tiles — built 2026-09-08
+
+Three 4:5 tiles, one per step of the shipped flow, in the order the app runs it — the Cal AI
+*Scan · Track · Improve* device, in our kit. Files and paste-ready captions live in
+`app/public/assets/winkypie/instagram/pinned/`; the `.txt` beside each tile is its caption,
+and `/instagram` shows them with a copy button.
+
+| Tile | Word on the frame | Screen shown | File |
+|---|---|---|---|
+| 1 | *1. Pick a pose.* | The poses grid — City & Street, Café & Drinks. Men only, no count anywhere | `WP_IG_PIN1_pickapose_4x5_v1.png` |
+| 2 | *2. Upload a photo.* | The reference pose over the selfie, the free check's green tick and its match % | `WP_IG_PIN2_uploadaphoto_4x5_v1.png` |
+| 3 | *3. More matches.* | The result, with *pose used* and *photo used* under it | `WP_IG_PIN3_morematches_4x5_v1.png` |
+
+- **Words.** The owner's set, 2026-09-08: *Pick · Upload · More matches*. *More matches* is the second half of the primary line, so it needs no source. The multiplier version (*x10 matches*) was dropped — it is the claim `PRODUCT.md` §9 and §11 ban, and the 9× in onboarding is `[unsourced]`.
+- **Order.** Post all three the same day and pin them in reverse — tile 3 first, then 2, then 1 — because Instagram puts the most recently pinned post first. Check the row after pinning; it should read 1 · 2 · 3 left to right.
+- **Tile 3 is a result frame.** Its caption carries the §11.2 disclosure and the post gets Instagram's AI label. The frame itself has no disclosure line yet — add it in the source file (bottom, under the word, small) before the tile is ever boosted; on the organic grid the caption is the disclosure.
+- **Captions.** Two beats, *Link in bio.*, the hashtag core, the collection tag of the pose shown. Tiles 2 and 3 show a poolside pose — `#goldenhour` is a guess until the collection is checked in the admin panel.
+
 ## Grid rhythm
 
-- **Reels first.** Three a week, cut from the paid creative — the 04.1 host clips are already 9:16 and already say the locked lines.
+- **The week is in [[Posts Calendar]]:** Monday pose → result, Wednesday education, Friday UGC — three posts, fixed days, nothing else, so each grid column stays one pillar. Every second Wednesday is a text card. Cut from the paid creative — the 04.1 host clips are already 9:16 and already say the locked lines.
 - **One header line on every reel**, top 12 % of the frame: `Authentic pro photos. More matches.` in Fraunces, *matches* italic in the gradient. Roast's header is what makes their grid read as one page; ours does the same job with the brand line.
-- **Every fourth tile a text card.** Black, one locked line, the punch word in the gradient. The first three cards: *She decided in 100 ms.* · *Looks pro. Still you.* · *Be the right swipe.*
-- **Pin three:** the primary-line card, the *How it works* reel, the *Photo check* reel. That is the whole pitch above the fold.
+- **Text cards:** black, one locked line, the punch word in the gradient. The first three: *Looks pro. Still you.* · *She decided in 100 ms.* · *Be the right swipe.*
+- **Pin three:** the tiles in *Pinned tiles* above — *Pick a pose · Upload a photo · More matches*. That is the whole pitch above the fold.
 - **Caption:** two beats, then *Link in bio.*, then `#WinkyPie #AIPhotos #AIPhotography #ProfilePic` plus the scene-collection tag of the pose shown (`PRODUCT.md` §6). No stat without its source label.
 - **Every result shown carries the disclosure** — *"Demo. Your photos use your actual face and body. Results vary based on selfie quality, lighting, and pose."*
 
@@ -113,8 +131,8 @@ A *Results* highlight comes later and only with the §11.2 disclosure on every s
 3. **Replace the bio** with the four-line block above, pasted as-is.
 4. **Set the links:** App Store first with the title *Download on the App Store*, `winkypie.app` second.
 5. **Check the account type.** Professional account, category *App page*, so insights and the contact button exist. Confirm it is the account linked to the Page in [[Account Setup]].
-6. **Post three tiles and pin them:** the primary-line text card, the *How it works* reel, the *Photo check* reel. All male, disclosure on every result frame.
+6. **Post the three tiles and pin them** — *Pick a pose · Upload a photo · More matches*, built 2026-09-08, files and captions under *Pinned tiles*. All three the same day, pinned in reverse order. Tile 3 gets the AI label and the disclosure in its caption.
 7. **Build the four highlights** — How it works, Photo check, Poses, FAQ — with brand covers.
 8. **Follow ~50 accounts** in the niche.
-9. **Start the rhythm:** three reels and one text card a week, every reel with the header line. Source: the paid creative that runs, nothing made only for organic.
+9. **Start the rhythm** from [[Posts Calendar]]: Monday pose → result, Wednesday education, Friday UGC, every reel with the header line. Source: the paid creative that runs, nothing made only for organic.
 10. **Decide on the comment-keyword DM automation** before writing *Comment POSE* in any caption. It needs a tool and a reply script; until it exists, *Link in bio.*

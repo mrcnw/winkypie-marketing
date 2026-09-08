@@ -1,7 +1,7 @@
 ---
 tags: [todo, setup]
 step: 07
-updated: 2026-09-07
+updated: 2026-09-08
 ---
 # 07 · TODO — Update Facebook Account
 
@@ -17,7 +17,10 @@ Documentation: [[07 Update Facebook Account]]
 - [ ] Confirm the linked Instagram account for placements.
 - [ ] Fix the `@winkypie.app` profile in the order in [[Instagram Profile]]: archive the
       female-model post, rename the name field, paste the new bio, App Store link first,
-      three pinned tiles, four highlights. Audited 2026-09-07.
+      three pinned tiles, four highlights. Audited 2026-09-07. The three tiles are built —
+      2026-09-08, *Pinned tiles* in [[Instagram Profile]], captions beside the files.
+- [ ] Post to [[Posts Calendar]] — Monday pose → result, Wednesday education, Friday UGC — and
+      mark each row `posted` the day it goes up. Fill the `needs asset` rows first.
 - [ ] Post enough real content that the Page does not look abandoned to a click-through.
 - [ ] Confirm the App Store link and the app's Meta association.
 - [ ] Verify the minimum iOS version yourself, in both places, before the first launch:

@@ -1,7 +1,7 @@
 ---
 tags: [todo, strategy]
 step: 03
-updated: 2026-09-06
+updated: 2026-09-08
 ---
 # 03 · TODO — Choose Videos And Five Campaigns
 
@@ -23,3 +23,11 @@ Documentation: [[03 Choose Videos And Five Campaigns]]
 
 - [x] 2026-09-06: campaign 5 re-chosen — savings out, blame-shift in ([[WP_P1_STATIC_algorithm]]);
       naming, budget table, shoot order and host script follow.
+
+- [x] 2026-09-08: campaign 7 added — [[WP_P2_PORTFOLIO_oneselfie]], the proof-density format
+      from [[Reface Male Portfolio Cut 2026-09-08]]. New format token `PORTFOLIO` in [[Creative Naming]],
+      script S7 in [[Host Scripts]], persona split now 3×P2 / 2×P1 / 2×P3.
+- [ ] Decide which two of the eight creatives wait for wave two — the ad set is two over Meta's six
+      ([[Budget And Thresholds]]).
+- [ ] Blocking for campaign 7: the likeness release, and one WinkyPie session giving thirteen results
+      plus a source selfie of the same man. Same release gap as the card set in [[Host Scripts]].

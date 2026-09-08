@@ -41,6 +41,8 @@ branded, permissioned, with billing that works and no policy flags outstanding.
 - `Account Setup.md` — what is configured, who has access, what is still pending
 - `Instagram Profile.md` — the `@winkypie.app` profile audited against `@roast.dating`, the
   fix list in order, the paste-ready bio. Rendered at `/instagram` in `app/`
+- `Posts Calendar.md` — the posting plan from 2026-09-08: three pillars, the weekly rhythm,
+  the schedule table. Rendered at `/instagram?tab=calendar` in `app/`
 
 ## Notes
 Access lists rot fast. Put a date next to each name in the doc and re-check it at the start
