@@ -33,7 +33,7 @@ export const SWIPE_SOURCES = {
     repoFile: "app/content/good-ads.json",
     assetDir: "assets/meta-ads/good-ads",
     blurb:
-      "One entry per ad worth keeping. Use the ad's own ?id=<library id> link so the card opens that ad, not a whole page.",
+      "One entry per ad worth keeping. Use the ad's own ?id=<library id> link — a page link records the page, not the ad.",
   },
   competitors: {
     key: "competitors",
