@@ -1,0 +1,5 @@
+Actor 03, cast 2026-09-09. Younger than the other two, short cropped hair, stone oxford shirt, hallway corner rather than the sofa - the first of the cast who stands, and the first shot away from the bookshelf the other two share.
+
+Built in three steps, not one: Soul 2.0 cast three standing candidates text-only at 9:16, then two Seedream is_inpaint passes on the chosen one - the first cut the hair and changed the t-shirt for the shirt, the second replaced the background. Generated at 9:16 on purpose so any clip animated from it inherits the ratio instead of needing a reframe.
+
+1152x2048. Note the hair reads dark blond rather than brown; that was visible at the casting stage and kept.

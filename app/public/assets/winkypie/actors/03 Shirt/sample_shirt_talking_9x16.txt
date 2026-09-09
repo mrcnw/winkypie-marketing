@@ -1,0 +1,9 @@
+Actor 03 speaking, 5 s with native audio, 2026-09-09. Animated from portrait.png with Seedance 2.0 Mini at 480p, generate_audio true - the test model Host Scripts.md fixes for every test run. Delivered 496x864, 9:16, inherited from the 9:16 portrait rather than fixed in post.
+
+Says: "You don't need to know how to pose. WinkyPie coaches you." A trimmed line from the approved S6 coaching script in Host Scripts.md - deliberately a different line and a different claim from actor 02's, and third person about the product, since a generated face has no bona fide use to claim (16 CFR 465).
+
+The voice was asked for brighter, warmer and slightly quicker than actor 02's dry, unhurried read, still a male US accent per the persona spec. It measures hotter too: max -1.6 dB against -3.1 dB. Speech runs the whole clip; the 0.39 s gap at 2.20 s is the sentence break, not a dropout.
+
+"AI-generated presenter. Not a real customer." burned in from frame one per Lane B rule 5, as a PIL plate overlaid with ffmpeg - this ffmpeg has no drawtext.
+
+Still a test render at 480p. A 1080p version is a new take of the same prompt, not an upscale. Note the actor reads early twenties, below the 25-40 band the persona table specifies.

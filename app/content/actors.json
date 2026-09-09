@@ -69,5 +69,52 @@
         "promptNote": "The model is not a choice — Host Scripts.md fixes Seedance 2.0 Mini at 480p with generate_audio for every test run, and it bills 1 credit/s, which this run confirmed. Its floor is 4 s, so a 3 s clip like the silent one is not reachable; 5 s is what a two-sentence read needs anyway. The spoken line is a trimmed WP_P2_STATIC_100ms line from the same file — third person about the product, because a generated face has no bona fide use to claim (16 CFR 465). 9:16 held here, unlike Kling. The \"AI-generated presenter. Not a real customer.\" disclosure is burned in from frame one per Lane B rule 5, as a PIL plate overlaid with ffmpeg, since this ffmpeg has no drawtext. Higgsfield again offered the \"IN THE DARK\" preset — declined again. 480p is a test render; 1080p is a new take of the same prompt, not an upscale."
       }
     ]
+  },
+  {
+    "slug": "03-shirt",
+    "name": "Shirt",
+    "folder": "03 Shirt",
+    "look": "Early twenties, short cropped hair, stone oxford shirt, standing in a hallway corner",
+    "added": "2026-09-09",
+    "disclosure": "Burned in from frame one on the talking sample — \"AI-generated presenter. Not a real customer.\"",
+    "note": "The first of the cast who stands, and the first shot away from the bookshelf the other two share. Cast from three text-only candidates at 9:16, then edited twice. Reads early twenties, below the 25–40 band the persona table in Host Scripts.md specifies — kept deliberately, the brief asked for younger. The hair reads dark blond rather than the brown asked for; that was visible at the casting stage and kept.",
+    "recipes": [
+      {
+        "label": "Casting — three standing candidates",
+        "model": "Higgsfield Soul 2.0 (soul_2)",
+        "params": "9:16 · quality 1.5k · 960×1696 · count 3 · text-only, no reference",
+        "credits": 0.36,
+        "jobId": "ebfbeedb-09d2-4fb6-9d06-11c6aa2503a4",
+        "prompt": "Handheld front-camera selfie, indoors, standing. A fair-skinned man in his early twenties with short brown hair - tapered at the sides, a little length left on top, lightly tousled, well off the ears and clear of the forehead - and clear light eyes, completely clean-shaven with a smooth jaw, no stubble, no facial hair. He stands upright in a lived-in living room, weight on one leg, shoulders relaxed, free hand loose at his side. The phone is held at eye level so the camera is level with his face, head and upper body filling the frame down to the waist. Wearing a plain washed grey cotton t-shirt. Looking straight into the lens with a calm, relaxed, neutral expression, mouth closed, lips together, not smiling. Behind him a soft-focus oak bookshelf with books, an off-white wall, the corner of a grey sofa low in the frame. Warm indoor daylight from a window off camera, slightly flat even light on the face. Shot on an iPhone front camera, natural skin texture with visible pores and shine, no retouching, mild lens distortion, casual UGC look. Vertical framing with room above the head.",
+        "promptNote": "The job id is the chosen candidate of three. An earlier round of three said \"very slight low angle\" alongside \"standing\", and two of the three came back leaning over the phone — a standing subject holds it at eye level, so the two instructions fought and the pose lost. Naming eye level explicitly fixed all three. 9:16 is deliberate: a clip animated from a 9:16 still inherits the ratio instead of needing a reframe. Asking for clean-shaven still produced stubble on two of three — the model pulls a young man toward facial hair regardless."
+      },
+      {
+        "label": "Edit 1 — shorter hair and a shirt",
+        "model": "Seedream 5.0 Pro (seedream_v5_pro)",
+        "params": "is_inpaint true · 1.5k · 9:16 · image_references = the chosen candidate · 1152×2048",
+        "credits": 1.5,
+        "jobId": "b6d24a55-a9bf-4552-b818-4f9952b6f9a2",
+        "prompt": "Keep his face and identity exactly as they are - same features, same eyes, same skin, clean-shaven. Three changes only. First, his hair is cut shorter: a short tapered crop, noticeably shorter on top than now, lightly textured, nothing falling forward onto the forehead. Second, replace the grey t-shirt with a plain button-up shirt - soft oxford cotton in a muted stone colour, collar open at the neck, the top two buttons undone, long sleeves to the wrist, clean and unbranded. Third, change the background: he now stands in a different corner of the same kind of home, a plain warm off-white wall with the edge of a doorway and a floor lamp softly out of focus, no bookshelf. Keep the same warm indoor daylight, the same upright standing pose, the same level eye contact and neutral closed-mouth expression, and the same handheld front-camera selfie framing.",
+        "promptNote": "Two of the three changes landed — the hair and the shirt. The background did not: the bookshelf survived untouched. is_inpaint protects the original pixels and replaces only what is named, which suits a garment or a haircut and resists a whole-frame swap. The rule that follows: one change per pass."
+      },
+      {
+        "label": "Edit 2 — new background",
+        "model": "Seedream 5.0 Pro (seedream_v5_pro)",
+        "params": "is_inpaint true · 1.5k · 9:16 · image_references = edit 1 · 1152×2048",
+        "credits": 1.5,
+        "jobId": "4e496d2d-8239-4777-8de8-e946303dbf8e",
+        "prompt": "Change only the background behind him. Remove the wooden bookshelf and all the books entirely - no shelving, no book spines, no bowls. He now stands against a plain warm off-white wall, with the soft out-of-focus edge of a doorway on one side and a floor lamp glowing softly out of focus behind his shoulder. Keep him exactly as he is: the same face, the same short cropped hair, the same stone oxford button-up shirt, the same upright standing pose, the same level eye contact and neutral closed-mouth expression, the same handheld front-camera selfie framing, and the same warm indoor daylight falling on him from the same direction.",
+        "promptNote": "The same request that failed as part of a three-part edit succeeded on its own. This is the actor's portrait."
+      },
+      {
+        "label": "Talking clip — shirt, brighter voice",
+        "model": "Seedance 2.0 Mini (seedance_2_0_mini)",
+        "params": "5 s · 480p · 9:16 · generate_audio true · start_image = the portrait · delivered 496×864",
+        "credits": 5,
+        "jobId": "49c63f3b-ee72-4b5e-91a3-c7fd48160762",
+        "prompt": "The man from the reference photo talks straight to the camera - handheld front-camera selfie, standing in the same hallway corner in his stone oxford shirt. A bright, warm, slightly quicker delivery: a lighter, younger male US voice, friendly and matter-of-fact, a touch of energy, not a hard sell. He says: \"You don't need to know how to pose. WinkyPie coaches you.\" Natural mouth movement and lip sync, a blink or two, small head movements, subtle continuous handheld micro-shake. Warm indoor daylight stays constant, nothing else in the frame moves. Quiet room tone behind the voice, no music. Casual UGC selfie video, one continuous take, no cuts.",
+        "promptNote": "A different line and a different claim from actor 02's, taken from the approved S6 coaching script rather than written here. The voice brief was brighter and quicker against actor 02's dry, unhurried read, still a male US accent per the persona table; it measures hotter as well, max -1.6 dB against -3.1 dB. 9:16 came free from the 9:16 portrait. Passing declined_preset_id up front suppressed the \"IN THE DARK\" preset prompt that had interrupted the two runs before it."
+      }
+    ]
   }
 ]
