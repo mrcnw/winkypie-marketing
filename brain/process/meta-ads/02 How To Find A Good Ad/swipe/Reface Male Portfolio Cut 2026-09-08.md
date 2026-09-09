@@ -1,6 +1,6 @@
 ---
 tags: [research, swipe]
-updated: 2026-09-08
+updated: 2026-09-09
 ---
 # Reface — the male cut, "my buddy asked who shot them" (2026-08-28)
 
@@ -24,7 +24,7 @@ contact sheets. Both cuts and the Facebook reel share the folder and `index.tsv`
 | Engagement | 1,134 likes · 49 comments (no view count exposed) |
 | File | 9:16, 1080×1920, H.264 30 fps, AAC, 0:32 |
 | Disclosure | Persistent bottom line on every result frame: "This ad contains AI-Generated Content. The app enables creation of AIGC". End card footer: "This ad`s content is created with AI" |
-| Composition | Narrator in a rounded inset, bottom-left, ~25 % of frame height, talking for the whole runtime. The other ~75 % is a finished portrait, replaced every ~1.8 s |
+| Composition | Narrator in a rounded inset, bottom-left, ~25 % of frame height, talking for the whole runtime. The other ~75 % is a finished portrait, replaced every **~1.07 s** (measured) |
 
 **Two cuts, one shape, twelve seconds apart.** The female cut runs a woman's portraits, the
 male cut a man's; the beat structure, the inset position, the karaoke captions, the end card
@@ -33,13 +33,42 @@ move the round-one set makes with the hook.
 
 ## Structure
 
-| Time | Full frame | Inset / caption |
-|---|---|---|
-| 0:00–0:19 | Thirteen finished B&W portraits of one man, one every ~1.8 s: suit, tank top, leather jacket, café, street, apartment window, floor-sitting, shirtless studio | Narrator talking throughout. White one-word karaoke captions centre-frame ("these" · "selfie" · "black" · "Realistic," · "professional.") |
-| 0:19–0:27 | More portraits, voice stops — music only. Ends on a laughing close-up | Narrator still visible, still talking silently |
-| 0:27–0:32 | Black end card: "TRY IT YOURSELF" over three descending chevrons | Footer: "This ad`s content is created with AI" |
+**Cut points measured with ffmpeg `scdet`, 2026-09-09 — not eyeballed.** Twenty-five cuts, so
+**twenty-six result shots** before the end card, at a steady **~1.07 s each**. An earlier
+version of this note said "one every ~1.8 s"; that came from reading a contact sheet sampled
+every 2 s, which aliased the real cadence. The narrator sits in a rounded inset, bottom-left,
+~25 % of frame height, talking across the whole run; white one-word karaoke captions land
+centre-frame; the AI-generated-content line rides every result frame.
 
-The AIGC line sits on every single result frame, small, bottom-left, for the whole 27 seconds.
+| # | Od–do | Full frame |
+|---|---|---|
+| 1 | 0.00–1.07 | Suit jacket open over bare chest, grey trousers, standing — studio grey |
+| 2 | 1.07–2.17 | Laughing, blazer, seated on a ledge — bright room |
+| 3 | 2.17–3.20 | Shirtless, seated, leaning back, black trousers |
+| 4 | 3.20–4.27 | Face close-up, hard diagonal shadow |
+| 5 | 4.27–5.37 | Shirtless outdoors, hedge behind, leaning on a balustrade |
+| 6 | 5.37–6.40 | Shirtless, white loft, standing, hand in pocket |
+| 7 | 6.40–7.47 | White tank, seated on a stool, hand to chin |
+| 8 | 7.47–8.57 | Laughing, white tank, arm raised |
+| 9 | 8.57–9.60 | Laughing, white tank, hand behind the head |
+| 10 | 9.60–10.67 | Black tee, standing at a window |
+| 11 | 10.67–11.77 | Suit and tie, seated on a leather chesterfield |
+| 12 | 11.77–12.80 | Open blazer over bare chest, seated, white studio |
+| 13 | 12.80–13.87 | Laughing close-up, chain |
+| 14 | 13.87–14.97 | Leather jacket, seated on a stool, dark backdrop |
+| 15 | 14.97–16.00 | Black tank, seated, hands on knees |
+| 16 | 16.00–17.07 | White tank and glasses, seated, jacket over the knee |
+| 17 | 17.07–18.17 | Dark suit, seated, pavement behind |
+| 18 | 18.17–19.20 | Shirtless, arms up, stool, loft window |
+| 19 | 19.20–20.27 | White tank, high-waist trousers, standing, hand on hip |
+| 20 | 20.27–21.37 | Shirtless, hands on the head, tight close-up |
+| 21 | 21.37–22.40 | White tank, seated on the floor, boots |
+| 22 | 22.40–23.47 | Black jumper, seated, hand to face |
+| 23 | 23.47–24.57 | Grey suit, leaning on a wall, arm raised |
+| 24 | 24.57–25.60 | Light suit, seated on a stool, hand in the hair |
+| 25 | 25.60–26.67 | Dark coat, mid-jump on a sofa |
+| 26 | 26.67–26.79 | Suit, mid-motion, and a laughing greyscale close-up |
+| — | 26.79–32.38 | Black end card: "TRY IT YOURSELF" over three descending chevrons |
 
 ## Mechanism (the three lines)
 

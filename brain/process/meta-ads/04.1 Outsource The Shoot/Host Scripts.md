@@ -34,15 +34,18 @@ below maps its beats to cards. Three things the workflow wants that we override,
 
 **2026-09-07, two changes in every script (owner's decisions):** `Pro photos.` became
 `Authentic pro photos.`, and the closer "Three days free. Cancel anytime." became "Be the right
-swipe." — the trial is never spoken and is not on the end card; the App Store listing carries
-it. Word counts are unchanged net (+1 −1). S2 was rendered before both changes and says the
+swipe." — the trial is never spoken. **The end-card half of that decision was reversed on
+2026-09-09:** the card carries "Try it yourself free." The §11.3 auto-renewal sentence was
+burned onto the first build and then removed at the owner's instruction — the open conflict
+with PRODUCT.md §11.3 is written up in [[Production Guardrails]] Lane B rule 10. Nothing
+changes in what the host says. Word counts are unchanged net (+1 −1). S2 was rendered before both changes and says the
 old lines; it is regenerated only on the owner's command, at 480p first.
 
 ## Run parameters — identical for all five
 
 | Parameter | Value | Why |
 |---|---|---|
-| Duration | **Two clips, never one continuous read** — 15 s + 10 s. Nothing on this platform renders past 15 s ([[AI Production Platforms]] item 6), so the split is a constraint, not a style choice; boundaries fall on sentence ends so the seam is inaudible | The Shoot Order's 20–25 s |
+| Duration | 15 s + 10 s **on the test model** — 2.0 Mini caps at 15 s, so a test of a 20–25 s ad is two clips. **The final need not be:** Seedance 2.5 takes 30 s in one continuous read ([[AI Production Platforms]] item 6, corrected 2026-09-09). Split boundaries fall on sentence ends so the seam is inaudible | The Shoot Order's 20–25 s |
 | Words | clip 1 ≤ 40, clip 2 ≤ 26; totals 55–61 | Workflow ceiling; ≈2.3–2.5 words/s, the calm end of its band |
 | Creator | male, 25–40, US accent, plain room, natural light, self-filmed framing | Persona match; the workflow generates him (Soul 2.0 → Seedream de-slop) |
 | **One host for all five** | Reuse the de-slopped seed from the first run as the "person photo" of runs 2–5 | Holds the person constant so the hook stays the only variable; saves the Soul + Seedream credits four times |

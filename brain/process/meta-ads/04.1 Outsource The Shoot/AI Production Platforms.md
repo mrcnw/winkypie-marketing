@@ -114,12 +114,27 @@ product out of the body of the clip and shows the app as overlay cards. Max clip
 generation; a 30 s ad is two clips cut together. MCP calls timed out repeatedly on 2026-09-02;
 plan generation time generously.
 
-6. **Nothing here renders longer than 15 seconds.** Read across the video catalog 2026-09-08:
-   Marketing Studio declares `duration_range` 12–15 s, and Seedance 2.5, 2.0 and 2.0 Mini all
-   cap at 15 s. **So every creative longer than 15 s is a splice, by definition** — a script is
-   written as clips from the first draft, never as one continuous read, and the join is ours.
-   Put the clip boundary on a sentence end, never mid-clause: the seam is exactly where the two
-   renders meet, and a sentence break hides it.
+6. **Duration ceilings differ by model — check before writing the script.** Read from the
+   model schemas 2026-09-09, correcting a wrong entry written here on 2026-09-08:
+
+   | Model | Max duration | Max resolution |
+   |---|---|---|
+   | **Seedance 2.5** | **30 s** | 1080p |
+   | Wan 3.0 | 30 s | 1080p |
+   | Seedance 2.0 (`std`) | 15 s | **4k** |
+   | Seedance 2.0 Mini | 15 s | 720p |
+   | Gemini Omni Flash 1.1 | 10 s | **4k** |
+   | Marketing Studio | 12–15 s | 1080p |
+
+   The earlier claim that "everything caps at 15 s" was wrong: 2.0 and Mini were checked, 2.5
+   was assumed. **Seedance 2.5 takes a 30-second read in one clip**, so a 20–25 s ad does not
+   have to be a splice at all — one continuous performance, no seam.
+
+   The splice rule still holds where it applies: the **test** model (2.0 Mini, the owner's rule
+   for every test) caps at 15 s, so a test of a longer ad is two clips even when the final is
+   one. When you do split, put the boundary on a sentence end — the seam is where the renders
+   meet, and a sentence break hides it. And note the trade: 4k exists only on models capped at
+   10–15 s, so length and resolution pull against each other.
 7. **Marketing Studio is not the tool for our formats** (read 2026-09-08, both the model schema
    and the preset gallery). Its video side is five formats — UGC talking-head, plus 2D product
    motion, hypermotion, mixed media and SaaS motion. Everything else in the gallery (Ads,

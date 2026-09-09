@@ -101,11 +101,26 @@ Paste these into the run brief. The workflow enforces some of them; we enforce t
    at 480p** (owner's rule 2026-09-08, 1 credit/s); the final on Seedance 2.5 at 1080p only
    once the owner has approved the test. Everything that costs
    nothing — prompts, cards, ffmpeg, the sandbox caption pass — may be prepared unasked.
-10. **No trial line, spoken or on frame** (owner\'s decision, 2026-09-07) — the closer is "Be
-    the right swipe." Same rule as Lane A item 7.
-11. **Write to clips; the assembly is ours** (rule set 2026-09-09). No model on this platform
-    renders past 15 s ([[AI Production Platforms]] item 6), so a script is a list of clips
-    before it is anything else: each clip ≤15 s, boundaries on sentence ends, words sized to
+10. **The trial: never spoken, on the end card since 2026-09-09, and §11.3 deliberately not
+    carried.** The closer stays "Be the right swipe." and no script mentions the trial —
+    Lane A item 7 is unchanged. Two owner decisions on 2026-09-09 changed the card: "Try it
+    yourself free." goes on it, overturning the on-frame half of 2026-09-07; and the
+    PRODUCT.md §11.3 auto-renewal sentence, which was burned onto the first build, was then
+    **removed at the owner's instruction** as not needed.
+
+    Recorded, not resolved: §11.3 in PRODUCT.md still states the disclosure is required "at
+    any purchase-adjacent surface" and lists no exception, so the card and PRODUCT.md now
+    disagree. The exposure is a free-trial offer that converts to a paid subscription with no
+    auto-renewal terms on the creative — the FTC and the EU UCPD both police this, and Apple
+    asks for the terms where the offer is presented. Either §11.3 gets an explicit carve-out
+    for ad creative (owner's call, with a reason) or the word "free" comes off the card; the
+    cheapest fix is dropping the word, because then nothing has to be disclosed. Shipped
+    state: `WP_P2_PORTFOLIO_oneselfie_9x16_v10`.
+11. **The assembly is ours; split only when the model makes you** (rule set 2026-09-09,
+    corrected the same day). Ceilings differ — Seedance 2.5 takes 30 s in one clip, the 2.0 Mini
+    used for tests caps at 15 s ([[AI Production Platforms]] item 6). So a final can be one
+    continuous read while its test is two clips: check the ceiling before writing. When you do
+    split, each clip ≤ the model's max, boundaries on sentence ends, words sized to
     ≈2.4 words/s. The platform delivers **talking clips and nothing else** — the wall of
     results, the caption plates, the inset and its hide/show windows, the watermark, the end
     card and the mix are all ours, after the fact. Marketing Studio cannot do any of it
