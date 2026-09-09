@@ -2,7 +2,11 @@ Actor 03 speaking, 5 s with native audio, 2026-09-09. Animated from portrait.png
 
 Says: "You don't need to know how to pose. WinkyPie coaches you." A trimmed line from the approved S6 coaching script in Host Scripts.md - deliberately a different line and a different claim from actor 02's, and third person about the product, since a generated face has no bona fide use to claim (16 CFR 465).
 
-The voice was asked for brighter, warmer and slightly quicker than actor 02's dry, unhurried read, still a male US accent per the persona spec. It measures hotter too: max -1.6 dB against -3.1 dB. Speech runs the whole clip; the 0.39 s gap at 2.20 s is the sentence break, not a dropout.
+The voice was asked for brighter, warmer and slightly quicker than actor 02's dry, unhurried read, still a male US accent per the persona spec. Measured max -1.1 dB against actor 02's -3.1 dB.
+
+Second take. The first said "a blink or two" in the prompt and got two pronounced ones, the second reading as a wink; this take asks for steady open eyes instead and holds them open across all 20 frames sampled at 4 fps. Not phrased as a blink ban - that produces a dead stare.
+
+Known defect, carried on purpose: the sentence-break pause ran to 1.06 s (2.20-3.26 s) against 0.39 s in the first take, so there is a dead beat mid-clip. Not trimmed locally because the mouth keeps moving through the silence - the lip sync is loose there and a cut would show. A tighter read needs another take.
 
 "AI-generated presenter. Not a real customer." burned in from frame one per Lane B rule 5, as a PIL plate overlaid with ffmpeg - this ffmpeg has no drawtext.
 
