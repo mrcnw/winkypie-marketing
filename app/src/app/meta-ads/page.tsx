@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { AlertTriangle } from "lucide-react";
 
 import { AdCard } from "@/components/ad-card";
+import { AdTeardowns } from "@/components/ad-teardowns";
 import { AssetGallery } from "@/components/asset-gallery";
 import { CampaignCard } from "@/components/campaign-card";
 import { DropHint } from "@/components/drop-hint";
 import { KpiDashboard } from "@/components/kpi-dashboard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { loadAdTeardowns, TEARDOWNS_DIR } from "@/lib/ad-teardowns";
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { BRIEFS_DIR, readCampaigns, type CampaignsData } from "@/lib/campaigns";
 import { readKpi } from "@/lib/kpi";
@@ -178,16 +180,20 @@ export default async function MetaAdsPage({
   searchParams: Promise<{ tab?: string }>;
 }) {
   // /meta-ads?tab=campaigns opens on the Campaigns section — the way back from a brief;
-  // ?tab=creations opens the same section on Our creations.
+  // ?tab=creations opens the same section on Our creations; ?tab=teardowns opens Research on
+  // the Ad analyzer, which is where a link pasted from elsewhere wants to land.
   const { tab } = await searchParams;
   const section = tab === "campaigns" || tab === "creations" ? "campaigns" : "research";
   const campaignTab = tab === "creations" ? "creations" : "ads-to-copy";
-  const [goodAds, competitors, kpi, ugc, statics] = await Promise.all([
+  const researchTab =
+    tab === "teardowns" ? "teardowns" : tab === "competitors" ? "competitors" : "good-ads";
+  const [goodAds, competitors, kpi, ugc, statics, teardowns] = await Promise.all([
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readKpi(),
     readAssets(`${ASSET_DIRS.creatives}/ugc`),
     readAssets(`${ASSET_DIRS.creatives}/static`),
+    loadAdTeardowns(),
   ]);
   const campaigns = await readCampaigns(goodAds.ads);
   const kpiLabel = kpi.sources.some((source) => source.scenario) ? "KPI Example" : "KPI";
@@ -227,7 +233,7 @@ export default async function MetaAdsPage({
         </TabsList>
 
         <TabsContent value="research">
-          <Tabs defaultValue="good-ads" className="gap-6">
+          <Tabs defaultValue={researchTab} className="gap-6">
             <TabsList>
               <TabsTrigger value="good-ads">
                 Good Ads
@@ -236,6 +242,10 @@ export default async function MetaAdsPage({
               <TabsTrigger value="competitors">
                 Competitors — Ad Library
                 <Count>{competitors.ads.length}</Count>
+              </TabsTrigger>
+              <TabsTrigger value="teardowns">
+                Ad analyzer
+                <Count>{teardowns.length}</Count>
               </TabsTrigger>
             </TabsList>
             <TabsContent value="good-ads">
@@ -251,6 +261,9 @@ export default async function MetaAdsPage({
                 ads={competitors.ads}
                 error={competitors.error}
               />
+            </TabsContent>
+            <TabsContent value="teardowns">
+              <AdTeardowns teardowns={teardowns} dir={TEARDOWNS_DIR} />
             </TabsContent>
           </Tabs>
         </TabsContent>
