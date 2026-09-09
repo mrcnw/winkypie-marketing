@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AlertTriangle } from "lucide-react";
 
+import { ActorCast } from "@/components/actor-cast";
 import { AdCard } from "@/components/ad-card";
 import { AdTeardowns } from "@/components/ad-teardowns";
 import { AssetGallery } from "@/components/asset-gallery";
@@ -8,6 +9,7 @@ import { CampaignCard } from "@/components/campaign-card";
 import { DropHint } from "@/components/drop-hint";
 import { KpiDashboard } from "@/components/kpi-dashboard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ACTORS_FILE, readActors } from "@/lib/actors";
 import { loadAdTeardowns, TEARDOWNS_DIR } from "@/lib/ad-teardowns";
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { BRIEFS_DIR, readCampaigns, type CampaignsData } from "@/lib/campaigns";
@@ -183,16 +185,19 @@ export default async function MetaAdsPage({
   // ?tab=creations opens the same section on Our creations; ?tab=teardowns opens Research on
   // the Ad analyzer, which is where a link pasted from elsewhere wants to land.
   const { tab } = await searchParams;
-  const section = tab === "campaigns" || tab === "creations" ? "campaigns" : "research";
-  const campaignTab = tab === "creations" ? "creations" : "ads-to-copy";
+  const section =
+    tab === "campaigns" || tab === "creations" || tab === "actors" ? "campaigns" : "research";
+  const campaignTab =
+    tab === "creations" ? "creations" : tab === "actors" ? "actors" : "ads-to-copy";
   const researchTab =
     tab === "teardowns" ? "teardowns" : tab === "competitors" ? "competitors" : "good-ads";
-  const [goodAds, competitors, kpi, ugc, statics, teardowns] = await Promise.all([
+  const [goodAds, competitors, kpi, ugc, statics, cast, teardowns] = await Promise.all([
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readKpi(),
     readAssets(`${ASSET_DIRS.creatives}/ugc`),
     readAssets(`${ASSET_DIRS.creatives}/static`),
+    readActors(),
     loadAdTeardowns(),
   ]);
   const campaigns = await readCampaigns(goodAds.ads);
@@ -279,6 +284,10 @@ export default async function MetaAdsPage({
                 Our creations
                 <Count>{ugc.length + statics.length}</Count>
               </TabsTrigger>
+              <TabsTrigger value="actors">
+                UGC AI Actors
+                <Count>{cast.actors.length}</Count>
+              </TabsTrigger>
               <TabsTrigger value="kpi">{kpiLabel}</TabsTrigger>
             </TabsList>
             <TabsContent value="ads-to-copy">
@@ -304,6 +313,37 @@ export default async function MetaAdsPage({
                 assets={statics}
                 dir={`${ASSET_DIRS.creatives}/static`}
               />
+            </TabsContent>
+            <TabsContent value="actors" className="flex flex-col gap-8">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <p className="max-w-2xl text-sm text-muted-foreground">
+                  The synthetic cast and the recipe behind each one — the prompt as it was
+                  sent, the model, the settings and what it cost, so a look can be reproduced
+                  or varied instead of rediscovered. Both faces are generated, so there is no
+                  likeness release to chase, and no testimonial is possible either: the person
+                  does not exist. What an actor may say on camera is bounded by{" "}
+                  <code className="font-mono text-foreground">PRODUCT.md</code> §11.
+                </p>
+                <p className="font-mono text-xs text-muted-foreground">
+                  {cast.actors.length} cast · {ACTORS_FILE}
+                </p>
+              </div>
+              {cast.error && <ErrorNote message={cast.error} />}
+              {cast.actors.length > 0 ? (
+                <ActorCast actors={cast.actors} />
+              ) : (
+                <DropHint dir={ACTORS_FILE} verb="Add an actor to">
+                  <p>
+                    One entry per actor. Its{" "}
+                    <code className="font-mono text-foreground">folder</code> is a sub-folder
+                    of{" "}
+                    <code className="font-mono text-foreground">
+                      app/public/{ASSET_DIRS.actors}
+                    </code>{" "}
+                    and that is how the portrait and the samples are found.
+                  </p>
+                </DropHint>
+              )}
             </TabsContent>
             <TabsContent value="kpi">
               <KpiDashboard data={kpi} />

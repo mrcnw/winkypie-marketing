@@ -43,6 +43,8 @@ export const ASSET_DIRS = {
   badPhotos: "assets/winkypie/bad-photos",
   /** Our own delivered creatives — one sub-folder per lane (`host/` = AI host clips). */
   creatives: "assets/winkypie/creatives",
+  /** The synthetic UGC cast — one sub-folder per actor: a portrait and a short casting sample. */
+  actors: "assets/winkypie/actors",
   /** Organic Instagram tiles — `pinned/` is the three-tile pitch above the fold. A `.txt` beside a tile is its post caption, pasted as-is. */
   instagram: "assets/winkypie/instagram",
 } as const;
