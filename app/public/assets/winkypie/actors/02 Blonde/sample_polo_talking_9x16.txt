@@ -1,0 +1,7 @@
+Actor 02 in the navy polo, speaking, 5 s with native audio, 2026-09-09. Animated from wardrobe_polo.png with Seedance 2.0 Mini at 480p, generate_audio true - the test model the owner fixed for every test run. Delivered 496x864, so 9:16 held here, unlike the Kling sample. Speech runs the whole clip; the 0.52 s gap at 2.12 s is the sentence break, not a dropout.
+
+Says: "The first photo does all the work. WinkyPie makes it from one selfie." A trimmed line from the approved WP_P2_STATIC_100ms script in Host Scripts.md - third person about the product, never a testimonial, since a generated face has no bona fide use to claim (16 CFR 465).
+
+The "AI-generated presenter. Not a real customer." disclosure is burned in from frame one, as Lane B rule 5 requires. Rendered as a transparent PNG in PIL and overlaid, because this ffmpeg has no drawtext, subtitles or ass filter - the workaround from Host Run 2026-09-08 S7. White glyphs over a baked soft shadow rather than a scrim, so it holds on both the bright wall and the dark polo.
+
+Still a test render: 480p. A 1080p version is a new take of the same prompt, not an upscale.
