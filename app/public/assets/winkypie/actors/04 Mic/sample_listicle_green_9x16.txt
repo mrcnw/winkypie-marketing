@@ -1,0 +1,11 @@
+Actor 04 reading the seven-photos listicle, 30 s continuous with native audio, 2026-09-09. Seedance 2.5 at 480p from portrait_green.png, delivered 480x854, 24 fps. Job f0006a11-fd25-440b-b9e2-b12d4afb0295. Cost 75 credits.
+
+This is the narration bed under WP_P4_LIST_sevenphotos_9x16_v1 - keep them together.
+
+Seedance 2.5 rather than the usual Mini test model because Mini stops at 15 s and the script needs 30. Two joined Mini clips were rejected: native speech is regenerated per job, so the voice would change in the middle of the ad. 480p rather than 1080p because the narrator ships as a corner inset about 324 px wide - 1080p at 30 s costs 270 credits for pixels that are scaled away.
+
+Speech fills the clip, 0.46 s to 30.04 s, 15 segments measured with silencedetect at -32 dB. Those gaps are what the finished ad cuts on.
+
+Not speech-verified. Nobody has confirmed the audio matches the written script word for word - whisper.cpp is installed on this machine but has no model downloaded. If a line was dropped or garbled, the burned captions in the finished creative are wrong. Verify before any paid run.
+
+Green screen is for keying. Do not ship this file.

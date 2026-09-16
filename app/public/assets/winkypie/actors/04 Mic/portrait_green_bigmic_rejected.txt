@@ -1,0 +1,7 @@
+First microphone pass, 2026-09-09, rejected. Job 09a7f875-31e7-4679-b120-34615e76bf08.
+
+Asked for a handheld dynamic microphone; got a large podcast microphone with a foam windscreen held up under the chin. Rejected on the owner's note that the reference format uses a small microphone held in the hands, not a podcast one at the mouth.
+
+Kept because its green came out visibly better than the accepted take - even, and keyable in one chromakey pass at similarity 0.07. Useful as the counter-example for how much the green varies between runs at an identical prompt.
+
+Also note the framing: this pass did not name the wide chest-up shot, and Seedream cropped to a tight head-and-shoulders on its own.

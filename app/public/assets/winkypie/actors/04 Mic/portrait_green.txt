@@ -1,0 +1,7 @@
+Actor 04 on a chroma-key green screen, holding a small microphone, cast 2026-09-09. Seedream 5.0 Pro is_inpaint from actor 03's portrait (job 4e496d2d-8239-4777-8de8-e946303dbf8e), 1152x2048, 9:16. Job 65ff3095-1fdf-4ae5-a017-9aa571969182.
+
+Two changes asked for in one pass: a compact stick microphone held in both hands at chest level, and the hallway corner replaced with a flat green screen. Both landed. The wide chest-up framing was held by naming it explicitly - an earlier pass that did not name it came back cropped to a tight head-and-shoulders.
+
+Identity drifted and this is why he is actor 04 rather than a wardrobe variant of actor 03. The prompt opened with "his face must not change at all", asked for a one-to-one reproduction of the head and banned ageing and re-styling; the face still came back longer, with a heavier jaw, reading about five years older than the source. The drift is consistent across all three microphone generations, so he is a stable new actor - just not the one that was asked for. Still below the 25-40 band the persona table specifies, same as actor 03.
+
+Green screen is for keying, not for shipping. No clip cut from this actor may go out on the green.

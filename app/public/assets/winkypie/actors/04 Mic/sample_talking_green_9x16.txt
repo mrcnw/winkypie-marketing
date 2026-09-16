@@ -1,0 +1,11 @@
+Actor 04 speaking, 4 s with native audio, 2026-09-09. Seedance 2.0 Mini at 480p from portrait_green.png, delivered 496x864. Job a1058720-73ce-4a56-a07e-a7e7b420f81d.
+
+Says: "You don't need to know how to pose. WinkyPie coaches you." Actor 03's approved line from Host Scripts.md, reused deliberately so the test isolated one variable - the microphone and the green - rather than testing a new line at the same time.
+
+The framing held for the first time here. The phrase that did it: "locked off on a tripod at the same wide chest-up framing (...) the head stays the same size in the frame for the whole clip". Plain "no push in, no zoom" had not been enough on the previous take, which crept in until the hands left the frame.
+
+Hands stayed low with the microphone as instructed, with one slip around 3 s where a hand lets go and gestures.
+
+Blinks are present despite the steady-eyes wording that worked on actor 03's second take. Third clip in a row where that wording failed - treat it as a known limit of Seedance 2.0 Mini rather than a prompt to keep rewriting.
+
+Duration is 4 s because 4 s is the model's floor; 3 s was asked for and is not available on Mini.
