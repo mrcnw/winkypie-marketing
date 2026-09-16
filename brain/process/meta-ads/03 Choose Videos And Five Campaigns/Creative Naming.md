@@ -1,6 +1,6 @@
 ---
 tags: [strategy, reference]
-updated: 2026-09-08
+updated: 2026-09-09
 ---
 # Creative Naming
 
@@ -34,9 +34,12 @@ WP_<persona>_<format>_<hook-slug>_<ratio>_v<n>
 | `WP_P1_STATIC_algorithm_<ratio>_v1` | [[WP_P1_STATIC_algorithm]] | Blame-shift — replaced the savings hook 2026-09-06 |
 | `WP_P3_UGC_triedthemall_<ratio>_v1` | [[WP_P3_UGC_triedthemall]] | Switcher's likeness story — the owner's sixth campaign, added 2026-09-07; lifts the set to seven creatives, one waits for wave two |
 | `WP_P2_PORTFOLIO_oneselfie_<ratio>_v1` | [[WP_P2_PORTFOLIO_oneselfie]] | Proof density — the results are the ad. Campaign 7, added 2026-09-08 off [[Reface Male Portfolio Cut 2026-09-08]]; new format token, and the first creative whose narrator is an inset. Eight creatives against Meta's six, so two wait for wave two |
+| `WP_P3_STATIC_versus_<ratio>_v1` | [[WP_P3_STATIC_versus]] | **Format, not hook** — campaign 6's switcher angle as a six-bullet grid instead of a paid UGC shoot. Campaign 8, added 2026-09-09 off [[Roast Comparison Card 2026-09-09]]. Wave two; do not run in the same ad set as campaign 6 unless the format question is the one being asked |
+| `WP_P2_STATIC_checkcard_<ratio>_v1` | [[WP_P2_STATIC_checkcard]] | **Format, not hook** — campaign 2's free-check angle as a two-frame card instead of a screen demo. Campaign 9, added 2026-09-09 off [[Roast Before After Card 2026-09-09]]. Check → result, never before/after, and never pose → result: that static belongs to campaign 4. Wave two; blocked on a likeness release |
 
 Every campaign ships all three ratios (9:16 master, 4:5, 1:1). Persona split was 2×P2 / 2×P1 /
-1×P3 per the step doc; campaign 7 moves it to 3×P2 / 2×P1 / 2×P3. The primary test axis across the set is the **hook/angle**; format
+1×P3 per the step doc; campaign 7 moved it to 3×P2 / 2×P1 / 2×P3, campaign 8 to 3×P2 / 2×P1 / 3×P3, campaign 9 to
+4×P2 / 2×P1 / 3×P3. The primary test axis across the set is the **hook/angle**; format
 follows hook and stays constant inside a campaign.
 
 ## The host variants (2026-09-03)
