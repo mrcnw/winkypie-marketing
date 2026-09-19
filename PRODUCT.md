@@ -296,6 +296,22 @@ Five pillars, weighted:
 | 4 | **Variety** | 12% | Every scene, every mood | "Street. Café. Golden hour. Night out." · "New week. New pose." |
 | 5 | **Trust / quality** | 8% | Real AI, looks like you, safe data | "Not a filter. Real AI." · "It checks your selfie before it charges you." |
 
+**Ad phrase — `Maximize your dating.`** Added 2026-09-17 (owner's decision), for ad creative
+only. Not a locked line (§1) and not in the app or on the site. It belongs to pillar 1 as the
+*outcome* beat of a two-beat headline, never the first beat:
+`Authentic pro photos. Maximize your dating.` The rules that bind it:
+
+- **Not on Meta in this form.** "Your dating" is a statement about the viewer's romantic life —
+  the personal-attributes rule below in §11, the same one that kills "Still single?". On Meta,
+  either keep `More matches.` in that beat or go third person about the product:
+  `Built to maximize a dating profile.`
+- **Second person is fine off Meta** — TikTok, organic, the site, the App Store listing. The
+  platform rule does not apply there; §11 still does.
+- **No number, ever.** "Maximize" carries no figure, which is why it passes where `10x your
+  matches` does not (§9 Don't, `BRAND.md` §7).
+- **Never alone.** The mechanism beat comes first, or the ad promises a dating outcome with
+  nothing shown behind it.
+
 **Copy formulas:** `Old → New` · `Thing. Thing. Punchline.` · `Pro X. Not pro Y.` ·
 `POV: [relatable]` · `Number + benefit`.
 
