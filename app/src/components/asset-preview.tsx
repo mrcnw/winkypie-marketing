@@ -10,6 +10,10 @@ type AssetPreviewProps = {
   asset: Asset;
   /** `true` inside a dialog: real video controls, contained image */
   interactive?: boolean;
+  /** Start a video on mount — the dialog opened because someone asked to watch it */
+  autoPlay?: boolean;
+  /** Drop the corner play badge where the parent draws its own play control */
+  hideBadge?: boolean;
   sizes?: string;
   className?: string;
 };
@@ -18,6 +22,8 @@ type AssetPreviewProps = {
 export function AssetPreview({
   asset,
   interactive = false,
+  autoPlay = false,
+  hideBadge = false,
   sizes = "(max-width: 768px) 50vw, 25vw",
   className,
 }: AssetPreviewProps) {
@@ -44,11 +50,12 @@ export function AssetPreview({
           src={src}
           controls={interactive}
           muted={!interactive}
+          autoPlay={autoPlay}
           playsInline
           preload="metadata"
           className={cn("h-full w-full object-contain", className)}
         />
-        {!interactive && (
+        {!interactive && !hideBadge && (
           <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 p-1.5">
             <Play className="size-3.5" />
           </span>

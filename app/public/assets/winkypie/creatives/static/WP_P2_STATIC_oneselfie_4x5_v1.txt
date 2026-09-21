@@ -1,0 +1,11 @@
+Campaign 7's proof-density angle as a static grid — the results are the ad. Five finished
+photos of one man (café, doorway, kitchen, terrace, poolside) around a sixth panel carrying
+the mark, "Endless pro photos. One selfie." and the App Store badge. No app UI on frame, no
+before/after framing, one man throughout.
+
+Two things block it. "Endless pro photos." is false against PRODUCT.md §7 — Pro is capped at
+50 per rolling week and 100 per rolling month, the trial at 5 over 3 days — and a caps-versus-
+claim mismatch is the class of thing both Meta ad review and App Store review flag. And the
+§11.2 disclosure strip is missing: rendered results are on frame, so the results-vary line is
+mandatory. No brief exists for WP_P2_STATIC_oneselfie yet; the closest written angle is
+briefs/WP_P2_PORTFOLIO_oneselfie.md, which is the video cut of the same argument.

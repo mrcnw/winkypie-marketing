@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { AlertTriangle } from "lucide-react";
 
-import { ActorCast } from "@/components/actor-cast";
 import { AdCard } from "@/components/ad-card";
 import { AdTeardowns } from "@/components/ad-teardowns";
 import { AssetGallery } from "@/components/asset-gallery";
 import { CampaignCard } from "@/components/campaign-card";
+import { CreativeCard } from "@/components/creative-card";
 import { DropHint } from "@/components/drop-hint";
 import { KpiDashboard } from "@/components/kpi-dashboard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ACTORS_FILE, readActors } from "@/lib/actors";
 import { loadAdTeardowns, TEARDOWNS_DIR } from "@/lib/ad-teardowns";
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { BRIEFS_DIR, readCampaigns, type CampaignsData } from "@/lib/campaigns";
+import type { Creative } from "@/lib/ad-readiness";
+import { readCreatives } from "@/lib/creatives";
 import { readKpi } from "@/lib/kpi";
+import { readProduct } from "@/lib/product";
 import {
   readSwipes,
   SWIPE_SOURCES,
@@ -42,6 +45,41 @@ const EXAMPLE = `[
 
 function Count({ children }: { children: React.ReactNode }) {
   return <span className="ms-1.5 font-mono text-xs text-muted-foreground">{children}</span>;
+}
+
+function CreativeLane({
+  title,
+  description,
+  creatives,
+}: {
+  title: string;
+  description: string;
+  creatives: Creative[];
+}) {
+  return (
+    <section className="flex flex-col gap-4">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <div>
+          <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
+          <p className="max-w-2xl text-sm text-muted-foreground">{description}</p>
+        </div>
+        <p className="font-mono text-xs text-muted-foreground">
+          {creatives.length} creative{creatives.length === 1 ? "" : "s"}
+        </p>
+      </div>
+      {creatives.length === 0 ? (
+        <p className="rounded-xl border border-dashed border-border p-6 text-sm text-muted-foreground">
+          Nothing in this lane yet.
+        </p>
+      ) : (
+        <div className="flex flex-col gap-6">
+          {creatives.map((creative) => (
+            <CreativeCard key={creative.campaign} creative={creative} />
+          ))}
+        </div>
+      )}
+    </section>
+  );
 }
 
 function ErrorNote({ message }: { message: string }) {
@@ -185,22 +223,28 @@ export default async function MetaAdsPage({
   // ?tab=creations opens the same section on Our creations; ?tab=teardowns opens Research on
   // the Ad analyzer, which is where a link pasted from elsewhere wants to land.
   const { tab } = await searchParams;
-  const section =
-    tab === "campaigns" || tab === "creations" || tab === "actors" ? "campaigns" : "research";
-  const campaignTab =
-    tab === "creations" ? "creations" : tab === "actors" ? "actors" : "ads-to-copy";
+  // The cast moved to /winkypie · Actors — keep the old link working.
+  if (tab === "actors") redirect("/winkypie?tab=actors");
+  const section = tab === "campaigns" || tab === "creations" ? "campaigns" : "research";
+  const campaignTab = tab === "creations" ? "creations" : "ads-to-copy";
   const researchTab =
     tab === "teardowns" ? "teardowns" : tab === "competitors" ? "competitors" : "good-ads";
-  const [goodAds, competitors, kpi, ugc, statics, cast, teardowns] = await Promise.all([
+  const [goodAds, competitors, kpi, statics, teardowns, product] = await Promise.all([
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
     readKpi(),
-    readAssets(`${ASSET_DIRS.creatives}/ugc`),
     readAssets(`${ASSET_DIRS.creatives}/static`),
-    readActors(),
     loadAdTeardowns(),
+    readProduct(),
   ]);
   const campaigns = await readCampaigns(goodAds.ads);
+  // One App Store link for every creative — it is a product fact (PRODUCT.md §2), not a
+  // per-campaign decision, so it is read once and handed down.
+  const appStore = product?.channels.find((channel) => channel.kind === "appstore")?.url ?? null;
+  const creatives = await readCreatives(campaigns.briefs, appStore);
+  const videos = creatives.filter((creative) => creative.format === "video");
+  const stills = creatives.filter((creative) => creative.format === "static");
+  const readyCount = creatives.filter((creative) => creative.ready).length;
   const kpiLabel = kpi.sources.some((source) => source.scenario) ? "KPI Example" : "KPI";
   const roundOne = campaigns.briefs.filter((brief) => !brief.isCandidate).length;
 
@@ -282,11 +326,7 @@ export default async function MetaAdsPage({
               </TabsTrigger>
               <TabsTrigger value="creations">
                 Our creations
-                <Count>{ugc.length + statics.length}</Count>
-              </TabsTrigger>
-              <TabsTrigger value="actors">
-                UGC AI Actors
-                <Count>{cast.actors.length}</Count>
+                <Count>{creatives.length}</Count>
               </TabsTrigger>
               <TabsTrigger value="kpi">{kpiLabel}</TabsTrigger>
             </TabsList>
@@ -294,56 +334,44 @@ export default async function MetaAdsPage({
               <CampaignList data={campaigns} />
             </TabsContent>
             <TabsContent value="creations" className="flex flex-col gap-10">
-              <p className="max-w-2xl text-sm text-muted-foreground">
-                What we have actually made, one lane per sub-folder. A file is not cleared to
-                run by being here — the step-04.1 QA, the §11 guardrails and the likeness
-                release for anyone on screen still apply. A{" "}
-                <code className="font-mono text-foreground">.txt</code> next to a file is its
-                caption: what the presenter says, or what is on screen.
-              </p>
-              <AssetGallery
-                title="UGC"
-                description="Talking-head pieces: the human creator lane and the AI host lane (a disclosed AI presenter, third person about the product — never a testimonial)."
-                assets={ugc}
-                dir={`${ASSET_DIRS.creatives}/ugc`}
-              />
-              <AssetGallery
-                title="Static"
-                description="Design-only pieces: stills and silent motion statics. Before/after framing needs the §11.2 disclosure on frame."
-                assets={statics}
-                dir={`${ASSET_DIRS.creatives}/static`}
-              />
-            </TabsContent>
-            <TabsContent value="actors" className="flex flex-col gap-8">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <div className="flex flex-wrap items-start justify-between gap-3">
                 <p className="max-w-2xl text-sm text-muted-foreground">
-                  The synthetic cast and the recipe behind each one — the prompt as it was
-                  sent, the model, the settings and what it cost, so a look can be reproduced
-                  or varied instead of rediscovered. Both faces are generated, so there is no
-                  likeness release to chase, and no testimonial is possible either: the person
-                  does not exist. What an actor may say on camera is bounded by{" "}
-                  <code className="font-mono text-foreground">PRODUCT.md</code> §11.
+                  One card per creative, drawn the way Meta will draw it, with the preflight
+                  beside it. A file is not cleared to run by being here: every check has to
+                  reach <span className="text-ok">APPROVED</span> or N/A first, and the
+                  sign-off is written in the brief&rsquo;s{" "}
+                  <code className="font-mono text-foreground">approved:</code> list — never in
+                  this app.
                 </p>
                 <p className="font-mono text-xs text-muted-foreground">
-                  {cast.actors.length} cast · {ACTORS_FILE}
+                  {readyCount}/{creatives.length} ready · {statics.length} files
                 </p>
               </div>
-              {cast.error && <ErrorNote message={cast.error} />}
-              {cast.actors.length > 0 ? (
-                <ActorCast actors={cast.actors} />
-              ) : (
-                <DropHint dir={ACTORS_FILE} verb="Add an actor to">
-                  <p>
-                    One entry per actor. Its{" "}
-                    <code className="font-mono text-foreground">folder</code> is a sub-folder
-                    of{" "}
-                    <code className="font-mono text-foreground">
-                      app/public/{ASSET_DIRS.actors}
-                    </code>{" "}
-                    and that is how the portrait and the samples are found.
-                  </p>
-                </DropHint>
-              )}
+
+              <CreativeLane
+                title="Video"
+                description="Anything that moves — a talking head, a screen demo, a silent motion static. Meta autoplays it muted, so the captions carry the read and the hook has to land in 1.5 s."
+                creatives={videos}
+              />
+              <CreativeLane
+                title="Static"
+                description="Design-only pieces: one frame, no sound. Before/after framing needs the §11.2 disclosure on frame."
+                creatives={stills}
+              />
+
+              <details className="rounded-xl border border-border/60 p-4">
+                <summary className="cursor-pointer text-sm text-muted-foreground">
+                  Every file, as files
+                </summary>
+                <div className="pt-4">
+                  <AssetGallery
+                    title="Static"
+                    description="The raw exports behind the cards above."
+                    assets={statics}
+                    dir={`${ASSET_DIRS.creatives}/static`}
+                  />
+                </div>
+              </details>
             </TabsContent>
             <TabsContent value="kpi">
               <KpiDashboard data={kpi} />

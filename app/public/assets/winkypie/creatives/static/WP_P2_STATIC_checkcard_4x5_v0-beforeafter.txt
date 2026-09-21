@@ -1,0 +1,16 @@
+Campaign 9's card rebuilt as a literal before/after — NOT SHIPPABLE. Rendered 2026-09-09 at
+19:48, ten minutes after the locked v1, so it is a regression and not a predecessor.
+
+Three things in it are the exact wording the brief fixed. The frames are labelled BEFORE and
+AFTER: "Never the words BEFORE and AFTER. They are what turns this layout into an appearance
+claim" — and PRODUCT.md §11 asks for reference-pose → result framing in this category. The
+first ✓ reads "Mirror the pose you picked."; the brief changed that to "Mirrors" because
+without the s it is an imperative aimed at the viewer, which §11 does not allow. The second ✓
+reads "Studio light."; the brief's line is "Real place, real light." because §6 collections
+deliver real locations, and studio light describes a product we do not sell.
+
+On top of that: no §11.2 disclosure strip although a rendered result is on frame, a real man
+in both frames with no likeness release on file, and a "Try it for free." line under the badge
+that v1 deliberately dropped. The sub "Your better photo." also asserts the viewer's own
+photo. Kept here as the record of what was tried; v1 is the card that runs.
+Brief: brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs/WP_P2_STATIC_checkcard.md

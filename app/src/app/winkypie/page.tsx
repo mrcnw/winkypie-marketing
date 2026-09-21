@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
+import { AlertTriangle } from "lucide-react";
+
+import { ActorCast } from "@/components/actor-cast";
 import { AssetGallery } from "@/components/asset-gallery";
 import { BeforeAfterGallery } from "@/components/before-after-gallery";
 import { ChannelChips } from "@/components/channel-chips";
 import { CopyBlock } from "@/components/copy-block";
+import { DropHint } from "@/components/drop-hint";
 import { Markdown } from "@/components/markdown";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ACTORS_FILE, readActors } from "@/lib/actors";
+import { CHANNEL_LABEL } from "@/lib/channels";
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { toPlainText } from "@/lib/markdown";
 import { brandMarkdown, readBrand, readProduct } from "@/lib/product";
@@ -15,15 +21,23 @@ export const metadata: Metadata = {
   title: "WinkyPie",
 };
 
-export default async function WinkyPiePage() {
-  const [brandAssets, beforeAfter, mobileApp, poses, badPhotos, creatives, instagram, product, brand] = await Promise.all([
+export default async function WinkyPiePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string }>;
+}) {
+  // ?tab=actors is where /actors and the old /meta-ads?tab=actors both land.
+  const { tab } = await searchParams;
+  const section =
+    tab === "assets" || tab === "branding" || tab === "actors" ? tab : "overview";
+  const [brandAssets, beforeAfter, mobileApp, poses, badPhotos, instagram, cast, product, brand] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
     readAssets(ASSET_DIRS.poses),
     readAssets(ASSET_DIRS.badPhotos),
-    readAssets(ASSET_DIRS.creatives),
     readAssets(ASSET_DIRS.instagram),
+    readActors(),
     readProduct(),
     readBrand(),
   ]);
@@ -31,7 +45,10 @@ export default async function WinkyPiePage() {
   const copyText = brandMarkdown(product, brand);
   const gaps = (product?.channels ?? [])
     .filter((channel) => !channel.found)
-    .map((channel) => channel.hint ?? channel.kind);
+    .map((channel) => ({
+      label: CHANNEL_LABEL[channel.kind],
+      hint: channel.hint ?? "nothing there yet",
+    }));
 
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-10">
@@ -44,11 +61,12 @@ export default async function WinkyPiePage() {
         </p>
       </header>
 
-      <Tabs defaultValue="overview" className="gap-6">
+      <Tabs defaultValue={section} className="gap-6">
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="assets">Assets</TabsTrigger>
           <TabsTrigger value="branding">Branding</TabsTrigger>
+          <TabsTrigger value="actors">Actors</TabsTrigger>
         </TabsList>
 
         {/* Overview ------------------------------------------------------ */}
@@ -59,11 +77,18 @@ export default async function WinkyPiePage() {
 
               <section className="flex flex-col gap-3">
                 <h2 className="text-lg font-semibold tracking-tight">Our channels</h2>
-                <ChannelChips channels={product.channels} />
+                <ChannelChips channels={product.channels} size="lg" />
                 {gaps.length > 0 && (
-                  <p className="text-xs text-muted-foreground">
-                    Not wired yet: {gaps.join(" · ")}
-                  </p>
+                  <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+                    <p className="uppercase tracking-wide text-muted-foreground/60">
+                      Not wired yet
+                    </p>
+                    {gaps.map((gap) => (
+                      <p key={gap.label}>
+                        <span className="text-foreground/70">{gap.label}</span> — {gap.hint}
+                      </p>
+                    ))}
+                  </div>
                 )}
               </section>
 
@@ -119,7 +144,7 @@ export default async function WinkyPiePage() {
         <TabsContent value="assets" className="flex flex-col gap-10">
           <AssetGallery
             title="Brand Assets"
-            description="Logo marks, wordmarks, the gradient — anything that carries the brand."
+            description="Logo marks, wordmarks, the gradient, the 9:16 end card — anything that carries the brand."
             assets={brandAssets}
             dir={ASSET_DIRS.brand}
           />
@@ -142,12 +167,6 @@ export default async function WinkyPiePage() {
             description="Problem-side material: what a first photo looks like when it is wrong — group shots, mirror selfies, bad light. The LIKE / NOPE half of a creative. Real people, men only; a likeness release before any of them runs in an ad, and never framed as bad-me → hot-me next to a result (PRODUCT.md §11)."
             assets={badPhotos}
             dir={ASSET_DIRS.badPhotos}
-          />
-          <AssetGallery
-            title="Creatives"
-            description="Delivered creatives, named per the step-03 convention, one sub-folder per lane: `ugc/` (human creator and the disclosed AI host — never a testimonial) and `static/` (stills, silent motion statics). A `.txt` next to a file is its caption. Nothing here is cleared to run until the step-04.1 QA and the likeness release for anyone on screen are done. The same set, by lane: /meta-ads · Our creations."
-            assets={creatives}
-            dir={ASSET_DIRS.creatives}
           />
           <AssetGallery
             title="Instagram"
@@ -249,6 +268,41 @@ export default async function WinkyPiePage() {
               Could not read <code className="font-mono">BRAND.md</code> next to{" "}
               <code className="font-mono">app/</code>.
             </p>
+          )}
+        </TabsContent>
+
+        {/* Actors -------------------------------------------------------- */}
+        <TabsContent value="actors" className="flex flex-col gap-8">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <p className="max-w-2xl text-sm text-muted-foreground">
+              The synthetic cast and the recipe behind each one — the prompt as it was sent,
+              the model, the settings and what it cost, so a look can be reproduced or varied
+              instead of rediscovered. Both faces are generated, so there is no likeness
+              release to chase, and no testimonial is possible either: the person does not
+              exist. What an actor may say on camera is bounded by{" "}
+              <code className="font-mono text-foreground">PRODUCT.md</code> §11.
+            </p>
+            <p className="font-mono text-xs text-muted-foreground">
+              {cast.actors.length} cast · {ACTORS_FILE}
+            </p>
+          </div>
+          {cast.error && (
+            <div className="flex items-start gap-3 rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm">
+              <AlertTriangle className="mt-0.5 size-4 shrink-0 text-destructive" />
+              <p>{cast.error}</p>
+            </div>
+          )}
+          {cast.actors.length > 0 ? (
+            <ActorCast actors={cast.actors} />
+          ) : (
+            <DropHint dir={ACTORS_FILE} verb="Add an actor to">
+              <p>
+                One entry per actor. Its{" "}
+                <code className="font-mono text-foreground">folder</code> is a sub-folder of{" "}
+                <code className="font-mono text-foreground">app/public/{ASSET_DIRS.actors}</code>{" "}
+                and that is how the portrait and the samples are found.
+              </p>
+            </DropHint>
           )}
         </TabsContent>
       </Tabs>

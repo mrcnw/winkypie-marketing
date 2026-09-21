@@ -1,0 +1,9 @@
+Same campaign as v1, different layout: five results in a 2×2-plus grid with the source selfie
+as a circular inset dead centre in the one brand gradient, and the wordmark at the foot. Hook
+split across two lozenges — "One selfie." above the inset, "Authentic pro photos." below, the
+punch in italic gradient. "Authentic pro photos." is the locked brand line (PRODUCT.md §1), so
+this version drops v1's "Endless" claim and says something we can stand behind.
+
+The centre inset is the mechanism in one image: the selfie that went in, ringed by what came
+out. No App Store badge on this one — v1 carries it, and that is the visible difference to
+test. Still missing the §11.2 disclosure strip, and still no brief for the campaign.

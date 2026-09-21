@@ -19,7 +19,7 @@
         "model": "Seedance 2.0 Mini",
         "params": "480p · 9:16 · image_references = the portrait · native audio",
         "credits": 15,
-        "promptNote": "The spoken script, not a scene prompt — per run in brain/process/meta-ads/04.1 Outsource The Shoot/Host Scripts.md (S2, S6, S7). The delivered captions sit beside each clip in creatives/ugc/ as .txt."
+        "promptNote": "The spoken script, not a scene prompt — per run in brain/process/meta-ads/04.1 Outsource The Shoot/Host Scripts.md (S2, S6, S7). The clips and their .txt captions were cleared out of creatives/ugc/ on 2026-09-19; the scripts note is the source."
       }
     ]
   },

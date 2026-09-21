@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, AtSign, Crosshair, Images, Megaphone } from "lucide-react";
 
+import { readActors } from "@/lib/actors";
 import { ASSET_DIRS, readAssets } from "@/lib/assets";
 import { readLandscape } from "@/lib/competitors";
 import { instagramHandle, readInstagramAudit } from "@/lib/instagram";
@@ -10,7 +11,7 @@ import { readPostsCalendar } from "@/lib/posts-calendar";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const [brand, beforeAfter, mobileApp, badPhotos, creatives, instagramTiles, goodAds, competitorAds, landscape, instagram, calendar] = await Promise.all([
+  const [brand, beforeAfter, mobileApp, badPhotos, creatives, instagramTiles, goodAds, competitorAds, cast, landscape, instagram, calendar] = await Promise.all([
     readAssets(ASSET_DIRS.brand),
     readAssets(ASSET_DIRS.beforeAfter),
     readAssets(ASSET_DIRS.mobileApp),
@@ -19,13 +20,14 @@ export default async function Home() {
     readAssets(ASSET_DIRS.instagram),
     readSwipes(SWIPE_SOURCES["good-ads"]),
     readSwipes(SWIPE_SOURCES.competitors),
+    readActors(),
     readLandscape(),
     readInstagramAudit(),
     readPostsCalendar(),
   ]);
 
   const winkypieCount =
-    brand.length + beforeAfter.length + mobileApp.length + badPhotos.length + creatives.length + instagramTiles.length;
+    brand.length + beforeAfter.length + mobileApp.length + badPhotos.length + instagramTiles.length;
 
   const tiles = [
     {
@@ -36,10 +38,10 @@ export default async function Home() {
         "Brand Assets — including Before / After",
         "Mobile App",
         "Bad Photos — the problem side",
-        "Creatives — our delivered ads",
         "Instagram — the organic tiles",
+        "Actors — the synthetic cast and its recipes",
       ],
-      count: `${winkypieCount} file${winkypieCount === 1 ? "" : "s"}`,
+      count: `${winkypieCount} file${winkypieCount === 1 ? "" : "s"} · ${cast.actors.length} cast`,
     },
     {
       href: "/meta-ads",
@@ -48,8 +50,9 @@ export default async function Home() {
       lines: [
         "Good Ads — single ads worth keeping",
         "Competitors — their whole live Ad Library",
+        "Our creations — the ads we have made",
       ],
-      count: `${goodAds.ads.length} good · ${competitorAds.ads.length} competitors`,
+      count: `${goodAds.ads.length} good · ${competitorAds.ads.length} competitors · ${creatives.length} ours`,
     },
     {
       href: "/competitors",

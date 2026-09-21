@@ -17,6 +17,10 @@ import type { AdSwipe } from "@/lib/meta-ads";
  *   order: 1..n                     position in the round
  *   status: candidate — …           anything starting with "candidate" is not one of the five
  *   modelled_on: [slug, slug]       good-ads.json slugs this brief was modelled on
+ *   cta: Install now                the Meta call-to-action button
+ *   destination: https://…          where the button goes; defaults to PRODUCT.md §2
+ *   approved: [hook, cta]           readiness checks the owner has signed off (ad-readiness.ts)
+ *   not_applicable: [music]         checks this creative cannot fail — the reason goes in the brief
  * Hook and primary text are the first blockquotes of their sections; evidence is the
  * lede paragraph that starts with "Evidence:".
  *
@@ -49,6 +53,18 @@ export type CampaignBrief = {
   /** Hook with its `**punch word**` markers kept for rendering */
   hookMarkdown: string | null;
   primaryText: string | null;
+  /** The `Headline: **…**` line under the primary text — the link card's bold line */
+  headline: string | null;
+  /** The `Description: **…**` line beside it */
+  description: string | null;
+  /** Frontmatter: the Meta call-to-action button */
+  cta: string | null;
+  /** Frontmatter: an override for the App Store destination */
+  destination: string | null;
+  /** Frontmatter: readiness check ids the owner has signed off */
+  approved: string[];
+  /** Frontmatter: readiness check ids that do not apply to this creative */
+  notApplicable: string[];
   /** Every `## ` section of the brief, in document order */
   sections: MdSection[];
   /** The ordered list under `## Do this, in order` — production steps in sequence */
@@ -82,6 +98,18 @@ function yamlList(value: string | undefined): string[] {
 function firstQuote(section: MdSection | undefined) {
   const quote = section?.blocks.find((block) => block.kind === "quote");
   return quote && quote.kind === "quote" ? quote.text : null;
+}
+
+/**
+ * `Headline: **It checks your selfie…**` sits as a plain paragraph under the primary-text
+ * quote, so it is read off the section's text rather than given a heading of its own.
+ */
+function labelled(section: MdSection | undefined, label: string) {
+  const text = (section?.blocks ?? [])
+    .map((block) => (block.kind === "paragraph" ? block.text : ""))
+    .join("\n");
+  const match = text.match(new RegExp(`${label}:\\s*\\*\\*([^*]+)\\*\\*`, "i"));
+  return match ? match[1].trim() : null;
 }
 
 function stepsOf(sections: MdSection[]) {
@@ -139,6 +167,12 @@ export async function readCampaigns(goodAds: AdSwipe[]): Promise<CampaignsData> 
           const quote = firstQuote(findSection(sections, "Primary text"));
           return quote ? toPlainText(quote) : null;
         })(),
+        headline: labelled(findSection(sections, "Primary text"), "Headline"),
+        description: labelled(findSection(sections, "Primary text"), "Description"),
+        cta: data.cta?.trim() || null,
+        destination: data.destination?.trim() || null,
+        approved: yamlList(data.approved),
+        notApplicable: yamlList(data.not_applicable),
         sections,
         steps: stepsOf(sections),
         modelledOn,

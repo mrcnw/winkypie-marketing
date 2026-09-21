@@ -1,0 +1,17 @@
+Silent, 13.4 s, 1080×1920, no audio track at all. A dating profile read as three cards of the
+same synthetic man, each carrying one locked line: "Is nobody swiping back?" over Marco, 29 ·
+24 miles away · 1 of 3, closer "Get noticed on dating apps." — "First photo. First chance."
+over Paris · 2 of 3, closer "She decided in 100 ms." (campaign 1's hook) — "Looks pro. Still
+you." over poolside · 3 of 3, closer "Authentic pro photos. More matches." Ends on the mark,
+"Get noticed on dating apps.", the sub "One selfie. Real photos. More matches." and the badge.
+
+Three things to settle. The hook asks the viewer about his own dating results, which is the
+Meta personal-attributes rule and PRODUCT.md §11's worked example of what not to write
+("Still single?" · "Tired of being ignored?") — it is the single most common rejection cause
+in this category. The §11.2 disclosure strip is absent although every frame shows a rendered
+result; v2 carries it, this cut does not. And the cards use a dating-app profile idiom — name,
+age, distance, 1 of 3 — which needs reading against the no-dating-app-interface rule in
+briefs/WP_P2_STATIC_checkcard.md, although nothing here carries a third-party mark.
+
+The man is the synthetic actor, so there is no likeness release to chase. Nothing is spoken,
+so burned-in captions do not apply. No brief exists for WP_P2_STATIC_swipingback yet.

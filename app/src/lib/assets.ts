@@ -41,7 +41,7 @@ export const ASSET_DIRS = {
   poses: "assets/winkypie/poses",
   /** Problem-side photos — what a first photo looks like when it is wrong. Real people: release before any ad use. */
   badPhotos: "assets/winkypie/bad-photos",
-  /** Our own delivered creatives — one sub-folder per lane (`host/` = AI host clips). */
+  /** Our own delivered creatives — one sub-folder per lane (`static/` is the only one). */
   creatives: "assets/winkypie/creatives",
   /** The synthetic UGC cast — one sub-folder per actor: a portrait and a short casting sample. */
   actors: "assets/winkypie/actors",

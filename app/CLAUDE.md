@@ -15,10 +15,8 @@ Four tabs. One job each:
 | Route | What it shows |
 |---|---|
 | `/` | The four tiles, with a count on each. |
-| `/winkypie` | Three tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot, bad photos (the problem side), our creatives; click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. |
-| `/meta-ads` | Two sections, each with two tabs. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Ads to copy* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section), *Our creations* (what we have made, read from `app/public/assets/winkypie/creatives/` and split by sub-folder into *UGC* and *Static*; a `.txt` beside a file is shown under it as its caption — what the presenter says or what is on screen; `/meta-ads?tab=creations` opens here) *UGC AI Actors* (the synthetic cast read from `app/content/actors.json` and the matching
-sub-folder of `assets/winkypie/actors/`: portrait, casting sample, the disclosure state, and
-the prompt each asset was made with behind a copy button; `/meta-ads?tab=actors` opens here)
+| `/winkypie` | Four tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot, bad photos (the problem side); click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. **Actors** — the synthetic UGC cast read from `app/content/actors.json` and the matching sub-folder of `assets/winkypie/actors/`: portrait, casting sample, the disclosure state, and the prompt each asset was made with behind a copy button; `/winkypie?tab=actors` opens here, and both `/actors` and the old `/meta-ads?tab=actors` redirect to it. |
+| `/meta-ads` | Two sections, three tabs each. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Ads to copy* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section), *Our creations* (one card per creative, split into *Video* and *Static* by whether any of its files moves. A card is the ad as Meta will draw it — page name, Sponsored, primary text, media, the link card with headline, description and CTA button. The media opens on click: a clip plays full size with sound, a still opens big enough to read what is on it. Beside it sits a **preflight** in four states: `TO DO` (does not exist), `TO CHECK` (exists, unsigned), `APPROVED` (the brief's `approved:` names it), `N/A` (the brief's `not_applicable:` names it). A creative is *ready to upload* only when every check is APPROVED or N/A. Files group by the [[Creative Naming]] convention `<campaign>_<ratio>_<version>`, so each version is a **scenario** and the card switches media between them inside the same copy; a `.txt` beside a file is shown under it as its caption — what the presenter says or what is on screen; `/meta-ads?tab=creations` opens here)
 and *KPI* (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; a keep example and an unprofitable example on top; labelled *KPI Example* while only scenario data exists). |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
 | `/instagram` | Three tabs. **Profile** — the step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, the paste-ready name field and bio behind a copy button, and *Pinned tiles* — the three 4:5 tiles from `assets/winkypie/instagram/pinned/` with the caption beside each behind a copy button. Both profile links come out of the note's frontmatter. **Posts calendar** — the step-07 posting plan on a month grid: Monday-first, today marked, one chip per planned post coloured by pillar (dashed while it still `needs asset`), the month's rows as a table under it, then the note's other sections; a chip or a table row opens a dialog with the whole row, and a link into the post when one is written; `/instagram?tab=calendar` opens here. **Posts** — every written post, read from the step-07 `posts/` folder: the hook drawn at its own ratio because slide one is the grid tile, whether it is a carousel or a single tile, the slide table verbatim, and the caption and first comment behind copy buttons; `/instagram?tab=posts` opens here, and `#<post slug>` scrolls to one. |
@@ -36,7 +34,8 @@ There is no database and no CMS. Every page reads the filesystem at request time
 workflow.
 
 ```
-app/public/assets/winkypie/brand/         → /winkypie · Brand Assets
+app/public/assets/winkypie/brand/         → /winkypie · Brand Assets — marks, the App Store
+                                            badge, the 9:16 end card
 app/public/assets/winkypie/before-after/  → /winkypie · pairs on the file name:
                                             hero_1_before.png + hero_1_after.png
                                             (before|pre and after|post both work)
@@ -45,17 +44,17 @@ app/public/assets/winkypie/poses/         → /winkypie · Poses — a snapshot 
                                             catalog; its file count is not a pose count
 app/public/assets/winkypie/bad-photos/    → /winkypie · Bad Photos — problem-side examples;
                                             real people, release before any ad use
-app/public/assets/winkypie/creatives/     → /winkypie · Creatives, and /meta-ads · Campaigns ·
-  ugc/  static/                             Our creations (one lane per sub-folder). `x.txt`
+app/public/assets/winkypie/creatives/     → /meta-ads · Campaigns · Our creations, and
+  static/                                   nowhere else (one lane per sub-folder). `x.txt`
                                             beside `x.mp4` or `x.png` is that file's caption
 app/public/assets/winkypie/instagram/     → /winkypie · Instagram, and /instagram · Profile ·
   pinned/                                   Pinned tiles (the `pinned/` sub-folder only). `x.txt`
                                             beside `x.png` is the post caption, pasted as-is
-app/public/assets/winkypie/actors/        → /meta-ads · Campaigns · UGC AI Actors — one
+app/public/assets/winkypie/actors/        → /winkypie · Actors — one
   01 Host/  02 Blonde/                      sub-folder per actor, joined to `actors.json` on
                                             its `folder`. A portrait plus a short casting
                                             sample, kept small on purpose: the delivered
-                                            creatives stay in `creatives/ugc/`. `x.txt`
+                                            creatives stay in `creatives/`. `x.txt`
                                             beside a file is its caption
 app/content/actors.json                   → the same tab's recipes — the prompt as it was
                                             sent, model, settings, credits, job id. A recipe
@@ -70,7 +69,14 @@ app/content/competitors.json              → /meta-ads · Competitors tab
                                             `order`, `status`, `modelled_on: [good-ads slugs]`;
                                             Hook and Primary text quotes; Evidence paragraph;
                                             `## Do this, in order` list → the steps on
-                                            /meta-ads/campaigns/<campaign>)
+                                            /meta-ads/campaigns/<campaign>), and the same
+                                            brief feeds Our creations: the `Headline: **…**`
+                                            and `Description: **…**` lines under the primary
+                                            text, plus frontmatter `cta:`, `destination:`
+                                            (defaults to PRODUCT.md §2), `approved: [ids]`
+                                            and `not_applicable: [ids]` — the readiness ids
+                                            are listed in `src/lib/ad-readiness.ts`. The
+                                            sign-off lives in the vault, never in the app
   05 Ad Strategy And Budget/KPI.md        → /meta-ads · KPI tab: thresholds table
   05 Ad Strategy And Budget/KPI Scenarios.md → /meta-ads · KPI tab, until a real review exists
   07 Update Facebook Account/Instagram Profile.md
