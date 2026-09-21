@@ -27,7 +27,11 @@ export function CreativeCard({ creative }: { creative: Creative }) {
     <article
       className={cn(
         "flex flex-col gap-5 rounded-2xl border p-5",
-        ready ? "border-ok/40 bg-ok/[0.03]" : "border-border bg-card",
+        ready
+          ? counts.waived
+            ? "border-ok/30 bg-ok/[0.02]"
+            : "border-ok/40 bg-ok/[0.03]"
+          : "border-border bg-card",
       )}
     >
       <header className="flex flex-col gap-3">
@@ -61,10 +65,17 @@ export function CreativeCard({ creative }: { creative: Creative }) {
                 ready ? "border-ok/50 bg-ok/10 text-ok" : "border-border text-muted-foreground",
               )}
             >
-              {ready ? "Ready to upload" : "Not ready"}
+              {ready
+                ? counts.waived
+                  ? "Ready — with a waiver"
+                  : "Ready to upload"
+                : "Not ready"}
             </span>
             <span className="font-mono text-[0.7rem] text-muted-foreground">
               {counts.approved} approved · {counts.check} to check · {counts.todo} to do
+              {counts.waived ? (
+                <span className="text-destructive"> · {counts.waived} waived</span>
+              ) : null}
               {counts.na ? ` · ${counts.na} n/a` : ""}
             </span>
           </div>

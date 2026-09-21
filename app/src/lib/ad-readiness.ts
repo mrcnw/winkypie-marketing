@@ -17,13 +17,17 @@ import type { CampaignBrief } from "@/lib/campaigns";
  *   todo      the field or the file does not exist yet — someone has to make it
  *   check     it exists and nobody has signed it off
  *   approved  the brief's frontmatter `approved:` names it — the owner's sign-off
+ *   waived    the brief's `waived:` names it — known, not done, running anyway. The one
+ *             state that says a risk is being carried on purpose; the reason goes in the
+ *             brief, and the precedent is the check card's headline
  *   na        the brief's `not_applicable:` names it, with the reason in the brief
  *
- * A creative is ready when every check is approved or n/a. That is the only definition —
- * there is no separate "ready" flag to fall out of sync with the checks.
+ * A creative is ready when nothing is left todo or to check. Approved, waived and n/a all
+ * clear it — waived clears it because the decision has been made, not because the work has.
+ * That is the only definition; there is no separate "ready" flag to fall out of sync.
  */
 
-export type CheckState = "todo" | "check" | "approved" | "na";
+export type CheckState = "todo" | "check" | "approved" | "waived" | "na";
 export type CheckGroup = "copy" | "asset" | "video" | "compliance" | "launch";
 
 /** A moving file is a video ad to Meta even when we call it a motion static. */
@@ -125,9 +129,12 @@ function state(
   found: boolean,
   id: string,
   approved: string[],
+  waived: string[],
   notApplicable: string[],
 ): CheckState {
   if (notApplicable.includes(id)) return "na";
+  // Waived outranks approved: if both name a check, the honest reading is the riskier one.
+  if (waived.includes(id)) return "waived";
   if (approved.includes(id)) return "approved";
   return found ? "check" : "todo";
 }
@@ -153,7 +160,10 @@ function buildChecks(
   format: CreativeFormat,
 ): ReadinessCheck[] {
   const approved = brief?.approved ?? [];
-  const na = brief?.notApplicable ?? [];
+  const waived = brief?.waived ?? [];
+  // Every face in a WinkyPie ad is generated — the product makes them and the cast is
+  // synthetic — so a release is owed only where a brief says a real person is on frame.
+  const na = [...(brief?.notApplicable ?? []), ...(brief?.realPeople ? [] : ["likeness"])];
   const guardrails = guardrailRead(brief);
   const missingRatios = TARGET_RATIOS.filter((ratio) => !ratios.includes(ratio));
 
@@ -276,7 +286,9 @@ function buildChecks(
       id: "likeness",
       group: "compliance",
       label: "Likeness release",
-      hint: "Signed for every real person on frame. N/A for a synthetic actor",
+      hint: brief?.realPeople
+        ? "Signed for every real person on frame — this brief says there is one"
+        : "N/A by default: every face we put in an ad is generated. A brief with a real person on frame sets real_people: true",
       value: null,
     },
     {
@@ -306,7 +318,7 @@ function buildChecks(
         : row.id === "ratios"
           ? ratios.length > 0 && missingRatios.length === 0
           : Boolean(row.value);
-    return { ...row, state: state(found, row.id, approved, na) };
+    return { ...row, state: state(found, row.id, approved, waived, na) };
   });
 }
 
@@ -360,7 +372,13 @@ export function assembleCreatives(
       ? "video"
       : "static";
     const checks = buildChecks(brief, copy, scenarios, ratios, format);
-    const counts: Record<CheckState, number> = { todo: 0, check: 0, approved: 0, na: 0 };
+    const counts: Record<CheckState, number> = {
+      todo: 0,
+      check: 0,
+      approved: 0,
+      waived: 0,
+      na: 0,
+    };
     for (const check of checks) counts[check.state] += 1;
 
     return {

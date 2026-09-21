@@ -1,4 +1,4 @@
-import { Check, CircleDashed, CircleSlash, Circle } from "lucide-react";
+import { AlertTriangle, Check, CircleDashed, CircleSlash, Circle } from "lucide-react";
 
 import {
   CHECK_GROUP_LABEL,
@@ -9,9 +9,10 @@ import {
 import { cn } from "@/lib/utils";
 
 /**
- * The preflight, four states wide. `todo` is work, `check` is a signature, `approved` is
- * the green light and `na` is a check this creative cannot fail — with the reason written
- * in the brief, never here.
+ * The preflight, five states wide. `todo` is work, `check` is a signature, `approved` is the
+ * green light, `na` is a check this creative cannot fail, and `waived` is the honest one:
+ * known, not done, running anyway. Waived stays red on purpose — it clears the creative for
+ * upload without ever looking like it passed. The reason is written in the brief, never here.
  */
 
 const STATE: Record<
@@ -37,6 +38,13 @@ const STATE: Record<
     icon: Check,
     dot: "border-ok/50 bg-ok/10 text-ok",
     text: "text-ok",
+    row: "",
+  },
+  waived: {
+    label: "WAIVED",
+    icon: AlertTriangle,
+    dot: "border-dashed border-destructive/60 bg-destructive/10 text-destructive",
+    text: "text-destructive",
     row: "",
   },
   na: {

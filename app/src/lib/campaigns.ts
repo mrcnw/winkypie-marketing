@@ -20,6 +20,8 @@ import type { AdSwipe } from "@/lib/meta-ads";
  *   cta: Install now                the Meta call-to-action button
  *   destination: https://…          where the button goes; defaults to PRODUCT.md §2
  *   approved: [hook, cta]           readiness checks the owner has signed off (ad-readiness.ts)
+ *   waived: [disclosure]            checks knowingly not done — running anyway, reason in the brief
+ *   real_people: true               a real face is on frame, so the likeness release is back in play
  *   not_applicable: [music]         checks this creative cannot fail — the reason goes in the brief
  * Hook and primary text are the first blockquotes of their sections; evidence is the
  * lede paragraph that starts with "Evidence:".
@@ -63,6 +65,10 @@ export type CampaignBrief = {
   destination: string | null;
   /** Frontmatter: readiness check ids the owner has signed off */
   approved: string[];
+  /** Frontmatter: check ids knowingly left undone — a risk carried on purpose */
+  waived: string[];
+  /** Frontmatter: a real person is on frame — the one case where a release is owed */
+  realPeople: boolean;
   /** Frontmatter: readiness check ids that do not apply to this creative */
   notApplicable: string[];
   /** Every `## ` section of the brief, in document order */
@@ -172,6 +178,8 @@ export async function readCampaigns(goodAds: AdSwipe[]): Promise<CampaignsData> 
         cta: data.cta?.trim() || null,
         destination: data.destination?.trim() || null,
         approved: yamlList(data.approved),
+        waived: yamlList(data.waived),
+        realPeople: /^(true|yes)$/i.test(data.real_people?.trim() ?? ""),
         notApplicable: yamlList(data.not_applicable),
         sections,
         steps: stepsOf(sections),
