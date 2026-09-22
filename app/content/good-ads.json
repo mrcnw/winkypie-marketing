@@ -65,10 +65,10 @@
     "title": "\"Same face. 10x the matches.\" — Roast's top ad by impressions",
     "advertiser": "Roast AI",
     "url": "https://www.facebook.com/ads/library/?id=2014738899400393",
-    "note": "Ran 2026-04-24 → 2026-09-02 (131 days), #1 on Roast's page by impressions while it lived; the 'Same face' family (~257 ads) keeps running with new variants. Mechanism: third-person coworker-gatekeeping story + a phone-screenshot IMAGE of a full Hinge match list as the creative — social proof shown, not claimed. Low-fi static beats their polished video. The '10x' multiplier is an invented stat we never copy.",
+    "note": "Ran 2026-04-24 → 2026-09-14 and is now inactive — 143 days, re-checked 2026-09-22 (the 2026-09-02 read logged 131 and still-running). #1 on Roast's page by impressions while it lived; the 'Same face' family (~257 ads) keeps running with new variants. Mechanism: a third-person coworker-gatekeeping story in the PRIMARY TEXT, with a phone-screenshot image of a full Hinge match list as the creative — social proof shown, not claimed. Low-fi static beats their polished video. Note where the risk sits: the story and the '10x' headline live in Meta's editable text fields, so a rejection costs them an edit, not a re-render. The '10x' multiplier is an invented stat we never copy, and the match-list screenshot is a third-party UI we do not run.",
     "tags": [
-      "131 days",
-      "ended 2026-09-02",
+      "143 days",
+      "ended 2026-09-14",
       "image",
       "story",
       "winner"

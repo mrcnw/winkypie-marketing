@@ -56,6 +56,8 @@ export type Scenario = {
 };
 
 export type AdCopy = {
+  /** The variant's label, when the brief declares more than one ad */
+  label: string | null;
   hook: string | null;
   primaryText: string | null;
   headline: string | null;
@@ -75,7 +77,10 @@ export type Creative = {
   scenarios: Scenario[];
   /** Every ratio any scenario was exported at */
   ratios: string[];
+  /** The first ad. Kept for anything that wants one set without caring about the test. */
   copy: AdCopy;
+  /** Every ad this creative goes out as — one entry per `## Primary text…` in the brief */
+  copySets: AdCopy[];
   checks: ReadinessCheck[];
   ready: boolean;
   counts: Record<CheckState, number>;
@@ -142,6 +147,10 @@ function state(
 /**
  * The `## Guardrail check` section is the owner's §11 read, written line by line in the
  * brief. Present and clean counts as done; a ✗ anywhere in it means it is not.
+ *
+ * This is where §11.2 lives now. It had its own row until 2026-09-22 and the row was
+ * redundant: a missing results-vary strip is one line of a §11 read, and the read is prose
+ * that can say *why* it is missing. A binary row could only say that it was.
  */
 function guardrailRead(brief: CampaignBrief | null) {
   const section = brief?.sections.find((entry) => /^guardrail/i.test(entry.heading));
@@ -152,9 +161,29 @@ function guardrailRead(brief: CampaignBrief | null) {
   return { found: true, clean: !/[✗✘❌]/.test(text) };
 }
 
+/** Meta cuts a link-card headline around here. Measured, not eyeballed. */
+const HEADLINE_LIMIT = 40;
+
+/** `"a"` for one ad, `"a · b"` for two — a copy check has to hold for every variant. */
+function acrossSets(sets: AdCopy[], pick: (set: AdCopy) => string | null) {
+  const values = sets.map(pick);
+  if (values.every((value) => !value)) return null;
+  if (values.length === 1) return values[0];
+  const missing = values.filter((value) => !value).length;
+  const shown = values
+    .map((value, index) => `${sets[index].label ?? String.fromCharCode(65 + index)}: ${value ?? "—"}`)
+    .join("  ·  ");
+  return missing ? `${shown}  — ${missing} variant${missing === 1 ? "" : "s"} missing it` : shown;
+}
+
+function allSetsHave(sets: AdCopy[], pick: (set: AdCopy) => string | null) {
+  return sets.every((set) => Boolean(pick(set)));
+}
+
 function buildChecks(
   brief: CampaignBrief | null,
   copy: AdCopy,
+  copySets: AdCopy[],
   scenarios: Scenario[],
   ratios: string[],
   format: CreativeFormat,
@@ -180,21 +209,27 @@ function buildChecks(
       group: "copy",
       label: "Primary text",
       hint: "The paragraph above the media — the Primary text section of the brief",
-      value: copy.primaryText,
+      value: acrossSets(copySets, (set) => set.primaryText),
     },
     {
       id: "headline",
       group: "copy",
       label: "Headline",
-      hint: "The bold line on the link card. Meta truncates past ~40 characters",
-      value: copy.headline,
+      hint: `The bold line on the link card. Meta cuts it past about ${HEADLINE_LIMIT} characters`,
+      value: acrossSets(copySets, (set) =>
+        set.headline
+          ? `${set.headline} (${set.headline.length}${
+              set.headline.length > HEADLINE_LIMIT ? " — Meta will cut this" : ""
+            })`
+          : null,
+      ),
     },
     {
       id: "description",
       group: "copy",
       label: "Description",
       hint: "The line under the headline. Optional, and dropped in some placements",
-      value: copy.description,
+      value: acrossSets(copySets, (set) => set.description),
     },
     {
       id: "cta",
@@ -276,13 +311,6 @@ function buildChecks(
         : null,
     },
     {
-      id: "disclosure",
-      group: "compliance",
-      label: "§11.2 disclosure on frame",
-      hint: "Results-vary strip wherever a rendered result is shown. N/A when nobody is on frame",
-      value: null,
-    },
-    {
       id: "likeness",
       group: "compliance",
       label: "Likeness release",
@@ -317,7 +345,15 @@ function buildChecks(
         ? guardrails.found && guardrails.clean
         : row.id === "ratios"
           ? ratios.length > 0 && missingRatios.length === 0
-          : Boolean(row.value);
+          : row.id === "primary-text"
+            ? allSetsHave(copySets, (set) => set.primaryText)
+            : row.id === "headline"
+              ? copySets.every(
+                  (set) => set.headline && set.headline.length <= HEADLINE_LIMIT,
+                )
+              : row.id === "description"
+                ? allSetsHave(copySets, (set) => set.description)
+                : Boolean(row.value);
     return { ...row, state: state(found, row.id, approved, waived, na) };
   });
 }
@@ -358,20 +394,23 @@ export function assembleCreatives(
       }))
       .sort((a, b) => a.version.localeCompare(b.version, "en"));
 
-    const copy: AdCopy = {
+    // Every `## Primary text…` section is an ad. The CTA and the destination are the
+    // creative's, not the variant's — a copy test that also moves the button is two tests.
+    const shared = {
       hook: brief?.hookMarkdown ?? null,
-      primaryText: brief?.primaryText ?? null,
-      headline: brief?.headline ?? null,
-      description: brief?.description ?? null,
       cta: brief?.cta ?? null,
       destination: brief?.destination ?? appStoreUrl,
     };
+    const copySets: AdCopy[] = (brief?.copySets ?? [
+      { label: null, primaryText: null, headline: null, description: null },
+    ]).map((set) => ({ ...shared, ...set }));
+    const copy = copySets[0];
 
     const ratios = sortRatios(unique(own.map((asset) => parseName(asset.name).ratio)));
     const format: CreativeFormat = own.some((asset) => asset.kind === "video")
       ? "video"
       : "static";
-    const checks = buildChecks(brief, copy, scenarios, ratios, format);
+    const checks = buildChecks(brief, copy, copySets, scenarios, ratios, format);
     const counts: Record<CheckState, number> = {
       todo: 0,
       check: 0,
@@ -390,6 +429,7 @@ export function assembleCreatives(
       scenarios,
       ratios,
       copy,
+      copySets,
       checks,
       ready: counts.todo === 0 && counts.check === 0,
       counts,

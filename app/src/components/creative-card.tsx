@@ -20,7 +20,11 @@ import { cn } from "@/lib/utils";
  */
 export function CreativeCard({ creative }: { creative: Creative }) {
   const [active, setActive] = useState(creative.scenarios.length - 1);
+  // A creative can go out as more than one ad — same media, different copy. The tabs are
+  // the ads; the thumbnails under the preview are the renders inside whichever ad is open.
+  const [variant, setVariant] = useState(0);
   const scenario = creative.scenarios[active] ?? creative.scenarios[0] ?? null;
+  const copy = creative.copySets[variant] ?? creative.copy;
   const { counts, ready } = creative;
 
   return (
@@ -83,6 +87,10 @@ export function CreativeCard({ creative }: { creative: Creative }) {
 
         <dl className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-muted-foreground">
           <div className="flex gap-1.5">
+            <dt className="uppercase tracking-wide text-muted-foreground/60">Ads</dt>
+            <dd className="font-mono text-foreground">{creative.copySets.length}</dd>
+          </div>
+          <div className="flex gap-1.5">
             <dt className="uppercase tracking-wide text-muted-foreground/60">Scenarios</dt>
             <dd className="font-mono text-foreground">{creative.scenarios.length}</dd>
           </div>
@@ -109,7 +117,33 @@ export function CreativeCard({ creative }: { creative: Creative }) {
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)]">
         <div className="flex flex-col gap-3">
-          <MetaAdPreview copy={creative.copy} asset={scenario?.poster ?? null} />
+          {creative.copySets.length > 1 && (
+            <div
+              role="tablist"
+              aria-label="Ad variants"
+              className="flex flex-wrap gap-1 rounded-lg border border-border bg-background/40 p-1"
+            >
+              {creative.copySets.map((set, index) => (
+                <button
+                  key={set.label ?? index}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === variant}
+                  onClick={() => setVariant(index)}
+                  className={cn(
+                    "flex-1 rounded-md px-3 py-1.5 text-xs transition-colors",
+                    index === variant
+                      ? "bg-secondary text-foreground"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {set.label ?? `Ad ${String.fromCharCode(65 + index)}`}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <MetaAdPreview copy={copy} asset={scenario?.poster ?? null} />
 
           {creative.scenarios.length > 1 && (
             <div className="flex flex-wrap gap-2">

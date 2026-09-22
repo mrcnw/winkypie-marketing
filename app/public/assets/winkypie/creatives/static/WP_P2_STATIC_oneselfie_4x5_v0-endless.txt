@@ -1,11 +1,14 @@
-Campaign 7's proof-density angle as a static grid — the results are the ad. Five finished
-photos of one man (café, doorway, kitchen, terrace, poolside) around a sixth panel carrying
-the mark, "Endless pro photos. One selfie." and the App Store badge. No app UI on frame, no
-before/after framing, one man throughout.
+Campaign 11, the retired scenario — NOT SHIPPABLE. Five finished photos of one man (café,
+doorway, kitchen, terrace, poolside) around a sixth panel carrying the mark, "Endless pro
+photos. One selfie." and the App Store badge. No app UI on frame, no before/after, one man
+throughout — the layout itself is sound and it is the reason this file is kept.
 
-Two things block it. "Endless pro photos." is false against PRODUCT.md §7 — Pro is capped at
-50 per rolling week and 100 per rolling month, the trial at 5 over 3 days — and a caps-versus-
-claim mismatch is the class of thing both Meta ad review and App Store review flag. And the
-§11.2 disclosure strip is missing: rendered results are on frame, so the results-vary line is
-mandatory. No brief exists for WP_P2_STATIC_oneselfie yet; the closest written angle is
-briefs/WP_P2_PORTFOLIO_oneselfie.md, which is the video cut of the same argument.
+It cannot run because of one word. "Endless" is false against PRODUCT.md §7: Pro allows 50
+generations per rolling week and 100 per rolling month, and the trial allows 5 over 3 days.
+A claim that contradicts the app's own caps is not a risk to weigh, it is a wrong statement,
+and it is the class of mismatch both Meta ad review and App Store review look for. Renamed
+from v1 to v0-endless on 2026-09-22 so the version token says what it is.
+
+v1 is the same argument with the claim fixed: the locked line "Authentic pro photos." in
+place of "Endless", and the source selfie brought into the centre.
+Brief: brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs/WP_P2_STATIC_oneselfie.md

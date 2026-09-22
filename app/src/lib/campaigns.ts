@@ -26,6 +26,12 @@ import type { AdSwipe } from "@/lib/meta-ads";
  * Hook and primary text are the first blockquotes of their sections; evidence is the
  * lede paragraph that starts with "Evidence:".
  *
+ * **A brief may declare more than one ad.** Every `## ` section whose heading starts with
+ * "Primary text" is one copy set — its quote is the primary text, its `Headline:` and
+ * `Description:` lines belong to it, and whatever follows "Primary text" in the heading is
+ * the variant's label. Two sections means two ads in the ad set, same creative, and the
+ * heading is where you say which single thing is being varied.
+ *
  * The campaign page (/meta-ads/campaigns/<campaign>) renders every `## ` section of the
  * brief in document order, and reads the ordered list under `## Do this, in order` as the
  * step list — the vault says what to do, the app shows it.
@@ -35,6 +41,15 @@ const ROOT = path.join(process.cwd(), "..");
 
 /** The brief section whose ordered list is the step-by-step */
 export const STEPS_HEADING = "Do this";
+
+/** One ad's worth of copy. A brief with two of these is a two-ad copy test. */
+export type CopySet = {
+  /** Whatever follows "Primary text" in the heading — "— B · the question" → "B · the question" */
+  label: string | null;
+  primaryText: string | null;
+  headline: string | null;
+  description: string | null;
+};
 
 export type CampaignBrief = {
   campaign: string;
@@ -59,6 +74,8 @@ export type CampaignBrief = {
   headline: string | null;
   /** The `Description: **…**` line beside it */
   description: string | null;
+  /** Every copy set in the brief, in document order. Always at least one entry. */
+  copySets: CopySet[];
   /** Frontmatter: the Meta call-to-action button */
   cta: string | null;
   /** Frontmatter: an override for the App Store destination */
@@ -118,6 +135,23 @@ function labelled(section: MdSection | undefined, label: string) {
   return match ? match[1].trim() : null;
 }
 
+/** Every `## Primary text…` section, in order — one per ad. */
+function copySetsOf(sections: MdSection[]): CopySet[] {
+  const sets = sections
+    .filter((section) => /^primary text/i.test(section.heading))
+    .map((section) => {
+      const quote = section.blocks.find((block) => block.kind === "quote");
+      const rest = section.heading.replace(/^primary text/i, "").replace(/^[\s—·-]+/, "").trim();
+      return {
+        label: rest.replace(/^\(.*\)$/, "").trim() || null,
+        primaryText: quote && quote.kind === "quote" ? toPlainText(quote.text) : null,
+        headline: labelled(section, "Headline"),
+        description: labelled(section, "Description"),
+      };
+    });
+  return sets.length ? sets : [{ label: null, primaryText: null, headline: null, description: null }];
+}
+
 function stepsOf(sections: MdSection[]) {
   const list = findSection(sections, STEPS_HEADING)?.blocks.find(
     (block) => block.kind === "list",
@@ -175,6 +209,7 @@ export async function readCampaigns(goodAds: AdSwipe[]): Promise<CampaignsData> 
         })(),
         headline: labelled(findSection(sections, "Primary text"), "Headline"),
         description: labelled(findSection(sections, "Primary text"), "Description"),
+        copySets: copySetsOf(sections),
         cta: data.cta?.trim() || null,
         destination: data.destination?.trim() || null,
         approved: yamlList(data.approved),

@@ -1,17 +1,19 @@
-Silent, 17.6 s, 1080×1920, no audio track at all. The later cut, and the stronger one: same
-hook and same closer as v1, but it stops selling cards and starts showing the mechanism.
+Campaign 13, the shippable cut. Silent, 17.6 s, 1080×1920, no audio track. Seven beats:
 "Is nobody swiping back?" over Marco, 29 · 24 miles away, closer "Get noticed on dating
-apps." — "The photos a profile needs." over a second card, closer "Authentic pro photos. More
-matches." — "All from one selfie." over the source selfie on the sofa, closer "Same face.
-Same build." — "Pick a pose. It renders you in it." over a real screen recording of the pose
-catalog, City & Street and Café & Drinks — then the mark, "Be the right swipe." and the badge.
+apps." — "First photo. First chance." over 8 miles away, closer "She decided in 100 ms." —
+"The photos a profile needs." over 11 miles away, closer "Authentic pro photos. More
+matches." — "It was never the bio." over 3 miles away, closer "The photo does the work." —
+"All from one selfie." over the source selfie on the sofa, closer "Same face. Same build.",
+with the §11.2 strip on frame — "Pick a pose. It renders you in it." over a real screen
+recording of the pose catalog, City & Street and Café & Drinks — end card: the mark, the
+wordmark, "Be the right swipe." and the App Store badge.
 
-Two things v1 does not have. The §11.2 disclosure is on frame under the selfie beat, verbatim:
-"Demo. Your photos use your actual face and body. Results vary based on selfie quality,
-lighting, and pose." And the pose-catalog capture puts the mechanism on screen instead of
-asserting it — pose in, you rendered into it — which is the one claim no rival can copy.
+Every locked line in it is verbatim, which is what separates it from v0-drifted: "She decided
+in 100 ms.", "First photo. First chance.", "Authentic pro photos. More matches.", "Be the
+right swipe.". The §11.2 strip sits under the one beat that shows a rendered result beside its
+source. The pose-catalog capture puts the mechanism on screen instead of asserting it.
 
-The hook still asks the viewer about his own dating results and carries the same
-personal-attributes risk as v1; that is the one blocker left, and the rest of the piece does
-not depend on it. The man is the synthetic actor, so no likeness release. Nothing is spoken,
-so burned-in captions do not apply. No brief exists for WP_P2_STATIC_swipingback yet.
+The man is the synthetic actor, so no likeness release is owed. One blocker remains and it is
+the first frame: "Is nobody swiping back?" asks the viewer about his own dating results, which
+is the shape PRODUCT.md §11 gives as the worked example of what Meta rejects.
+Brief: brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs/WP_P2_STATIC_swipingback.md

@@ -6,3 +6,11 @@ rendered result is shown. The pair here is the sanctioned demo pair from before-
 (wall_00_sofa) — swap for the real session pair once the likeness release is signed. No trial
 line: the badge carries the offer. Brief: brain/process/meta-ads/03 Choose Videos And Five
 Campaigns/briefs/WP_P2_STATIC_checkcard.md.
+
+Render audit 2026-09-22: the card does not show the check it sells. The brief asks for the
+Photo Check screen on the left — selfie beside the chosen pose, verdict and reasons on screen,
+inside an iPhone mockup running the WinkyPie UI, captured at 1206 × 2622. What is here is two
+bare photographs. The left one is also not technically bad: even window light, eyes to lens,
+chest-up — while the bullets under it say "Dark lighting." and "Bad frame.", which the eye can
+check and which fail. The brief's bullet set was revised the same day to lines the two frames
+actually support; this render still carries the old ones.

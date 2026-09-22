@@ -1,1 +1,17 @@
-Silent. On screen: "My coworker's profile photos looked like a photographer took them. He said one app. This is my phone one week later." — a scroll of Tinder match and message notifications — "he was gatekeeping this the whole time." — WinkyPie · x10 the matches.
+Campaign 12, approved by the owner 2026-09-22 and running with four §11 failures carried on
+purpose. Silent, 4:5, no audio track. On screen: "My coworker's profile photos looked like a
+photographer took them. He said one app. This is my phone one week later." — a scroll of
+Tinder match and message notifications — "he was gatekeeping this the whole time." — closing
+on WinkyPie · x10 the matches.
+
+Modelled on Roast's 2014738899400393, the #1 ad by impressions on their page, which ran 143
+days. What is carried, knowingly: "x10 the matches" is an unsourced multiplier and root
+CLAUDE.md lists that exact phrase among the words we do not use; the coworker is a fabricated
+testimonial (§11.1); the notification scroll is fabricated proof; and the interface in it is a
+third-party dating app, which the check card brief rules out on our creatives.
+
+One structural note that outlives the decision. In the model, the story sits in the primary
+text and the multiplier in the link-card headline — editable fields, so a rejection costs an
+edit. Ours are rendered into the file, so the same rejection costs a re-render. If this comes
+back from review, that is the first thing to change about the next cut.
+Brief: brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs/WP_P2_STATIC_coworker.md

@@ -1,9 +1,15 @@
-Same campaign as v1, different layout: five results in a 2×2-plus grid with the source selfie
-as a circular inset dead centre in the one brand gradient, and the wordmark at the foot. Hook
-split across two lozenges — "One selfie." above the inset, "Authentic pro photos." below, the
-punch in italic gradient. "Authentic pro photos." is the locked brand line (PRODUCT.md §1), so
-this version drops v1's "Endless" claim and says something we can stand behind.
+Campaign 11, the shippable card. Five finished photos of one man in a grid — Paris street,
+café, kitchen, poolside, terrace — with the source selfie as a circular inset dead centre,
+ringed in the one brand gradient. The hook is split across two lozenges over the grid: "One
+selfie." above the inset, "Authentic pro photos." below, the punch in italic gradient.
+Wordmark at the foot. No App Store badge: the link card carries the store.
 
-The centre inset is the mechanism in one image: the selfie that went in, ringed by what came
-out. No App Store badge on this one — v1 carries it, and that is the visible difference to
-test. Still missing the §11.2 disclosure strip, and still no brief for the campaign.
+The centre inset is the whole argument in one image — the selfie that went in, ringed by what
+came out — which is why this version reads as a mechanism and v0-endless reads as a gallery.
+It also drops that scenario's false "Endless" claim for "Authentic pro photos.", the locked
+brand line from PRODUCT.md §1.
+
+The man is generated, so there is no likeness release owed. Two things are open and are
+decisions rather than work: the §11.2 disclosure strip is not on frame although rendered
+results are, and the card exists at 4:5 only — feed-native, but nothing for Reels or Stories.
+Brief: brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs/WP_P2_STATIC_oneselfie.md
