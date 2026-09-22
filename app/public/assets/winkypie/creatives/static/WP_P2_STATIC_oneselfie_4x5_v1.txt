@@ -1,11 +1,9 @@
-Campaign 7's proof-density angle as a static grid — the results are the ad. Five finished
-photos of one man (café, doorway, kitchen, terrace, poolside) around a sixth panel carrying
-the mark, "Endless pro photos. One selfie." and the App Store badge. No app UI on frame, no
-before/after framing, one man throughout.
+Same campaign as v1, different layout: five results in a 2×2-plus grid with the source selfie
+as a circular inset dead centre in the one brand gradient, and the wordmark at the foot. Hook
+split across two lozenges — "One selfie." above the inset, "Authentic pro photos." below, the
+punch in italic gradient. "Authentic pro photos." is the locked brand line (PRODUCT.md §1), so
+this version drops v1's "Endless" claim and says something we can stand behind.
 
-Two things block it. "Endless pro photos." is false against PRODUCT.md §7 — Pro is capped at
-50 per rolling week and 100 per rolling month, the trial at 5 over 3 days — and a caps-versus-
-claim mismatch is the class of thing both Meta ad review and App Store review flag. And the
-§11.2 disclosure strip is missing: rendered results are on frame, so the results-vary line is
-mandatory. No brief exists for WP_P2_STATIC_oneselfie yet; the closest written angle is
-briefs/WP_P2_PORTFOLIO_oneselfie.md, which is the video cut of the same argument.
+The centre inset is the mechanism in one image: the selfie that went in, ringed by what came
+out. No App Store badge on this one — v1 carries it, and that is the visible difference to
+test. Still missing the §11.2 disclosure strip, and still no brief for the campaign.

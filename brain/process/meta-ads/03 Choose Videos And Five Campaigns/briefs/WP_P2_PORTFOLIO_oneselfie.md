@@ -5,7 +5,7 @@ persona: P2 Grinder
 format: PORTFOLIO — results full-frame, narrator as a corner inset
 variable: "proof density — the finished photos are the ad"
 order: 7
-updated: 2026-09-08
+updated: 2026-09-22
 ---
 # Brief — WP_P2_PORTFOLIO_oneselfie
 
@@ -72,12 +72,21 @@ talking does not exist, and the AI line rides two seconds of twenty-two.
 
 ## Primary text
 
-> One selfie goes in. Street, café, studio, night out — a set of photos for a dating profile
-> comes back. Same face, same build. No photographer, no shoot day. WinkyPie starts from a
-> pose, coaches the selfie, then renders it. Looks pro. Still you.
+> One selfie goes in. A set of photos for a dating profile comes back — different places,
+> different light. Same face, same build. No photographer, no shoot day. WinkyPie starts from
+> a pose, coaches the selfie, then renders it. Looks pro. Still you.
 
 Headline: **One selfie in. A profile's worth out.** · Description: **Authentic pro photos.
 More matches.**
+
+**The scene list came out 2026-09-22.** It used to name four of §6's seven collections —
+"Street, café, studio, night out". Nothing in it was false, and that is not why it went:
+**the collections are admin-managed and sync live from the backend** (§6), so an ad that
+names them can stop being true without anyone touching the ad. It is the same reasoning that
+forbids a pose count, applied to the names instead of the number. "Different places, different
+light" says the range and stays true whatever ships next. [[WP_P2_STATIC_oneselfie]] carries
+the identical line — that is the point of it, so the two move together or the format test
+stops meaning anything.
 
 ## To produce
 

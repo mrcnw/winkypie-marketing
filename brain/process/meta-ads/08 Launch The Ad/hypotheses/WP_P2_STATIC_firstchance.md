@@ -1,16 +1,16 @@
 ---
 tags: [hypothesis, launch]
 campaign: WP_P2_STATIC_firstchance
-status: draft
-dated:
-updated: 2026-09-21
+status: committed
+dated: 2026-09-22
+updated: 2026-09-22
 ---
 # Hypothesis — WP_P2_STATIC_firstchance
 
-**Draft. Not yet committed — `dated:` is empty and stays empty until the moment before spend
-starts.** A hypothesis written after the numbers arrive always turns out to have predicted
-them ([[08 Launch The Ad]]), which is the whole reason this file exists before the campaign
-does.
+**Committed 2026-09-22 by the owner, before any spend.** A hypothesis written after the
+numbers arrive always turns out to have predicted them ([[08 Launch The Ad]]), which is the
+whole reason this file is dated now rather than on launch day. It is not edited again: if the
+prediction turns out wrong, that is the result.
 
 ## The line
 
@@ -33,7 +33,10 @@ exactly the question this creative was cut to answer.
 
 ## Before this goes live
 
-1. Put a date in `dated:` and flip `status:` to `committed`. Before the money moves.
-2. Add `hypothesis` to the brief's `approved:` list — the preflight then clears.
+1. ~~Date it and commit it.~~ Done 2026-09-22.
+2. ~~Add `hypothesis` to the brief's `approved:` list.~~ Done 2026-09-22 — the preflight clears.
 3. Feed off, Reels and Stories on (the 9:16-only decision in the brief).
-4. Then leave it alone for the learning phase, and write the do-not-touch date on the tracker.
+4. **It cannot launch alone.** The prediction is a ranking inside round one, so it needs the
+   rest of the round beside it — and [[08 Launch The Ad]] requires the set to go out together
+   or the campaigns are not comparable.
+5. Then leave it alone for the learning phase, and write the do-not-touch date on the tracker.

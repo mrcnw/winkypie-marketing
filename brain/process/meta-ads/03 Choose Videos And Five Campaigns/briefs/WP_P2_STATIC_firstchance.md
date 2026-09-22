@@ -7,10 +7,9 @@ variable: the first-photo angle carried photographically instead of by type
 order: 10
 modelled_on: [photoshoot-she-swiped-left]
 cta: Install now
-approved: [hook, primary-text, headline, description, cta, destination, render, guardrails]
+approved: [hook, primary-text, headline, description, cta, destination, render, guardrails, hypothesis]
 not_applicable: [ratios, flags]
-waived: [disclosure]
-updated: 2026-09-21
+updated: 2026-09-22
 ---
 # Brief — WP_P2_STATIC_firstchance
 
@@ -99,7 +98,7 @@ the viewer's appearance, results, status or finances ✓ · same man in both fra
 confirmed ✓ · no BEFORE / AFTER wording, no labels at all ✓ · AI described honestly ✓ · no
 third-party mark and no dating-app interface ✓ · no stat, no percentage ✓ · no user count, no
 rating, no testimonial ✓ · no dollar figure, no trial line ✓ · no pose count ✓ · male subject,
-and a synthetic one ✓ · one gradient ✓ · **§11.2 disclosure — waived, see below.**
+and a synthetic one ✓ · one gradient ✓ · **§11.2 disclosure — not on frame, decided below.**
 
 ## Decisions carried on purpose
 
@@ -108,7 +107,7 @@ recorded here so nobody re-discovers them as bugs.
 
 | What | Why it is a risk | The decision |
 |---|---|---|
-| **No §11.2 disclosure strip** | [[Before After Card Bullets]] calls the line mandatory from the moment a rendered photo is on the card | **Waived 2026-09-21, and the research says the cost is near zero.** The line's second half ("Results vary based on…") is the disclaimer shape the FTC ruled insufficient in 2009, and Meta prohibits before/after imagery outright rather than permitting it with a footer. Its first half ("your photos use your actual face and body") is not a disclaimer at all but the mechanism claim — and the primary text already carries it: *"it renders your face and your build into it"*. What the strip would have protected is already in the ad |
+| **No §11.2 disclosure strip** | [[Before After Card Bullets]] calls the line mandatory from the moment a rendered photo is on the card | **Waived 2026-09-21, and the research says the cost is near zero.** The line's second half ("Results vary based on…") is the disclaimer shape the FTC ruled insufficient in 2009, and Meta prohibits before/after imagery outright rather than permitting it with a footer. Its first half ("your photos use your actual face and body") is not a disclaimer at all but the mechanism claim — and the primary text already carries it: *"it renders your face and your build into it"*. What the strip would have protected is already in the ad. **The preflight stopped tracking this on 2026-09-22** — it is a line of the §11 read now, and this table is where the decision lives |
 | **"Pro photos. More matches." on frame** | The locked line gained *Authentic* on 2026-09-07 (§1), and that word answers the persona's first buying blocker — "thinks AI photos look fake" (§3). The frame predates it | **Leave as is, 2026-09-21.** The primary text carries the current wording, so the ad says *Authentic* even where the frame does not |
 
 Neither is `N/A` and neither is `approved`. They are `waived:` in the frontmatter, which is

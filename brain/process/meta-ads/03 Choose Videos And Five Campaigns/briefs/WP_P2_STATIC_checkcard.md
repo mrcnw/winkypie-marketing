@@ -6,7 +6,10 @@ format: static (two frames + grid)
 variable: the free pre-flight check as a two-frame card
 order: 9
 modelled_on: [roast-before-after-card-1321304576602871]
-updated: 2026-09-09
+cta: Install now
+approved: [hook, primary-text, headline, description, cta, destination, render, guardrails]
+not_applicable: [ratios]
+updated: 2026-09-22
 ---
 # Brief — WP_P2_STATIC_checkcard
 
@@ -95,9 +98,28 @@ that work, exactly as in the model card.
 
 | ✗ | ✓ |
 |---|---|
-| No posing skills. | Mirrors the pose you picked. |
-| Dark lighting. | Your build. |
-| Bad frame. | Looks pro. Still you. |
+| No pose. | Your pose, mirrored. |
+| Your living room. | Real place, real light. |
+| Arm's length. | A few steps back. |
+
+**Revised 2026-09-22, against the render rather than against the model card.** The set this
+brief carried until then — and the different set `v1` actually shipped with — described a
+photograph that is not on the card. `v1`'s left frame is a normal indoor selfie in even window
+light, framed chest-up; the bullets under it read "Dark lighting." and "Bad frame." Both are
+claims the eye can check and both fail. The brief's own test is explicit: *cover the text and
+the two frames still have to tell the story*, and *every line has to be verifiable in the two
+frames*. Three of the six lines could not be.
+
+The set above is what the two frames do show. Pose: nothing on the left, a held pose on the
+right. Place: a sofa against a vineyard in daylight. Distance: an arm's length against a
+camera several steps back. Read across, one dimension per row, and every word checkable by
+covering the text.
+
+"Your build." and "Looks pro. Still you." came out of the ✓ column at the same time. They are
+likeness claims, and the likeness argument needs the *same man visibly the same* in both
+frames — which this pair does support — but they answer a different opponent than the ✗ column
+sets up. The ✗ column here is his own selfie, so every ✓ has to answer that fault. "Looks pro.
+Still you." stays where it belongs, as the closer and the headline of [[WP_P3_POSERESULT_stillyou]].
 
 Slot for slot against the model card, **only the first row had to be replaced**:
 
@@ -129,16 +151,38 @@ back.` / `One face, chest up.` (carries the §8 "+38 % · Image-engagement 2025"
 number is ever wanted) · `Turned away.` / `Body angled, face forward.` (the strongest sourced
 row, "+102 % · Hinge 2023")
 
-## Headline variants rendered 2026-09-09
+## Headline variants — the decision, after the renders went
 
-Three layouts exist as 4:5 renders in `app/public/assets/winkypie/creatives/static/`, all with
-the placeholder left frame. Same card, three headlines, and the bullet set changes with them.
+Three 4:5 layout renders existed from 2026-09-09 and were **deleted on 2026-09-22**. The
+decision they were made to settle survives; the files do not. They are recoverable from git
+history if a comparison is ever wanted again.
 
-| Variant | Headline | Bullets | Verdict |
-|---|---|---|---|
-| **A** `…_v0-layout` | "Why a first photo **works**." | Guessing the pose. · Dark lighting. · No smile. → Mirrors the pose you picked. · Real place, real light. · Relaxed expression. | Superseded by the B/C bullet set below |
-| **B** `…-B` | "Why you're not getting **matches**." | No posing skills. · Bad lighting. · Bad frame. → Your pose, mirrored. · Real place, real light. · One face, chest up. | **The owner's call, and the one line on any of our cards that asserts the viewer's dating results.** It is the model card's own headline; Meta's personal-attributes rule and §11 both forbid it, and it is the most common rejection cause in this category. Rendered so the choice is made on the real thing, not on a description of it |
-| **C** `…-C` | "Why photos don't get **matches**." | Same as B | The compliant twin of B — same energy, subject moved off the man and onto the photo. The control to run B against, and the fallback when B is rejected |
+| Variant | Headline | Verdict |
+|---|---|---|
+| **A** | "Why a first photo **works**." | Superseded by the B/C bullet set. Render deleted 2026-09-22 |
+| **B** | "Why you're not getting **matches**." | **The owner's call, and the one line on any of our cards that asserts the viewer's dating results.** It is the model card's own headline; Meta's personal-attributes rule and §11 both forbid it, and it is the most common rejection cause in this category. **This is what `v1` carries** |
+| **C** | "Why photos don't get **matches**." | The compliant twin of B — same energy, subject moved off the man and onto the photo. Still the control and still the fallback, **but it no longer exists as a file** |
+
+**C is a plan without an asset, and that is a live gap.** The whole reason B could be shipped
+as a deliberate risk was that its compliant twin stood ready to swap on the first rejection.
+Swapping now means re-rendering first, which is the wrong thing to be doing while an account
+is carrying a rejection. Either re-render C and keep it beside `v1`, or accept that a
+rejection means the card comes down rather than changes.
+
+## The scenario kept as a warning — `v0-beforeafter`
+
+A fourth render exists, made 2026-09-09 at 19:48 — **ten minutes after `v1`**, which makes it
+a regression rather than a draft. It is kept so the mistake stays visible, and it is not
+shippable. Three things in it are the exact wording this brief fixed:
+
+| In `v0-beforeafter` | What this brief says |
+|---|---|
+| Frames labelled **BEFORE** and **AFTER** | "Never the words BEFORE and AFTER. They are what turns this layout into an appearance claim" |
+| "**Mirror** the pose you picked." | Changed to "Mirror**s**" — without the *s* it is an imperative aimed at the viewer, which §11 does not allow |
+| "**Studio light.**" | The line is "Real place, real light." — §6's collections deliver real locations, and studio light describes a product we do not sell |
+
+It also drops the §11.2 strip that `v1` carries, uses a real man rather than the sanctioned
+demo pair, and puts a "Try it for free." line under the badge that `v1` deliberately dropped.
 
 **Why the likeness lines live here and not on campaign 8 (revised 2026-09-09).** The ✓ column
 was first written to answer the ✗ column row by row — light, eyes, frame. The owner's set puts
@@ -199,14 +243,97 @@ protected attribute; the safest form remains "Guessing the pose."
 - Optional motion version: the left frame holds, the right resolves from the pass verdict to
   the result once, 6 s loop. Nothing else moves.
 
-## Primary text (Meta placement)
+## Two ads, one creative
+
+This campaign goes out as **two ads in the same ad set**, same card, different copy. The
+variable is **what the first sentence is about**: A opens on the software — what most AI photo
+apps do — and B opens on the moment the photo is judged, and does not mention the product
+until the third sentence.
+
+Problem-aware against solution-aware, in other words. A assumes he has already tried an AI
+photo app and been disappointed by one. B assumes he has not, and starts at the swipe.
+
+**Changed 2026-09-22: the headline now moves with the primary text.** It was held identical,
+which made this the tightest possible test — one sentence isolated, and a result attributable
+to that sentence alone. It is now a **message test** instead: each variant's headline finishes
+the argument its primary text starts, so A is the mechanism answer to a category complaint and
+B is the outcome of the moment it describes.
+
+The cost is stated plainly so nobody mis-reads the result later: **a win here says which
+argument works, not which sentence did it.** Description and call to action stay constant, so
+it is still two fields rather than four. [[WP_P2_STATIC_swipingback]] runs the same kind of
+test; the sentence-level test now exists nowhere in the round, and is worth rebuilding on a
+creative that has a spare slot.
+
+## Primary text — A · the category
 
 > Most AI photo apps charge you for the bad result. WinkyPie checks your selfie against the
 > pose first — free — and tells you what will go wrong before it renders anything. Fix it,
 > retake it, nothing charged. Then one selfie becomes the photo your dating profile leads with.
 
-Headline: **It checks your selfie before it costs you anything.** ·
+Headline: **It checks before it charges.** ·
 Description: **One selfie. No photographer.**
+
+**Headline shortened 2026-09-22.** It read "It checks your selfie before it costs you
+anything." — 50 characters, and Meta cuts the link-card headline around 40, so it was being
+served as "It checks your selfie before it cos…". The replacement is §9's own pillar-5 line
+compressed to four words, and it is literally what §5 describes: the check runs before a
+generation is charged. Identical in A and B, which is what keeps this a one-variable test.
+
+The opening line is the same one campaign 8 built a whole card around, so if it wins here the
+angle is worth more than one format. It also does the work of positioning without naming a
+rival — "most AI photo apps" is a category, not a competitor, which keeps it clear of the
+third-party-mark line the model card crosses.
+
+## Primary text — B · the decision
+
+> She decided in 100 ms. The photo is what she looked at. The bio is what she did not.
+> WinkyPie checks your selfie against the pose before it renders anything — free, and says so
+> if it will not work. Then one selfie becomes the photo the profile leads with.
+
+Headline: **Be the right swipe.** ·
+Description: **One selfie. No photographer.**
+
+19 characters, and it is the **locked closing CTA** (PRODUCT.md §1) — not a line written for
+this ad. It finishes the sentence the primary text opens: she decided in 100 ms, so be the one
+she decided on. Third person about the photograph and about her, never about him, which is the
+line that separates this from `swipingback`'s opening plate.
+
+**It is already on the card**, above the App Store badge in `v1`. Headline and closer saying
+the same words means the link card and the creative land one idea instead of two.
+
+A first draft of this slot read "The photo she stops on." — written for the ad, and replaced
+on 2026-09-22. A locked line beats an invented one when both say the same thing: it is
+already decided, already on the frame, and it cannot drift.
+
+**Not "First photo. First chance."** — also a locked line, but it is already
+[[WP_P2_STATIC_firstchance]]'s on-frame hook. Reusing it here would put the same words on two
+creatives in one round and make both reads useless.
+
+**The first sentence is the locked line, verbatim** (PRODUCT.md §1, the hero hook from
+onboarding screen 1). Verbatim is not a style preference here: `swipingback` was demoted to
+`v0-drifted` on the same day for paraphrasing a locked line twice, and this brief is not going
+to repeat it. Not "she decides in 100 ms", not "100 milliseconds", not "a tenth of a second."
+
+**It is a narrative device and is never presented as a statistic.** [[WP_P2_STATIC_100ms]]
+states that rule for this line and it carries over: no source citation, no percentage, nothing
+on the creative that dresses it as research. §8 allows five sourced stats and this is not one
+of them — it is a sentence about a woman looking at a phone.
+
+**Three hard stops before the product is named.** The decision, what she read, what she did
+not. Then the mechanism. Note the subject of every sentence: *she*, *the photo*, *the bio*,
+*WinkyPie* — never *you*, and never anything about how the viewer's own dating is going. That
+is the whole difference between this and `swipingback`'s opening plate, which fails §11 for
+asking him directly.
+
+The last two sentences are A's, verbatim, so the ads converge on the same mechanism and the
+same promise. Only the door in is different.
+
+**Overlap to declare before launch.** "She decided in 100 ms." is campaign 1's whole hook, and
+it is already on frame as beat 2's closer in [[WP_P2_STATIC_swipingback]]. Campaign 1 has no
+render, so nothing collides today — but if it is ever produced, or if this ad and
+`swipingback` run in the same ad set, the hypotheses have to say so, or a win cannot be
+attributed to the line or to the format.
 
 ## Guardrail check (§11)
 
@@ -217,6 +344,39 @@ implication of a different person** ✓ · no BEFORE / AFTER wording ✓ · §11
 frame ✓ · AI described honestly ✓ · no third-party mark and no rival's UI ✓ · no stat unless it
 carries its §8 label ✓ · no user count, no rating, no testimonial ✓ · no dollar figure, no
 trial line ✓ · no pose count ✓ · male subject ✓ · one gradient ✓.
+
+## Render audit — `v1`, read 2026-09-22
+
+The card is well made and it carries the §11.2 strip. **It also does not show the mechanism it
+was written to sell.**
+
+| The brief asks for | `v1` has |
+|---|---|
+| Left frame: **the Photo Check screen** — his selfie beside the pose he picked, verdict and reasons visible | A plain photograph of a selfie. No verdict, no reasons, no pose reference |
+| Both frames inside **a plain iPhone mockup running the WinkyPie UI** | Two bare photographs with rounded corners. No device, no UI |
+| Flag 3: **capture, not mockup** — real app captures at 1206 × 2622 | Neither frame is an app capture |
+| Left frame **technically bad** — backlit, shadowed, eyes hidden, wrong angle | Even window light, eyes to lens, chest-up framing |
+
+This is the campaign's whole variable: *the free pre-flight check as a two-frame card*. With
+the check absent, what is left is a selfie beside a result — which is campaign 10's layout,
+and it inherits campaign 10's exposure to being read as before/after without having campaign
+10's reason to exist.
+
+**So production flags 1 and 3 are not resolved, and the card is not a smaller version of the
+brief — it is a different card.** Either the Photo Check screens get captured and the frames
+rebuilt around them, or this brief is re-scoped to describe what was actually made.
+
+## Ratio and placements — decided 2026-09-22
+
+**4:5 only, and the placements are restricted to the feed family.** Unlike
+[[WP_P2_STATIC_oneselfie]], this card does not survive a crop: Meta's *Smart Zoom* takes
+roughly 15 % off each side in Stories and Reels, and **both bullet columns sit in the outer
+thirds** — the ✗ and ✓ marks and the opening words go first. The argument is in the margins
+here, not on the centre axis.
+
+So: Advantage+ placements off, feed family by hand, Reels and Stories off until a 9:16 is laid
+out. **Reversible** — if the crop turns out acceptable in preview, open the placements; this
+is the safe default, not a finding.
 
 ## Production flags (resolve before design starts)
 
@@ -253,6 +413,9 @@ trial line ✓ · no pose count ✓ · male subject ✓ · one gradient ✓.
 8. Run the Guardrail check line by line; fix what fails, do not argue with it.
 9. Register in the app's asset browser and hand to [[08 Launch The Ad]] with the hypothesis
    line written before spend.
+10. Build **both ads** in the same ad set — same card, A and B copy above, identical CTA and
+   description. If only one slot is available, run A: it is the version the evidence was
+   gathered on.
 
 ## Set-size note
 
