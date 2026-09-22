@@ -1,3 +1,4 @@
+import { repoPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -19,7 +20,7 @@ import {
 
 /** The research lives in the vault, not in this app. Read it, never copy it. */
 export const RESEARCH_DIR = "brain/process/meta-ads/01 Find Competitors";
-const ABS_DIR = path.join(process.cwd(), "..", RESEARCH_DIR);
+const ABS_DIR = repoPath(RESEARCH_DIR);
 
 export type Fact = { field: string; value: string; source: string | null };
 

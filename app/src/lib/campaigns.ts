@@ -1,3 +1,4 @@
+import { REPO_ROOT } from "@/lib/paths";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -37,7 +38,7 @@ import type { AdSwipe } from "@/lib/meta-ads";
  * step list — the vault says what to do, the app shows it.
  */
 export const BRIEFS_DIR = "brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs";
-const ROOT = path.join(process.cwd(), "..");
+const ROOT = REPO_ROOT;
 
 /** The brief section whose ordered list is the step-by-step */
 export const STEPS_HEADING = "Do this";

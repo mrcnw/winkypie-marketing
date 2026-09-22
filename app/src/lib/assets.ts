@@ -1,3 +1,4 @@
+import { appPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -26,7 +27,7 @@ export type Asset = {
   caption: string | null;
 };
 
-const PUBLIC_DIR = path.join(process.cwd(), "public");
+const PUBLIC_DIR = appPath("public");
 const IMAGE_EXT = new Set([".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif", ".svg"]);
 const VIDEO_EXT = new Set([".mp4", ".webm", ".mov", ".m4v"]);
 const MAX_DEPTH = 4;

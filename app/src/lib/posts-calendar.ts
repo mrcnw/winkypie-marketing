@@ -1,5 +1,5 @@
+import { repoPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
-import path from "node:path";
 
 import {
   findSection,
@@ -21,7 +21,7 @@ import { pillarKeyOf, type PlannedPost } from "@/lib/pillars";
  */
 export const CALENDAR_NOTE_PATH =
   "brain/process/meta-ads/07 Update Facebook Account/Posts Calendar.md";
-const ABS_PATH = path.join(process.cwd(), "..", CALENDAR_NOTE_PATH);
+const ABS_PATH = repoPath(CALENDAR_NOTE_PATH);
 
 /** The section whose first table is the schedule */
 export const SCHEDULE_HEADING = "Schedule";

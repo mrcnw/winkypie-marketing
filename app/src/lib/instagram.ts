@@ -1,5 +1,5 @@
+import { repoPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
-import path from "node:path";
 
 import {
   findSection,
@@ -22,7 +22,7 @@ import {
  */
 export const NOTE_PATH =
   "brain/process/meta-ads/07 Update Facebook Account/Instagram Profile.md";
-const ABS_PATH = path.join(process.cwd(), "..", NOTE_PATH);
+const ABS_PATH = repoPath(NOTE_PATH);
 
 /** The section whose ordered list is the fix list */
 export const STEPS_HEADING = "Do this";

@@ -1,3 +1,4 @@
+import { REPO_ROOT } from "@/lib/paths";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -12,7 +13,7 @@ import {
 } from "@/lib/markdown";
 
 /** Both files live at the repo root. This app renders them; it never restates them. */
-const ROOT = path.join(process.cwd(), "..");
+const ROOT = REPO_ROOT;
 
 
 

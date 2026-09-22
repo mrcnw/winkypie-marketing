@@ -1,3 +1,4 @@
+import { repoPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -24,7 +25,7 @@ import { pillarKeyOf, type PillarKey } from "@/lib/pillars";
  * The vault writes the post; this only shows it. Nothing here is a status.
  */
 export const POSTS_DIR = "brain/process/meta-ads/07 Update Facebook Account/posts";
-const ABS_DIR = path.join(process.cwd(), "..", POSTS_DIR);
+const ABS_DIR = repoPath(POSTS_DIR);
 
 /** Sections matched on their opening words — a rename in the vault degrades, never breaks. */
 const HOOK_HEADING = "The hook";

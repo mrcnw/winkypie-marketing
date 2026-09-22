@@ -1,5 +1,5 @@
+import { appPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
-import path from "node:path";
 
 import { readAssets, type Asset } from "@/lib/assets";
 
@@ -95,7 +95,7 @@ function previewsFor(slug: string, assets: Asset[]) {
 export async function readSwipes(
   source: SwipeSource,
 ): Promise<{ ads: AdSwipe[]; error: string | null }> {
-  const file = path.join(process.cwd(), "content", source.file);
+  const file = appPath("content", source.file);
 
   let raw: string;
   try {
