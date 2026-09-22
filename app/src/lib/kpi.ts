@@ -1,3 +1,4 @@
+import { REPO_ROOT } from "@/lib/paths";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -19,7 +20,7 @@ import {
  */
 export const STRATEGY_DIR = "brain/process/meta-ads/05 Ad Strategy And Budget";
 export const REVIEW_DIR = "brain/process/meta-ads/09 Analyze KPIs";
-const ROOT = path.join(process.cwd(), "..");
+const ROOT = REPO_ROOT;
 
 export type AdStatus = "active" | "previous";
 

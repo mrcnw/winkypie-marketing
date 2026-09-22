@@ -1,3 +1,4 @@
+import { appPath, repoPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -31,9 +32,9 @@ import {
  * `app/public/assets/winkypie/teardowns/<note slug>/` and the detail view shows the strip.
  */
 export const TEARDOWNS_DIR = "brain/process/meta-ads/02 How To Find A Good Ad/swipe";
-const ABS_DIR = path.join(process.cwd(), "..", TEARDOWNS_DIR);
+const ABS_DIR = repoPath(TEARDOWNS_DIR);
 const FRAMES_REL = "assets/winkypie/teardowns";
-const FRAMES_ABS = path.join(process.cwd(), "public", FRAMES_REL);
+const FRAMES_ABS = appPath("public", FRAMES_REL);
 
 const FACTS_HEADING = "Facts";
 const STRUCTURE_HEADING = "Structure";

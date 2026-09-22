@@ -1,5 +1,5 @@
+import { appPath } from "@/lib/paths";
 import { promises as fs } from "node:fs";
-import path from "node:path";
 
 import { ASSET_DIRS, readAssets, type Asset } from "@/lib/assets";
 
@@ -68,7 +68,7 @@ function recipesOf(value: unknown): ActorRecipe[] {
  * the sub-folder under `assets/winkypie/actors` carries what came out.
  */
 export async function readActors(): Promise<{ actors: Actor[]; error: string | null }> {
-  const file = path.join(process.cwd(), "content", "actors.json");
+  const file = appPath("content", "actors.json");
 
   let raw: string;
   try {
