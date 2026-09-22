@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw captures — screen recordings and rushes. GitHub rejects anything over 100 MB and a
+# 157 MB recording stopped a push on 2026-09-22. Stills go in git, the footage does not.
+# See public/assets/videos/README.md.
+public/assets/videos/*
+!public/assets/videos/README.md

@@ -39,7 +39,19 @@ app/public/assets/winkypie/brand/         → /winkypie · Brand Assets — mark
 app/public/assets/winkypie/before-after/  → /winkypie · pairs on the file name:
                                             hero_1_before.png + hero_1_after.png
                                             (before|pre and after|post both work)
-app/public/assets/winkypie/mobile-app/    → /winkypie · Mobile App
+app/public/assets/winkypie/mobile-app/    → /winkypie · Mobile App. A still cut from a raw
+                                            recording lives here; the recording does not —
+                                            see `assets/videos/` below
+app/public/assets/videos/                 → served at /assets/videos/ locally and **git-
+                                            ignored**. Raw captures: screen recordings,
+                                            rushes, anything that exists so a still can be
+                                            cut out of it. GitHub rejects a file over 100 MB
+                                            and a 157 MB recording stopped a push on
+                                            2026-09-22. Delivered creatives stay in git —
+                                            they are the work product and the largest is
+                                            under 11 MB. Footage does not. A fresh clone has
+                                            the stills, not the rushes; back the rushes up
+                                            somewhere that is not a git repo
 app/public/assets/winkypie/poses/         → /winkypie · Poses — a snapshot of the in-app
                                             catalog; its file count is not a pose count
 app/public/assets/winkypie/bad-photos/    → /winkypie · Bad Photos — problem-side examples;
@@ -173,8 +185,10 @@ both or the dashboard lies.** The thresholds table itself is rendered from that 
 guardrail 2 applies: no invented results anywhere in this app — scenario rows exist only to
 exercise the rules and say so on screen.
 
-Assets are committed to the repo. A multi-hundred-MB video is worth a second thought before
-`git add`; everything else just goes in.
+Assets are committed to the repo — **except raw footage**, which goes in
+`public/assets/videos/` and is ignored. That soft "worth a second thought" advice used to live
+here and it did not hold: a 157 MB screen recording went in on 2026-09-07 and blocked the next
+push. The line is now drawn by `.gitignore` rather than by judgement.
 
 Before/after imagery carries the `PRODUCT.md` §11.2 disclosure in the UI. If that section
 moves or the wording changes, `before-after-gallery.tsx` has to change with it.

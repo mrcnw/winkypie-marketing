@@ -1,1 +1,14 @@
-Screen recording of one full run, 89 s: poses grid → pose → selfie → photo check → generate → result. iPhone capture, 1206 × 2622, HEVC.
+Stands in for the 89-second screen recording of the whole app flow, captured 2026-09-07 at
+1206 × 2622. The recording itself is 157 MB — over GitHub's 100 MB ceiling — so it lives
+outside git at app/public/assets/videos/09-app-flow-recording-2026-09-07.mp4 and this frame
+is what the repo carries.
+
+The frame is from 0:12 and it is the Photo Check comparison: the reference pose the man
+picked above, his selfie below, the app analyzing the two against each other. That screen is
+the mechanism §5.2 calls the moat, and it is the capture
+briefs/WP_P2_STATIC_checkcard.md asks for in production flag 1 — at the resolution flag 3
+specifies. What the recording does not contain is a *block* verdict with its reasons on a
+technically bad selfie, which is the part of that flag still open.
+
+The other eight files in this folder are stills from the same session and cover the rest of
+the flow.
