@@ -9,7 +9,7 @@ import { PostsCalendar } from "@/components/posts-calendar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ASSET_DIRS, readAssets } from "@/lib/assets";
+import { ASSET_DIRS, pairUploads, readAssets } from "@/lib/assets";
 import {
   cardTable,
   instagramHandle,
@@ -134,8 +134,11 @@ export default async function InstagramPage({
   ]);
   const section =
     tab === "calendar" ? "calendar" : tab === "posts" ? "posts" : "profile";
-  const pinned = instagramAssets.filter(
-    (asset) => asset.kind === "image" && asset.group.split("/")[0] === PINNED_GROUP,
+  // One entry per master, each carrying its `upload/` export when `npm run ig` has made one.
+  const pinned = pairUploads(
+    instagramAssets.filter(
+      (asset) => asset.kind === "image" && asset.group.split("/")[0] === PINNED_GROUP,
+    ),
   );
   const today = todayIso();
 
@@ -238,7 +241,7 @@ export default async function InstagramPage({
             )}
           </section>
 
-          <PinnedTiles assets={pinned} dir={`${ASSET_DIRS.instagram}/${PINNED_GROUP}`} />
+          <PinnedTiles tiles={pinned} dir={`${ASSET_DIRS.instagram}/${PINNED_GROUP}`} />
 
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_24rem]">
             <div className="flex flex-col gap-10">

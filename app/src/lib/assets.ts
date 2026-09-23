@@ -203,3 +203,41 @@ export function pairBeforeAfter(assets: Asset[]) {
     loose,
   };
 }
+
+/**
+ * The sub-folder beside a master that holds its platform-ready export. `npm run ig` writes
+ * it; nothing in the app ever writes into `public/`.
+ */
+export const UPLOAD_GROUP = "upload";
+
+export type UploadPair = {
+  /** The archive — full resolution, whatever the design tool wrote. Not what gets uploaded. */
+  master: Asset;
+  /** The file to hand the platform, once the export has been run. */
+  upload: Asset | null;
+};
+
+/**
+ * Pairs `pinned/tile.png` with `pinned/upload/tile.jpg`, on the stem, inside the same folder.
+ * An export whose master is gone is dropped rather than listed — that is the leftover of a
+ * renamed tile, not a tile of its own.
+ */
+export function pairUploads(assets: Asset[]): UploadPair[] {
+  const uploads = new Map<string, Asset>();
+  const masters: Asset[] = [];
+  const stemOf = (asset: Asset) => asset.name.replace(/\.[^.]+$/, "");
+
+  for (const asset of assets) {
+    const segments = asset.group.split("/");
+    if (segments[segments.length - 1] === UPLOAD_GROUP) {
+      uploads.set(`${segments.slice(0, -1).join("/")}/${stemOf(asset)}`, asset);
+      continue;
+    }
+    masters.push(asset);
+  }
+
+  return masters.map((master) => ({
+    master,
+    upload: uploads.get(`${master.group}/${stemOf(master)}`) ?? null,
+  }));
+}

@@ -2,7 +2,7 @@
 tags: [setup, instagram, teardown]
 step: 07
 status: doing
-updated: 2026-09-08
+updated: 2026-09-23
 reference: https://www.instagram.com/roast.dating/
 ---
 # Static Post Format — the text-card carousel, taken apart
@@ -67,6 +67,20 @@ the caption, pasted as-is; `.comment.txt` is the first comment.
 | Margins | 96 px, type block in the middle third |
 | Slide count | 10. Hook · 7 beats · one product slide · one CTA |
 | Footer | `@winkypie.app` bottom-left, 26 px, `#8A8A8A`, every slide but the hook |
+
+**Upload file.** The canvas above is the master; it is not the file that goes to Instagram.
+Instagram serves a feed photo at 1080 px wide and re-encodes anything bigger with its own
+downscaler, which bands the near-black ground and smears the gradient hook. So a tile ships as
+**1080 × 1350 sRGB JPEG, no alpha channel, 4:4:4 chroma, quality 95** — roughly 250–330 KB,
+far under the 8 MB ceiling. 4:4:4 is the part worth remembering: JPEG's default 4:2:0 throws
+away three quarters of the colour detail, which is exactly the saturated amber/pink type on
+near-black this format is made of. Measured on `WP_IG_PIN1`, 4:4:4 scores 46.1 dB against the
+lossless reference where 4:2:0 scores 40.9.
+
+The master stays in `app/public/assets/winkypie/instagram/<lane>/` as a PNG at whatever size
+it was drawn; `npm run ig` in `app/` writes the upload file to `<lane>/upload/<stem>.jpg` and
+`/instagram` hands that one over on the download button. Nobody exports these by hand — a
+tile re-cut in the design tool is re-exported by re-running the command.
 
 **Before it posts:** men only · no invented proof · no dollar figure · one gradient · AI
 described honestly · no pose count · the §11.2 disclosure on any frame showing a result.

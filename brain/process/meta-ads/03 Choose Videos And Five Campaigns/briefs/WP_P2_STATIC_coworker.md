@@ -104,38 +104,62 @@ and 11 hold.
 
 ## Primary text (Meta placement)
 
-> The men whose dating photos look professional mostly did not hire a photographer. One selfie
-> goes into WinkyPie, a set of photos for a dating profile comes back — different places,
-> different light, same face and build. Pick a pose, it coaches the shot, then it renders you
-> in it. Looks pro. Still you.
+> some dating profiles look like every photo came from a shoot. almost none of them did. you
+> pick a pose, match it with a selfie, and WinkyPie renders you into it. same face, same
+> build, one selfie in. nobody puts that part in their bio.
 
 Headline: **Authentic pro photos. More matches.** ·
 Description: **One selfie. No photographer.**
 
-**Headline changed 2026-09-22 to the locked primary brand line** (PRODUCT.md §1, decided
-2026-09-06, *Authentic* added 2026-09-07). It was "Looks pro. Still you." — also a locked
-line, but the product-truth one, which answers a question this ad is not asking. This creative
-promises matches; the headline should say so in the form the product has already sanctioned.
+**Lowercase on purpose, and it is the variable.** Everything is lower case except the brand
+name — one capitalised word in a field of small letters is the only thing that cannot be read
+as a typo, and it pulls the eye exactly where it should go. `BRAND.md`'s sentence-case rule
+governs headlines on frame, not the Meta text field, so nothing is being broken here. But it
+is a register decision rather than a copy decision: **one creative in lower case beside four
+in sentence case reads as carelessness, not as a voice.** It is deliberately confined to this
+campaign, which is already the most reckless thing in the set. If it works, it becomes the
+house register for Meta primary text; if nobody notices, it comes back.
 
-**Verbatim, 35 characters.** Not "Better photos. More matches.", not "Good photos, more
-matches." §1 says the locked lines are identical everywhere and are not drifted, and
-[[WP_P2_STATIC_swipingback]] was demoted to `v0-drifted` on the same day for paraphrasing this
-exact line twice. Under Meta's ~40-character link-card cut with room to spare.
+**Written against the model's own copy**, read across five variants of it on 2026-09-22:
 
-**It also does one thing for the waivers.** The frame closes on "x10 the matches" — an
-unsourced multiplier, and one of the four items being carried. The headline makes the same
-promise in the form the product is allowed to make it: a claim with no number attached to it.
-That does not undo the waiver, but it means the ad's own link card shows what the compliant
-version of that sentence looks like.
+> *"we joined the same week. same city, same age, same apps. he had 20 matches by friday and i
+> had 2, and he'd been using roast the whole time. 724,000+ guys already did it, the free quiz
+> takes 2 min at roast.dating."*
 
-The opening sentence of the primary text is the peer-discovery beat rewritten as a statement
-about a group rather than a story about a person — which is the whole difference between this
-and the render we have.
+> *"zero matches for six weeks. fixed my photos on sunday, first match tuesday morning. same
+> face, same bio. 724,000+ guys already did it, the free quiz takes 2 min at roast.dating."*
 
-**The text carries no story, and that is deliberate.** The frame already tells one; repeating
-it in the primary text would double the exposure of the part that is being waived. Here the
-text does the job the frame cannot — the mechanism, in the third person, with nothing asserted
-about the viewer.
+**What that family actually is:** one creative with four primary texts, where **only the
+opening story rotates** and the last sentence is identical in every one. Which is the same
+machine as `## Primary text — A / B` here, run at four.
+
+**And the correction worth recording.** An earlier read of a single variant concluded the
+mechanism was the third person. Across five it is mostly the **first** — "i had 2", "my
+brother and i", "fixed my photos". The rule is not first against third, it is **never *you***:
+Meta prohibits claims about the *reader*, so a sentence about the speaker is safe in any
+person. That distinction is what makes their copy sound like an accusation while clearing the
+policy, and it is the part worth copying.
+
+What we take from it is the grammar — flat declaratives, no adjectives, mundane specificity,
+a reveal in the middle, and a closer that implies something was being withheld. Our last
+sentence does the job their "he was gatekeeping this the whole time" does, without inventing
+the man who was doing the gatekeeping.
+
+Ours keeps all of that: seven beats, hard stops, the reveal in the middle ("pick a pose, match
+it with a selfie"), the closer with the same withheld-secret energy ("nobody puts that part in
+their bio" against "he was gatekeeping this the whole time").
+
+**Two things are deliberately not taken.**
+
+| In the model | Why it stays out |
+|---|---|
+| **"20 matches by Friday. He had 2."** | Invented figures. §8 requires every number to trace to a citable source, and this creative already carries one unsourced multiplier as a waiver. Adding two more in the field we can edit would be spending the waiver twice |
+| **"724,000+ guys already did it"** | In the fixed closer of **every** variant of theirs, so it is not a detail to strip — it is the load-bearing sentence. An invented user count is §11.1, the guardrail that is about law rather than taste, and it stays out whole |
+| **The coworker himself** | A fabricated person is a fabricated testimonial (§11.1). The frame already carries one and the owner waived it; putting a second one in the primary text would double the exposure rather than move it. Ours makes the same point about a **category of profiles**, which is a claim nobody has to have made |
+
+**If the literal version is wanted** — a named-less man, a before-and-after count, the
+gatekeeping line — it is writable, and it would need its own line in *What is being carried*.
+It is a decision, not a rewrite, and it is not one this brief takes on its own.
 
 ## Production flags
 

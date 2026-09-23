@@ -18,7 +18,7 @@ Four tabs. One job each:
 | `/winkypie` | Four tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot, bad photos (the problem side); click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. **Actors** — the synthetic UGC cast read from `app/content/actors.json` and the matching sub-folder of `assets/winkypie/actors/`: portrait, casting sample, the disclosure state, and the prompt each asset was made with behind a copy button; `/winkypie?tab=actors` opens here, and both `/actors` and the old `/meta-ads?tab=actors` redirect to it. |
 | `/meta-ads/*` | **Every tab is a route.** Two sections, three tabs each, and a bare `/meta-ads` sends you to the first one. **Research** — `research/good-ads` (single ads worth keeping), `research/competitors` (a competitor's page link, which always shows what they run today), `research/teardowns` (the Ad analyzer). **Campaigns** — `campaigns/ads-to-copy` (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; a card opens `campaigns/<campaign>`, the whole brief section by section with its `## Do this, in order` list as numbered steps), `campaigns/our-creations` (one card per creative, split into *Video* and *Static* by whether any of its files moves. A card is the ad as Meta will draw it — page name, Sponsored, primary text, media, the link card with headline, description and CTA button — and a brief that declares more than one `## Primary text…` section gets **tabs above the preview, one per ad**. The media opens on click: a clip plays full size with sound, a still opens big enough to read what is on it. Beside it sits a **preflight** in five states: `TO DO` (does not exist), `TO CHECK` (exists, unsigned), `APPROVED` (the brief's `approved:` names it), `WAIVED` (the brief's `waived:` — known, not done, running anyway), `N/A` (the brief's `not_applicable:`). A creative is *ready to upload* when nothing is left todo or to check. Files group by the [[Creative Naming]] convention `<campaign>_<ratio>_<version>`, so each version is a **scenario** and the card switches media between them inside the same copy; a `.txt` beside a file is its caption), and `campaigns/kpi` (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; labelled *KPI Example* while only scenario data exists). The old `?tab=` links all redirect, including `?tab=actors` → `/winkypie?tab=actors`. |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
-| `/instagram` | Three tabs. **Profile** — the step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, the paste-ready name field and bio behind a copy button, and *Pinned tiles* — the three 4:5 tiles from `assets/winkypie/instagram/pinned/` with the caption beside each behind a copy button. Both profile links come out of the note's frontmatter. **Posts calendar** — the step-07 posting plan on a month grid: Monday-first, today marked, one chip per planned post coloured by pillar (dashed while it still `needs asset`), the month's rows as a table under it, then the note's other sections; a chip or a table row opens a dialog with the whole row, and a link into the post when one is written; `/instagram?tab=calendar` opens here. **Posts** — every written post, read from the step-07 `posts/` folder: the hook drawn at its own ratio because slide one is the grid tile, whether it is a carousel or a single tile, the slide table verbatim, and the caption and first comment behind copy buttons; `/instagram?tab=posts` opens here, and `#<post slug>` scrolls to one. |
+| `/instagram` | Three tabs. **Profile** — the step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, the paste-ready name field and bio behind a copy button, and *Pinned tiles* — the three 4:5 tiles from `assets/winkypie/instagram/pinned/` with the caption beside each behind a copy button — the preview is the master, the download button hands over the `upload/` export, and a tile without one says so instead of serving the master. Both profile links come out of the note's frontmatter. **Posts calendar** — the step-07 posting plan on a month grid: Monday-first, today marked, one chip per planned post coloured by pillar (dashed while it still `needs asset`), the month's rows as a table under it, then the note's other sections; a chip or a table row opens a dialog with the whole row, and a link into the post when one is written; `/instagram?tab=calendar` opens here. **Posts** — every written post, read from the step-07 `posts/` folder: the hook drawn at its own ratio because slide one is the grid tile, whether it is a carousel or a single tile, the slide table verbatim, and the caption and first comment behind copy buttons; `/instagram?tab=posts` opens here, and `#<post slug>` scrolls to one. |
 
 Anything that is a *decision* — budgets, hypotheses, KPI thresholds, which creative is live —
 belongs in `brain/process/meta-ads/`, not here. If a view would need a checkbox or a status,
@@ -60,7 +60,10 @@ app/public/assets/winkypie/creatives/     → /meta-ads · Campaigns · Our crea
                                             beside `x.mp4` or `x.png` is that file's caption
 app/public/assets/winkypie/instagram/     → /winkypie · Instagram, and /instagram · Profile ·
   pinned/                                   Pinned tiles (the `pinned/` sub-folder only). `x.txt`
-                                            beside `x.png` is the post caption, pasted as-is
+    upload/                                 beside `x.png` is the post caption, pasted as-is.
+                                            `pinned/x.png` is the master; `pinned/upload/x.jpg`
+                                            is what gets posted, written by `npm run ig` and
+                                            never by hand
 app/public/assets/winkypie/actors/        → /winkypie · Actors — one
   01 Host/  02 Blonde/                      sub-folder per actor, joined to `actors.json` on
                                             its `folder`. A portrait plus a short casting
@@ -135,6 +138,20 @@ entry that has no preview in headless Chrome and saves the viewport to that list
 key; it is the screenshot you would otherwise take by hand, kept for internal reference.
 `-- --force` recaptures, and passing slugs limits it to those entries. Its `SOURCES` array
 must stay in sync with `SWIPE_SOURCES`.
+
+**Upload files: `npm run ig`.** `scripts/instagram-export.mjs` walks
+`public/assets/winkypie/instagram/`, and for every tile master writes
+`<lane>/upload/<stem>.jpg` — 1080×1350 sRGB JPEG, no alpha, 4:4:4 chroma, quality 95, around
+250–330 KB. The canvas comes from the vault's [Static Post Format] `## Our spec`; change it
+there first. The point is that **Instagram serves a feed photo at 1080 px wide and re-encodes
+anything bigger itself**, which bands the near-black ground and smears the gradient hook, and
+that JPEG's default 4:2:0 chroma wrecks saturated type on dark — measured on WP_IG_PIN1, 4:4:4
+scores 46.1 dB against the lossless reference where 4:2:0 scores 40.9. A master that is not 4:5
+is reported and skipped: picking the crop is a design decision, not the script's. Re-exports
+when the master is newer, `-- --force` redoes everything, and passing stems limits it. The
+master is the archive and is never touched.
+
+[Static Post Format]: ../brain/process/meta-ads/07%20Update%20Facebook%20Account/Static%20Post%20Format.md
 
 **`/winkypie` Overview and Branding read `../PRODUCT.md` and `../BRAND.md`.** Our own channel
 links come out of the §2 facts table, so adding a Facebook Page there makes it appear here.
