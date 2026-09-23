@@ -81,9 +81,9 @@ export default async function CampaignPage({ params }: Props) {
   );
 
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-10">
+    <div className="flex flex-col gap-8">
       <Link
-        href="/meta-ads?tab=campaigns"
+        href="/meta-ads/campaigns/ads-to-copy"
         className="inline-flex w-fit items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
       >
         <ArrowLeft className="size-4" />
@@ -209,6 +209,6 @@ export default async function CampaignPage({ params }: Props) {
           </footer>
         </aside>
       </div>
-    </main>
+    </div>
   );
 }

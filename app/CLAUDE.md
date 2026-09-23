@@ -16,8 +16,7 @@ Four tabs. One job each:
 |---|---|
 | `/` | The four tiles, with a count on each. |
 | `/winkypie` | Four tabs. **Overview** — the one-liner, our own channels (and which ones do not exist yet), the locked lines, the shipped flow, the limits. **Assets** — brand marks, before/after pairs with the disclosure, mobile-app captures, the pose catalog snapshot, bad photos (the problem side); click a file for a full preview, its repo path and a download. **Branding** — colour swatches, live components, type, and one copyable markdown block of the whole brand. **Actors** — the synthetic UGC cast read from `app/content/actors.json` and the matching sub-folder of `assets/winkypie/actors/`: portrait, casting sample, the disclosure state, and the prompt each asset was made with behind a copy button; `/winkypie?tab=actors` opens here, and both `/actors` and the old `/meta-ads?tab=actors` redirect to it. |
-| `/meta-ads` | Two sections, three tabs each. **Research** — *Good Ads* (single ads worth keeping) and *Competitors — Ad Library* (a competitor's page link, which always shows what they run today); preview, why it works, one-click link into the library. **Campaigns** — *Ads to copy* (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; each card opens `/meta-ads/campaigns/<campaign>` — the whole brief section by section, its `## Do this, in order` list as numbered steps, and the model ads with previews; `/meta-ads?tab=campaigns` opens on this section), *Our creations* (one card per creative, split into *Video* and *Static* by whether any of its files moves. A card is the ad as Meta will draw it — page name, Sponsored, primary text, media, the link card with headline, description and CTA button. The media opens on click: a clip plays full size with sound, a still opens big enough to read what is on it. Beside it sits a **preflight** in four states: `TO DO` (does not exist), `TO CHECK` (exists, unsigned), `APPROVED` (the brief's `approved:` names it), `N/A` (the brief's `not_applicable:` names it). A creative is *ready to upload* only when every check is APPROVED or N/A. Files group by the [[Creative Naming]] convention `<campaign>_<ratio>_<version>`, so each version is a **scenario** and the card switches media between them inside the same copy; a `.txt` beside a file is shown under it as its caption — what the presenter says or what is on screen; `/meta-ads?tab=creations` opens here)
-and *KPI* (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; a keep example and an unprofitable example on top; labelled *KPI Example* while only scenario data exists). |
+| `/meta-ads/*` | **Every tab is a route.** Two sections, three tabs each, and a bare `/meta-ads` sends you to the first one. **Research** — `research/good-ads` (single ads worth keeping), `research/competitors` (a competitor's page link, which always shows what they run today), `research/teardowns` (the Ad analyzer). **Campaigns** — `campaigns/ads-to-copy` (the step-03 briefs read from the vault: hook, variable tested, primary text, and the Good Ads each one was modelled on, joined on the brief's `modelled_on` slugs; a card opens `campaigns/<campaign>`, the whole brief section by section with its `## Do this, in order` list as numbered steps), `campaigns/our-creations` (one card per creative, split into *Video* and *Static* by whether any of its files moves. A card is the ad as Meta will draw it — page name, Sponsored, primary text, media, the link card with headline, description and CTA button — and a brief that declares more than one `## Primary text…` section gets **tabs above the preview, one per ad**. The media opens on click: a clip plays full size with sound, a still opens big enough to read what is on it. Beside it sits a **preflight** in five states: `TO DO` (does not exist), `TO CHECK` (exists, unsigned), `APPROVED` (the brief's `approved:` names it), `WAIVED` (the brief's `waived:` — known, not done, running anyway), `N/A` (the brief's `not_applicable:`). A creative is *ready to upload* when nothing is left todo or to check. Files group by the [[Creative Naming]] convention `<campaign>_<ratio>_<version>`, so each version is a **scenario** and the card switches media between them inside the same copy; a `.txt` beside a file is its caption), and `campaigns/kpi` (the step-09 review tables rendered as a dashboard — Active / Previous ads, the funnel per ad, the decision each row earns under `KPI.md`, the projected margin at scale; labelled *KPI Example* while only scenario data exists). The old `?tab=` links all redirect, including `?tab=actors` → `/winkypie?tab=actors`. |
 | `/competitors` | The step-01 research, rendered: the gap sentence, ranked competitor cards with the facts that matter, the longest-living ads, and the dismissed list. Each card opens the full note. |
 | `/instagram` | Three tabs. **Profile** — the step-07 profile audit, rendered: where `@winkypie.app` stands today, what `@roast.dating` does that we take or leave, the fix list as numbered steps, the paste-ready name field and bio behind a copy button, and *Pinned tiles* — the three 4:5 tiles from `assets/winkypie/instagram/pinned/` with the caption beside each behind a copy button. Both profile links come out of the note's frontmatter. **Posts calendar** — the step-07 posting plan on a month grid: Monday-first, today marked, one chip per planned post coloured by pillar (dashed while it still `needs asset`), the month's rows as a table under it, then the note's other sections; a chip or a table row opens a dialog with the whole row, and a link into the post when one is written; `/instagram?tab=calendar` opens here. **Posts** — every written post, read from the step-07 `posts/` folder: the hook drawn at its own ratio because slide one is the grid tile, whether it is a carousel or a single tile, the slide table verbatim, and the caption and first comment behind copy buttons; `/instagram?tab=posts` opens here, and `#<post slug>` scrolls to one. |
 
@@ -72,12 +71,12 @@ app/content/actors.json                   → the same tab's recipes — the pro
                                             sent, model, settings, credits, job id. A recipe
                                             with no `prompt` carries a `promptNote` saying
                                             where the real source is; do not invent one
-app/content/good-ads.json                 → /meta-ads · Good Ads tab
-app/content/competitors.json              → /meta-ads · Competitors tab
+app/content/good-ads.json                 → /meta-ads/research/good-ads
+app/content/competitors.json              → /meta-ads/research/competitors
 ../brain/process/meta-ads/
   01 Find Competitors/                    → /competitors, read straight from the vault
   03 Choose Videos And Five Campaigns/briefs/*.md
-                                          → /meta-ads · Campaigns · Ads to copy (frontmatter
+                                          → /meta-ads/campaigns/ads-to-copy (frontmatter
                                             `order`, `status`, `modelled_on: [good-ads slugs]`;
                                             Hook and Primary text quotes; Evidence paragraph;
                                             `## Do this, in order` list → the steps on
@@ -89,8 +88,8 @@ app/content/competitors.json              → /meta-ads · Competitors tab
                                             and `not_applicable: [ids]` — the readiness ids
                                             are listed in `src/lib/ad-readiness.ts`. The
                                             sign-off lives in the vault, never in the app
-  05 Ad Strategy And Budget/KPI.md        → /meta-ads · KPI tab: thresholds table
-  05 Ad Strategy And Budget/KPI Scenarios.md → /meta-ads · KPI tab, until a real review exists
+  05 Ad Strategy And Budget/KPI.md        → /meta-ads/campaigns/kpi: thresholds table
+  05 Ad Strategy And Budget/KPI Scenarios.md → the same page, until a real review exists
   07 Update Facebook Account/Instagram Profile.md
                                           → /instagram: frontmatter `profile` and `reference`
                                             are the two links; `## Do this, in order` → the
@@ -107,7 +106,7 @@ app/content/competitors.json              → /meta-ads · Competitors tab
                                             table (`Date` as YYYY-MM-DD, `Time` optional, `Pillar`,
                                             `Format`, `Asset`, `Line`, `Status`) → the month grid and
                                             the rows under it; every other section in order
-  09 Analyze KPIs/KPI Review *.md         → /meta-ads · KPI tab: real rounds
+  09 Analyze KPIs/KPI Review *.md         → /meta-ads/campaigns/kpi: real rounds
 ../PRODUCT.md                             → /winkypie · Overview
 ../BRAND.md                               → /winkypie · Branding
 app/public/assets/meta-ads/good-ads/      → previews for the first list, by slug:
@@ -170,7 +169,14 @@ decides it.
 Nothing here is a tracker: the fix list is numbered, never ticked — the checkboxes stay in
 `07 TODO.md` — and a post's `Status` is typed in the vault, never here.
 
-**`/meta-ads` KPI tab reads two vault locations.** `src/lib/kpi.ts` loads every
+**Routes, not tab state.** `src/app/meta-ads/layout.tsx` is the shell — heading, the two-level
+nav (`meta-ads-nav.tsx`, a client component reading `usePathname()`), and the children. Each
+tab is a page under `research/` or `campaigns/`. The nav's counts and the pages' data come from
+the same `cache()`-wrapped readers in `src/lib/meta-ads-data.ts`, so a request reads each file
+once. A detail page — a brief at `campaigns/<campaign>` — highlights its section's first tab
+rather than none. `src/app/meta-ads/page.tsx` is only a redirect table for the old `?tab=` URLs.
+
+**`/meta-ads/campaigns/kpi` reads two vault locations.** `src/lib/kpi.ts` loads every
 `../brain/process/meta-ads/09 Analyze KPIs/KPI Review *.md` (real rounds, newest first) and,
 when no real review exists, `../brain/process/meta-ads/05 Ad Strategy And Budget/KPI
 Scenarios.md` — worked examples with `scenario: true` in the frontmatter, which the tab shows
