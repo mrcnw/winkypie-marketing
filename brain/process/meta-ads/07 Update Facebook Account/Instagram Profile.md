@@ -77,7 +77,7 @@ Free trial on iOS, cancel anytime 👇
 
 Links, in this order:
 
-1. `https://apps.apple.com/us/app/winkypie/id6757441777` — title *Download on the App Store*
+1. `https://apps.apple.com/us/app/winkypie-ai-dating-photos/id6757441777` — title *Download on the App Store*
 2. `https://winkypie.app` — title *winkypie.app*
 
 Shorter name if the long one wraps on a phone: `WinkyPie · AI Dating Photos`. Keep *Authentic*

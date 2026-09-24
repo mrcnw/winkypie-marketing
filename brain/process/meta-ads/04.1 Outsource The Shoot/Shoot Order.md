@@ -102,7 +102,7 @@ runs as our ad from our page. You post nothing.
 
 **Step zero — before you film (required).**
 
-1. Install WinkyPie from the App Store: `apps.apple.com/us/app/winkypie/id6757441777`.
+1. Install WinkyPie from the App Store: `https://apps.apple.com/us/app/winkypie-ai-dating-photos/id6757441777`.
    Start the free trial — it covers everything you need for this. Do not pay for anything.
    If you need more than the trial gives, message us and we cover it.
 2. Pick a pose, follow the coaching, take your selfie, let the check run, generate one photo.
