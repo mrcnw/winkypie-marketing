@@ -6,6 +6,7 @@ format: static (text-led)
 variable: blame-shift hook
 order: 5
 modelled_on: [roast-blame-tinder, roast-stop-blaming-algorithm]
+cta: Install now
 updated: 2026-09-07
 ---
 # Brief — WP_P1_STATIC_algorithm

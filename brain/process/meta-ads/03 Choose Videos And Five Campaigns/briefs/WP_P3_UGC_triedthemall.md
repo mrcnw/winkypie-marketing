@@ -5,6 +5,7 @@ persona: P3 Camera-Shy
 format: UGC, phone-shot, talking
 variable: "I tried them all — none looked like me" (likeness, first person)
 order: 6
+cta: Install now
 updated: 2026-09-07
 ---
 # Brief — WP_P3_UGC_triedthemall

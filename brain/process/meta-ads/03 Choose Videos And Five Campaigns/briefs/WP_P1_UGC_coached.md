@@ -6,6 +6,7 @@ format: UGC, phone-shot, talking
 variable: pose-coaching hook
 order: 3
 modelled_on: [roast-selfies-to-photos-ugc, charmd-better-photos-more-matches, charmd-youre-not-ugly]
+cta: Install now
 updated: 2026-09-07
 ---
 # Brief — WP_P1_UGC_coached

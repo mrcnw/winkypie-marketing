@@ -5,6 +5,7 @@ persona: P2 Grinder
 format: PORTFOLIO — results full-frame, narrator as a corner inset
 variable: "proof density — the finished photos are the ad"
 order: 7
+cta: Install now
 updated: 2026-09-22
 ---
 # Brief — WP_P2_PORTFOLIO_oneselfie

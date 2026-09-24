@@ -6,6 +6,7 @@ format: screen demo
 variable: free pre-flight check (risk reversal)
 order: 2
 modelled_on: [charmd-profile-underperforming, regen-control-copy]
+cta: Install now
 updated: 2026-09-07
 ---
 # Brief — WP_P2_DEMO_freecheck

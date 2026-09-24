@@ -6,6 +6,7 @@ format: static (grid, text-led)
 variable: category contrast as a six-bullet grid — output, not process
 order: 8
 modelled_on: [roast-comparison-card-2213072699509422]
+cta: Install now
 updated: 2026-09-09
 ---
 # Brief — WP_P3_STATIC_versus

@@ -7,6 +7,7 @@ variable: genuine beta call — scarcity that is true
 status: candidate — wave two, conditional on running the programme for real
 order: 6
 modelled_on: [roast-casting-30-guys]
+cta: Install now
 updated: 2026-09-06
 ---
 # Brief — WP_P2_STATIC_betacall (candidate)

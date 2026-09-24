@@ -6,6 +6,7 @@ format: static (text-led)
 variable: decision-moment hook
 order: 1
 modelled_on: [photoshoot-she-swiped-left, roast-same-face-10x]
+cta: Install now
 updated: 2026-09-07
 ---
 # Brief — WP_P2_STATIC_100ms

@@ -6,6 +6,7 @@ format: pose → result
 variable: likeness-trust hook
 order: 4
 modelled_on: [roast-same-face-10x, charmd-youre-not-ugly]
+cta: Install now
 updated: 2026-09-07
 ---
 # Brief — WP_P3_POSERESULT_stillyou
