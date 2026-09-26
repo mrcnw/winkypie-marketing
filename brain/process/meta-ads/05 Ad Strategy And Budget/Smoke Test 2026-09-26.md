@@ -41,7 +41,7 @@ CTA "Install now" on all three, App Store destination from PRODUCT.md §2.
 |---|---|
 | Objective · optimisation | App Promotion (iOS 14+, SKAdNetwork) · app installs, lowest cost, no cap |
 | Targeting | United States · iOS 15.1+ · English · mobile · Advantage+ placements |
-| Attribution | AEM as reporting view, 7-day click |
+| Attribution | AEM as reporting view, **1-day click** — the only window Meta allows for install-optimised iOS 14+ ad sets; the API accepted a 7-day request at creation and stored 1-day at publish |
 | Budget | $15 a day on the campaign · campaign spend cap $210 · account funded with $300 prepaid |
 | Account currency · time zone | USD (changed from PLN at first payment setup) · Europe/Warsaw, so the reporting day ends at 18:00 New York |
 | Identity | WinkyPie Page on both Facebook and Instagram (the Instagram profile is deliberately not linked while it has no followers) |

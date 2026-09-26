@@ -22,9 +22,10 @@ Decision and settings: [[Smoke Test 2026-09-26]]. Read the rules there before to
 **Do not touch until: 2026-10-10, end of the account day (Europe/Warsaw).** Delivery starts
 at 00:00 on 2026-09-27, so day 1 is a full account day and the fourteen days run 09-27 to 10-10.
 
-Before delivery starts (2026-09-26, evening): the ad set's attribution setting was found to be
-**1-day click** (Ads Manager substituted its own value when the owner saved the ad set); the plan
-and [[KPI]] say 7-day click. Being corrected before the first impression, so no clock restarts.
+Attribution setting: **1-day click**. Not an error and not editable — for install-optimised
+iOS 14+ ad sets under AEM Meta offers no other window (7-day click exists only for app-event
+or value optimisation). [[KPI]] and [[Budget And Thresholds]] corrected on 2026-09-26; installs
+that happen more than a day after the click are counted by SKAdNetwork, not by the AEM view.
 
 | Read | Date | What |
 |---|---|---|

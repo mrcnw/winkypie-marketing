@@ -18,7 +18,7 @@ The spend and the decision rules are in [[Budget And Thresholds]].
 | Did they stop? | **Hook rate** | *3-second video plays* ÷ *Impressions* | day 7 (directional), day 14 | ≥3,000 impressions per ad `[unsourced]` |
 | Did they stay? | **Hold rate** | *ThruPlays* ÷ *3-second video plays* (ThruPlay = 15 s or full video if shorter, unique seconds — replays do not count) | day 14 | same |
 | Did they act? | **CTR (link)** | *Link clicks* ÷ *Impressions* | day 14 | same |
-| Did they install? | **CPI**, install rate | *Cost per app install*; *App installs* ÷ *Link clicks*. AEM attribution setting (7-day click) as the reporting view; SKAN column for comparison | day 14, ad set level; ad level only at ≥20 installs `[unsourced]` | ad set out of learning (~50 installs in 7 days) |
+| Did they install? | **CPI**, install rate | *Cost per app install*; *App installs* ÷ *Link clicks*. AEM attribution setting as the reporting view (**1-day click** — the only window Meta allows for install-optimised iOS 14+ campaigns under AEM; 7-day click exists only for app-event or value optimisation, found 2026-09-26); SKAN column for comparison | day 14, ad set level; ad level only at ≥20 installs `[unsourced]` | ad set out of learning (~50 installs in 7 days) |
 | Did they pay? | **Trial start rate, trial→paid, CAC** | *StartTrial* (or the custom event we name) ÷ *App installs*; paid ÷ trials from RevenueCat; spend ÷ payers | day 28, aggregated over all ads | ≥40 payers before calling anything more than directional `[unsourced]` |
 
 Statics have no hook or hold rate. For the two static ads the "did they stop" proxy is CTR
@@ -30,7 +30,7 @@ skip straight to CTR. Compare statics with statics.
 | Number | Source | Lag / caveat |
 |---|---|---|
 | Impressions, 3-second plays, ThruPlays, link clicks, CTR | Meta, near real time | Not affected by SKAdNetwork ([SKAN reporting](https://www.facebook.com/business/help/584603712214119)) |
-| App installs, CPI | Meta AEM view: near real time, 7-day click. Meta SKAN view: "delays of at least 24 hours", campaign-level aggregate, statistically modelled at ad level, unstable for "a few days" after launch ([AEM vs SKAN](https://www.facebook.com/business/help/1356268495231843)) | Use AEM for decisions; check SKAN agrees in direction |
+| App installs, CPI | Meta AEM view: near real time, 1-day click (Meta's only option for install optimisation, see above). Meta SKAN view: "delays of at least 24 hours", campaign-level aggregate, statistically modelled at ad level, unstable for "a few days" after launch ([AEM vs SKAN](https://www.facebook.com/business/help/1356268495231843)) | Use AEM for decisions; check SKAN agrees in direction |
 | Trial starts, paid conversions, refunds | RevenueCat (entitlement `access`, PRODUCT.md §2), optionally forwarded to Meta as app events | Trial → paid resolves 3 days after trial start; first payers appear day 4 at the earliest |
 | Optimisation events since last significant edit | Meta, *Results* and *Last significant edit* columns ([learning phase](https://www.facebook.com/business/help/112167992830700)) | Tells you whether the ad set is judgeable at all |
 
