@@ -13,14 +13,18 @@ Decision and settings: [[Smoke Test 2026-09-26]]. Read the rules there before to
 
 | Object | Name | Hypothesis | Launched | Budget | Status |
 |---|---|---|---|---|---|
-| Campaign | `WP_SMOKE_2026-09_US_iOS_installs` | — | 2026-09-26 ≈19:40 CEST, ACTIVE confirmed 19:44 | $15/day, cap $210 | live |
-| Ad set | `WP_SMOKE_US_iOS_EN_installs` | — | same | campaign budget | live, expected "learning limited" |
+| Campaign | `WP_SMOKE_2026-09_US_iOS_installs` | — | switched on 2026-09-26 ≈19:40 CEST, ACTIVE confirmed 19:44 | $15/day, cap $210 | live |
+| Ad set | `WP_SMOKE_US_iOS_EN_installs` | — | **scheduled start 2026-09-27 00:00 CEST** (2026-09-26 18:00 New York), set by the owner in Ads Manager after the switches went on | campaign budget | scheduled; "learning limited" expected once it delivers |
 | Ad | `WP_P2_STATIC_oneselfie_4x5_v1` | [[WP_P2_STATIC_oneselfie]] (hypotheses/, committed 2026-09-22) | same | — | live |
 | Ad | `WP_P2_STATIC_coworker_4x5_v1` | [[WP_P2_STATIC_coworker]] (hypotheses/, committed 2026-09-22) | same | — | live |
 | Ad | `WP_P2_STATIC_swipingback_9x16_v3` | [[WP_P2_STATIC_swipingback]] (hypotheses/, 2026-09-26) | same | — | live |
 
-**Do not touch until: 2026-10-10, end of the account day (Europe/Warsaw).** Fourteen full
-account days after launch day; 2026-09-26 itself is a partial day and does not count.
+**Do not touch until: 2026-10-10, end of the account day (Europe/Warsaw).** Delivery starts
+at 00:00 on 2026-09-27, so day 1 is a full account day and the fourteen days run 09-27 to 10-10.
+
+Before delivery starts (2026-09-26, evening): the ad set's attribution setting was found to be
+**1-day click** (Ads Manager substituted its own value when the owner saved the ad set); the plan
+and [[KPI]] say 7-day click. Being corrected before the first impression, so no clock restarts.
 
 | Read | Date | What |
 |---|---|---|

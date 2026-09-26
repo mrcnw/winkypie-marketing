@@ -48,8 +48,9 @@ CTA "Install now" on all three, App Store destination from PRODUCT.md §2.
 | Advantage+ creative enhancements | off. Standard enhancements left at Meta's defaults except as the owner edits them |
 | AI disclosure | OPT_IN on oneselfie and swipingback (rendered men on frame); not set on coworker |
 
-Launched 2026-09-26 at about 19:40 CEST (13:40 New York); all five objects confirmed ACTIVE
-through the API at 19:44 CEST. Timeline and the do-not-touch date are in
+Switched on 2026-09-26 at about 19:40 CEST (13:40 New York); all five objects confirmed ACTIVE
+through the API at 19:44 CEST. The owner then scheduled the ad set to start at 00:00 CEST on
+2026-09-27 (18:00 New York), which makes day 1 a full account day. Timeline and the do-not-touch date are in
 [[08 Launch The Ad]]'s `Campaign Tracker.md`.
 
 ## Rules for the fourteen days
