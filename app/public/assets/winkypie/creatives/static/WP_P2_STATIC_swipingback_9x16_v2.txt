@@ -1,0 +1,23 @@
+Campaign 13, the owner's voice-over cut, delivered 2026-09-26 as `v2-a-jace.mp4` and renamed
+here. 13.4 s, 1080x1920, h264, AAC mono voice-over. Chosen by the owner for the $15/day smoke
+test beside `WP_P2_STATIC_oneselfie_4x5_v1` and `WP_P2_STATIC_coworker_4x5_v1`.
+
+The picture is `v0-drifted`, not `v1`. Read frame by frame on 2026-09-26: the same four beats
+and the same 13.4 s, "1 of 3 / 2 of 3" on the profile cards, "Get pro authentic photos and
+more matches." under the pose-catalog beat, and the end card "Get noticed on dating apps." over
+"One selfie. Real photos. More matches." with the badge. Those two lines are the drift that
+retired v0 (PRODUCT.md §1 locks "Authentic pro photos. More matches."), and v1 fixed them; v2
+carries them again, on purpose, because the owner cut the voice-over onto this picture.
+
+The voice-over, speech-verified with whisper-cli (ggml-small.en) on 2026-09-26:
+"She decided in a hundred milliseconds. The first photo does all the work. Pick a pose, send
+one selfie, get photos like these. WinkyPie. Be the right swipe." Clean under §11: no claim
+about the viewer, no number beyond the locked "100 ms" line, no other app. The spoken closer
+is the locked "Be the right swipe." while the frame still reads "Get noticed on dating apps."
+- the audio and the picture disagree on the last beat.
+
+Still open, unchanged from v1: the first plate "Is nobody swiping back?" asks the viewer about
+his own results, the shape PRODUCT.md §11 gives as the worked example of what Meta rejects. The
+brief's own fix is to re-render beat 1 as "A profile is not one photo." No §11.2 strip on
+frame, which since the owner's 2026-09-25 instruction is the rule, not a defect.
+Brief: brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs/WP_P2_STATIC_swipingback.md
