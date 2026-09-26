@@ -1,0 +1,17 @@
+Actor 04 on green, "the truth" script, 2026-09-25. Job f7f4495f-9551-47f6-aece-72177397b848,
+from portrait_green_nomic.png.
+
+Says: "Every photo up there came off one selfie. The truth? No photographer. No studio. Just the
+app and one photo from his phone. It checks the selfie before it renders, free. And yes, it's
+AI. That's the point."
+
+Cast 3 of 3 on one script.
+
+Raw UGC take, 15.1 s, 496x864, native audio. Seedance 2.0 Mini, 480p, 9:16,
+generate_audio true, 7.5 credits. No key applied and no overlays - this is exactly what the
+platform delivered, kept so the finished cut can be rebuilt without paying for the clip again.
+
+Key that works on these clips: chromakey=0x1A9A46:0.14:0.02 then despill=type=green. One pass,
+never two - a chained second pass on a darker green removes the actor entirely.
+
+Finished cut: creatives/ugc/WP_P2_PORTFOLIO_thetruth_9x16_v6.mp4

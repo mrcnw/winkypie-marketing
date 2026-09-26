@@ -1,0 +1,17 @@
+Raw UGC take, actor 04 on green, 2026-09-25. 15.1 s, 496x864, native audio, no key applied and
+no overlays - this is what Seedance delivered, kept so the cut can be rebuilt without paying for
+the clip again.
+
+Higgsfield job 049247d3-4bea-4ed2-89d2-bb5699cde164. Seedance 2.0 Mini, 480p, 9:16, 15 s,
+image_references = portrait_green_nomic.png, generate_audio true. 7.5 credits.
+
+VOICE: bright, higher-pitched, quick and slightly breathless - the opposite end of the range
+from actor 02's dry read in the same pair. Measured -18.3 dB mean.
+
+He says: "These are all one selfie. Same guy, same face, same build. No photographer. No studio.
+No photoshoot. It tells him how to stand, then it renders the shot. And yes, it's AI. It still
+looks like him."
+
+Key that works on this clip: chromakey=0x1A9A46:0.14:0.02 then despill=type=green.
+
+Finished cut: creatives/ugc/WP_P2_PORTFOLIO_stillhim_9x16_v2.mp4

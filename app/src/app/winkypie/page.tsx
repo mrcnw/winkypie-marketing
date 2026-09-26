@@ -8,10 +8,11 @@ import { ChannelChips } from "@/components/channel-chips";
 import { CopyBlock } from "@/components/copy-block";
 import { DropHint } from "@/components/drop-hint";
 import { Markdown } from "@/components/markdown";
+import { PinnedTiles } from "@/components/pinned-tiles";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ACTORS_FILE, readActors } from "@/lib/actors";
 import { CHANNEL_LABEL } from "@/lib/channels";
-import { ASSET_DIRS, readAssets } from "@/lib/assets";
+import { ASSET_DIRS, pairUploads, readAssets } from "@/lib/assets";
 import { toPlainText } from "@/lib/markdown";
 import { brandMarkdown, readBrand, readProduct } from "@/lib/product";
 
@@ -41,6 +42,13 @@ export default async function WinkyPiePage({
     readProduct(),
     readBrand(),
   ]);
+
+  // `pinned/` renders as the same paired cards as /instagram — one per master, the download
+  // the upload export — so the JPEGs in `pinned/upload/` never list as assets of their own.
+  const pinnedTiles = pairUploads(
+    instagram.filter((asset) => asset.kind === "image" && asset.group.split("/")[0] === "pinned"),
+  );
+  const instagramRest = instagram.filter((asset) => asset.group.split("/")[0] !== "pinned");
 
   const copyText = brandMarkdown(product, brand);
   const gaps = (product?.channels ?? [])
@@ -168,12 +176,18 @@ export default async function WinkyPiePage({
             assets={badPhotos}
             dir={ASSET_DIRS.badPhotos}
           />
-          <AssetGallery
-            title="Instagram"
-            description="Organic tiles for @winkypie.app, 4:5. `pinned/` is the three-tile pitch above the fold — pick a pose, upload a photo, more matches. The `.txt` beside a tile is its post caption, pasted as-is. Men only, no number without a source, and the results-vary disclosure wherever a result is shown (PRODUCT.md §11). The same set with copy buttons: /instagram · Pinned tiles."
-            assets={instagram}
-            dir={ASSET_DIRS.instagram}
+          <PinnedTiles
+            tiles={pinnedTiles}
+            dir={`${ASSET_DIRS.instagram}/pinned`}
           />
+          {instagramRest.length > 0 && (
+            <AssetGallery
+              title="Instagram — other lanes"
+              description="Organic tiles for @winkypie.app outside `pinned/`, 4:5. The `.txt` beside a tile is its post caption, pasted as-is. Men only, no number without a source, and the results-vary disclosure wherever a result is shown (PRODUCT.md §11)."
+              assets={instagramRest}
+              dir={ASSET_DIRS.instagram}
+            />
+          )}
         </TabsContent>
 
         {/* Branding ------------------------------------------------------ */}

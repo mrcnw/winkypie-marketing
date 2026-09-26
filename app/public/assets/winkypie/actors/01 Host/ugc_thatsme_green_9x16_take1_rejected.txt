@@ -1,0 +1,16 @@
+REJECTED take, kept for what it shows. Actor 01, 2026-09-25, job
+676a9edd-f04e-487b-b784-8a6bb14d071d. Same portrait, same script, 7.5 credits.
+
+The read garbles in the middle: where the script says "No photographer, no studio.", the model
+produced something that transcribes as "No photographer. Noter. Studio." - with a 0.5 s hole
+before "Studio". Whatever it actually said, a caption burned from that audio is wrong, and the
+whole point of transcribing the delivered take is to catch exactly this.
+
+The fix that worked on take 2 was in the prompt, not in post: write the two clauses as separate
+sentences with hard stops ("No photographer. No studio.") instead of joining them with a comma,
+and say so explicitly - "every sentence ends on a clean hard stop; do not run 'No studio' into
+the sentence before it."
+
+Third failure mode now logged for this model, alongside padding a short script with a repeated
+sentence and stuttering a word twice. All three are audible only after the fact, which is why
+the speech verification step is not optional.

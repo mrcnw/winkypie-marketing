@@ -1,0 +1,15 @@
+Actor 02 on a chroma-key green screen with his hands forward, 2026-09-25. Seedream 5.0 Pro
+is_inpaint from wardrobe_polo.png, 1.5k, 1152x2048, 9:16. Jobs
+c34932ac-0626-4dda-8e2e-7d195e0fac42 then 18077c82-1f5f-409b-b8df-5ab0c07dbe48.
+
+Two passes, because the first one only did half the job. The first prompt asked for the hands
+and the green screen together, opening with a face lock - it moved the arms forward and left the
+sofa, bookshelf and lamp exactly where they were. The second prompt asked for the background and
+nothing else, naming the objects to remove one by one, and the green landed.
+
+The lesson is about ordering: Seedream honours the first concrete instruction and drops the
+second when both are large. Ask for the wardrobe or the pose in one pass and the background in
+another, never both.
+
+Face, hair and the navy polo are unchanged from the source. Used for
+WP_P2_PORTFOLIO_thetruth_9x16_v1.

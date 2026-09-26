@@ -1,0 +1,32 @@
+Actor 02 - blond, navy polo. Clip job f2f0e9d4-0ea5-4fb6-af2d-8f6bd2ddb7e5, wall seed 3.
+
+Says: "Every photo up there came off one selfie. The truth? No photographer. No studio. Just the
+app and one photo from his phone. It checks the selfie before it renders, free. And yes, it's
+AI. That's the point."
+
+The beat-for-beat port of the reference ad's own structure - hook, a pause on "The truth?", the
+triple negation, a second proof, the AI reveal as the punchline. Her two proof beats were
+fabricated and could not carry; ours are the wall itself and the free pre-flight check.
+Side-by-side: brain/process/meta-ads/04.1 Outsource The Shoot/Cutout Wall Scripts 2026-09-25.md
+
+Cutout-wall cut, built 2026-09-25. 9:16, 1080x1920, 18.9 s - 15.1 s of wall plus a 3.8 s end card.
+Internal test render, not cleared for upload.
+
+Captions: one word at a time, Inter Bold charcoal on an off-white rounded pill with a soft drop
+shadow, left edge at 0.252 W, centred at 0.648 H - the reference ad's own measured position and
+treatment. Words come from the sentence transcript aligned character by character to the
+word-level timings, so nothing is ever glued or cut mid-token.
+
+NO PERSISTENT DISCLOSURE OVERLAYS. Owner's standing instruction, 2026-09-25: the
+"AI-generated presenter. Not a real customer." pill and the PRODUCT.md 11.2 results-vary line
+are never burned onto a frame again. The end card carries "This ad contains AI-Generated
+Content" and that is the whole on-frame disclosure.
+
+End card: brand/WP_endcard_tryitnow_9x16.png - warm radial glow, the mark, "Authentic pro
+photos." in Inter Bold, "More matches." in gradient bold italic, "Be the right swipe.", a
+gradient "Try it now" pill and the App Store badge.
+
+Wall: actor 01's twelve results plus his source selfie, order randomised per cut with a fixed
+seed; the selfie is pinned to the slot holding the word "selfie", or "photo" when a script never
+says it. Cuts land on measured word boundaries, roughly one a second. Audio normalised to
+-14 LUFS.

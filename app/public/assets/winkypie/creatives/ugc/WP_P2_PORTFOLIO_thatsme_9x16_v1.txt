@@ -1,0 +1,32 @@
+Cutout-wall cut with actor 01, built 2026-09-25. 9:16, 1080x1920, 18.9 s. Internal test render.
+
+THE ONLY CUT IN THE SET WHERE THE PRESENTER IS THE MAN ON THE WALL. Every result behind him is
+rendered from his own selfie (before-after/wall_00_sofa_before.png), so this is the one cut that
+reproduces the reference ad's actual mechanism: the person talking is the person in the
+pictures. The other four use a host who is not the demo subject and speak in the third person.
+
+Raw take: actors/01 Host/ugc_thatsme_green_9x16.mp4, job
+11e9f546-5342-4648-9f4a-cc4d971d2542. Wall seed 42. Key chromakey=0x149448:0.12:0.02.
+
+He says: "That's me. One selfie, on my sofa, grey shirt. Everything else here is the app. Pick a
+pose. It tells you how to stand. Same face, same build. No photographer. No studio. And yes,
+it's AI. That's the point."
+
+Why first person is allowed here and nowhere else in the set: "that's me, one selfie, on my
+sofa" describes the picture on screen, which genuinely is a render of this face. It claims no
+outcome, cites no number and reports nobody else's reaction - the three things that turn a
+description into a testimonial under 16 CFR 465 and PRODUCT.md 11.1. The line the owner's
+original draft crossed was "got 50 plus comments" and "my friend asked me"; nothing like that is
+here. On the word "selfie" the wall cuts to his actual source selfie, which is the proof beat.
+
+Second take. The first garbled "no studio" - kept as
+actors/01 Host/ugc_thatsme_green_9x16_take1_rejected.mp4 with the fix that worked.
+
+Captions: one word at a time, Inter Bold charcoal on an off-white rounded pill with a soft drop
+shadow, left edge 0.252 W, centred 0.648 H - the reference ad's own measured treatment. Words
+come from the sentence transcript aligned character by character to the word-level timings.
+
+No persistent disclosure overlays - owner's standing instruction, 2026-09-25. The end card
+carries "This ad contains AI-Generated Content" and that is the whole on-frame disclosure.
+
+End card: brand/WP_endcard_tryitnow_9x16.png. Audio normalised to -14 LUFS.

@@ -1,0 +1,15 @@
+Actor 04 with the microphone removed, 2026-09-25. Seedream 5.0 Pro is_inpaint from
+portrait_green.png, 1.5k, 1152x2048, 9:16. Job 3ada951c-8d86-482a-bf1f-04ee7e953a1e.
+
+Two changes asked for in one pass and both landed: the microphone gone with both hands open and
+relaxed at chest height mid-gesture, and the green screen extended so it fills the frame edge to
+edge. The second one is the important fix - on portrait_green.png the backdrop stops around 55 %
+of the frame height and a bright grey floor sits below it, which showed up as an unkeyable strip
+in the first cutout composite (Host Run 2026-09-25 Cutout Wall).
+
+Identity held this time. The prompt opened with "his face must not change at all" and named the
+head, hair, hairline, jawline, eyes, skin and shirt as one-to-one; unlike the pass that created
+actor 04 from actor 03, nothing drifted, so this is a variant of 04 rather than a new actor.
+
+The folder name is now stale - he is not holding a microphone in this file or in the clip beside
+it. Left as "04 Mic" so the existing sidecars and run notes keep resolving.

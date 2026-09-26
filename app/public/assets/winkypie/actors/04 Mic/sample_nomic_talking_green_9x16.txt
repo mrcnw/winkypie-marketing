@@ -1,0 +1,16 @@
+Actor 04 without the microphone, talking with his hands, 2026-09-25. The first 5 s cut from the
+15 s take that became WP_P2_PORTFOLIO_nophotographer_9x16_v1; the delivered creative is in
+creatives/ugc/. Seedance 2.0 Mini at 480p from portrait_green_nomic.png, generate_audio true,
+delivered 496x864. Job d4a362ae-25cb-4b6b-87e2-826d2acf6ba3. Cost 7.5 credits for the full 15 s.
+
+Casual UGC register rather than the narrator read of the earlier samples - the owner's note on
+2026-09-25 was that the reference ad's presenter talks like a person, so the prompt asked for
+"like he is telling a friend something" and for hands that move on the beats. Both landed: the
+hands gesture continuously and are empty in every frame.
+
+The framing held again with the wording from 2026-09-09 - "locked off on a tripod at the same
+wide chest-up framing (...) the head stays the same size in the frame for the whole clip".
+
+No disclosure burned in here: this is a casting sample and the clip says nothing on its own. The
+delivered ad carries "AI-generated presenter. Not a real customer." and the PRODUCT.md 11.2 line
+from frame one.

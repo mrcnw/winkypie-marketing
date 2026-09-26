@@ -1,0 +1,28 @@
+REJECTED, kept as the counter-example. Actor 04 holding the microphone, 2026-09-25. Job
+49f22859-34a2-4549-aadb-63541bb71032, from portrait_green.png - the mic portrait, before the
+no-mic variant existed.
+
+Rejected on the owner's note: the microphone has to go and the hands have to move. A man holding
+a stick mic reads as a news anchor, and the reference format's whole appeal is a person talking
+like a person. Cropping the prop below the frame edge does not fix the register; removing it
+does.
+
+Two things this take proved, which is why it is here and not deleted:
+
+1. The green screen on portrait_green.png does not fill the frame. The backdrop stops at about
+   0.55 of the frame height and a bright grey floor sits below it - sampled (212,207,202) where
+   green was expected. A cutout crop had to stop at y 445 of 864 to stay on green. Invisible in
+   the portrait, which is framed tighter than what Seedance generates around it.
+2. The model pads a short script by repeating a sentence. Thirty-two words filled about 13.4 s
+   of the 15 s and it said "Same build." twice, at 0:08 and again at 0:09, to reach the ceiling.
+   Confirmed at word level, not a transcription artefact.
+
+Its key needed chromakey=0x0A5A2C:0.10:0.02 - a different value from every later clip. Five
+takes across three runs, five different greens: sample the corners and sweep, every time.
+
+Raw UGC take, 15.1 s, 496x864, native audio. Seedance 2.0 Mini, 480p, 9:16,
+generate_audio true, 7.5 credits. No key applied and no overlays - this is exactly what the
+platform delivered, kept so the finished cut can be rebuilt without paying for the clip again.
+
+Key that works on these clips: chromakey=0x1A9A46:0.14:0.02 then despill=type=green. One pass,
+never two - a chained second pass on a darker green removes the actor entirely.

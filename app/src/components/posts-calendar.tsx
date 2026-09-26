@@ -27,7 +27,6 @@ const PILLAR_LOOK: Record<PillarKey, { dot: string; chip: string }> = {
   pinned: { dot: "brand-gradient", chip: "border-border bg-secondary text-foreground" },
   result: { dot: "bg-pillar-result", chip: "border-pillar-result/40 bg-pillar-result/10" },
   education: { dot: "bg-pillar-education", chip: "border-pillar-education/40 bg-pillar-education/10" },
-  ugc: { dot: "bg-pillar-ugc", chip: "border-pillar-ugc/40 bg-pillar-ugc/10" },
   card: { dot: "bg-pillar-card", chip: "border-pillar-card/40 bg-pillar-card/10" },
 };
 const UNKNOWN_LOOK = { dot: "bg-muted-foreground", chip: "border-border bg-card" };

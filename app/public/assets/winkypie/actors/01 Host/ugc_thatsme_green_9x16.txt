@@ -1,0 +1,18 @@
+Raw UGC take, actor 01 on green, 2026-09-25. 15.1 s, 496x864, native audio, no key and no
+overlays. Job 11e9f546-5342-4648-9f4a-cc4d971d2542, from portrait_green.png. Seedance 2.0 Mini,
+480p, 7.5 credits. Second take - see ugc_thatsme_green_9x16_take1_rejected.mp4.
+
+He says: "That's me. One selfie, on my sofa, grey shirt. Everything else here is the app. Pick a
+pose. It tells you how to stand. Same face, same build. No photographer. No studio. And yes,
+it's AI. That's the point."
+
+First person, and allowed to be: the wall behind him is rendered from this man's own selfie, so
+"that's me" describes what is on screen rather than claiming an experience. No outcome, no
+number, no third-party reaction - the three things that would turn it into a testimonial.
+
+VOICE: mid-pitched, easy, conversational - deliberately between actor 02's deep dry read and
+actor 04's bright quick one, so the three sit as a range.
+
+Key: chromakey=0x149448:0.12:0.02 then despill=type=green.
+
+Finished cut: creatives/ugc/WP_P2_PORTFOLIO_thatsme_9x16_v1.mp4

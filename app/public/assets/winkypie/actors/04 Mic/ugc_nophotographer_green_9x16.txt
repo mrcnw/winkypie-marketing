@@ -1,0 +1,23 @@
+Actor 04 on green, "no photographer" script, 2026-09-25. Job
+d4a362ae-25cb-4b6b-87e2-826d2acf6ba3, from portrait_green_nomic.png. The first clip on this lane
+with empty gesturing hands.
+
+Says: "No photographer. No studio. One selfie from his phone - that one. Every other shot here
+came out of it. Pick a pose, it coaches you. Same face, same build. Authentic pro photos. No
+photographer. Be the right swipe."
+
+sample_nomic_talking_green_9x16.mp4 in this folder is the first 5 s of this take, cut small for
+the Actors tab; this is the whole thing.
+
+Thirty-eight words, filled 15 s with no padding. The 32-word version of the same script came
+back with "Same build." said twice - the model pads to the ceiling rather than pausing.
+
+Raw UGC take, 15.1 s, 496x864, native audio. Seedance 2.0 Mini, 480p, 9:16,
+generate_audio true, 7.5 credits. No key applied and no overlays - this is exactly what the
+platform delivered, kept so the finished cut can be rebuilt without paying for the clip again.
+
+Key that works on these clips: chromakey=0x1A9A46:0.14:0.02 then despill=type=green. One pass,
+never two - a chained second pass on a darker green removes the actor entirely.
+
+The finished cut built from this take was retired on 2026-09-25 along with every build carrying
+the persistent AI-presenter overlay. Rebuild from here if the script is wanted again.

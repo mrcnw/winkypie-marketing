@@ -1,0 +1,19 @@
+Raw UGC take, actor 02 on green, 2026-09-25. 15.1 s, 496x864, native audio, no key applied and
+no overlays - this is what Seedance delivered, kept so the cut can be rebuilt without paying for
+the clip again.
+
+Higgsfield job b885fca4-f5cf-4688-9343-bad176d3bd36. Seedance 2.0 Mini, 480p, 9:16, 15 s,
+image_references = portrait_green.png, generate_audio true. 7.5 credits.
+
+VOICE: low, warm, slow and dry, a small smile in it - the deeper half of a deliberate pair with
+04's bright quick read. Measured -22.4 dB mean against 04's -18.3, so the delivered cut
+normalises it to -14 LUFS.
+
+He says: "Look at these. You'd ask who shot them. The truth? No photographer. No studio. Just
+the app and one photo from his phone. And it's AI - which is the part nobody believes, because
+it still looks like him."
+
+Key that works on this clip: chromakey=0x1A9A46:0.14:0.02 then despill=type=green. One pass,
+never two.
+
+Finished cut: creatives/ugc/WP_P2_PORTFOLIO_whoshot_9x16_v2.mp4

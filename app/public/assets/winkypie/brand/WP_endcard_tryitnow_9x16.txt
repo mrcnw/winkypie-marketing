@@ -1,0 +1,16 @@
+End card for the cutout-wall video set, built 2026-09-25. 1080x1920, the last 3.8 s of every
+WP_P2_PORTFOLIO_* cut in creatives/ugc/.
+
+Replaces the plain "TRY IT YOURSELF" card that shipped with the first two builds, which was set
+in Arial Black on black and carried no brand at all. This one is on the kit: the mark, the
+wordmark in Fraunces, and a full-round gradient pill CTA reading "Try it now" - the pattern
+BRAND.md section on UI components specifies. One gradient, linear-gradient(135deg, #F59E0B,
+#EC4899), used on the wordmark and the pill and nowhere else.
+
+Fraunces and Inter are the shipped brand faces and both are SIL OFL 1.1. They are not installed
+on this machine; the build fetches them from the Google Fonts repository into the scratchpad.
+Drawn in PIL, not HTML - this Mac's ffmpeg has no drawtext filter, and PIL renders the gradient
+through a text mask rather than through background-clip.
+
+The word "free" is deliberately absent, so nothing on the card is purchase-adjacent and
+PRODUCT.md 11.3 has nothing to attach to. The AI line is required and stays.

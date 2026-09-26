@@ -1,0 +1,31 @@
+Actor 04 - cream shirt, bright quick voice. Raw take: actors/04 Mic/ugc_stillhim_green_9x16.mp4
+(job 049247d3-4bea-4ed2-89d2-bb5699cde164). Wall seed 27.
+
+Says: "These are all one selfie. Same guy, same face, same build. No photographer. No studio. No
+photoshoot. It tells him how to stand, then it renders the shot. And yes, it's AI. It still
+looks like him."
+
+The same beat structure as the whoshot cut with the proof moved to the likeness rather than to
+the reaction. Paired with it deliberately: same format, two opposite voices.
+
+Cutout-wall cut, built 2026-09-25. 9:16, 1080x1920, 18.9 s - 15.1 s of wall plus a 3.8 s end card.
+Internal test render, not cleared for upload.
+
+Captions: one word at a time, Inter Bold charcoal on an off-white rounded pill with a soft drop
+shadow, left edge at 0.252 W, centred at 0.648 H - the reference ad's own measured position and
+treatment. Words come from the sentence transcript aligned character by character to the
+word-level timings, so nothing is ever glued or cut mid-token.
+
+NO PERSISTENT DISCLOSURE OVERLAYS. Owner's standing instruction, 2026-09-25: the
+"AI-generated presenter. Not a real customer." pill and the PRODUCT.md 11.2 results-vary line
+are never burned onto a frame again. The end card carries "This ad contains AI-Generated
+Content" and that is the whole on-frame disclosure.
+
+End card: brand/WP_endcard_tryitnow_9x16.png - warm radial glow, the mark, "Authentic pro
+photos." in Inter Bold, "More matches." in gradient bold italic, "Be the right swipe.", a
+gradient "Try it now" pill and the App Store badge.
+
+Wall: actor 01's twelve results plus his source selfie, order randomised per cut with a fixed
+seed; the selfie is pinned to the slot holding the word "selfie", or "photo" when a script never
+says it. Cuts land on measured word boundaries, roughly one a second. Audio normalised to
+-14 LUFS.

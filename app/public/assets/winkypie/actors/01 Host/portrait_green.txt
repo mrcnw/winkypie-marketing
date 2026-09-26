@@ -1,0 +1,20 @@
+Actor 01 on a chroma-key green screen, standing, hands forward, 2026-09-25. Two Seedream 5.0
+Pro is_inpaint passes from the full-resolution source selfie
+(before-after/wall_00_sofa_before.png): re-framing and hands first
+(74e084cd-1270-46aa-a00d-445b899bc9f8), then the background
+(45d80824-8333-41f4-a6fb-66e78e8f845d). 1152x2048, 9:16. One instruction per pass - asking for
+both at once leaves the room untouched, which is how actors 02 and 03 failed first.
+
+The source is a tight 4:3 seated close-up on a sofa; this is a 9:16 wide chest-up standing shot
+with both hands open in front of his chest. The face held through both passes - the lock names
+the head, hair, hairline, jawline, eyes, skin, stubble and the grey t-shirt one-to-one.
+
+WHY THIS ACTOR IS DIFFERENT FROM 02, 03 AND 04. Actor 01 is the man on the wall: every result in
+before-after/ is rendered from this exact selfie. So he is the only presenter who can speak in
+the first person about the pictures behind him without inventing anything - "that's me, one
+selfie, on my sofa" is a true statement about the demo asset on screen. What he still cannot do
+is claim an outcome or somebody else's reaction, which is where a testimonial begins.
+
+Keying: his grey t-shirt sits closer to green in UV than the cream shirts, so the window is
+narrower. chromakey=0x149448:0.12:0.02 then despill=type=green. At 0.18 the shirt is already
+going.

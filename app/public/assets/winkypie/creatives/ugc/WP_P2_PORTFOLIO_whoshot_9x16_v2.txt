@@ -1,0 +1,33 @@
+Actor 02 - blond, navy polo, low dry voice. Raw take: actors/02 Blonde/ugc_whoshot_green_9x16.mp4
+(job b885fca4-f5cf-4688-9343-bad176d3bd36). Wall seed 11.
+
+Says: "Look at these. You'd ask who shot them. The truth? No photographer. No studio. Just the
+app and one photo from his phone. And it's AI - which is the part nobody believes, because it
+still looks like him."
+
+Written from the owner's own line, keeping its rhythm, its pause on "The truth?", its triple
+negation and its closing beat about AI that still looks authentic. Two clauses of that line
+could not be carried: "got 50 plus comments" is an invented statistic and "my friend asked me"
+is a second-hand endorsement - fabricated proof in the mouth of a presenter who does not exist.
+
+Cutout-wall cut, built 2026-09-25. 9:16, 1080x1920, 18.9 s - 15.1 s of wall plus a 3.8 s end card.
+Internal test render, not cleared for upload.
+
+Captions: one word at a time, Inter Bold charcoal on an off-white rounded pill with a soft drop
+shadow, left edge at 0.252 W, centred at 0.648 H - the reference ad's own measured position and
+treatment. Words come from the sentence transcript aligned character by character to the
+word-level timings, so nothing is ever glued or cut mid-token.
+
+NO PERSISTENT DISCLOSURE OVERLAYS. Owner's standing instruction, 2026-09-25: the
+"AI-generated presenter. Not a real customer." pill and the PRODUCT.md 11.2 results-vary line
+are never burned onto a frame again. The end card carries "This ad contains AI-Generated
+Content" and that is the whole on-frame disclosure.
+
+End card: brand/WP_endcard_tryitnow_9x16.png - warm radial glow, the mark, "Authentic pro
+photos." in Inter Bold, "More matches." in gradient bold italic, "Be the right swipe.", a
+gradient "Try it now" pill and the App Store badge.
+
+Wall: actor 01's twelve results plus his source selfie, order randomised per cut with a fixed
+seed; the selfie is pinned to the slot holding the word "selfie", or "photo" when a script never
+says it. Cuts land on measured word boundaries, roughly one a second. Audio normalised to
+-14 LUFS.

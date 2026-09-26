@@ -1,0 +1,15 @@
+Actor 03 on a chroma-key green screen in a grey t-shirt, hands forward, 2026-09-25. Three
+Seedream 5.0 Pro is_inpaint passes from portrait.png: hands
+(2a6bcba1-87db-45c7-b3a8-443def551034), then the green background
+(52e1534f-2b56-4477-b620-5da895ce16a4), then the wardrobe
+(7d4f0496-5c50-4d8d-9e84-f3b035b54db6). One instruction per pass - see 02 Blonde's sidecar for
+why.
+
+The t-shirt is a casting decision, not a styling one. On green and in the same wide chest-up
+framing, actor 03 in his stone oxford shirt and actor 04 are near-identical - same haircut, same
+cream button-down, same build, because 04 was inpainted out of 03 in the first place. Two
+casting variants that look like the same man test nothing. Navy polo / grey tee / cream shirt
+makes the trio read as three people.
+
+Face, hair and hands are unchanged through all three passes. Used for
+WP_P2_PORTFOLIO_thetruth_9x16_v2.
