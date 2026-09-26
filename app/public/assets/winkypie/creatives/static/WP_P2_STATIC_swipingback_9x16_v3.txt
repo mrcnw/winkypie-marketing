@@ -1,0 +1,14 @@
+Campaign 13, v2 with the black lead-in removed. Built 2026-09-26 from
+`WP_P2_STATIC_swipingback_9x16_v2.mp4`: the first 0.4 s (a fade from black) are cut, so frame
+zero is the "Is nobody swiping back?" plate. 13.0 s, 1080x1920, h264 CRF 18, the owner's
+voice-over intact and in sync (audio trimmed with the picture). Nothing else changed - every
+note on v2 (v0 picture, drifted lines, first-plate risk) applies here verbatim.
+
+Why: Meta builds a video's own thumbnail from frame zero. v2's frame zero was black, so the
+asset showed a black tile in Ads Manager and a black player in per-placement previews even
+though the ad carried a proper poster. A cut whose first frame is the hook plate fixes the
+asset thumbnail, the autoplay first impression and the 3-second-play clock in one move.
+
+Rule for every cut from here: frame zero is the hook plate. Never open on black.
+This is the file uploaded to Meta for the smoke test in place of v2.
+Brief: brain/process/meta-ads/03 Choose Videos And Five Campaigns/briefs/WP_P2_STATIC_swipingback.md
