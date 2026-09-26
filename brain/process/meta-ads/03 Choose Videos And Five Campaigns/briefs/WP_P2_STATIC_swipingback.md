@@ -8,9 +8,9 @@ order: 13
 modelled_on: []
 reference: https://www.instagram.com/p/DdRWxHFMX6h/
 cta: Install now
-approved: [primary-text, headline, description, cta, destination, render, sound-off]
+approved: [primary-text, headline, description, cta, destination, render, sound-off, hypothesis]
 not_applicable: [captions, voice, music, flags, ratios]
-updated: 2026-09-22
+updated: 2026-09-26
 ---
 # Brief — WP_P2_STATIC_swipingback
 
