@@ -72,3 +72,10 @@ through the API at 19:44 CEST. The owner then scheduled the ad set to start at 0
   tile everywhere. Frame zero is the hook plate from now on.
 - Drafts marked deleted through the API stay in Ads Manager with an error; only the owner's
   "Discard draft" removes them.
+- Meta's "format display options" (single media + carousel) are on by default and let Meta
+  cut a single image into a two-card carousel for some viewers. Left on for the smoke test
+  (switching it off three hours before launch would have re-triggered review); switch it off
+  at creation in the next campaign, together with the standard enhancements.
+- Ads Manager's preview panel does not load `fbcdn.net` media in the owner's browser; blank
+  previews there are not evidence. Meta's own renders through the API, or "Preview on mobile
+  device", are.
