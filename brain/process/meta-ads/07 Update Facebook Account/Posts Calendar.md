@@ -2,10 +2,10 @@
 tags: [plan, instagram, calendar]
 step: 07
 status: plan
-updated: 2026-09-08
-from: 2026-09-08
+updated: 2026-09-24
+from: 2026-09-24
 ---
-# Posts Calendar — @winkypie.app, from 2026-09-08
+# Posts Calendar — @winkypie.app, from 2026-09-24
 
 Documentation: [[07 Update Facebook Account]] · Checklist: [[07 TODO]] · Profile fixes: [[Instagram Profile]]
 
@@ -21,30 +21,33 @@ each written post is a note in `posts/`.
 
 The dashboard renders this note at `/instagram?tab=calendar` — the `## Schedule` table on a month grid with today marked; every other section as written.
 
-## The three pillars
+## The two pillars
 
-Asked for on 2026-09-08 as *before/after · education · UGC*. Kept as three, two of them renamed to what we can actually show:
+Asked for on 2026-09-08 as *before/after · education · UGC*. **UGC was dropped on 2026-09-24 at
+the owner's call** — we are not posting it for now, so the pillar, its Friday slot and its
+colour are gone rather than parked. Two pillars remain, the first renamed to what we can
+honestly show:
 
 | Pillar | What it is | Source material today | Rules it must keep |
 |---|---|---|---|
 | **Pose → Result** (asked for as *before/after*) | The pose he picked, the selfie he gave, the photo the app made — the transformation pillar, 40 % of the message weight in `PRODUCT.md` §9 | Pinned tile 3 · the result captures in `mobile-app/app-flow-2026-09-07/` (05, 07, 08) · the phone-in-hand run · `POSERESULT` creatives when step 04.1 delivers them | Reference pose → result, never bad-me → hot-me (`PRODUCT.md` §11). The §11.2 disclosure on the frame and in the caption. Instagram's AI label on. Men only |
 | **Education** | How it works and why it is different: the free photo check, pose coaching, one selfie not twenty, deleted in 7 days and never used for training, *not a filter*. The five sourced stats, each with its label | Pinned tiles 1–2 · the app captures · the poses snapshot · the *freecheck* host clip · text cards from the locked lines · the carousels queued in [[Post Ideas]] | A number only with its `PRODUCT.md` §8 source label. No pose count. No "Winky Shots". No vendor names |
-| **UGC** | A person on camera using the app — the human creator clips and the disclosed AI host from [[04.1 Outsource The Shoot]] | `WP_UGC_phoneinhand_9x16_v1` · `WP_P2_HOST_freecheck_9x16_v1` · `WP_P3_HOST_triedthemall_9x16_v1` · the wave-two host clips once rendered ([[Host Scripts]]) | Never a testimonial, never a result claim, never an invented user. The host is labelled AI on screen ([[Production Guardrails]]). A creator's likeness release before the clip posts |
 
 ## Is the split a good idea
 
 Yes, with three corrections — the split is the right shape, the labels were not.
 
-- **It maps onto what already exists.** Pose → Result is the transformation pillar, Education is *ease* plus *trust*, UGC is the 04.1 lane. The four highlights planned in [[Instagram Profile]] (How it works · Photo check · Poses · FAQ) are Education; the pinned tiles are one of each. Nothing new has to be made.
+- **It maps onto what already exists.** Pose → Result is the transformation pillar, Education is *ease* plus *trust*. The four highlights planned in [[Instagram Profile]] (How it works · Photo check · Poses · FAQ) are Education; the pinned tiles are one of each. Nothing new has to be made.
 - **"Before/after" is the one frame to avoid.** It is what Meta restricts in appearance-adjacent categories the moment a post is boosted, and it invites the *bad me → hot me* read `PRODUCT.md` §11 tells us not to make. The app's own result screen already shows *pose used* and *photo used* — the honest frame costs nothing. Hence *Pose → Result*.
-- **"UGC" is thin and must stay honest.** There are no real users to quote and guardrail 2 bans testimonials, so the pillar is the creator lane: two host clips and one phone-in-hand run exist today. It gets one slot a week and reuses those until the shoot order delivers more.
-- **Equal thirds under-weight transformation** (40 % in §9 against 25 + 8 for the other two). Accepted on purpose: on a grid the rhythm is worth more than the weight, and the text cards — locked lines — are transformation copy too.
-- **One pillar per weekday makes the grid read as a page.** Three posts a week on fixed days, nothing else, and each grid column stays one pillar (Instagram fills rows newest-first, three across; the three pinned tiles are the first row). The price is discipline: a fourth post in a week shifts every column below it.
+- **UGC was the thin one, and it is gone.** There are no real users to quote, guardrail 2 bans testimonials, and the clips it depended on never arrived — `creatives/ugc/` does not exist in the repo. Dropped 2026-09-24 rather than left as a standing slot nobody fills. If the 04.1 shoot ever delivers, it comes back as a new pillar with its own decision.
+- **Two pillars weight transformation correctly.** Half the slots on Pose → Result against 40 % of the message weight in §9 is much closer than the equal thirds were, and the text cards — locked lines — are transformation copy too.
+- **One pillar per weekday makes the grid read as a page.** Two posts a week on fixed days, nothing else. Instagram fills rows newest-first, three across, so a two-a-week cadence walks the pillars across the columns instead of keeping each column pure — the price of dropping the third slot, and worth paying over posting a pillar we cannot source.
 
 ## Rhythm
 
-- **Monday — Pose → Result. Wednesday — Education. Friday — UGC.** 20:00 New York every time — 02:00 Warsaw the next morning, scheduled, never posted live (*When to post* below). Monday and Friday sit on the calendar as empty slots today: the day is fixed, the post is not.
-- **Every second Wednesday the Education slot is a text card:** black, one locked line, the punch word in the gradient — *Looks pro. Still you.* · *She decided in 100 ms.* · *Be the right swipe.*
+- **Monday — Pose → Result. Wednesday — Education.** 20:00 New York every time — 02:00 Warsaw the next morning, scheduled, never posted live (*When to post* below). Two a week from 2026-09-24; the Friday UGC slot is gone, not parked.
+- **The Wednesday carousel is the text-card format** in [[Static Post Format]] — 4:5, near-black, slide 1 the hook tile, then three-beat slides, ten of them. The queue of topics is [[Post Ideas]]. Three things in the reference accounts do **not** come across: the green highlight box (ours is the punch word in italic gradient — guardrail 4), a woman on the hook tile (guardrail 1), and a rule about him rather than about the photo.
+- **Every second Wednesday the slot is a single text card instead:** black, one locked line, the punch word in the gradient — *Looks pro. Still you.* · *She decided in 100 ms.* · *Be the right swipe.*
 - **Every reel carries the header line** from [[Instagram Profile]] — `Authentic pro photos. More matches.`, top 12 % of the frame.
 - **Caption:** two beats, then *Link in bio.*, then `#WinkyPie #AIPhotos #AIPhotography #ProfilePic` and the collection tag of the pose shown (`PRODUCT.md` §6). A comment keyword only once a DM automation answers it.
 - **Every result shown:** the §11.2 disclosure on the frame and in the caption, the AI label on.
@@ -74,21 +77,39 @@ scheduler asks for a time. Decided 2026-09-08, replacing the 18:00-Warsaw compro
 
 `Date` is the US day the post lands on and `Time` is New York; in Warsaw that is 02:00 the next morning — see *When to post*. `Asset` is the file under `app/public/assets/winkypie/` or the creative name from [[Creative Naming]]. `Status`: `planned` · `needs asset` · `needs post` · `posted`.
 
-**Pose → Result and UGC are empty slots, 2026-09-08.** Both pillars were cleared at the owner's call and put back as placeholders: the day is claimed, nothing else is decided. A placeholder carries a date, a time and a pillar, and `needs post` in `Status` — no format, no asset, no line. It holds the weekday so the grid keeps its shape and nobody has to re-derive the rhythm; filling one is a separate decision, and until it is made the slot stays blank rather than carrying a guess. **Only Pinned and Education are actually scheduled.**
+**Re-based on 2026-09-24.** The plan was written from 2026-09-08 and nothing went out under it: the
+three pinned tiles finally posted on 2026-09-24, so every unposted row was re-dated forward from
+that day rather than left sitting in the past. Two rows did not survive the move — the
+2026-09-09 *Would your selfie pass?* reel, whose asset `creatives/ugc/WP_P2_HOST_freecheck_9x16_v1.mp4`
+does not exist in the repo, and every Friday UGC slot, dropped with the pillar. Everything that was
+written but unmade was carried forward, not thrown away.
+
+**Pose → Result is live again, 2026-09-24.** It stopped being a placeholder at the owner's call:
+before/after is one of the two things we post. A Monday whose creative is not decided yet carries
+the date, the time and the pillar with `needs asset` — the day is held, the post is not invented.
 
 | Date | Weekday | Time | Pillar | Format | Asset | Line | Status |
 |---|---|---|---|---|---|---|---|
-| 2026-09-08 | Tue | 20:00 ET | Pinned | 3 tiles | `instagram/pinned/WP_IG_PIN1…PIN3` | *Pick a pose · Upload a photo · More matches* — post all three, pin 3 → 2 → 1 | planned |
-| 2026-09-09 | Wed | 20:00 ET | Education | Reel | `creatives/ugc/WP_P2_HOST_freecheck_9x16_v1.mp4` | *Would your selfie pass?* — the free check | planned |
-| 2026-09-11 | Fri | 20:00 ET | UGC |  |  |  | needs post |
-| 2026-09-14 | Mon | 20:00 ET | Pose → Result |  |  |  | needs post |
-| 2026-09-16 | Wed | 20:00 ET | Education | Carousel | Ten 4:5 text cards, written but not designed — [[WP_IG_EDU1_firstphoto]] | *The first photo does all the work.* — seven rules, every number sourced in the first comment | needs asset |
-| 2026-09-18 | Fri | 20:00 ET | UGC |  |  |  | needs post |
-| 2026-09-21 | Mon | 20:00 ET | Pose → Result |  |  |  | needs post |
-| 2026-09-23 | Wed | 20:00 ET | Education | Carousel | `mobile-app/app-flow-2026-09-07/03-photo-check-analyzing.png` → `04-photo-check-90-match.png` | *It checks your selfie before it charges you.* | planned |
-| 2026-09-25 | Fri | 20:00 ET | UGC |  |  |  | needs post |
-| 2026-09-28 | Mon | 20:00 ET | Pose → Result |  |  |  | needs post |
+| 2026-09-24 | Thu | 20:00 ET | Pinned | 3 tiles | `instagram/pinned/WP_IG_PIN1…PIN3` | *Pick a pose · Upload a photo · More matches* — pinned 3 → 2 → 1 | posted |
+| 2026-09-25 | Fri | 20:00 ET | Education | Carousel | `mobile-app/app-flow-2026-09-07/03-photo-check-analyzing.png` → `04-photo-check-90-match.png` | *It checks your selfie before it charges you.* | planned |
+| 2026-09-28 | Mon | 20:00 ET | Pose → Result | Carousel | `mobile-app/app-flow-2026-09-07/02-selfie-source.png` → `07-output-poolside.jpg` | *Same face. Same build. New photo.* — pose used, photo used | needs asset |
 | 2026-09-30 | Wed | 20:00 ET | Text card | Static | Made from the locked line — black, punch word in the gradient | *Looks pro. Still you.* | needs asset |
+| 2026-10-05 | Mon | 20:00 ET | Pose → Result |  |  |  | needs asset |
+| 2026-10-07 | Wed | 20:00 ET | Education | Carousel | Ten 4:5 text cards, written but not designed — [[WP_IG_EDU1_firstphoto]] | *The first photo does all the work.* — seven rules, every number sourced in the first comment | needs asset |
+| 2026-10-12 | Mon | 20:00 ET | Pose → Result |  |  |  | needs asset |
 | 2026-10-14 | Wed | 20:00 ET | Text card | Static | Made from the locked line | *She decided in 100 ms.* | needs asset |
+| 2026-10-19 | Mon | 20:00 ET | Pose → Result |  |  |  | needs asset |
+| 2026-10-21 | Wed | 20:00 ET | Education | Carousel | Eight 4:5 text cards — [[Post Ideas]] #2 | *Would your selfie pass?* — the free check, screen by screen | needs asset |
+| 2026-10-26 | Mon | 20:00 ET | Pose → Result |  |  |  | needs asset |
+| 2026-10-28 | Wed | 20:00 ET | Text card | Static | Made from the locked line | *Be the right swipe.* | needs asset |
 
-While Pose → Result and UGC are empty slots, only the Wednesday Education slot runs — one post a week, alternating a carousel from [[Post Ideas]] with a text card. When Pose → Result and UGC come back, the three-a-week cycle resumes and each slot is filled from whatever paid creative ran that week. Add rows here; the calendar follows on refresh.
+**2026-09-25 is a Friday, and deliberately off the grid.** The photo-check carousel was the
+only row whose files already existed, so it was pulled forward from 2026-09-30 at the owner's
+call on 2026-09-24 rather than sitting ready for six days. The Monday/Wednesday rhythm resumes
+on 2026-09-28; the Wednesday alternation picks up where the pull-forward left it, so 09-30 is
+a text card, not a second carousel.
+
+Two posts a week after that: Monday the transformation, Wednesday alternating a ten-slide
+carousel from [[Post Ideas]] with a single text card. Every row but 09-25 is `needs asset` —
+the plan is ahead of the design work, which is the honest state of it. Add rows here; the
+calendar follows on refresh.

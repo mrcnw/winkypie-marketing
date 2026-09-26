@@ -97,10 +97,16 @@ the §11.2 line at 42 px across the top, needed because every frame here shows a
 ## Blocked on
 
 **The narration is not speech-verified.** The burned captions are the written script timed to
-measured speech gaps, not a transcript of what the model actually said. `whisper-cli` is
-installed on this machine with no model downloaded. If Seedance dropped or garbled a line, a
-burned caption is wrong — which is disqualifying, not cosmetic. Verify before this goes near a
-paid run.
+measured speech gaps, not a transcript of what the model actually said. If Seedance dropped or
+garbled a line, a burned caption is wrong — which is disqualifying, not cosmetic. Verify before
+this goes near a paid run.
+
+**The blocker is gone, the check is not done.** This note said `whisper-cli` had no model
+downloaded; that is stale — `~/models/ggml-small.en.bin` is on the machine and
+[[Host Run 2026-09-25 Cutout Wall]] used it to verify a read at word level. Nothing stands in
+the way of re-checking this cut except doing it — and the 2026-09-25 run found the model
+repeating a whole sentence to fill its duration, which is exactly the failure a written-script
+caption would hide.
 
 Also unchecked: this cut against Meta's Reels 35 % band, and the actor still reads below the
 25–40 persona band.

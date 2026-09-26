@@ -12,9 +12,14 @@ Documentation: [[02 How To Find A Good Ad]]
       → `swipe/` created 2026-09-08. The file shape — facts, structure table, the three-line
         mechanism, transcript, copy / never-copy, rubric — is [[Reface Studio Portrait Reel 2026-09-08]]
 - [ ] Collect 20 swipes to start: 10 from competitors, 10 from outside the category.
-      → 4 of 20: [[Reface Studio Portrait Reel 2026-09-08]] · [[Reface Male Portfolio Cut 2026-09-08]] ·
-        [[Roast Comparison Card 2026-09-09]] · [[Roast Before After Card 2026-09-09]] — the two
-        126-day six-bullet cards, created 27 s apart, our first swipes from the leader's statics
+      → 7 of 20 (count corrected 2026-09-25 against the folder): [[Reface Studio Portrait Reel 2026-09-08]] ·
+        [[Reface Male Portfolio Cut 2026-09-08]] · [[Roast Comparison Card 2026-09-09]] ·
+        [[Roast Before After Card 2026-09-09]] — the two 126-day six-bullet cards, created 27 s
+        apart, our first swipes from the leader's statics — · [[Roast Ten Out Of Ten Pics 2026-09-09]] ·
+        [[Photoshoot Real Talk From A Girl 2026-09-09]] · [[Reface Cutout Wall Reel 2026-09-25]]
+      → the 2026-09-25 file is the same advertiser's newest cut, one day old when read: the
+        narrator-over-results layout with the box removed, and a script that is a fabricated
+        testimonial end to end. Format taken, script replaced — [[Cutout Wall Scripts 2026-09-25]]
       → 40 Roast AI ads with transcripts and frames: [[Roast AI Creative Teardown 2026-09-06]] (not yet split into `swipe/` files)
 - [ ] For each swipe, write *why* it works — the mechanism, not "nice video".
 - [x] Extract 10 hooks in the customer's own words from Reddit / App Store reviews.

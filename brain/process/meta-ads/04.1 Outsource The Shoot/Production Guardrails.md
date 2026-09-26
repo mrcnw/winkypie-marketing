@@ -74,10 +74,24 @@ Paste these into the run brief. The workflow enforces some of them; we enforce t
    decides — but a generated presenter is still a "fictitious individual" under that policy,
    so **if Meta classifies us as dating, the AI lane cannot run as an ad at all** and becomes
    an internal animatic only.
-5. **Disclosure from the first frame:** "AI-generated presenter. Not a real customer." as a
-   persistent caption, not an end card — same-modality (visible) and at first exposure (EU
-   Art. 50). The workflow's caption layers cover the hook plate and subtitles; the persistent
-   line is burned by us in post (`video-editing` workflow or ffmpeg). **Recipe, verified on the
+5. **~~Disclosure from the first frame.~~ Overruled by the owner, 2026-09-25 — this rule no
+   longer applies and is kept for its reasoning and its typography.** Neither
+   "AI-generated presenter. Not a real customer." nor the PRODUCT.md §11.2 results-vary line is
+   ever burned onto a frame again. The instruction was given flatly and without qualification
+   after seeing both on a finished cut; it repeats the narrower call already made for S7 on
+   2026-09-08 ([[Host Scripts]] S7). **The on-frame AI disclosure is now the end card line
+   `This ad contains AI-Generated Content`, and nothing else.**
+
+   What that costs, recorded once and not raised again: nothing on the picture says the man
+   talking does not exist, which is narrower than EU AI Act Art. 50's same-modality-at-first-
+   exposure reading and narrower than PRODUCT.md §11.2, which asks for the results-vary line
+   "wherever before/after imagery appears" and lists no exception. Meta's own automatic "AI
+   info" label and the end card are what carry it. If a regulator or Meta ever asks, this
+   paragraph is the decision and its date.
+
+   **The rest of this rule is now a typography note, not a disclosure rule.** Original text
+   follows: the persistent line sat as a caption at first exposure, burned by us in post
+   (`video-editing` workflow or ffmpeg). **Recipe, verified on the
    first run 2026-09-07** (frame 1080×1920, full parameters and the script in
    [[Host Run 2026-09-07]]): the line sits in a 75 % `#0E0E0E` pill at y = 290–370 (just under
    Meta's top 14 %), Helvetica 30, every presenter frame; the workflow's hook plate is forced to

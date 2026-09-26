@@ -2,7 +2,7 @@
 tags: [setup, instagram, audit]
 step: 07
 status: todo
-updated: 2026-09-08
+updated: 2026-09-24
 profile: https://www.instagram.com/winkypie.app/
 reference: https://www.instagram.com/roast.dating/
 ---
@@ -11,25 +11,30 @@ reference: https://www.instagram.com/roast.dating/
 Documentation: [[07 Update Facebook Account]] · Checklist: [[07 TODO]]
 
 `@winkypie.app` is the handle every Instagram-placement ad runs under, and the profile a man
-taps before he installs. Today it undercuts the ad: one post, a woman in it, none of the
-locked lines. Audited 2026-09-07 through a logged-in browser against
+taps before he installs. First audited 2026-09-07 through a logged-in browser against
 [[ROAST]]'s account — the competitor that matters (`../../../PRODUCT.md` §3) and the only one
-in the niche with a profile that works as a landing surface. Product facts and claim limits
-are not repeated here; every fix below stays inside `PRODUCT.md` §9–§11.
+in the niche with a profile that works as a landing surface. **Steps 1–6 were all run on
+2026-09-24**: the profile carries the name field, the bio, both links and the three pinned
+tiles. What is left is 7–10 — highlights, following, the posting rhythm and the DM
+automation decision. See *Where we are*. Product facts and claim limits are not repeated here; every fix below stays
+inside `PRODUCT.md` §9–§11.
 
 The dashboard renders this note at `/instagram`. Edit it here; the page follows on refresh.
 
-## Where we are — 2026-09-07
+## Where we are — 2026-09-24
+
+Read off the profile on 2026-09-24, after the owner ran steps 1–6. What it replaces — the
+2026-09-07 audit that opened this note — is in git history.
 
 | Field | Live value | Verdict |
 |---|---|---|
-| Name field | `WinkyPie - AI Photo Studio` | Generic. No "dating", the one keyword the buyer searches. The name field is searchable; the bio barely is |
-| Bio | 📸✨ Your AI photographer in your pocket · 🔥 One selfie → stunning pro photos · 📲 Download now👇 · #WinkyPie | None of the locked lines. "Stunning" is hype (§9). The 👇 points at a website, not the store. A hashtag in a bio links to nothing useful |
-| Link | `winkypie.app` — one link | The App Store is two taps away. Instagram allows five links |
+| Name field | `WinkyPie - AI Authentic Dating Photos` | Carries *Dating*, which was the point of renaming it. Two drifts from the block in *New bio*: the words are swapped — *AI Authentic* where *Authentic AI* is what parses — and the separator is a hyphen, not `·`. Cosmetic; fix on the next edit |
+| Bio | Four lines, emoji-prefixed. Lines 1–3 are the locked lines from *New bio*; line 4 read *Get more x10 matches.👇* in the 2026-09-24 screenshot | Raised against `PRODUCT.md` §9 and **closed by the owner on 2026-09-24**. Settled, not an open item — do not re-open it from this note. This row is a dated snapshot; the live bio is edited on the profile, which is the only source of truth for what it says today |
+| Link | App Store first, `winkypie.app` second | **Step 4 done 2026-09-24.** The store is one tap from the profile, which is the whole point of the link order |
 | Picture | The mark on the gradient ring | **Keep.** Reads at 40 px, matches the app icon |
-| Posts | 1, pinned, posted 2026-04-24, tagged New York City. "Same Face. New level" phone mockup — the result shown is a **woman** | Breaks guardrail 1 (men only). The caption says "Upload. Pick a pose. Run" — the reversed flow listed as stale in `PRODUCT.md` §12 — plus "Free shots on us" (the retired credit word) and "ready in seconds" (unsourced, §13). Archive it |
-| Followers / following | 2 / 0 | Nothing is at stake in a reset. 0 following reads as a bot account |
-| Highlights | None | The profile has no second screen |
+| Posts | 3, all three pinned, posted 2026-09-24 | The whole pitch above the fold — *Pick a pose · Upload a photo · More matches*, reading 1 · 2 · 3 left to right. The 2026-04-24 female-model post is archived |
+| Followers / following | 2 / 0 | Step 8 not done. 0 following still reads as a bot account |
+| Highlights | None | Step 7 not done. The four are named in *Highlights to build* and their construction is `BRAND.md` §8; none of the covers is designed yet |
 | Reels | None — the tab does not appear | Reels are the only reach lever an account with 2 followers has |
 
 ## The model — what @roast.dating does
@@ -117,11 +122,11 @@ and `/instagram` shows them with a copy button.
 
 ## Grid rhythm
 
-- **The week is in [[Posts Calendar]]:** Monday pose → result, Wednesday education, Friday UGC — three posts, fixed days, nothing else, so each grid column stays one pillar. Every second Wednesday is a text card. Cut from the paid creative — the 04.1 host clips are already 9:16 and already say the locked lines.
+- **The week is in [[Posts Calendar]]:** Monday pose → result, Wednesday education — two posts, fixed days, nothing else. Every second Wednesday is a text card, the other a ten-slide carousel in the [[Static Post Format]] shape. UGC and its Friday slot were dropped 2026-09-24: the 04.1 host clips never landed and `creatives/ugc/` does not exist.
 - **One header line on every reel**, top 12 % of the frame: `Authentic pro photos. More matches.` in Fraunces, *matches* italic in the gradient. Roast's header is what makes their grid read as one page; ours does the same job with the brand line.
 - **Text cards:** black, one locked line, the punch word in the gradient. The first three: *Looks pro. Still you.* · *She decided in 100 ms.* · *Be the right swipe.*
 - **Pin three:** the tiles in *Pinned tiles* above — *Pick a pose · Upload a photo · More matches*. That is the whole pitch above the fold.
-- **Caption:** two beats, then *Link in bio.*, then `#WinkyPie #AIPhotos #AIPhotography #ProfilePic` plus the scene-collection tag of the pose shown (`PRODUCT.md` §6). No stat without its source label.
+- **Caption:** two beats, then *Link in bio.*, then the hashtags. **Instagram capped hashtags at 5 per post on 2025-12-18**, so the old 15–20 in `PRODUCT.md` §9 cannot be followed and that section still has to be rewritten. No stat without its source label.
 - **Every result shown carries the disclosure** — *"Demo. Your photos use your actual face and body. Results vary based on selfie quality, lighting, and pose."*
 
 ## Do this, in order
@@ -134,5 +139,5 @@ and `/instagram` shows them with a copy button.
 6. **Post the three tiles and pin them** — *Pick a pose · Upload a photo · More matches*, built 2026-09-08, files and captions under *Pinned tiles*. All three the same day, pinned in reverse order. Tile 3 gets the AI label and the disclosure in its caption.
 7. **Build the four highlights** — How it works, Photo check, Poses, FAQ — with brand covers.
 8. **Follow ~50 accounts** in the niche.
-9. **Start the rhythm** from [[Posts Calendar]]: Monday pose → result, Wednesday education, Friday UGC, every reel with the header line. Source: the paid creative that runs, nothing made only for organic.
+9. **Start the rhythm** from [[Posts Calendar]]: Monday pose → result, Wednesday education, every reel with the header line. UGC and the Friday slot were dropped 2026-09-24. Source: the paid creative that runs, nothing made only for organic.
 10. **Decide on the comment-keyword DM automation** before writing *Comment POSE* in any caption. It needs a tool and a reply script; until it exists, *Link in bio.*

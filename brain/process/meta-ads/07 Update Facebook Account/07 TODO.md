@@ -1,7 +1,7 @@
 ---
 tags: [todo, setup]
 step: 07
-updated: 2026-09-08
+updated: 2026-09-24
 ---
 # 07 · TODO — Update Facebook Account
 
@@ -18,9 +18,16 @@ Documentation: [[07 Update Facebook Account]]
 - [ ] Fix the `@winkypie.app` profile in the order in [[Instagram Profile]]: archive the
       female-model post, rename the name field, paste the new bio, App Store link first,
       three pinned tiles, four highlights. Audited 2026-09-07. The three tiles are built —
-      2026-09-08, *Pinned tiles* in [[Instagram Profile]], captions beside the files.
-- [ ] Post to [[Posts Calendar]] — Monday pose → result, Wednesday education, Friday UGC — and
-      mark each row `posted` the day it goes up. Fill the `needs asset` rows first.
+      2026-09-08 — and **posted and pinned 2026-09-24**. **Steps 1–6 all done 2026-09-24**:
+      archived, renamed, bio pasted, App Store link first, account type checked, three tiles
+      posted and pinned. The bio's fourth line was raised against `PRODUCT.md` §9 and closed
+      by the owner the same day — settled, see *Where we are* in [[Instagram Profile]].
+      Open: 7 (four highlights — the covers are spec'd in *Highlights to build*
+      and built on `BRAND.md` §8, but none is designed yet), 8 (follow ~50), 9 (rhythm — the calendar runs from 2026-09-28),
+      10 (DM automation, which blocks any *Comment POSE* caption).
+- [ ] Post to [[Posts Calendar]] — Monday pose → result, Wednesday education — and mark each
+      row `posted` the day it goes up. Fill the `needs asset` rows first. UGC and its Friday
+      slot were dropped 2026-09-24; the calendar was re-based on the same day.
 - [ ] Post enough real content that the Page does not look abandoned to a click-through.
 - [ ] Confirm the App Store link and the app's Meta association.
 - [ ] Verify the minimum iOS version yourself, in both places, before the first launch:
