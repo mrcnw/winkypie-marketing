@@ -115,6 +115,9 @@ app/content/competitors.json              → /meta-ads/research/competitors
   09 Analyze KPIs/KPI Review *.md         → /meta-ads/campaigns/kpi: real rounds
 ../PRODUCT.md                             → /winkypie · Overview
 ../BRAND.md                               → /winkypie · Branding
+app/public/assets/meta-posters/           → not rendered. Poster frames Meta fetches by raw-
+                                            GitHub URL as the cover of a video ad created
+                                            through the MCP; see the README.txt there
 app/public/assets/meta-ads/good-ads/      → previews for the first list, by slug:
 app/public/assets/meta-ads/competitors/     <slug>.png, or a <slug>/ folder for several
 ```
