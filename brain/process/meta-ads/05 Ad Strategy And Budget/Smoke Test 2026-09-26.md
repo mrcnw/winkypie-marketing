@@ -79,3 +79,34 @@ through the API at 19:44 CEST. The owner then scheduled the ad set to start at 0
 - Ads Manager's preview panel does not load `fbcdn.net` media in the owner's browser; blank
   previews there are not evidence. Meta's own renders through the API, or "Preview on mobile
   device", are.
+
+## Zero impressions after activation — what "new account warm-up" actually is (read 2026-09-28)
+
+Meta has no documented warm-up. Three documented things add up to one: a **daily spending
+limit set by Meta** on new accounts (ours: $35.53, raised after clean payments —
+[Meta help 563129151097553](https://www.facebook.com/business/help/563129151097553)), the
+learning phase, and Meta's own troubleshooting line "if your ad is new, check again later —
+delivery and results may not happen straight away"
+([Meta help 2647789935489213](https://www.facebook.com/business/help/2647789935489213)).
+
+Practitioner consensus, 2026: first impressions within hours to 24 h; **zero impressions after
+48 h with everything Active is a problem, not a ramp**
+([Adnova](https://www.adnova.ai/blogs/meta-ads-not-delivering),
+[AdsGo](https://www.adsgo.ai/blog/facebook-ads-no-impressions/)). "Warm-up" playbooks
+([Clikim](https://clikim.com/warm-up-facebook-ad-account/),
+[ZenWeb](https://zenweb.my/blog/warm-up-new-facebook-ads-account/)) describe a fresh account
+as statistically indistinguishable from fraud to Meta's risk systems: conservative delivery,
+~$50/day caps in week one, 2–6 weeks to real headroom, and **status flapping or spend spikes
+rewind the clock**. Their week-one recipe: $20–50 a day, the safest creative, batched changes,
+business verification done.
+
+Against that recipe this test is under budget ($15), runs two creatives that are not "safest"
+(coworker's waivers, swipingback's first plate), had six status changes in an hour on
+2026-09-26 and two days switched off, and the business is not verified. None of it blocks
+delivery by itself; all of it slows a new account's start.
+
+**Rule adopted:** the 48-hour line is 2026-09-30 15:07 CEST. Until then nothing in the campaign
+is touched. Zero-risk moves meanwhile: business verification in Business Settings, and a look
+at Account Quality. Past the line with zero impressions, the ladder is: account spending
+limit → Account Quality → app eligibility in the developer dashboard → a duplicate ad set as a
+control.
