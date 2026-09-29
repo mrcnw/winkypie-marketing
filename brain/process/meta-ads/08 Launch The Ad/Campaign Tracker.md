@@ -42,5 +42,22 @@ therefore never used. New reference: delivery possible from 2026-09-28 15:07 CES
 account day 2026-09-29; **do not touch until 2026-10-12**; reads on 2026-09-29 (delivery),
 2026-10-06 (day 7), 2026-10-13 (day 14), 2026-10-27 (day 28).
 
-Restarted clocks: the one above. If Meta rejects an ad and it is fixed and re-submitted, it gets
+Restarted clocks: the one above.
+
+## Reads
+
+### Day 1 — 2026-09-29, 08:07 CEST (API, `maximum`, i.e. everything since activation)
+
+| Object | Impressions | Reach | Spend | CPM |
+|---|---|---|---|---|
+| Ad set | 352 | 333 | $3.67 | $10.43 |
+| `oneselfie_4x5_v1` | 280 | 257 | $1.56 | $5.57 |
+| `swipingback_9x16_v3` | 69 | 66 | $2.09 | $30.29 |
+| `coworker_4x5_v1` | 3 | 3 | $0.02 | $6.67 |
+
+2026-09-28 (activation day, from 15:07): 1 impression in total. Everything above landed after
+00:00 CEST on 09-29, i.e. the US evening of 09-28. Delivery works; the new account is being
+fed cautiously. Meta already splits the budget unevenly (oneselfie takes most, coworker is
+starved), exactly as [[Budget And Thresholds]] said it would. Installs: "not available" yet
+(SKAdNetwork lag, AEM sample). No verdicts from this — day-1 numbers are delivery, not results. If Meta rejects an ad and it is fixed and re-submitted, it gets
 its own launch time here and is reported separately ([[08 Launch The Ad]] step 5).
