@@ -110,3 +110,22 @@ is touched. Zero-risk moves meanwhile: business verification in Business Setting
 at Account Quality. Past the line with zero impressions, the ladder is: account spending
 limit → Account Quality → app eligibility in the developer dashboard → a duplicate ad set as a
 control.
+
+## Parked for the next round: why the leader runs a quiz, and what our equivalent would be
+
+Asked by the owner on 2026-09-30. Roast is web-first: the ad click lands on a quiz page, not
+the App Store ([[ROAST]]). That buys them, in order of weight: full web measurement (Pixel +
+Conversions API, 7-day windows, retargeting) that sidesteps SKAdNetwork; a cheap, frequent
+optimisation event ("quiz completed") so ad sets exit learning fast; a micro-commitment before
+the paywall (our note calls it the bait funnel: free quiz, pay to see results); answers that
+segment and personalise the paywall ($6.99 → $97 tiers); an e-mail list ("724,000+ users" are
+quiz takers, 84,000 are customers); and a landing page that can say what an ad cannot. The
+cost of that model shows in their seven months of "50 % OFF today only" and in their billing
+complaints.
+
+Our equivalent is the free photo check — a diagnosis of a real selfie, not an ankieta — but it
+sits behind the install, so it does none of the above. The product question for the round
+after this test: a web-side check (upload selfie → verdict → App Store) would give a
+Pixel-measured funnel, a frequent optimisation event and a list, without "pay to see". Its
+price is one more step before install and a privacy story for selfies on the web that
+PRODUCT.md currently promises differently. Decision belongs to the product, not to this test.
