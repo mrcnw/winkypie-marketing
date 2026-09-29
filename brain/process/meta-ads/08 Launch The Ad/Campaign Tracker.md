@@ -59,5 +59,28 @@ Restarted clocks: the one above.
 00:00 CEST on 09-29, i.e. the US evening of 09-28. Delivery works; the new account is being
 fed cautiously. Meta already splits the budget unevenly (oneselfie takes most, coworker is
 starved), exactly as [[Budget And Thresholds]] said it would. Installs: "not available" yet
-(SKAdNetwork lag, AEM sample). No verdicts from this — day-1 numbers are delivery, not results. If Meta rejects an ad and it is fixed and re-submitted, it gets
+(SKAdNetwork lag, AEM sample). No verdicts from this — day-1 numbers are delivery, not results.
+
+### Day 2 — 2026-09-30, 00:28 CEST (API; 2026-09-29 was the first full account day)
+
+| Day | Impressions | Reach | Link clicks | Spend | CPM | Installs (AEM) |
+|---|---|---|---|---|---|---|
+| 2026-09-28 (from 15:07) | 1 | 1 | 0 | $0.00 | — | 0 |
+| 2026-09-29 | 782 | 654 | 132 | $16.84 | $21.53 | 1 |
+
+$16.84 on a $15 daily budget is inside Meta's rule (up to 25 % over on a single day, the
+calendar week averages to the budget); the $210 campaign cap still bounds the total.
+
+Per placement since launch: Audience Network 267 impressions, 128 link clicks, $1.36 — it
+stopped growing after the morning of 09-29 (263 → 267), so the account-level exclusion or
+Meta's own re-allocation took effect. Facebook 252 impressions, 3 link clicks, $8.78 (CPM ≈ $35).
+Instagram 278 impressions, 2 link clicks, $7.07 (CPM ≈ $25). **Every CTR read from this test
+excludes Audience Network**: on Facebook + Instagram it is 5 link clicks on 530 impressions,
+≈ 0.9 %, a handful of clicks — directional at best.
+
+Per ad since launch: oneselfie 644 impressions, $12.23, 1 install (AEM, 1-day click) ·
+swipingback v3 141 impressions, $4.88, CPM $34.61 (Reels-heavy) · coworker 12 impressions,
+$0.10 (starved, as the plan expected for the weakest early auctions). One install at $16.84 is
+a single event, not a CPI. CPM on Facebook and Instagram is running well above the $16
+orientation in the strategy notes; early days on a new account, to be re-read on day 7. If Meta rejects an ad and it is fixed and re-submitted, it gets
 its own launch time here and is reported separately ([[08 Launch The Ad]] step 5).
