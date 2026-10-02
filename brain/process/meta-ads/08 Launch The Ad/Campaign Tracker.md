@@ -42,7 +42,8 @@ therefore never used. New reference: delivery possible from 2026-09-28 15:07 CES
 account day 2026-09-29; **do not touch until 2026-10-12**; reads on 2026-09-29 (delivery),
 2026-10-06 (day 7), 2026-10-13 (day 14), 2026-10-27 (day 28).
 
-Restarted clocks: the one above.
+Restarted clocks: the one above. If Meta rejects an ad and it is fixed and re-submitted, it gets
+its own launch time here and is reported separately ([[08 Launch The Ad]] step 5).
 
 ## Reads
 
@@ -126,5 +127,8 @@ zero, paid CPI for those days is ≈ $58.91 / 17 ≈ **$3.50** `[smoke test, org
 subtracted]`. Open: the pre-campaign baseline (09-20 → 09-27) and the Sources breakdown (App
 Referrer: Facebook / Instagram) in App Store Connect. Apple's day is UTC, Meta's is
 Europe/Warsaw — compare multi-day sums, not single days. **From here on, installs for CPI come
-from App Store Connect minus organic, not from Meta's column.** If Meta rejects an ad and it is fixed and re-submitted, it gets
-its own launch time here and is reported separately ([[08 Launch The Ad]] step 5).
+from App Store Connect minus organic, not from Meta's column.**
+
+Drawn: [[Smoke Test Funnel 2026-10-02]] — spend → impressions → taps → installs → paywall →
+trial with the drop at each step, plus the per-ad strip. Same numbers as this read; the
+drawing does not get updated, the day-7 read gets its own if one is worth drawing.
