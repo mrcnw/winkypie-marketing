@@ -82,5 +82,40 @@ Per ad since launch: oneselfie 644 impressions, $12.23, 1 install (AEM, 1-day cl
 swipingback v3 141 impressions, $4.88, CPM $34.61 (Reels-heavy) · coworker 12 impressions,
 $0.10 (starved, as the plan expected for the weakest early auctions). One install at $16.84 is
 a single event, not a CPI. CPM on Facebook and Instagram is running well above the $16
-orientation in the strategy notes; early days on a new account, to be re-read on day 7. If Meta rejects an ad and it is fixed and re-submitted, it gets
+orientation in the strategy notes; early days on a new account, to be re-read on day 7.
+
+### Day 5 — 2026-10-02, 18:23 CEST (API, since activation)
+
+| Day | Impressions | Reach | Link clicks | Spend | CPM | Installs (AEM, 1-day click) |
+|---|---|---|---|---|---|---|
+| 2026-09-29 | 791 | 658 | 132 | $16.97 | $21.45 | 1 |
+| 2026-09-30 | 1,076 | 800 | 148 | $20.60 | $19.14 | 4 |
+| 2026-10-01 | 867 | 608 | 26 | $21.34 | $24.61 | 4 |
+| 2026-10-02 (to 18:23) | 844 | 625 | 30 | $20.25 | $23.99 | 3 |
+| **Total** | **3,579** | — | 336 | **$79.16** | — | **12** |
+
+Daily spend runs 13–42 % above the $15 budget on single days — Meta's daily-budget
+flexibility, bounded by 7 × daily per calendar week ($105 for 09-28 → 10-04) and by the $210
+campaign cap. Nobody changed the budget (activity log: only billing events since 09-28). The
+account is being billed in $15 chunks against the prepaid funds.
+
+| Ad | Impressions | of which Audience Network | Link clicks FB+IG | CTR FB+IG | Spend | CPM | Installs (AEM) |
+|---|---|---|---|---|---|---|---|
+| `oneselfie_4x5_v1` | 3,114 | 729 | 41 / 2,381 | 1.7 % | $62.33 | $20.02 | 11 (FB 5 · IG 2 · AN 4) |
+| `swipingback_9x16_v3` | 442 | 54 | 9 / 388 | 2.3 % | $16.31 | $36.90 | 1 (AN) |
+| `coworker_4x5_v1` | 23 | 0 | 3 / 23 | — | $0.52 | $22.61 | 0 |
+
+Audience Network is back (729 + 54 impressions, 283 of the 336 link clicks, $4.46 of spend):
+the account-level exclusion either was not applied or does not bind Advantage+ app campaigns.
+Spend there is 6 % of the total; its clicks are excluded from every CTR above; its 5 installs
+are kept apart until RevenueCat says whether they trial.
+
+Video funnel, ad-set level (≈ swipingback, coworker is 23 impressions): 439 plays, 132
+3-second plays, 22 ThruPlays. Swipingback hook rate ≈ 130 / 442 ≈ **29 %** (orientation
+"good ≥ 30 %"), hold rate ≈ 21 / 130 ≈ **16 %** (orientation "healthy 25–30 %") — the opening
+works, the middle beats lose them, on 442 impressions, so directional. Blended AEM CPI
+$6.60 `[smoke test, n<20 installs, AEM only]` — inside the plan's $6–8 pessimistic band, and
+AEM undercounts (ATT opt-ins only), so the true figure is lower. Oneselfie has crossed the
+3,000-impression floor overall but not on Facebook + Instagram alone (2,381); the other two are
+starved. No verdicts; next read day 7. If Meta rejects an ad and it is fixed and re-submitted, it gets
 its own launch time here and is reported separately ([[08 Launch The Ad]] step 5).
