@@ -117,5 +117,14 @@ works, the middle beats lose them, on 442 impressions, so directional. Blended A
 $6.60 `[smoke test, n<20 installs, AEM only]` — inside the plan's $6–8 pessimistic band, and
 AEM undercounts (ATT opt-ins only), so the true figure is lower. Oneselfie has crossed the
 3,000-impression floor overall but not on Facebook + Instagram alone (2,381); the other two are
-starved. No verdicts; next read day 7. If Meta rejects an ad and it is fixed and re-submitted, it gets
+starved. No verdicts; next read day 7.
+
+**App Store Connect, first-time downloads (owner's screenshot, 2026-10-02):** 09-29: 3 ·
+09-30: 7 · 10-01: 7 — 17 over the three days against Meta's 9 AEM installs for the same days,
+i.e. AEM sees roughly half, as expected (ATT opt-ins only). If the organic baseline is near
+zero, paid CPI for those days is ≈ $58.91 / 17 ≈ **$3.50** `[smoke test, organic not yet
+subtracted]`. Open: the pre-campaign baseline (09-20 → 09-27) and the Sources breakdown (App
+Referrer: Facebook / Instagram) in App Store Connect. Apple's day is UTC, Meta's is
+Europe/Warsaw — compare multi-day sums, not single days. **From here on, installs for CPI come
+from App Store Connect minus organic, not from Meta's column.** If Meta rejects an ad and it is fixed and re-submitted, it gets
 its own launch time here and is reported separately ([[08 Launch The Ad]] step 5).
