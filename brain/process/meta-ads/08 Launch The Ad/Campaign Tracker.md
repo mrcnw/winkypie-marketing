@@ -129,6 +129,18 @@ Referrer: Facebook / Instagram) in App Store Connect. Apple's day is UTC, Meta's
 Europe/Warsaw — compare multi-day sums, not single days. **From here on, installs for CPI come
 from App Store Connect minus organic, not from Meta's column.**
 
+**SDK events (dataset, 2026-09-28 → 2026-10-02 17:35 CEST, ATT opt-ins only):** first_app_launch
+21 · initiated_checkout (paywall reached) 9 · StartTrial 1 · purchase 3 · achievement_unlocked 4.
+The one trial started 2026-09-29 at about 15:00 CEST, so its three days ran out on 2026-10-02 at
+about 15:00 CEST; RevenueCat decides whether it converted or was cancelled. The 3 purchase events
+and 2 of the 9 paywalls sit in one hour on 2026-10-01 around 11:00 CEST; the owner confirmed on
+2026-10-02 that nobody has bought, so they are not customers and do not count. Funnel so far:
+launches → paywall 9 / 21 (43 %), paywall → trial 1 / 9, installs → trial 1 / 17 (≈ 6 % against
+the 7.1 % median in [[KPI]]). At 17 installs the hard-paywall median (10.7 % download → paid by
+day 35) predicts under two payers, so zero paid is the expected reading, not a verdict. The
+business read needs ≥ 40 payers ([[KPI]]), roughly 400 installs at that rate — not this test's
+job ([[Budget And Thresholds]]).
+
 Drawn: [[Smoke Test Funnel 2026-10-02]] — spend → impressions → taps → installs → paywall →
 trial with the drop at each step, plus the per-ad strip. Same numbers as this read; the
 drawing does not get updated, the day-7 read gets its own if one is worth drawing.
