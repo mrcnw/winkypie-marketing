@@ -187,7 +187,9 @@ class Scene {
       const t = this.get(box.boundElements[0].id);
       t.y = y + 14;
       t.verticalAlign = 'top';
-      const cap = this.text(x, y + h - capSize * LINE_HEIGHT - 12, o.sub,
+      // a caption that wraps must still end above the box bottom
+      const capLines = wrap(o.sub, w - 4, capSize, this.font).split('\n').length;
+      const cap = this.text(x, y + h - capLines * capSize * LINE_HEIGHT - 12, o.sub,
         { size: capSize, width: w, align: 'center', color: o.subColor || PALETTE.grey.stroke });
       this.meta.set(cap.id, { inside: box.id });
     } else {
